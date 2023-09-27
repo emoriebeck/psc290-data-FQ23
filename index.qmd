@@ -1,5 +1,6 @@
 ---
 title: "Data Cleaning and Management (Fall 2023)"
+author: "Dr. Emorie D Beck, University of California, Davis"
 ---
 
 ## **Course Description**
@@ -10,12 +11,12 @@ This course is not a \"pure\" data science (i.e. we won\'t be working with datab
 
 ## **Navigating This Site:** 
 
-1\. Weekly assignments are under **Assignments**. These are due at 12:01 AM on the day of class. 
+1\. Weekly assignments are under **Problem Sets**. These are due at 12:01 AM on the day of class. 
 
-2\. Reading list (and links) and links to workshop slides are under **Schedule** and on Canvas. I recommend bookmark this site to allow you access to all materials in perpetuity.
+2\. Reading list (and links) and links to workshop slides are under [**Schedule**](schedule.html)and on Canvas. I recommend bookmarking this site to allow you access to all materials in perpetuity.
 
 3\. Final Project information and class participation are under Assignments**.** Be sure to familiarize yourself with due dates for the final projects. More details will be provided on the final project in the coming weeks.
 
-4\. The most updated version of the syllabus will be on the Syllabus page and can be downloaded there as well.
+4\. The most updated version of the syllabus will be on the [**Syllabus**](syllabus.html) page and can be downloaded there as well.
 
  

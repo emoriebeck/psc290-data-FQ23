@@ -5,6 +5,7 @@ website:
   title: "Data Cleaning and Management (FQ23)"
   navbar:
     background: primary
+    search: true
     left:
       - text: "Home"
         file: index.qmd
