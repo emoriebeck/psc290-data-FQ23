@@ -24,6 +24,8 @@ editor_options:
 
 # Week 1 - Getting Situated in R & Quarto
 
+You can download the code for this workbook and the rendered workbook [here](https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/01-week1-intro/week1-workbook.zip).
+
 ```{r}
 library(knitr)
 library(psych)
@@ -370,7 +372,9 @@ knitr::include_graphics("https://github.com/rstudio/hex-stickers/raw/main/thumbs
 
 [Quarto](https://quarto.org/)
 
-![](quarto.png){fig-align="center"} - These slides\
+![](https://github.com/rstudio/hex-stickers/raw/main/thumbs/quarto.png){fig-align="center"} 
+
+- These slides\
 - The course website\
 - Your homework\
 - All written in Quarto

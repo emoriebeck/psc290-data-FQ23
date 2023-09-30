@@ -662,7 +662,7 @@
     "href": "01-week1-workbook.html",
     "title": "Week 1 Workbook",
     "section": "",
-    "text": "Codelibrary(knitr)\nlibrary(psych)\nlibrary(plyr)\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.2     ✔ purrr   0.3.4\n✔ tibble  3.2.1     ✔ dplyr   1.1.3\n✔ tidyr   1.2.1     ✔ stringr 1.5.0\n✔ readr   2.1.2     ✔ forcats 0.5.2\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ ggplot2::%+%()     masks psych::%+%()\n✖ ggplot2::alpha()   masks psych::alpha()\n✖ dplyr::arrange()   masks plyr::arrange()\n✖ purrr::compact()   masks plyr::compact()\n✖ dplyr::count()     masks plyr::count()\n✖ dplyr::desc()      masks plyr::desc()\n✖ dplyr::failwith()  masks plyr::failwith()\n✖ dplyr::filter()    masks stats::filter()\n✖ dplyr::id()        masks plyr::id()\n✖ dplyr::lag()       masks stats::lag()\n✖ dplyr::mutate()    masks plyr::mutate()\n✖ dplyr::rename()    masks plyr::rename()\n✖ dplyr::summarise() masks plyr::summarise()\n✖ dplyr::summarize() masks plyr::summarize()"
+    "text": "You can download the code for this workbook and the rendered workbook here.\n\nCodelibrary(knitr)\nlibrary(psych)\nlibrary(plyr)\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.2     ✔ purrr   0.3.4\n✔ tibble  3.2.1     ✔ dplyr   1.1.3\n✔ tidyr   1.2.1     ✔ stringr 1.5.0\n✔ readr   2.1.2     ✔ forcats 0.5.2\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ ggplot2::%+%()     masks psych::%+%()\n✖ ggplot2::alpha()   masks psych::alpha()\n✖ dplyr::arrange()   masks plyr::arrange()\n✖ purrr::compact()   masks plyr::compact()\n✖ dplyr::count()     masks plyr::count()\n✖ dplyr::desc()      masks plyr::desc()\n✖ dplyr::failwith()  masks plyr::failwith()\n✖ dplyr::filter()    masks stats::filter()\n✖ dplyr::id()        masks plyr::id()\n✖ dplyr::lag()       masks stats::lag()\n✖ dplyr::mutate()    masks plyr::mutate()\n✖ dplyr::rename()    masks plyr::rename()\n✖ dplyr::summarise() masks plyr::summarise()\n✖ dplyr::summarize() masks plyr::summarize()"
   },
   {
     "objectID": "01-week1-workbook.html#course-goals-learning-outcomes",
@@ -760,7 +760,7 @@
     "href": "01-week1-workbook.html#why-use-quarto",
     "title": "Week 1 Workbook",
     "section": "Why use Quarto",
-    "text": "Why use Quarto\nQuarto\n - These slides\n- The course website\n- Your homework\n- All written in Quarto"
+    "text": "Why use Quarto\nQuarto\n\n\n\n\n\nThese slides\n\nThe course website\n\nYour homework\n\nAll written in Quarto"
   },
   {
     "objectID": "01-week1-workbook.html#some-r-basics",
@@ -823,6 +823,6 @@
     "href": "01-week1-slides.html",
     "title": "Week 1 Slides",
     "section": "",
-    "text": "Welcome to Week 1! This week, we’re just getting started."
+    "text": "Welcome to Week 1! This week, we’re just getting started. You can download the slides code and slides here."
   }
 ]
