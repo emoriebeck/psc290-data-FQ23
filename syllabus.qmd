@@ -9,7 +9,7 @@ After successful completion of this course, you will be able to:\
 2.    Learn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.  \
 3.    Create a bank of code and tools that can be used for a variety of types of research. 
 
-## Course Materials
+## **Course Materials**
 
 There is no official textbook for this course (but if there was, it'd be Wickham, Cetinkaya-Rundel, & Grolemund's R for Data Science \[2nd edition\]). However, many of you are coming in with different levels of knowledge and different types of questions, so I am providing some suggested readings below. 
 
@@ -22,7 +22,7 @@ Hadley Wickham: [Advanced R](http://adv-r.had.co.nz/) 
 
 *All course materials comply with copyright/fair use policies.*
 
-## Technology Requirements
+## **Technology Requirements**
 
 The lecture presentations, links to articles, assignments, and rubrics are located on this Canvas site for the course and on the Quarto site. To participate in learning activities and complete assignments, you will need:
 
@@ -52,7 +52,7 @@ my_packages <- c(
 install.packages(my_packages, repos = "http://cran.rstudio.com")
 ```
 
-## Minimum Technical Skills Needed
+## **Minimum Technical Skills Needed**
 
 Minimum technical skills are needed in this course. All work in this course must be completed and submitted online through Canvas and all assignments will be completed in R / Rmarkdown / Quarto. Therefore, you must have consistent and reliable access to a computer and the Internet.
 
@@ -67,7 +67,7 @@ The basic technical skills you have include the ability to:
 
 However, you will spend about 50% of this course using R. Therefore, to get the most out of this class, I highly recommend having a better-than-beginner understanding or and experience with the R programming language. R is a skill, just like understanding the components of quality data and workflows, and for the purposes of this course, both are equally necessary and important. If you have any concerns about whether your R skills are strong enough for the course, please talk to the instructor or consider taking the course in a future year.
 
-## Course Assignments and Grading
+## **Course Assignments and Grading**
 
 ### General Assignment Information
 
@@ -127,7 +127,7 @@ All grades will be posted on Canvas. You are strongly encouraged to check your s
 67.5% - 69.4% = D+; 62.5% - 67.4% = D; 59.5% - 62.4% = D-\
 0% - 59.4% = F
 
-## Course Policies and Procedures
+## **Course Policies and Procedures**
 
 Many of the below are also outlined in the [UC Davis Code of Academic Conduct](https://ossja.ucdavis.edu/code-academic-conduct?utm_source=sja&utm_medium=redirect-page).
 

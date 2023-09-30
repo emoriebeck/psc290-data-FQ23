@@ -25,6 +25,7 @@ website:
       collapse-level: 2
       contents:
         - 01-week1.qmd
+        - 02-week2.qmd
         
     - id: assignments
       title: "Problem Sets"
