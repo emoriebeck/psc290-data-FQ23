@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -137,17 +200,17 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link active" data-scroll-target="#learning-outcomes"><strong>Learning Outcomes</strong></a></li>
-  <li><a href="#course-materials" id="toc-course-materials" class="nav-link" data-scroll-target="#course-materials">Course Materials</a></li>
-  <li><a href="#technology-requirements" id="toc-technology-requirements" class="nav-link" data-scroll-target="#technology-requirements">Technology Requirements</a></li>
-  <li><a href="#minimum-technical-skills-needed" id="toc-minimum-technical-skills-needed" class="nav-link" data-scroll-target="#minimum-technical-skills-needed">Minimum Technical Skills Needed</a></li>
-  <li><a href="#course-assignments-and-grading" id="toc-course-assignments-and-grading" class="nav-link" data-scroll-target="#course-assignments-and-grading">Course Assignments and Grading</a>
+  <li><a href="#course-materials" id="toc-course-materials" class="nav-link" data-scroll-target="#course-materials"><strong>Course Materials</strong></a></li>
+  <li><a href="#technology-requirements" id="toc-technology-requirements" class="nav-link" data-scroll-target="#technology-requirements"><strong>Technology Requirements</strong></a></li>
+  <li><a href="#minimum-technical-skills-needed" id="toc-minimum-technical-skills-needed" class="nav-link" data-scroll-target="#minimum-technical-skills-needed"><strong>Minimum Technical Skills Needed</strong></a></li>
+  <li><a href="#course-assignments-and-grading" id="toc-course-assignments-and-grading" class="nav-link" data-scroll-target="#course-assignments-and-grading"><strong>Course Assignments and Grading</strong></a>
   <ul class="collapse">
   <li><a href="#general-assignment-information" id="toc-general-assignment-information" class="nav-link" data-scroll-target="#general-assignment-information">General Assignment Information</a></li>
   <li><a href="#weekly-assignments" id="toc-weekly-assignments" class="nav-link" data-scroll-target="#weekly-assignments">Weekly Assignments</a></li>
   <li><a href="#final-exam" id="toc-final-exam" class="nav-link" data-scroll-target="#final-exam">Final Exam</a></li>
   <li><a href="#evaluation-and-grading-scale" id="toc-evaluation-and-grading-scale" class="nav-link" data-scroll-target="#evaluation-and-grading-scale">Evaluation and Grading Scale</a></li>
   </ul></li>
-  <li><a href="#course-policies-and-procedures" id="toc-course-policies-and-procedures" class="nav-link" data-scroll-target="#course-policies-and-procedures">Course Policies and Procedures</a>
+  <li><a href="#course-policies-and-procedures" id="toc-course-policies-and-procedures" class="nav-link" data-scroll-target="#course-policies-and-procedures"><strong>Course Policies and Procedures</strong></a>
   <ul class="collapse">
   <li><a href="#attendance-policy" id="toc-attendance-policy" class="nav-link" data-scroll-target="#attendance-policy">Attendance Policy</a></li>
   <li><a href="#late-workmake-up-policy" id="toc-late-workmake-up-policy" class="nav-link" data-scroll-target="#late-workmake-up-policy">Late Work/Make-up Policy</a></li>
@@ -188,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 3. &nbsp; &nbsp;Create a bank of code and tools that can be used for a variety of types of research.&nbsp;</p>
 </section>
 <section id="course-materials" class="level2">
-<h2 class="anchored" data-anchor-id="course-materials">Course Materials</h2>
+<h2 class="anchored" data-anchor-id="course-materials"><strong>Course Materials</strong></h2>
 <p>There is no official textbook for this course (but if there was, it’d be Wickham, Cetinkaya-Rundel, &amp; Grolemund’s R for Data Science [2nd edition]). However, many of you are coming in with different levels of knowledge and different types of questions, so I am providing some suggested readings below.&nbsp;</p>
 <p>I have arranged for students in this course to receive free access to Data Camp, a library of R (other programming languages) tutorials. Sign up using your UC Davis email&nbsp;<a href="https://www.datacamp.com/groups/shared_links/bd4b5bf66c2195741f388ca82c1b19c89b6f37754c7cfa0eb5aded5f16678360">here</a>.&nbsp;</p>
 <p>We will pull from the following two (freely available) books:</p>
@@ -197,7 +260,7 @@ Hadley Wickham:&nbsp;<a href="http://adv-r.had.co.nz/">Advanced R</a>&nbsp;</p>
 <p><em>All course materials comply with copyright/fair use policies.</em></p>
 </section>
 <section id="technology-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="technology-requirements">Technology Requirements</h2>
+<h2 class="anchored" data-anchor-id="technology-requirements"><strong>Technology Requirements</strong></h2>
 <p>The lecture presentations, links to articles, assignments, and rubrics are located on this Canvas site for the course and on the Quarto site. To participate in learning activities and complete assignments, you will need:</p>
 <ul>
 <li>Access to a working computer that has a current operating system with updates installed;</li>
@@ -214,11 +277,17 @@ Hadley Wickham:&nbsp;<a href="http://adv-r.had.co.nz/">Advanced R</a>&nbsp;</p>
 <li><p><a href="http://tidyverse.org/">Install the tidyverse library</a> and several other add-on packages for R. These are sets of tolls or functions that will aid us in cleaning and wrangling data, and more. This is a non-exhaustive list that will get us started.</p></li>
 </ol>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"plyr"</span>, <span class="st">"tidyverse"</span>, <span class="st">"furrr"</span>, <span class="st">"broom"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MASS"</span>, <span class="st">"quantreg"</span>, <span class="st">"rlang"</span>, <span class="st">"scales"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"survey"</span>, <span class="st">"srvyr"</span>, <span class="st">"devtools"</span>, <span class="st">"future"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(my_packages, <span class="at">repos =</span> <span class="st">"http://cran.rstudio.com"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="minimum-technical-skills-needed" class="level2">
-<h2 class="anchored" data-anchor-id="minimum-technical-skills-needed">Minimum Technical Skills Needed</h2>
+<h2 class="anchored" data-anchor-id="minimum-technical-skills-needed"><strong>Minimum Technical Skills Needed</strong></h2>
 <p>Minimum technical skills are needed in this course. All work in this course must be completed and submitted online through Canvas and all assignments will be completed in R / Rmarkdown / Quarto. Therefore, you must have consistent and reliable access to a computer and the Internet.</p>
 <p>The basic technical skills you have include the ability to:</p>
 <ul>
@@ -232,7 +301,7 @@ Hadley Wickham:&nbsp;<a href="http://adv-r.had.co.nz/">Advanced R</a>&nbsp;</p>
 <p>However, you will spend about 50% of this course using R. Therefore, to get the most out of this class, I highly recommend having a better-than-beginner understanding or and experience with the R programming language. R is a skill, just like understanding the components of quality data and workflows, and for the purposes of this course, both are equally necessary and important. If you have any concerns about whether your R skills are strong enough for the course, please talk to the instructor or consider taking the course in a future year.</p>
 </section>
 <section id="course-assignments-and-grading" class="level2">
-<h2 class="anchored" data-anchor-id="course-assignments-and-grading">Course Assignments and Grading</h2>
+<h2 class="anchored" data-anchor-id="course-assignments-and-grading"><strong>Course Assignments and Grading</strong></h2>
 <section id="general-assignment-information" class="level3">
 <h3 class="anchored" data-anchor-id="general-assignment-information">General Assignment Information</h3>
 <ul>
@@ -313,7 +382,7 @@ Hadley Wickham:&nbsp;<a href="http://adv-r.had.co.nz/">Advanced R</a>&nbsp;</p>
 </section>
 </section>
 <section id="course-policies-and-procedures" class="level2">
-<h2 class="anchored" data-anchor-id="course-policies-and-procedures">Course Policies and Procedures</h2>
+<h2 class="anchored" data-anchor-id="course-policies-and-procedures"><strong>Course Policies and Procedures</strong></h2>
 <p>Many of the below are also outlined in the <a href="https://ossja.ucdavis.edu/code-academic-conduct?utm_source=sja&amp;utm_medium=redirect-page">UC Davis Code of Academic Conduct</a>.</p>
 <section id="attendance-policy" class="level3">
 <h3 class="anchored" data-anchor-id="attendance-policy">Attendance Policy</h3>
@@ -372,44 +441,6 @@ Hadley Wickham:&nbsp;<a href="http://adv-r.had.co.nz/">Advanced R</a>&nbsp;</p>
 </section>
 
 </main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -2,13 +2,21 @@
 title: "About"
 ---
 
+::: {layout="[ 65,35 ]"}
+::: {#first-column}
 **Dr. Emorie D. Beck (she/her/hers)**
 
-E-mail: `edbeck@ucdavis.edu`\
+E-mail: [`edbeck@ucdavis.edu`](mailto:edbeck@ucdavis.edu)\
 Office: 268J\
 - Office Hours: TBD as fall schedules finalize\
 - Drop-in hour:\
-- One-on-one hour: - By other appointment: `edbeck@ucdavis.edu`
+- One-on-one hour: - By other appointment: [`edbeck@ucdavis.edu`](mailto:edbeck@ucdavis.edu)
+:::
+
+::: {#second=column}
+![](static/Beck-headshot.jpg){width="30%"}
+:::
+::::
 
 Dr. Beck is an Assistant Professor in the Psychology Department specializing in personality psychology. She received her PhD in Social and Personality Psychology from Washington University in St. Louis in 2020 and her BA (with honors) from Brown University in 2016. 
 
