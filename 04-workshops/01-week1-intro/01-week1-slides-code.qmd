@@ -707,30 +707,19 @@ I especially want you to take some time to peruse documents on YAML headers:
 
 -   Depending on time, I'll either take us to RStudio and walk you through some steps and tricks hands on, or we'll call it a day go to the BBQ
 
-
 ## Goals for Today
 
-::::{.columns}
-:::{.column}
-
+::: columns
+::: column
 ::: nonincremental
 -   ~~Course Overview~~
 -   ~~What Is a Workflow?~~
 -   ~~Fundamentals of R~~
 -   ~~Brief Quarto Overview~~
 :::
-
 :::
-:::{.column}
 
-Reminders: 
-- Problem set 1 due next Monday at 12:01 AM (grace period until 9 AM) 
-- Make sure to check out the readings
-- There are exercises at the end that can be helpful to do. You can even download the directory of the bookdown/quarto book from GitHub (link in book)
-- Next time: 
-  - Bring your data, ideally loaded into R (or at a piece of it is)
-  - Part 1: Reproducibility and Using Workflows to Reflect Your Values
-  - Part 2: Data Manipulation: `dplyr`
-
+::: column
+Reminders: - Problem set 1 due next Monday at 12:01 AM (grace period until 9 AM) - Make sure to check out the readings - There are exercises at the end that can be helpful to do. You can even download the directory of the bookdown/quarto book from GitHub (link in book) - Next time: - Bring your data, ideally loaded into R (or at a piece of it is) - Part 1: Reproducibility and Using Workflows to Reflect Your Values - Part 2: Data Manipulation: `dplyr`
 :::
-::::
+:::
