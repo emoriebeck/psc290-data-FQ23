@@ -33,7 +33,7 @@ website:
       background: light
       collapse-level: 2
       contents:
-        - assignments.qmd
+        - ps1-week1.qmd
 
 format:
   html:
