@@ -2,7 +2,7 @@
 title: "Problem Set #1"
 author: "INSERT YOUR NAME HERE"
 date: "insert date here"
-output: pdf_document
+format: pdf
 urlcolor: blue
 ---
 
