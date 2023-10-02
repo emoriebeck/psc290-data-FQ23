@@ -3,6 +3,11 @@ title: "Data Cleaning and Management (Fall 2023)"
 author: "Dr. Emorie D Beck, University of California, Davis"
 ---
 
+Mondays, 2:10-5 PM (October 2-December 4, 2023)\
+166 Young Hall\
+Psychology Department\
+University of California, Davis
+
 ## **Course Description**
 
 ::: {layout="[ 65,35 ]"}
@@ -29,6 +34,6 @@ This course is not a "pure" data science (i.e. we won't be working with database
 
 4\. The most updated version of the syllabus will be on the [**Syllabus**](syllabus.html) page and can be downloaded there as well.
 
-## **Course Zoom Link**  
+## **Course Zoom Link**
 
-This course is in person, but you may access it on [Zoom](https://ucdavis.zoom.us/j/98563530283?pwd=cHN3Wk96aXB4TTVrdG9nUy9BNnJmZz09) due to illness, exposure, travel, etc. 
+This course is in person, but you may access it on [Zoom](https://ucdavis.zoom.us/j/98563530283?pwd=cHN3Wk96aXB4TTVrdG9nUy9BNnJmZz09) due to illness, exposure, travel, etc.
