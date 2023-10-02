@@ -669,7 +669,7 @@
     "href": "01-week1-workbook.html#course-goals-learning-outcomes",
     "title": "Week 1 Workbook",
     "section": "Course Goals & Learning Outcomes",
-    "text": "Course Goals & Learning Outcomes\n\nUnderstand the cognitive and psychological underpinnings of perceiving data visualization.\nIdentify good data visualizations and describe what makes them good.\nProduce data visualizations according to types of questions, data, and more, with a particular emphasis on building a toolbox that you can carry into your own research."
+    "text": "Course Goals & Learning Outcomes\nAfter successful completion of this course, you will be able to:\n\nBuild your own research workflow that can be ported to future projects.\nLearn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.\nCreate a bank of code and tools that can be used for a variety of types of research."
   },
   {
     "objectID": "01-week1-workbook.html#course-expectations",
@@ -831,5 +831,12 @@
     "title": "Data Cleaning and Management (Fall 2023)",
     "section": "Course Zoom Link",
     "text": "Course Zoom Link\nThis course is in person, but you may access it on Zoom due to illness, exposure, travel, etc."
+  },
+  {
+    "objectID": "01-week1-workbook.html#learning-outcomes",
+    "href": "01-week1-workbook.html#learning-outcomes",
+    "title": "Week 1 Workbook",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nAfter successful completion of this course, you will be able to: 1. Build your own research workflow that can be ported to future projects. 2. Learn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.\n3. Create a bank of code and tools that can be used for a variety of types of research."
   }
 ]

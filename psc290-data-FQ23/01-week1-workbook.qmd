@@ -44,9 +44,13 @@ library(tidyverse)
 
 ## Course Goals & Learning Outcomes
 
-1.  Understand the cognitive and psychological underpinnings of perceiving data visualization.
-2.  Identify good data visualizations and describe what makes them good.
-3.  Produce data visualizations according to types of questions, data, and more, with a particular emphasis on building a toolbox that you can carry into your own research.
+After successful completion of this course, you will be able to:
+
+1.  Build your own research workflow that can be ported to future projects.
+
+2.  Learn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.
+
+3.  Create a bank of code and tools that can be used for a variety of types of research.
 
 ## Course Expectations
 
@@ -372,12 +376,12 @@ knitr::include_graphics("https://github.com/rstudio/hex-stickers/raw/main/thumbs
 
 [Quarto](https://quarto.org/)
 
-![](https://github.com/rstudio/hex-stickers/raw/main/thumbs/quarto.png){fig-align="center"} 
+![](https://github.com/rstudio/hex-stickers/raw/main/thumbs/quarto.png){fig-align="center"}
 
-- These slides\
-- The course website\
-- Your homework\
-- All written in Quarto
+-   These slides\
+-   The course website\
+-   Your homework\
+-   All written in Quarto
 
 ## Some R Basics
 
