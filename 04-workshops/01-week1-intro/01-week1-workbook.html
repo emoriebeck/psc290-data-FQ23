@@ -3996,10 +3996,11 @@ window.onload = function() {
 <li>Brief Quarto Overview</li>
 </ul></section><section id="course-overview" class="level1"><h1>Course Overview</h1>
 <section id="course-goals-learning-outcomes" class="level2"><h2 class="anchored" data-anchor-id="course-goals-learning-outcomes">Course Goals &amp; Learning Outcomes</h2>
+<p>After successful completion of this course, you will be able to:</p>
 <ol type="1">
-<li>Understand the cognitive and psychological underpinnings of perceiving data visualization.</li>
-<li>Identify good data visualizations and describe what makes them good.</li>
-<li>Produce data visualizations according to types of questions, data, and more, with a particular emphasis on building a toolbox that you can carry into your own research.</li>
+<li><p>Build your own research workflow that can be ported to future projects.</p></li>
+<li><p>Learn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.</p></li>
+<li><p>Create a bank of code and tools that can be used for a variety of types of research.</p></li>
 </ol></section><section id="course-expectations" class="level2"><h2 class="anchored" data-anchor-id="course-expectations">Course Expectations</h2>
 <ul>
 <li>~50% of the course will be in R</li>
@@ -5019,641 +5020,644 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb50-22"><a href="#cb50-22"></a><span class="co">  chunk_output_type: console</span></span>
 <span id="cb50-23"><a href="#cb50-23"></a><span class="co">---</span></span>
 <span id="cb50-24"><a href="#cb50-24"></a></span>
-<span id="cb50-25"><a href="#cb50-25"></a></span>
-<span id="cb50-28"><a href="#cb50-28"></a><span class="in">```{r}</span></span>
-<span id="cb50-29"><a href="#cb50-29"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb50-30"><a href="#cb50-30"></a><span class="fu">library</span>(psych)</span>
-<span id="cb50-31"><a href="#cb50-31"></a><span class="fu">library</span>(plyr)</span>
-<span id="cb50-32"><a href="#cb50-32"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb50-33"><a href="#cb50-33"></a><span class="in">```</span></span>
-<span id="cb50-34"><a href="#cb50-34"></a></span>
-<span id="cb50-35"><a href="#cb50-35"></a><span class="fu"># Goals for Today</span></span>
-<span id="cb50-36"><a href="#cb50-36"></a></span>
-<span id="cb50-37"><a href="#cb50-37"></a><span class="ss">-   </span>Course Overview</span>
-<span id="cb50-38"><a href="#cb50-38"></a><span class="ss">-   </span>What Is a Workflow?</span>
-<span id="cb50-39"><a href="#cb50-39"></a><span class="ss">-   </span>Fundamentals of R</span>
-<span id="cb50-40"><a href="#cb50-40"></a><span class="ss">-   </span>Brief Quarto Overview</span>
-<span id="cb50-41"><a href="#cb50-41"></a></span>
-<span id="cb50-42"><a href="#cb50-42"></a><span class="fu"># Course Overview</span></span>
-<span id="cb50-43"><a href="#cb50-43"></a></span>
-<span id="cb50-44"><a href="#cb50-44"></a><span class="fu">## Course Goals &amp; Learning Outcomes</span></span>
-<span id="cb50-45"><a href="#cb50-45"></a></span>
-<span id="cb50-46"><a href="#cb50-46"></a><span class="ss">1.  </span>Understand the cognitive and psychological underpinnings of perceiving data visualization.</span>
-<span id="cb50-47"><a href="#cb50-47"></a><span class="ss">2.  </span>Identify good data visualizations and describe what makes them good.</span>
-<span id="cb50-48"><a href="#cb50-48"></a><span class="ss">3.  </span>Produce data visualizations according to types of questions, data, and more, with a particular emphasis on building a toolbox that you can carry into your own research.</span>
-<span id="cb50-49"><a href="#cb50-49"></a></span>
-<span id="cb50-50"><a href="#cb50-50"></a><span class="fu">## Course Expectations</span></span>
-<span id="cb50-51"><a href="#cb50-51"></a></span>
-<span id="cb50-52"><a href="#cb50-52"></a><span class="ss">-   </span>\~50% of the course will be in R</span>
-<span id="cb50-53"><a href="#cb50-53"></a><span class="ss">-   </span>You will get the most from this course if you:</span>
-<span id="cb50-54"><a href="#cb50-54"></a><span class="ss">    -   </span>have your own data you can apply course content to</span>
-<span id="cb50-55"><a href="#cb50-55"></a><span class="ss">    -   </span>know how to clean clean, transform, and manage that data</span>
-<span id="cb50-56"><a href="#cb50-56"></a><span class="ss">    -   </span>today&#39;s workshop is a good litmus test for this</span>
-<span id="cb50-57"><a href="#cb50-57"></a></span>
-<span id="cb50-58"><a href="#cb50-58"></a><span class="fu">## Course Materials</span></span>
-<span id="cb50-59"><a href="#cb50-59"></a></span>
-<span id="cb50-60"><a href="#cb50-60"></a><span class="ss">-   </span>All materials (required and optional) are free and online</span>
-<span id="cb50-61"><a href="#cb50-61"></a><span class="ss">    -   </span>Wickham &amp; Grolemond: *R for Data Science* <span class="ot">&lt;https://r4ds.had.co.nz&gt;</span></span>
-<span id="cb50-62"><a href="#cb50-62"></a><span class="ss">    -   </span>Wickham: *Advanced R* <span class="ot">&lt;http://adv-r.had.co.nz&gt;</span></span>
-<span id="cb50-63"><a href="#cb50-63"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data Camp</span><span class="co">](https://www.datacamp.com/groups/shared_links/bd4b5bf66c2195741f388ca82c1b19c89b6f37754c7cfa0eb5aded5f16678360)</span>: All paid content unlocked</span>
-<span id="cb50-64"><a href="#cb50-64"></a></span>
-<span id="cb50-65"><a href="#cb50-65"></a><span class="fu">## Assignments</span></span>
-<span id="cb50-66"><a href="#cb50-66"></a></span>
-<span id="cb50-67"><a href="#cb50-67"></a>| **Assignment Weights** | **Percent** |</span>
-<span id="cb50-68"><a href="#cb50-68"></a>|------------------------|-------------|</span>
-<span id="cb50-69"><a href="#cb50-69"></a>| Class Participation    | 20%         |</span>
-<span id="cb50-70"><a href="#cb50-70"></a>| Problem Sets           | 40%         |</span>
-<span id="cb50-71"><a href="#cb50-71"></a>| Final Project Proposal | 10%<span class="sc">\*</span>       |</span>
-<span id="cb50-72"><a href="#cb50-72"></a>| Class Presentation     | 10%<span class="sc">\*</span>       |</span>
-<span id="cb50-73"><a href="#cb50-73"></a>| Final Project          | 20%<span class="sc">\*</span>       |</span>
-<span id="cb50-74"><a href="#cb50-74"></a>| Total                  | 100%        |</span>
-<span id="cb50-75"><a href="#cb50-75"></a></span>
-<span id="cb50-76"><a href="#cb50-76"></a><span class="fu">### Class Participation</span></span>
-<span id="cb50-77"><a href="#cb50-77"></a></span>
-<span id="cb50-78"><a href="#cb50-78"></a><span class="ss">-   </span>There are lots of ways to participate, both in and outside class meetings</span>
-<span id="cb50-79"><a href="#cb50-79"></a><span class="ss">-   </span>Classes will be technologically hybrid</span>
-<span id="cb50-80"><a href="#cb50-80"></a><span class="ss">-   </span>The goal of this is for accessibility and to create recordings</span>
-<span id="cb50-81"><a href="#cb50-81"></a><span class="ss">-   </span>If you need to miss 2+ classes (i.e. 20+% of total class time), maybe consider taking the course in a different year</span>
-<span id="cb50-82"><a href="#cb50-82"></a></span>
-<span id="cb50-83"><a href="#cb50-83"></a><span class="fu">### Problem Sets</span></span>
-<span id="cb50-84"><a href="#cb50-84"></a></span>
-<span id="cb50-85"><a href="#cb50-85"></a><span class="ss">-   </span>The main homework in the course are weekly problem sets</span>
-<span id="cb50-86"><a href="#cb50-86"></a><span class="ss">-   </span>The goal is to let you apply concepts from that week to your own data (or whatever data you&#39;ll focus on for the class)</span>
-<span id="cb50-87"><a href="#cb50-87"></a><span class="ss">-   </span>Problem sets will be posted on Mondays before class</span>
-<span id="cb50-88"><a href="#cb50-88"></a><span class="ss">-   </span>Due 12:01 AM each Monday (starting next Monday and not including the last day of the course)</span>
-<span id="cb50-89"><a href="#cb50-89"></a></span>
-<span id="cb50-90"><a href="#cb50-90"></a><span class="fu">### Final Projects</span></span>
-<span id="cb50-91"><a href="#cb50-91"></a></span>
-<span id="cb50-92"><a href="#cb50-92"></a><span class="ss">-   </span>Final project replaces final exam (there are no exams)</span>
-<span id="cb50-93"><a href="#cb50-93"></a><span class="ss">-   </span>This is a bring your own data class, so the goal of the course is to apply what you&#39;re learning to your own research throughout the term</span>
-<span id="cb50-94"><a href="#cb50-94"></a><span class="ss">-   </span>Details of the final project TBD, but will generally include</span>
-<span id="cb50-95"><a href="#cb50-95"></a><span class="ss">    -   </span>Stage 1: Proposals (due 11/13/23)</span>
-<span id="cb50-96"><a href="#cb50-96"></a><span class="ss">    -   </span>Stage 2: In-class presentations (12/04/23)</span>
-<span id="cb50-97"><a href="#cb50-97"></a><span class="ss">    -   </span>Stage 3: Final project submission (Due day and time of scheduled final; which I can&#39;t access because ScheduleBuilder thinks I need a CRN for my own course and no one emails me back 🙃)</span>
-<span id="cb50-98"><a href="#cb50-98"></a></span>
-<span id="cb50-99"><a href="#cb50-99"></a><span class="fu">### Extra Credit</span></span>
-<span id="cb50-100"><a href="#cb50-100"></a></span>
-<span id="cb50-101"><a href="#cb50-101"></a><span class="ss">-   </span>Participate in a <span class="ot">&lt;https://www.tidytuesday.com&gt;</span>.</span>
-<span id="cb50-102"><a href="#cb50-102"></a></span>
-<span id="cb50-103"><a href="#cb50-103"></a><span class="ss">-   </span>2 pt extra credit for each one you participate in (max 6 pt total).</span>
-<span id="cb50-104"><a href="#cb50-104"></a></span>
-<span id="cb50-105"><a href="#cb50-105"></a><span class="ss">-   </span>Can post on Twitter or just create a document with the code and output</span>
-<span id="cb50-106"><a href="#cb50-106"></a></span>
-<span id="cb50-107"><a href="#cb50-107"></a><span class="ss">-   </span>Submit on Canvas</span>
-<span id="cb50-108"><a href="#cb50-108"></a></span>
-<span id="cb50-109"><a href="#cb50-109"></a><span class="ss">    -   </span>If posting, link the post in the Canvas submission</span>
-<span id="cb50-110"><a href="#cb50-110"></a><span class="ss">    -   </span>If not posting, attach the knitted file on Canvas</span>
+<span id="cb50-27"><a href="#cb50-27"></a><span class="in">```{r}</span></span>
+<span id="cb50-28"><a href="#cb50-28"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb50-29"><a href="#cb50-29"></a><span class="fu">library</span>(psych)</span>
+<span id="cb50-30"><a href="#cb50-30"></a><span class="fu">library</span>(plyr)</span>
+<span id="cb50-31"><a href="#cb50-31"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb50-32"><a href="#cb50-32"></a><span class="in">```</span></span>
+<span id="cb50-33"><a href="#cb50-33"></a></span>
+<span id="cb50-34"><a href="#cb50-34"></a><span class="fu"># Goals for Today</span></span>
+<span id="cb50-35"><a href="#cb50-35"></a></span>
+<span id="cb50-36"><a href="#cb50-36"></a><span class="ss">-   </span>Course Overview</span>
+<span id="cb50-37"><a href="#cb50-37"></a><span class="ss">-   </span>What Is a Workflow?</span>
+<span id="cb50-38"><a href="#cb50-38"></a><span class="ss">-   </span>Fundamentals of R</span>
+<span id="cb50-39"><a href="#cb50-39"></a><span class="ss">-   </span>Brief Quarto Overview</span>
+<span id="cb50-40"><a href="#cb50-40"></a></span>
+<span id="cb50-41"><a href="#cb50-41"></a><span class="fu"># Course Overview</span></span>
+<span id="cb50-42"><a href="#cb50-42"></a></span>
+<span id="cb50-43"><a href="#cb50-43"></a><span class="fu">## Course Goals &amp; Learning Outcomes</span></span>
+<span id="cb50-44"><a href="#cb50-44"></a></span>
+<span id="cb50-45"><a href="#cb50-45"></a>After successful completion of this course, you will be able to:</span>
+<span id="cb50-46"><a href="#cb50-46"></a></span>
+<span id="cb50-47"><a href="#cb50-47"></a><span class="ss">1.  </span>Build your own research workflow that can be ported to future projects.</span>
+<span id="cb50-48"><a href="#cb50-48"></a></span>
+<span id="cb50-49"><a href="#cb50-49"></a><span class="ss">2.  </span>Learn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.</span>
+<span id="cb50-50"><a href="#cb50-50"></a></span>
+<span id="cb50-51"><a href="#cb50-51"></a><span class="ss">3.  </span>Create a bank of code and tools that can be used for a variety of types of research.</span>
+<span id="cb50-52"><a href="#cb50-52"></a></span>
+<span id="cb50-53"><a href="#cb50-53"></a><span class="fu">## Course Expectations</span></span>
+<span id="cb50-54"><a href="#cb50-54"></a></span>
+<span id="cb50-55"><a href="#cb50-55"></a><span class="ss">-   </span>\~50% of the course will be in R</span>
+<span id="cb50-56"><a href="#cb50-56"></a><span class="ss">-   </span>You will get the most from this course if you:</span>
+<span id="cb50-57"><a href="#cb50-57"></a><span class="ss">    -   </span>have your own data you can apply course content to</span>
+<span id="cb50-58"><a href="#cb50-58"></a><span class="ss">    -   </span>know how to clean clean, transform, and manage that data</span>
+<span id="cb50-59"><a href="#cb50-59"></a><span class="ss">    -   </span>today&#39;s workshop is a good litmus test for this</span>
+<span id="cb50-60"><a href="#cb50-60"></a></span>
+<span id="cb50-61"><a href="#cb50-61"></a><span class="fu">## Course Materials</span></span>
+<span id="cb50-62"><a href="#cb50-62"></a></span>
+<span id="cb50-63"><a href="#cb50-63"></a><span class="ss">-   </span>All materials (required and optional) are free and online</span>
+<span id="cb50-64"><a href="#cb50-64"></a><span class="ss">    -   </span>Wickham &amp; Grolemond: *R for Data Science* <span class="ot">&lt;https://r4ds.had.co.nz&gt;</span></span>
+<span id="cb50-65"><a href="#cb50-65"></a><span class="ss">    -   </span>Wickham: *Advanced R* <span class="ot">&lt;http://adv-r.had.co.nz&gt;</span></span>
+<span id="cb50-66"><a href="#cb50-66"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data Camp</span><span class="co">](https://www.datacamp.com/groups/shared_links/bd4b5bf66c2195741f388ca82c1b19c89b6f37754c7cfa0eb5aded5f16678360)</span>: All paid content unlocked</span>
+<span id="cb50-67"><a href="#cb50-67"></a></span>
+<span id="cb50-68"><a href="#cb50-68"></a><span class="fu">## Assignments</span></span>
+<span id="cb50-69"><a href="#cb50-69"></a></span>
+<span id="cb50-70"><a href="#cb50-70"></a>| **Assignment Weights** | **Percent** |</span>
+<span id="cb50-71"><a href="#cb50-71"></a>|------------------------|-------------|</span>
+<span id="cb50-72"><a href="#cb50-72"></a>| Class Participation    | 20%         |</span>
+<span id="cb50-73"><a href="#cb50-73"></a>| Problem Sets           | 40%         |</span>
+<span id="cb50-74"><a href="#cb50-74"></a>| Final Project Proposal | 10%<span class="sc">\*</span>       |</span>
+<span id="cb50-75"><a href="#cb50-75"></a>| Class Presentation     | 10%<span class="sc">\*</span>       |</span>
+<span id="cb50-76"><a href="#cb50-76"></a>| Final Project          | 20%<span class="sc">\*</span>       |</span>
+<span id="cb50-77"><a href="#cb50-77"></a>| Total                  | 100%        |</span>
+<span id="cb50-78"><a href="#cb50-78"></a></span>
+<span id="cb50-79"><a href="#cb50-79"></a><span class="fu">### Class Participation</span></span>
+<span id="cb50-80"><a href="#cb50-80"></a></span>
+<span id="cb50-81"><a href="#cb50-81"></a><span class="ss">-   </span>There are lots of ways to participate, both in and outside class meetings</span>
+<span id="cb50-82"><a href="#cb50-82"></a><span class="ss">-   </span>Classes will be technologically hybrid</span>
+<span id="cb50-83"><a href="#cb50-83"></a><span class="ss">-   </span>The goal of this is for accessibility and to create recordings</span>
+<span id="cb50-84"><a href="#cb50-84"></a><span class="ss">-   </span>If you need to miss 2+ classes (i.e. 20+% of total class time), maybe consider taking the course in a different year</span>
+<span id="cb50-85"><a href="#cb50-85"></a></span>
+<span id="cb50-86"><a href="#cb50-86"></a><span class="fu">### Problem Sets</span></span>
+<span id="cb50-87"><a href="#cb50-87"></a></span>
+<span id="cb50-88"><a href="#cb50-88"></a><span class="ss">-   </span>The main homework in the course are weekly problem sets</span>
+<span id="cb50-89"><a href="#cb50-89"></a><span class="ss">-   </span>The goal is to let you apply concepts from that week to your own data (or whatever data you&#39;ll focus on for the class)</span>
+<span id="cb50-90"><a href="#cb50-90"></a><span class="ss">-   </span>Problem sets will be posted on Mondays before class</span>
+<span id="cb50-91"><a href="#cb50-91"></a><span class="ss">-   </span>Due 12:01 AM each Monday (starting next Monday and not including the last day of the course)</span>
+<span id="cb50-92"><a href="#cb50-92"></a></span>
+<span id="cb50-93"><a href="#cb50-93"></a><span class="fu">### Final Projects</span></span>
+<span id="cb50-94"><a href="#cb50-94"></a></span>
+<span id="cb50-95"><a href="#cb50-95"></a><span class="ss">-   </span>Final project replaces final exam (there are no exams)</span>
+<span id="cb50-96"><a href="#cb50-96"></a><span class="ss">-   </span>This is a bring your own data class, so the goal of the course is to apply what you&#39;re learning to your own research throughout the term</span>
+<span id="cb50-97"><a href="#cb50-97"></a><span class="ss">-   </span>Details of the final project TBD, but will generally include</span>
+<span id="cb50-98"><a href="#cb50-98"></a><span class="ss">    -   </span>Stage 1: Proposals (due 11/13/23)</span>
+<span id="cb50-99"><a href="#cb50-99"></a><span class="ss">    -   </span>Stage 2: In-class presentations (12/04/23)</span>
+<span id="cb50-100"><a href="#cb50-100"></a><span class="ss">    -   </span>Stage 3: Final project submission (Due day and time of scheduled final; which I can&#39;t access because ScheduleBuilder thinks I need a CRN for my own course and no one emails me back 🙃)</span>
+<span id="cb50-101"><a href="#cb50-101"></a></span>
+<span id="cb50-102"><a href="#cb50-102"></a><span class="fu">### Extra Credit</span></span>
+<span id="cb50-103"><a href="#cb50-103"></a></span>
+<span id="cb50-104"><a href="#cb50-104"></a><span class="ss">-   </span>Participate in a <span class="ot">&lt;https://www.tidytuesday.com&gt;</span>.</span>
+<span id="cb50-105"><a href="#cb50-105"></a></span>
+<span id="cb50-106"><a href="#cb50-106"></a><span class="ss">-   </span>2 pt extra credit for each one you participate in (max 6 pt total).</span>
+<span id="cb50-107"><a href="#cb50-107"></a></span>
+<span id="cb50-108"><a href="#cb50-108"></a><span class="ss">-   </span>Can post on Twitter or just create a document with the code and output</span>
+<span id="cb50-109"><a href="#cb50-109"></a></span>
+<span id="cb50-110"><a href="#cb50-110"></a><span class="ss">-   </span>Submit on Canvas</span>
 <span id="cb50-111"><a href="#cb50-111"></a></span>
-<span id="cb50-112"><a href="#cb50-112"></a><span class="fu">## Grading Scale</span></span>
-<span id="cb50-113"><a href="#cb50-113"></a></span>
-<span id="cb50-114"><a href="#cb50-114"></a>92.5% - 100% = A; 89.5% - 92.4% = A-\</span>
-<span id="cb50-115"><a href="#cb50-115"></a>87.5% - 89.4% = B+; 82.5% - 87.4% = B; 79.5% - 82.4% = B-\</span>
-<span id="cb50-116"><a href="#cb50-116"></a>77.5% - 79.4% = C+; 72.5% - 77.4% = C; 69.5% - 72.4% = C-\</span>
-<span id="cb50-117"><a href="#cb50-117"></a>67.5% - 69.4% = D+; 62.5% - 67.4% = D; 59.5% - 62.4% = D-\</span>
-<span id="cb50-118"><a href="#cb50-118"></a>0% - 59.4% = F</span>
-<span id="cb50-119"><a href="#cb50-119"></a></span>
-<span id="cb50-120"><a href="#cb50-120"></a><span class="fu">## Schedule</span></span>
-<span id="cb50-121"><a href="#cb50-121"></a></span>
-<span id="cb50-122"><a href="#cb50-122"></a><span class="ss">-   </span>Week 1: Intro &amp; Basics\</span>
-<span id="cb50-123"><a href="#cb50-123"></a><span class="ss">-   </span>Week 2: Reproducibility &amp; <span class="in">`dplyr`</span>\</span>
-<span id="cb50-124"><a href="#cb50-124"></a><span class="ss">-   </span>Week 3: Data Quality &amp; <span class="in">`tidyr`</span>\</span>
-<span id="cb50-125"><a href="#cb50-125"></a><span class="ss">-   </span>Week 4: Codebooks &amp; importing data\</span>
-<span id="cb50-126"><a href="#cb50-126"></a><span class="ss">-   </span>Week 5: Data structures &amp; transformation</span>
-<span id="cb50-127"><a href="#cb50-127"></a><span class="ss">-   </span>Week 6: Versioning &amp; <span class="in">`purrr`</span>\</span>
-<span id="cb50-128"><a href="#cb50-128"></a><span class="ss">-   </span>Week 7: Efficient R &amp; parallelization\</span>
-<span id="cb50-129"><a href="#cb50-129"></a><span class="ss">-   </span>Week 8: TBD &amp; tables and figures in <span class="in">`R`</span>\</span>
-<span id="cb50-130"><a href="#cb50-130"></a><span class="ss">-   </span>Week 9: Odds and ends &amp; help with projects\</span>
-<span id="cb50-131"><a href="#cb50-131"></a><span class="ss">-   </span>Week 10: Presentations</span>
-<span id="cb50-132"><a href="#cb50-132"></a></span>
-<span id="cb50-133"><a href="#cb50-133"></a><span class="fu"># What is a workflow?</span></span>
-<span id="cb50-134"><a href="#cb50-134"></a></span>
-<span id="cb50-135"><a href="#cb50-135"></a><span class="ss">-   </span>Dictionary definition: &quot;the sequence of industrial, administrative, or other processes through which a piece of work passes from initiation to completion&quot;</span>
-<span id="cb50-136"><a href="#cb50-136"></a><span class="ss">-   </span>Research Workflow: &quot;The process of conducting research from conceptualization to dissemination&quot;</span>
+<span id="cb50-112"><a href="#cb50-112"></a><span class="ss">    -   </span>If posting, link the post in the Canvas submission</span>
+<span id="cb50-113"><a href="#cb50-113"></a><span class="ss">    -   </span>If not posting, attach the knitted file on Canvas</span>
+<span id="cb50-114"><a href="#cb50-114"></a></span>
+<span id="cb50-115"><a href="#cb50-115"></a><span class="fu">## Grading Scale</span></span>
+<span id="cb50-116"><a href="#cb50-116"></a></span>
+<span id="cb50-117"><a href="#cb50-117"></a>92.5% - 100% = A; 89.5% - 92.4% = A-\</span>
+<span id="cb50-118"><a href="#cb50-118"></a>87.5% - 89.4% = B+; 82.5% - 87.4% = B; 79.5% - 82.4% = B-\</span>
+<span id="cb50-119"><a href="#cb50-119"></a>77.5% - 79.4% = C+; 72.5% - 77.4% = C; 69.5% - 72.4% = C-\</span>
+<span id="cb50-120"><a href="#cb50-120"></a>67.5% - 69.4% = D+; 62.5% - 67.4% = D; 59.5% - 62.4% = D-\</span>
+<span id="cb50-121"><a href="#cb50-121"></a>0% - 59.4% = F</span>
+<span id="cb50-122"><a href="#cb50-122"></a></span>
+<span id="cb50-123"><a href="#cb50-123"></a><span class="fu">## Schedule</span></span>
+<span id="cb50-124"><a href="#cb50-124"></a></span>
+<span id="cb50-125"><a href="#cb50-125"></a><span class="ss">-   </span>Week 1: Intro &amp; Basics\</span>
+<span id="cb50-126"><a href="#cb50-126"></a><span class="ss">-   </span>Week 2: Reproducibility &amp; <span class="in">`dplyr`</span>\</span>
+<span id="cb50-127"><a href="#cb50-127"></a><span class="ss">-   </span>Week 3: Data Quality &amp; <span class="in">`tidyr`</span>\</span>
+<span id="cb50-128"><a href="#cb50-128"></a><span class="ss">-   </span>Week 4: Codebooks &amp; importing data\</span>
+<span id="cb50-129"><a href="#cb50-129"></a><span class="ss">-   </span>Week 5: Data structures &amp; transformation</span>
+<span id="cb50-130"><a href="#cb50-130"></a><span class="ss">-   </span>Week 6: Versioning &amp; <span class="in">`purrr`</span>\</span>
+<span id="cb50-131"><a href="#cb50-131"></a><span class="ss">-   </span>Week 7: Efficient R &amp; parallelization\</span>
+<span id="cb50-132"><a href="#cb50-132"></a><span class="ss">-   </span>Week 8: TBD &amp; tables and figures in <span class="in">`R`</span>\</span>
+<span id="cb50-133"><a href="#cb50-133"></a><span class="ss">-   </span>Week 9: Odds and ends &amp; help with projects\</span>
+<span id="cb50-134"><a href="#cb50-134"></a><span class="ss">-   </span>Week 10: Presentations</span>
+<span id="cb50-135"><a href="#cb50-135"></a></span>
+<span id="cb50-136"><a href="#cb50-136"></a><span class="fu"># What is a workflow?</span></span>
 <span id="cb50-137"><a href="#cb50-137"></a></span>
-<span id="cb50-138"><a href="#cb50-138"></a><span class="fu">## Why Should I Care?</span></span>
-<span id="cb50-139"><a href="#cb50-139"></a></span>
-<span id="cb50-140"><a href="#cb50-140"></a><span class="ss">-   </span>Whether you like it or not, you have a workflow</span>
-<span id="cb50-141"><a href="#cb50-141"></a><span class="ss">-   </span>You have ways you go about doing a project that you maybe haven&#39;t thought too much about</span>
-<span id="cb50-142"><a href="#cb50-142"></a><span class="ss">-   </span>Issues arise when</span>
-<span id="cb50-143"><a href="#cb50-143"></a><span class="ss">    1.  </span>A workflow has *missing steps*</span>
-<span id="cb50-144"><a href="#cb50-144"></a><span class="ss">    2.  </span>Your workflow is *inconsistent* across projects</span>
-<span id="cb50-145"><a href="#cb50-145"></a><span class="ss">    3.  </span>Your workflow is *inefficient*, which can lead to mistakes</span>
-<span id="cb50-146"><a href="#cb50-146"></a><span class="ss">-   </span>A workflow is a work in progress. If it no longer serves you, let it go</span>
-<span id="cb50-147"><a href="#cb50-147"></a></span>
-<span id="cb50-148"><a href="#cb50-148"></a><span class="fu">## How Do I Build a Workflow?</span></span>
-<span id="cb50-149"><a href="#cb50-149"></a></span>
-<span id="cb50-150"><a href="#cb50-150"></a><span class="ss">-   </span>Building a good workflow is both top-down (i.e. big steps to smaller ones) and bottom-up (i.e. necessary smaller steps make certain larger ones necessary)</span>
-<span id="cb50-151"><a href="#cb50-151"></a><span class="ss">-   </span>What?</span>
+<span id="cb50-138"><a href="#cb50-138"></a><span class="ss">-   </span>Dictionary definition: &quot;the sequence of industrial, administrative, or other processes through which a piece of work passes from initiation to completion&quot;</span>
+<span id="cb50-139"><a href="#cb50-139"></a><span class="ss">-   </span>Research Workflow: &quot;The process of conducting research from conceptualization to dissemination&quot;</span>
+<span id="cb50-140"><a href="#cb50-140"></a></span>
+<span id="cb50-141"><a href="#cb50-141"></a><span class="fu">## Why Should I Care?</span></span>
+<span id="cb50-142"><a href="#cb50-142"></a></span>
+<span id="cb50-143"><a href="#cb50-143"></a><span class="ss">-   </span>Whether you like it or not, you have a workflow</span>
+<span id="cb50-144"><a href="#cb50-144"></a><span class="ss">-   </span>You have ways you go about doing a project that you maybe haven&#39;t thought too much about</span>
+<span id="cb50-145"><a href="#cb50-145"></a><span class="ss">-   </span>Issues arise when</span>
+<span id="cb50-146"><a href="#cb50-146"></a><span class="ss">    1.  </span>A workflow has *missing steps*</span>
+<span id="cb50-147"><a href="#cb50-147"></a><span class="ss">    2.  </span>Your workflow is *inconsistent* across projects</span>
+<span id="cb50-148"><a href="#cb50-148"></a><span class="ss">    3.  </span>Your workflow is *inefficient*, which can lead to mistakes</span>
+<span id="cb50-149"><a href="#cb50-149"></a><span class="ss">-   </span>A workflow is a work in progress. If it no longer serves you, let it go</span>
+<span id="cb50-150"><a href="#cb50-150"></a></span>
+<span id="cb50-151"><a href="#cb50-151"></a><span class="fu">## How Do I Build a Workflow?</span></span>
 <span id="cb50-152"><a href="#cb50-152"></a></span>
-<span id="cb50-153"><a href="#cb50-153"></a>::: columns</span>
-<span id="cb50-154"><a href="#cb50-154"></a>::: column</span>
-<span id="cb50-155"><a href="#cb50-155"></a>**Example: New Data Collection**\</span>
-<span id="cb50-156"><a href="#cb50-156"></a><span class="ss">1. </span>Conceptualization\</span>
-<span id="cb50-157"><a href="#cb50-157"></a><span class="ss">2. </span>Funding acquisition\</span>
-<span id="cb50-158"><a href="#cb50-158"></a><span class="ss">3. </span>Preregistration\</span>
-<span id="cb50-159"><a href="#cb50-159"></a><span class="ss">4. </span>Project Building\</span>
-<span id="cb50-160"><a href="#cb50-160"></a><span class="ss">5. </span>Data Collection\</span>
-<span id="cb50-161"><a href="#cb50-161"></a><span class="ss">6. </span>Data Cleaning\</span>
-<span id="cb50-162"><a href="#cb50-162"></a><span class="ss">7. </span>Data Analysis\</span>
-<span id="cb50-163"><a href="#cb50-163"></a><span class="ss">8. </span>Writing (and rewriting)\</span>
-<span id="cb50-164"><a href="#cb50-164"></a><span class="ss">9. </span>Submission\</span>
-<span id="cb50-165"><a href="#cb50-165"></a><span class="ss">10. </span>Revision (and possibly crying)\</span>
-<span id="cb50-166"><a href="#cb50-166"></a><span class="ss">11. </span>ACCEPTANCE</span>
-<span id="cb50-167"><a href="#cb50-167"></a>:::</span>
-<span id="cb50-168"><a href="#cb50-168"></a></span>
-<span id="cb50-169"><a href="#cb50-169"></a>::: column</span>
-<span id="cb50-170"><a href="#cb50-170"></a>**Example: Secondary Data**\</span>
-<span id="cb50-171"><a href="#cb50-171"></a><span class="ss">1. </span>Conceptualization\</span>
-<span id="cb50-172"><a href="#cb50-172"></a><span class="ss">2. </span>Data search\</span>
-<span id="cb50-173"><a href="#cb50-173"></a><span class="ss">3. </span>Project Building\</span>
-<span id="cb50-174"><a href="#cb50-174"></a><span class="ss">4. </span>Data documentation\</span>
-<span id="cb50-175"><a href="#cb50-175"></a><span class="ss">5. </span>Preregistration\</span>
-<span id="cb50-176"><a href="#cb50-176"></a><span class="ss">6. </span>Data Cleaning\</span>
-<span id="cb50-177"><a href="#cb50-177"></a><span class="ss">7. </span>Data Analysis\</span>
-<span id="cb50-178"><a href="#cb50-178"></a><span class="ss">8. </span>Writing (and rewriting)\</span>
-<span id="cb50-179"><a href="#cb50-179"></a><span class="ss">9. </span>Submission\</span>
-<span id="cb50-180"><a href="#cb50-180"></a><span class="ss">10. </span>Revision (and possibly crying)\</span>
-<span id="cb50-181"><a href="#cb50-181"></a><span class="ss">11. </span>ACCEPTANCE</span>
-<span id="cb50-182"><a href="#cb50-182"></a>:::</span>
-<span id="cb50-183"><a href="#cb50-183"></a>:::</span>
-<span id="cb50-184"><a href="#cb50-184"></a></span>
-<span id="cb50-185"><a href="#cb50-185"></a><span class="ss">-   </span>Workflows Are Hierarchical: Example -- Data Cleaning Steps</span>
-<span id="cb50-186"><a href="#cb50-186"></a></span>
-<span id="cb50-187"><a href="#cb50-187"></a>::: columns</span>
-<span id="cb50-188"><a href="#cb50-188"></a>::: column</span>
-<span id="cb50-189"><a href="#cb50-189"></a>**Experimental Data**</span>
-<span id="cb50-190"><a href="#cb50-190"></a></span>
-<span id="cb50-191"><a href="#cb50-191"></a>1<span class="sc">\.</span> Gather all data files\</span>
-<span id="cb50-192"><a href="#cb50-192"></a><span class="ss">2. </span>Quality checks for each file\</span>
-<span id="cb50-193"><a href="#cb50-193"></a><span class="ss">3. </span>Load all files\</span>
-<span id="cb50-194"><a href="#cb50-194"></a><span class="ss">4. </span>Merge all files\</span>
-<span id="cb50-195"><a href="#cb50-195"></a><span class="ss">5. </span>Check all descriptives\</span>
-<span id="cb50-196"><a href="#cb50-196"></a><span class="ss">6. </span>Scoring, coding, and data transformation\</span>
-<span id="cb50-197"><a href="#cb50-197"></a><span class="ss">7. </span>Recheck all descriptives\</span>
-<span id="cb50-198"><a href="#cb50-198"></a><span class="ss">8. </span>Correlations and visualization\</span>
-<span id="cb50-199"><a href="#cb50-199"></a><span class="ss">9. </span>Restructure data for analyses</span>
-<span id="cb50-200"><a href="#cb50-200"></a>:::</span>
-<span id="cb50-201"><a href="#cb50-201"></a></span>
-<span id="cb50-202"><a href="#cb50-202"></a>::: column</span>
-<span id="cb50-203"><a href="#cb50-203"></a>**Secondary Data**</span>
+<span id="cb50-153"><a href="#cb50-153"></a><span class="ss">-   </span>Building a good workflow is both top-down (i.e. big steps to smaller ones) and bottom-up (i.e. necessary smaller steps make certain larger ones necessary)</span>
+<span id="cb50-154"><a href="#cb50-154"></a><span class="ss">-   </span>What?</span>
+<span id="cb50-155"><a href="#cb50-155"></a></span>
+<span id="cb50-156"><a href="#cb50-156"></a>::: columns</span>
+<span id="cb50-157"><a href="#cb50-157"></a>::: column</span>
+<span id="cb50-158"><a href="#cb50-158"></a>**Example: New Data Collection**\</span>
+<span id="cb50-159"><a href="#cb50-159"></a><span class="ss">1. </span>Conceptualization\</span>
+<span id="cb50-160"><a href="#cb50-160"></a><span class="ss">2. </span>Funding acquisition\</span>
+<span id="cb50-161"><a href="#cb50-161"></a><span class="ss">3. </span>Preregistration\</span>
+<span id="cb50-162"><a href="#cb50-162"></a><span class="ss">4. </span>Project Building\</span>
+<span id="cb50-163"><a href="#cb50-163"></a><span class="ss">5. </span>Data Collection\</span>
+<span id="cb50-164"><a href="#cb50-164"></a><span class="ss">6. </span>Data Cleaning\</span>
+<span id="cb50-165"><a href="#cb50-165"></a><span class="ss">7. </span>Data Analysis\</span>
+<span id="cb50-166"><a href="#cb50-166"></a><span class="ss">8. </span>Writing (and rewriting)\</span>
+<span id="cb50-167"><a href="#cb50-167"></a><span class="ss">9. </span>Submission\</span>
+<span id="cb50-168"><a href="#cb50-168"></a><span class="ss">10. </span>Revision (and possibly crying)\</span>
+<span id="cb50-169"><a href="#cb50-169"></a><span class="ss">11. </span>ACCEPTANCE</span>
+<span id="cb50-170"><a href="#cb50-170"></a>:::</span>
+<span id="cb50-171"><a href="#cb50-171"></a></span>
+<span id="cb50-172"><a href="#cb50-172"></a>::: column</span>
+<span id="cb50-173"><a href="#cb50-173"></a>**Example: Secondary Data**\</span>
+<span id="cb50-174"><a href="#cb50-174"></a><span class="ss">1. </span>Conceptualization\</span>
+<span id="cb50-175"><a href="#cb50-175"></a><span class="ss">2. </span>Data search\</span>
+<span id="cb50-176"><a href="#cb50-176"></a><span class="ss">3. </span>Project Building\</span>
+<span id="cb50-177"><a href="#cb50-177"></a><span class="ss">4. </span>Data documentation\</span>
+<span id="cb50-178"><a href="#cb50-178"></a><span class="ss">5. </span>Preregistration\</span>
+<span id="cb50-179"><a href="#cb50-179"></a><span class="ss">6. </span>Data Cleaning\</span>
+<span id="cb50-180"><a href="#cb50-180"></a><span class="ss">7. </span>Data Analysis\</span>
+<span id="cb50-181"><a href="#cb50-181"></a><span class="ss">8. </span>Writing (and rewriting)\</span>
+<span id="cb50-182"><a href="#cb50-182"></a><span class="ss">9. </span>Submission\</span>
+<span id="cb50-183"><a href="#cb50-183"></a><span class="ss">10. </span>Revision (and possibly crying)\</span>
+<span id="cb50-184"><a href="#cb50-184"></a><span class="ss">11. </span>ACCEPTANCE</span>
+<span id="cb50-185"><a href="#cb50-185"></a>:::</span>
+<span id="cb50-186"><a href="#cb50-186"></a>:::</span>
+<span id="cb50-187"><a href="#cb50-187"></a></span>
+<span id="cb50-188"><a href="#cb50-188"></a><span class="ss">-   </span>Workflows Are Hierarchical: Example -- Data Cleaning Steps</span>
+<span id="cb50-189"><a href="#cb50-189"></a></span>
+<span id="cb50-190"><a href="#cb50-190"></a>::: columns</span>
+<span id="cb50-191"><a href="#cb50-191"></a>::: column</span>
+<span id="cb50-192"><a href="#cb50-192"></a>**Experimental Data**</span>
+<span id="cb50-193"><a href="#cb50-193"></a></span>
+<span id="cb50-194"><a href="#cb50-194"></a>1<span class="sc">\.</span> Gather all data files\</span>
+<span id="cb50-195"><a href="#cb50-195"></a><span class="ss">2. </span>Quality checks for each file\</span>
+<span id="cb50-196"><a href="#cb50-196"></a><span class="ss">3. </span>Load all files\</span>
+<span id="cb50-197"><a href="#cb50-197"></a><span class="ss">4. </span>Merge all files\</span>
+<span id="cb50-198"><a href="#cb50-198"></a><span class="ss">5. </span>Check all descriptives\</span>
+<span id="cb50-199"><a href="#cb50-199"></a><span class="ss">6. </span>Scoring, coding, and data transformation\</span>
+<span id="cb50-200"><a href="#cb50-200"></a><span class="ss">7. </span>Recheck all descriptives\</span>
+<span id="cb50-201"><a href="#cb50-201"></a><span class="ss">8. </span>Correlations and visualization\</span>
+<span id="cb50-202"><a href="#cb50-202"></a><span class="ss">9. </span>Restructure data for analyses</span>
+<span id="cb50-203"><a href="#cb50-203"></a>:::</span>
 <span id="cb50-204"><a href="#cb50-204"></a></span>
-<span id="cb50-205"><a href="#cb50-205"></a>1<span class="sc">\.</span> Gather all data files\</span>
-<span id="cb50-206"><a href="#cb50-206"></a><span class="ss">2. </span>Load each file\</span>
-<span id="cb50-207"><a href="#cb50-207"></a><span class="ss">3. </span>Extract variables used\</span>
-<span id="cb50-208"><a href="#cb50-208"></a><span class="ss">4. </span>Rename variables, possibly deal with time variables\</span>
-<span id="cb50-209"><a href="#cb50-209"></a><span class="ss">4. </span>Merge all files\</span>
-<span id="cb50-210"><a href="#cb50-210"></a><span class="ss">5. </span>Check all descriptives\</span>
-<span id="cb50-211"><a href="#cb50-211"></a><span class="ss">6. </span>Scoring, coding, and data transformation\</span>
-<span id="cb50-212"><a href="#cb50-212"></a><span class="ss">7. </span>Recheck all descriptives\</span>
-<span id="cb50-213"><a href="#cb50-213"></a><span class="ss">8. </span>Correlations and visualization\</span>
-<span id="cb50-214"><a href="#cb50-214"></a><span class="ss">9. </span>Restructure data for analyses</span>
-<span id="cb50-215"><a href="#cb50-215"></a>:::</span>
-<span id="cb50-216"><a href="#cb50-216"></a>:::</span>
-<span id="cb50-217"><a href="#cb50-217"></a></span>
-<span id="cb50-218"><a href="#cb50-218"></a><span class="fu">## Workflows: Overview of the Course</span></span>
-<span id="cb50-219"><a href="#cb50-219"></a></span>
-<span id="cb50-220"><a href="#cb50-220"></a>In this class, we will focus on building tools for:</span>
-<span id="cb50-221"><a href="#cb50-221"></a></span>
-<span id="cb50-222"><a href="#cb50-222"></a><span class="ss">-   </span>Documenting Data (both before and after collection)\</span>
-<span id="cb50-223"><a href="#cb50-223"></a></span>
-<span id="cb50-224"><a href="#cb50-224"></a><span class="ss">-   </span>File management (how do I build a machine and human navigable directory)\</span>
-<span id="cb50-225"><a href="#cb50-225"></a></span>
-<span id="cb50-226"><a href="#cb50-226"></a><span class="ss">-   </span>Loading data files\</span>
-<span id="cb50-227"><a href="#cb50-227"></a></span>
-<span id="cb50-228"><a href="#cb50-228"></a><span class="ss">-   </span>All steps of cleaning data\</span>
-<span id="cb50-229"><a href="#cb50-229"></a></span>
-<span id="cb50-230"><a href="#cb50-230"></a><span class="ss">-   </span>Restructuring Data\</span>
-<span id="cb50-231"><a href="#cb50-231"></a></span>
-<span id="cb50-232"><a href="#cb50-232"></a><span class="ss">-   </span>DESCRIPTIVES DESCRIPTIVES DESCRIPTIVES\</span>
-<span id="cb50-233"><a href="#cb50-233"></a></span>
-<span id="cb50-234"><a href="#cb50-234"></a><span class="ss">-   </span>Efficient Programming (plz stop copy-pasting)</span>
-<span id="cb50-235"><a href="#cb50-235"></a></span>
-<span id="cb50-236"><a href="#cb50-236"></a><span class="ss">-   </span>This class does not focus on modeling but rather how you get your data set up to run models (Weeks 1-5/6) AND how to extract and present data after you run them (Weeks 6/7-9)</span>
-<span id="cb50-237"><a href="#cb50-237"></a></span>
-<span id="cb50-238"><a href="#cb50-238"></a><span class="ss">-   </span>We will focus on classes of models in R you will most likely encounter (<span class="in">`lm()`</span>, <span class="in">`glm()`</span>, <span class="in">`lmer()`</span>, <span class="in">`nlme()`</span>, <span class="in">`lavaan`</span>, <span class="in">`brms`</span>)</span>
-<span id="cb50-239"><a href="#cb50-239"></a></span>
-<span id="cb50-240"><a href="#cb50-240"></a><span class="ss">-   </span>If you run other kinds of models, most tools we will use are portable to many packages and other object classes</span>
-<span id="cb50-241"><a href="#cb50-241"></a></span>
-<span id="cb50-242"><a href="#cb50-242"></a><span class="ss">-   </span>By the end of this class, my goal is that you:\</span>
-<span id="cb50-243"><a href="#cb50-243"></a></span>
-<span id="cb50-244"><a href="#cb50-244"></a><span class="ss">1.  </span>Have a documented workflow for the kind of research you work on\</span>
-<span id="cb50-245"><a href="#cb50-245"></a><span class="ss">2.  </span>Have a set of tools and skills that apply to each piece of that workflow\</span>
-<span id="cb50-246"><a href="#cb50-246"></a><span class="ss">3.  </span>Have a skillset that will allow you to adapt and build new workflows for different kinds of research</span>
-<span id="cb50-247"><a href="#cb50-247"></a></span>
-<span id="cb50-248"><a href="#cb50-248"></a><span class="fu"># Fundamentals of R</span></span>
-<span id="cb50-249"><a href="#cb50-249"></a></span>
-<span id="cb50-250"><a href="#cb50-250"></a><span class="fu">## What is R? Why R?</span></span>
-<span id="cb50-251"><a href="#cb50-251"></a></span>
-<span id="cb50-252"><a href="#cb50-252"></a><span class="ss">-   </span>An &quot;open source&quot; programming language and software that provide collections of interrelated &quot;functions&quot;</span>
-<span id="cb50-253"><a href="#cb50-253"></a><span class="ss">-   </span>&quot;open source&quot; means that *R* is free and created by the user community. The user community can modify basic things about *R* and add new capabilities to what R can do the user community can modify R and</span>
-<span id="cb50-254"><a href="#cb50-254"></a><span class="ss">-   </span>a &quot;function&quot; is usually something that takes in some &quot;input,&quot; processes this input in some way, and creates some &quot;output&quot;</span>
-<span id="cb50-255"><a href="#cb50-255"></a><span class="ss">    -   </span>e.g., the <span class="in">`max()`</span> function takes as input a collection of numbers (e.g., 3,5,6) and returns as output the number with the maximum value</span>
-<span id="cb50-256"><a href="#cb50-256"></a><span class="ss">    -   </span>e.g., the <span class="in">`lm()`</span> function takes in as inputs a dataset and a statistical model you specify within the function, and returns as output the results of the regression model</span>
-<span id="cb50-257"><a href="#cb50-257"></a></span>
-<span id="cb50-258"><a href="#cb50-258"></a><span class="fu">## Base R vs. R packages</span></span>
-<span id="cb50-259"><a href="#cb50-259"></a></span>
-<span id="cb50-260"><a href="#cb50-260"></a>::: columns</span>
-<span id="cb50-261"><a href="#cb50-261"></a>::: column</span>
-<span id="cb50-262"><a href="#cb50-262"></a>Base R</span>
-<span id="cb50-263"><a href="#cb50-263"></a></span>
-<span id="cb50-264"><a href="#cb50-264"></a><span class="ss">-   </span>When you install R, you automatically install the <span class="co">[</span><span class="ot">&quot;Base R&quot;</span><span class="co">](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html)</span> set of functions</span>
-<span id="cb50-265"><a href="#cb50-265"></a><span class="ss">-   </span>Example of a few of the functions in in Base R:</span>
-<span id="cb50-266"><a href="#cb50-266"></a><span class="ss">    -   </span><span class="in">`as.character()`</span> function</span>
-<span id="cb50-267"><a href="#cb50-267"></a><span class="ss">    -   </span><span class="in">`print()`</span> function</span>
-<span id="cb50-268"><a href="#cb50-268"></a><span class="ss">    -   </span><span class="in">`setwd()`</span> function</span>
-<span id="cb50-269"><a href="#cb50-269"></a>:::</span>
-<span id="cb50-270"><a href="#cb50-270"></a></span>
-<span id="cb50-271"><a href="#cb50-271"></a>::: column</span>
-<span id="cb50-272"><a href="#cb50-272"></a>R packages</span>
+<span id="cb50-205"><a href="#cb50-205"></a>::: column</span>
+<span id="cb50-206"><a href="#cb50-206"></a>**Secondary Data**</span>
+<span id="cb50-207"><a href="#cb50-207"></a></span>
+<span id="cb50-208"><a href="#cb50-208"></a>1<span class="sc">\.</span> Gather all data files\</span>
+<span id="cb50-209"><a href="#cb50-209"></a><span class="ss">2. </span>Load each file\</span>
+<span id="cb50-210"><a href="#cb50-210"></a><span class="ss">3. </span>Extract variables used\</span>
+<span id="cb50-211"><a href="#cb50-211"></a><span class="ss">4. </span>Rename variables, possibly deal with time variables\</span>
+<span id="cb50-212"><a href="#cb50-212"></a><span class="ss">4. </span>Merge all files\</span>
+<span id="cb50-213"><a href="#cb50-213"></a><span class="ss">5. </span>Check all descriptives\</span>
+<span id="cb50-214"><a href="#cb50-214"></a><span class="ss">6. </span>Scoring, coding, and data transformation\</span>
+<span id="cb50-215"><a href="#cb50-215"></a><span class="ss">7. </span>Recheck all descriptives\</span>
+<span id="cb50-216"><a href="#cb50-216"></a><span class="ss">8. </span>Correlations and visualization\</span>
+<span id="cb50-217"><a href="#cb50-217"></a><span class="ss">9. </span>Restructure data for analyses</span>
+<span id="cb50-218"><a href="#cb50-218"></a>:::</span>
+<span id="cb50-219"><a href="#cb50-219"></a>:::</span>
+<span id="cb50-220"><a href="#cb50-220"></a></span>
+<span id="cb50-221"><a href="#cb50-221"></a><span class="fu">## Workflows: Overview of the Course</span></span>
+<span id="cb50-222"><a href="#cb50-222"></a></span>
+<span id="cb50-223"><a href="#cb50-223"></a>In this class, we will focus on building tools for:</span>
+<span id="cb50-224"><a href="#cb50-224"></a></span>
+<span id="cb50-225"><a href="#cb50-225"></a><span class="ss">-   </span>Documenting Data (both before and after collection)\</span>
+<span id="cb50-226"><a href="#cb50-226"></a></span>
+<span id="cb50-227"><a href="#cb50-227"></a><span class="ss">-   </span>File management (how do I build a machine and human navigable directory)\</span>
+<span id="cb50-228"><a href="#cb50-228"></a></span>
+<span id="cb50-229"><a href="#cb50-229"></a><span class="ss">-   </span>Loading data files\</span>
+<span id="cb50-230"><a href="#cb50-230"></a></span>
+<span id="cb50-231"><a href="#cb50-231"></a><span class="ss">-   </span>All steps of cleaning data\</span>
+<span id="cb50-232"><a href="#cb50-232"></a></span>
+<span id="cb50-233"><a href="#cb50-233"></a><span class="ss">-   </span>Restructuring Data\</span>
+<span id="cb50-234"><a href="#cb50-234"></a></span>
+<span id="cb50-235"><a href="#cb50-235"></a><span class="ss">-   </span>DESCRIPTIVES DESCRIPTIVES DESCRIPTIVES\</span>
+<span id="cb50-236"><a href="#cb50-236"></a></span>
+<span id="cb50-237"><a href="#cb50-237"></a><span class="ss">-   </span>Efficient Programming (plz stop copy-pasting)</span>
+<span id="cb50-238"><a href="#cb50-238"></a></span>
+<span id="cb50-239"><a href="#cb50-239"></a><span class="ss">-   </span>This class does not focus on modeling but rather how you get your data set up to run models (Weeks 1-5/6) AND how to extract and present data after you run them (Weeks 6/7-9)</span>
+<span id="cb50-240"><a href="#cb50-240"></a></span>
+<span id="cb50-241"><a href="#cb50-241"></a><span class="ss">-   </span>We will focus on classes of models in R you will most likely encounter (<span class="in">`lm()`</span>, <span class="in">`glm()`</span>, <span class="in">`lmer()`</span>, <span class="in">`nlme()`</span>, <span class="in">`lavaan`</span>, <span class="in">`brms`</span>)</span>
+<span id="cb50-242"><a href="#cb50-242"></a></span>
+<span id="cb50-243"><a href="#cb50-243"></a><span class="ss">-   </span>If you run other kinds of models, most tools we will use are portable to many packages and other object classes</span>
+<span id="cb50-244"><a href="#cb50-244"></a></span>
+<span id="cb50-245"><a href="#cb50-245"></a><span class="ss">-   </span>By the end of this class, my goal is that you:\</span>
+<span id="cb50-246"><a href="#cb50-246"></a></span>
+<span id="cb50-247"><a href="#cb50-247"></a><span class="ss">1.  </span>Have a documented workflow for the kind of research you work on\</span>
+<span id="cb50-248"><a href="#cb50-248"></a><span class="ss">2.  </span>Have a set of tools and skills that apply to each piece of that workflow\</span>
+<span id="cb50-249"><a href="#cb50-249"></a><span class="ss">3.  </span>Have a skillset that will allow you to adapt and build new workflows for different kinds of research</span>
+<span id="cb50-250"><a href="#cb50-250"></a></span>
+<span id="cb50-251"><a href="#cb50-251"></a><span class="fu"># Fundamentals of R</span></span>
+<span id="cb50-252"><a href="#cb50-252"></a></span>
+<span id="cb50-253"><a href="#cb50-253"></a><span class="fu">## What is R? Why R?</span></span>
+<span id="cb50-254"><a href="#cb50-254"></a></span>
+<span id="cb50-255"><a href="#cb50-255"></a><span class="ss">-   </span>An &quot;open source&quot; programming language and software that provide collections of interrelated &quot;functions&quot;</span>
+<span id="cb50-256"><a href="#cb50-256"></a><span class="ss">-   </span>&quot;open source&quot; means that *R* is free and created by the user community. The user community can modify basic things about *R* and add new capabilities to what R can do the user community can modify R and</span>
+<span id="cb50-257"><a href="#cb50-257"></a><span class="ss">-   </span>a &quot;function&quot; is usually something that takes in some &quot;input,&quot; processes this input in some way, and creates some &quot;output&quot;</span>
+<span id="cb50-258"><a href="#cb50-258"></a><span class="ss">    -   </span>e.g., the <span class="in">`max()`</span> function takes as input a collection of numbers (e.g., 3,5,6) and returns as output the number with the maximum value</span>
+<span id="cb50-259"><a href="#cb50-259"></a><span class="ss">    -   </span>e.g., the <span class="in">`lm()`</span> function takes in as inputs a dataset and a statistical model you specify within the function, and returns as output the results of the regression model</span>
+<span id="cb50-260"><a href="#cb50-260"></a></span>
+<span id="cb50-261"><a href="#cb50-261"></a><span class="fu">## Base R vs. R packages</span></span>
+<span id="cb50-262"><a href="#cb50-262"></a></span>
+<span id="cb50-263"><a href="#cb50-263"></a>::: columns</span>
+<span id="cb50-264"><a href="#cb50-264"></a>::: column</span>
+<span id="cb50-265"><a href="#cb50-265"></a>Base R</span>
+<span id="cb50-266"><a href="#cb50-266"></a></span>
+<span id="cb50-267"><a href="#cb50-267"></a><span class="ss">-   </span>When you install R, you automatically install the <span class="co">[</span><span class="ot">&quot;Base R&quot;</span><span class="co">](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html)</span> set of functions</span>
+<span id="cb50-268"><a href="#cb50-268"></a><span class="ss">-   </span>Example of a few of the functions in in Base R:</span>
+<span id="cb50-269"><a href="#cb50-269"></a><span class="ss">    -   </span><span class="in">`as.character()`</span> function</span>
+<span id="cb50-270"><a href="#cb50-270"></a><span class="ss">    -   </span><span class="in">`print()`</span> function</span>
+<span id="cb50-271"><a href="#cb50-271"></a><span class="ss">    -   </span><span class="in">`setwd()`</span> function</span>
+<span id="cb50-272"><a href="#cb50-272"></a>:::</span>
 <span id="cb50-273"><a href="#cb50-273"></a></span>
-<span id="cb50-274"><a href="#cb50-274"></a><span class="ss">-   </span>an R &quot;package&quot; (or &quot;library&quot;) is a collection of (related) functions developed by the R community</span>
-<span id="cb50-275"><a href="#cb50-275"></a><span class="ss">-   </span>Examples of R packages:</span>
-<span id="cb50-276"><a href="#cb50-276"></a><span class="ss">    -   </span><span class="in">`tidyverse`</span> package for manipulating and visualizing data</span>
-<span id="cb50-277"><a href="#cb50-277"></a><span class="ss">    -   </span><span class="in">`igraph`</span> package for network analyses</span>
-<span id="cb50-278"><a href="#cb50-278"></a><span class="ss">    -   </span><span class="in">`leaflet`</span> package for mapping</span>
-<span id="cb50-279"><a href="#cb50-279"></a><span class="ss">    -   </span><span class="in">`rvest`</span> package for webscraping</span>
-<span id="cb50-280"><a href="#cb50-280"></a><span class="ss">    -   </span><span class="in">`rtweet`</span> package for streaming and downloading data from Twitter</span>
-<span id="cb50-281"><a href="#cb50-281"></a><span class="ss">-   </span>**All** R packages are free!</span>
-<span id="cb50-282"><a href="#cb50-282"></a>:::</span>
-<span id="cb50-283"><a href="#cb50-283"></a>:::</span>
-<span id="cb50-284"><a href="#cb50-284"></a></span>
-<span id="cb50-285"><a href="#cb50-285"></a><span class="fu">## Why Use RStudio (Pivot)</span></span>
-<span id="cb50-286"><a href="#cb50-286"></a></span>
-<span id="cb50-287"><a href="#cb50-287"></a>::: columns</span>
-<span id="cb50-288"><a href="#cb50-288"></a>::: {.column width=&quot;60%&quot;}</span>
-<span id="cb50-289"><a href="#cb50-289"></a><span class="ss">-   </span>Also free</span>
-<span id="cb50-290"><a href="#cb50-290"></a><span class="ss">-   </span>Basically a GUI for R</span>
-<span id="cb50-291"><a href="#cb50-291"></a><span class="ss">-   </span>Organize files, import data, etc. with ease</span>
-<span id="cb50-292"><a href="#cb50-292"></a><span class="ss">-   </span>RMarkdown, Quarto, and more are powerful tools (they were used to create these slides!)</span>
-<span id="cb50-293"><a href="#cb50-293"></a><span class="ss">-   </span>Lots of new features and support</span>
-<span id="cb50-294"><a href="#cb50-294"></a>:::</span>
-<span id="cb50-295"><a href="#cb50-295"></a></span>
-<span id="cb50-296"><a href="#cb50-296"></a>::: {.column width=&quot;40%&quot;}</span>
-<span id="cb50-299"><a href="#cb50-299"></a><span class="in">```{r}</span></span>
-<span id="cb50-300"><a href="#cb50-300"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/emoriebeck/psc290-data-viz-2022/raw/main/01-week1-intro/02-code/02-images/RStudio-Logo-Flat.png&quot;</span>)</span>
-<span id="cb50-301"><a href="#cb50-301"></a><span class="in">```</span></span>
-<span id="cb50-302"><a href="#cb50-302"></a>:::</span>
-<span id="cb50-303"><a href="#cb50-303"></a>:::</span>
-<span id="cb50-304"><a href="#cb50-304"></a></span>
-<span id="cb50-305"><a href="#cb50-305"></a><span class="fu">## Why Use the `tidyverse`</span></span>
-<span id="cb50-306"><a href="#cb50-306"></a></span>
-<span id="cb50-307"><a href="#cb50-307"></a>::: columns</span>
-<span id="cb50-308"><a href="#cb50-308"></a>::: {.column width=&quot;70%&quot;}</span>
-<span id="cb50-309"><a href="#cb50-309"></a><span class="ss">-   </span>Maintained by RStudio (Pivot)</span>
-<span id="cb50-310"><a href="#cb50-310"></a><span class="ss">-   </span>No one should have to use a for loop to change data from long to wide</span>
-<span id="cb50-311"><a href="#cb50-311"></a><span class="ss">-   </span>Tons of integrated tools for data cleaning, manipulation, transformation, and visualization</span>
-<span id="cb50-312"><a href="#cb50-312"></a><span class="ss">-   </span>Even increasing support for modeling (e.g., <span class="in">`tidymodels`</span>)</span>
-<span id="cb50-313"><a href="#cb50-313"></a>:::</span>
-<span id="cb50-314"><a href="#cb50-314"></a></span>
-<span id="cb50-315"><a href="#cb50-315"></a>::: {.column width=&quot;30%&quot;}</span>
-<span id="cb50-316"><a href="#cb50-316"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-317"><a href="#cb50-317"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/emoriebeck/psc290-data-viz-2022/raw/main/01-week1-intro/02-code/02-images/tidyverse.png&quot;</span>)</span>
-<span id="cb50-318"><a href="#cb50-318"></a><span class="in">```</span></span>
-<span id="cb50-319"><a href="#cb50-319"></a>:::</span>
-<span id="cb50-320"><a href="#cb50-320"></a>:::</span>
-<span id="cb50-321"><a href="#cb50-321"></a></span>
-<span id="cb50-322"><a href="#cb50-322"></a>::: {layout=&quot;[<span class="co">[</span><span class="ot">1,1, 1, 1, 1, 1</span><span class="co">]</span>, <span class="co">[</span><span class="ot">1,1, 1, 1, 1,1</span><span class="co">]</span>]&quot;}</span>
-<span id="cb50-323"><a href="#cb50-323"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-324"><a href="#cb50-324"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/tidyr.png&quot;</span>)</span>
-<span id="cb50-325"><a href="#cb50-325"></a><span class="in">```</span></span>
-<span id="cb50-326"><a href="#cb50-326"></a></span>
-<span id="cb50-327"><a href="#cb50-327"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-328"><a href="#cb50-328"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/stringr.png&quot;</span>)</span>
-<span id="cb50-329"><a href="#cb50-329"></a><span class="in">```</span></span>
-<span id="cb50-330"><a href="#cb50-330"></a></span>
-<span id="cb50-331"><a href="#cb50-331"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-332"><a href="#cb50-332"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/shiny.png&quot;</span>)</span>
-<span id="cb50-333"><a href="#cb50-333"></a><span class="in">```</span></span>
-<span id="cb50-334"><a href="#cb50-334"></a></span>
-<span id="cb50-335"><a href="#cb50-335"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-336"><a href="#cb50-336"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/rmarkdown.png&quot;</span>)</span>
-<span id="cb50-337"><a href="#cb50-337"></a><span class="in">```</span></span>
-<span id="cb50-338"><a href="#cb50-338"></a></span>
-<span id="cb50-339"><a href="#cb50-339"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-340"><a href="#cb50-340"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/quarto.png&quot;</span>)</span>
-<span id="cb50-341"><a href="#cb50-341"></a><span class="in">```</span></span>
-<span id="cb50-342"><a href="#cb50-342"></a></span>
-<span id="cb50-343"><a href="#cb50-343"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-344"><a href="#cb50-344"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/knitr.png&quot;</span>)</span>
-<span id="cb50-345"><a href="#cb50-345"></a><span class="in">```</span></span>
-<span id="cb50-346"><a href="#cb50-346"></a></span>
-<span id="cb50-347"><a href="#cb50-347"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-348"><a href="#cb50-348"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/ggplot2.png&quot;</span>)</span>
-<span id="cb50-349"><a href="#cb50-349"></a><span class="in">```</span></span>
-<span id="cb50-350"><a href="#cb50-350"></a></span>
-<span id="cb50-351"><a href="#cb50-351"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-352"><a href="#cb50-352"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/forcats.png&quot;</span>)</span>
-<span id="cb50-353"><a href="#cb50-353"></a><span class="in">```</span></span>
-<span id="cb50-354"><a href="#cb50-354"></a></span>
-<span id="cb50-355"><a href="#cb50-355"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-356"><a href="#cb50-356"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/dplyr.png&quot;</span>)</span>
-<span id="cb50-357"><a href="#cb50-357"></a><span class="in">```</span></span>
-<span id="cb50-358"><a href="#cb50-358"></a></span>
-<span id="cb50-359"><a href="#cb50-359"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-360"><a href="#cb50-360"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/broom.png&quot;</span>)</span>
-<span id="cb50-361"><a href="#cb50-361"></a><span class="in">```</span></span>
-<span id="cb50-362"><a href="#cb50-362"></a></span>
-<span id="cb50-363"><a href="#cb50-363"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-364"><a href="#cb50-364"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/tibble.png&quot;</span>)</span>
-<span id="cb50-365"><a href="#cb50-365"></a><span class="in">```</span></span>
-<span id="cb50-366"><a href="#cb50-366"></a></span>
-<span id="cb50-367"><a href="#cb50-367"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
-<span id="cb50-368"><a href="#cb50-368"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/purrr.png&quot;</span>)</span>
-<span id="cb50-369"><a href="#cb50-369"></a><span class="in">```</span></span>
-<span id="cb50-370"><a href="#cb50-370"></a>:::</span>
-<span id="cb50-371"><a href="#cb50-371"></a></span>
-<span id="cb50-372"><a href="#cb50-372"></a><span class="fu">## Why use Quarto</span></span>
-<span id="cb50-373"><a href="#cb50-373"></a></span>
-<span id="cb50-374"><a href="#cb50-374"></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span></span>
-<span id="cb50-375"><a href="#cb50-375"></a></span>
-<span id="cb50-376"><a href="#cb50-376"></a><span class="al">![](quarto.png)</span>{fig-align=&quot;center&quot;} - These slides\</span>
-<span id="cb50-377"><a href="#cb50-377"></a><span class="ss">- </span>The course website\</span>
-<span id="cb50-378"><a href="#cb50-378"></a><span class="ss">- </span>Your homework\</span>
-<span id="cb50-379"><a href="#cb50-379"></a><span class="ss">- </span>All written in Quarto</span>
-<span id="cb50-380"><a href="#cb50-380"></a></span>
-<span id="cb50-381"><a href="#cb50-381"></a><span class="fu">## Some R Basics</span></span>
-<span id="cb50-382"><a href="#cb50-382"></a></span>
-<span id="cb50-383"><a href="#cb50-383"></a><span class="fu">### Executing R commands</span></span>
-<span id="cb50-384"><a href="#cb50-384"></a></span>
-<span id="cb50-385"><a href="#cb50-385"></a>Three ways to execute commands in R</span>
-<span id="cb50-386"><a href="#cb50-386"></a></span>
-<span id="cb50-387"><a href="#cb50-387"></a><span class="ss">1.  </span>Type/copy commands directly into the &quot;console&quot;</span>
-<span id="cb50-388"><a href="#cb50-388"></a><span class="ss">2.  </span><span class="sc">\`</span>code chunks&#39; in RMarkdown (.Rmd files)</span>
-<span id="cb50-389"><a href="#cb50-389"></a><span class="ss">    -   </span>**Cmd/Ctrl + Enter**: execute highlighted line(s) within chunk</span>
-<span id="cb50-390"><a href="#cb50-390"></a><span class="ss">    -   </span>**Cmd/Ctrl + Shift + k**: &quot;knit&quot; entire document</span>
-<span id="cb50-391"><a href="#cb50-391"></a><span class="ss">3.  </span>R scripts (.R files)</span>
-<span id="cb50-392"><a href="#cb50-392"></a><span class="ss">    -   </span>**Cmd/Ctrl + Enter**: execute highlighted line(s)</span>
-<span id="cb50-393"><a href="#cb50-393"></a><span class="ss">    -   </span>**Cmd/Ctrl + Shift + Enter** (without highlighting any lines): run entire script</span>
-<span id="cb50-394"><a href="#cb50-394"></a></span>
-<span id="cb50-395"><a href="#cb50-395"></a><span class="fu">### Assignment</span></span>
-<span id="cb50-396"><a href="#cb50-396"></a></span>
-<span id="cb50-397"><a href="#cb50-397"></a>**Assignment** refers to creating an &quot;object&quot; and assigning values to it</span>
-<span id="cb50-398"><a href="#cb50-398"></a></span>
-<span id="cb50-399"><a href="#cb50-399"></a><span class="ss">-   </span>The object may be a variable, a dataset, a bit of text that reads &quot;la la la&quot;</span>
-<span id="cb50-400"><a href="#cb50-400"></a><span class="ss">-   </span><span class="in">`&lt;-`</span> is the assignment operator</span>
-<span id="cb50-401"><a href="#cb50-401"></a><span class="ss">    -   </span>in other languages <span class="in">`=`</span> is the assignment operator</span>
-<span id="cb50-402"><a href="#cb50-402"></a><span class="ss">-   </span>general syntax:</span>
-<span id="cb50-403"><a href="#cb50-403"></a><span class="ss">    -   </span><span class="in">`object_name &lt;- object_values`</span></span>
-<span id="cb50-404"><a href="#cb50-404"></a><span class="ss">    -   </span>good practice to put a space before and after assignment operator</span>
-<span id="cb50-405"><a href="#cb50-405"></a></span>
-<span id="cb50-406"><a href="#cb50-406"></a><span class="fu">### Objects</span></span>
-<span id="cb50-407"><a href="#cb50-407"></a></span>
-<span id="cb50-408"><a href="#cb50-408"></a>R is an &quot;object-oriented&quot; programming language (like Python, JavaScript). So, what is an &quot;object&quot;?</span>
-<span id="cb50-409"><a href="#cb50-409"></a></span>
-<span id="cb50-410"><a href="#cb50-410"></a><span class="ss">-   </span>formal computer science definitions are confusing because they require knowledge of concepts we haven&#39;t introduced yet</span>
-<span id="cb50-411"><a href="#cb50-411"></a><span class="ss">-   </span>More intuitively, I think objects as anything I assign values to</span>
-<span id="cb50-412"><a href="#cb50-412"></a><span class="ss">    -   </span>For example, below, <span class="in">`a`</span> and <span class="in">`b`</span> are the names of objects I assigned values to</span>
-<span id="cb50-413"><a href="#cb50-413"></a></span>
-<span id="cb50-414"><a href="#cb50-414"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-415"><a href="#cb50-415"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb50-416"><a href="#cb50-416"></a>a</span>
-<span id="cb50-417"><a href="#cb50-417"></a>b <span class="ot">&lt;-</span> <span class="st">&quot;yay!&quot;</span></span>
-<span id="cb50-418"><a href="#cb50-418"></a>b</span>
-<span id="cb50-419"><a href="#cb50-419"></a><span class="in">```</span></span>
-<span id="cb50-420"><a href="#cb50-420"></a></span>
-<span id="cb50-421"><a href="#cb50-421"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Ben Skinner</span><span class="co">](https://www.btskinner.io)</span> says &quot;Objects are like boxes in which we can put things: data, functions, and even other objects.&quot;</span>
-<span id="cb50-422"><a href="#cb50-422"></a></span>
-<span id="cb50-423"><a href="#cb50-423"></a><span class="ss">-   </span>Many commercial statistical software packages (e.g., SPSS, Stata) operate on datasets, which consist of rows of observations and columns of variables</span>
-<span id="cb50-424"><a href="#cb50-424"></a></span>
-<span id="cb50-425"><a href="#cb50-425"></a><span class="ss">-   </span>Usually, these packages can open only one dataset at a time</span>
-<span id="cb50-426"><a href="#cb50-426"></a></span>
-<span id="cb50-427"><a href="#cb50-427"></a><span class="ss">-   </span>By contrast, in R everything is an object and there is no limit to the number of objects R can hold (except memory)</span>
-<span id="cb50-428"><a href="#cb50-428"></a></span>
-<span id="cb50-429"><a href="#cb50-429"></a><span class="fu">### Vectors</span></span>
-<span id="cb50-430"><a href="#cb50-430"></a></span>
-<span id="cb50-431"><a href="#cb50-431"></a>The fundamental data structure in R is the &quot;vector&quot;</span>
-<span id="cb50-432"><a href="#cb50-432"></a></span>
-<span id="cb50-433"><a href="#cb50-433"></a><span class="ss">-   </span>A vector is a collection of values</span>
-<span id="cb50-434"><a href="#cb50-434"></a></span>
-<span id="cb50-435"><a href="#cb50-435"></a><span class="ss">-   </span>The individual values within a vector are called &quot;elements&quot;</span>
-<span id="cb50-436"><a href="#cb50-436"></a></span>
-<span id="cb50-437"><a href="#cb50-437"></a><span class="ss">-   </span>Values in a vector can be numeric, character (e.g., &quot;Apple&quot;), or some other *type*</span>
-<span id="cb50-438"><a href="#cb50-438"></a></span>
-<span id="cb50-439"><a href="#cb50-439"></a><span class="ss">-   </span>Below we use the combine function <span class="in">`c()`</span> to create a numeric vector that contains three elements</span>
-<span id="cb50-440"><a href="#cb50-440"></a></span>
-<span id="cb50-441"><a href="#cb50-441"></a><span class="ss">-   </span>Help file says that <span class="in">`c()`</span> &quot;combines values into a vector or list&quot;</span>
-<span id="cb50-442"><a href="#cb50-442"></a></span>
-<span id="cb50-443"><a href="#cb50-443"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-444"><a href="#cb50-444"></a><span class="co">#?c # to see help file for the c() &quot;combine&quot; function</span></span>
-<span id="cb50-445"><a href="#cb50-445"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">9</span>) <span class="co"># create object called x, which is a vector with three elements </span></span>
-<span id="cb50-446"><a href="#cb50-446"></a><span class="co"># (each an integer)</span></span>
-<span id="cb50-447"><a href="#cb50-447"></a>x <span class="co"># print object x</span></span>
-<span id="cb50-448"><a href="#cb50-448"></a><span class="in">```</span></span>
-<span id="cb50-449"><a href="#cb50-449"></a></span>
-<span id="cb50-450"><a href="#cb50-450"></a>Vector where the elements are characters</span>
-<span id="cb50-451"><a href="#cb50-451"></a></span>
-<span id="cb50-452"><a href="#cb50-452"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-453"><a href="#cb50-453"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;lions&quot;</span>, <span class="st">&quot;tigers&quot;</span>, <span class="st">&quot;bears&quot;</span>, <span class="st">&quot;oh my&quot;</span>) <span class="co"># create object called animals</span></span>
-<span id="cb50-454"><a href="#cb50-454"></a>animals</span>
-<span id="cb50-455"><a href="#cb50-455"></a><span class="in">```</span></span>
-<span id="cb50-456"><a href="#cb50-456"></a></span>
-<span id="cb50-457"><a href="#cb50-457"></a><span class="fu">## EXERCISE</span></span>
-<span id="cb50-458"><a href="#cb50-458"></a></span>
-<span id="cb50-459"><a href="#cb50-459"></a>Either in the R console or within the R markdown file, do the following:</span>
-<span id="cb50-460"><a href="#cb50-460"></a></span>
-<span id="cb50-461"><a href="#cb50-461"></a><span class="ss">1.  </span>Create a vector called <span class="in">`v1`</span> with three elements, where all the elements are numbers. Then print the values.</span>
-<span id="cb50-462"><a href="#cb50-462"></a><span class="ss">2.  </span>Create a vector called <span class="in">`v2`</span> with four elements, where all the elements are characters (i.e., enclosed in single &#39;&#39; or double &quot;&quot; quotes). Then print the values.</span>
-<span id="cb50-463"><a href="#cb50-463"></a><span class="ss">3.  </span>Create a vector called <span class="in">`v3`</span> with five elements, where some elements are numeric and some elements are characters. Then print the values.</span>
-<span id="cb50-464"><a href="#cb50-464"></a></span>
-<span id="cb50-465"><a href="#cb50-465"></a><span class="fu">## Solution to Exercise</span></span>
-<span id="cb50-466"><a href="#cb50-466"></a></span>
-<span id="cb50-467"><a href="#cb50-467"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-468"><a href="#cb50-468"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) </span>
-<span id="cb50-469"><a href="#cb50-469"></a><span class="co"># create a vector called v1 with three elements</span></span>
-<span id="cb50-470"><a href="#cb50-470"></a><span class="co"># all the elements are numbers</span></span>
-<span id="cb50-471"><a href="#cb50-471"></a>v1 <span class="co"># print value</span></span>
-<span id="cb50-472"><a href="#cb50-472"></a><span class="in">```</span></span>
-<span id="cb50-473"><a href="#cb50-473"></a></span>
-<span id="cb50-474"><a href="#cb50-474"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-475"><a href="#cb50-475"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>) </span>
-<span id="cb50-476"><a href="#cb50-476"></a><span class="co"># create a vector called v2 with four elements</span></span>
-<span id="cb50-477"><a href="#cb50-477"></a><span class="co"># all the elements are characters</span></span>
-<span id="cb50-478"><a href="#cb50-478"></a>v2 <span class="co"># print value</span></span>
-<span id="cb50-479"><a href="#cb50-479"></a><span class="in">```</span></span>
-<span id="cb50-480"><a href="#cb50-480"></a></span>
-<span id="cb50-481"><a href="#cb50-481"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-482"><a href="#cb50-482"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>) </span>
-<span id="cb50-483"><a href="#cb50-483"></a><span class="co"># create a vector called v3 with five element</span></span>
-<span id="cb50-484"><a href="#cb50-484"></a><span class="co"># some elements are numeric and some elements are characters</span></span>
-<span id="cb50-485"><a href="#cb50-485"></a>v3 <span class="co"># print value</span></span>
-<span id="cb50-486"><a href="#cb50-486"></a><span class="in">```</span></span>
-<span id="cb50-487"><a href="#cb50-487"></a></span>
-<span id="cb50-488"><a href="#cb50-488"></a><span class="fu">## Formal classification of vectors in R</span></span>
-<span id="cb50-489"><a href="#cb50-489"></a></span>
-<span id="cb50-490"><a href="#cb50-490"></a><span class="ss">-   </span>Here, I introduce the classification of vectors by Grolemund and Wickham</span>
-<span id="cb50-491"><a href="#cb50-491"></a></span>
-<span id="cb50-492"><a href="#cb50-492"></a><span class="ss">-   </span>There are two broad types of vectors</span>
-<span id="cb50-493"><a href="#cb50-493"></a></span>
-<span id="cb50-494"><a href="#cb50-494"></a><span class="ss">1.  </span>**Atomic vectors**. An object that contains elements. Six &quot;types&quot; of atomic vectors:</span>
-<span id="cb50-495"><a href="#cb50-495"></a><span class="ss">    -   </span>**logical**, **integer**, **double**, **character**, **complex**, and **raw**.</span>
-<span id="cb50-496"><a href="#cb50-496"></a><span class="ss">        -   </span>**Integer** and **double** vectors are collectively known as **numeric** vectors.</span>
-<span id="cb50-497"><a href="#cb50-497"></a><span class="ss">2.  </span>**Lists**. Like atomic vectors, lists are objects that contain elements</span>
-<span id="cb50-498"><a href="#cb50-498"></a><span class="ss">    -   </span>elements within a list may be atomic vectors</span>
-<span id="cb50-499"><a href="#cb50-499"></a><span class="ss">    -   </span>elements within a list may also be other lists; that is lists can contain other lists</span>
-<span id="cb50-500"><a href="#cb50-500"></a></span>
-<span id="cb50-501"><a href="#cb50-501"></a>One difference between atomic vectors and lists: **homogeneous** vs. **heterogeneous** elements</span>
-<span id="cb50-502"><a href="#cb50-502"></a></span>
-<span id="cb50-503"><a href="#cb50-503"></a><span class="ss">-   </span>atomic vectors are **homogeneous**: all elements within atomic vector must be of the same type</span>
-<span id="cb50-504"><a href="#cb50-504"></a><span class="ss">-   </span>lists can be **heterogeneous**: e.g., one element can be an integer and another element can be character</span>
+<span id="cb50-274"><a href="#cb50-274"></a>::: column</span>
+<span id="cb50-275"><a href="#cb50-275"></a>R packages</span>
+<span id="cb50-276"><a href="#cb50-276"></a></span>
+<span id="cb50-277"><a href="#cb50-277"></a><span class="ss">-   </span>an R &quot;package&quot; (or &quot;library&quot;) is a collection of (related) functions developed by the R community</span>
+<span id="cb50-278"><a href="#cb50-278"></a><span class="ss">-   </span>Examples of R packages:</span>
+<span id="cb50-279"><a href="#cb50-279"></a><span class="ss">    -   </span><span class="in">`tidyverse`</span> package for manipulating and visualizing data</span>
+<span id="cb50-280"><a href="#cb50-280"></a><span class="ss">    -   </span><span class="in">`igraph`</span> package for network analyses</span>
+<span id="cb50-281"><a href="#cb50-281"></a><span class="ss">    -   </span><span class="in">`leaflet`</span> package for mapping</span>
+<span id="cb50-282"><a href="#cb50-282"></a><span class="ss">    -   </span><span class="in">`rvest`</span> package for webscraping</span>
+<span id="cb50-283"><a href="#cb50-283"></a><span class="ss">    -   </span><span class="in">`rtweet`</span> package for streaming and downloading data from Twitter</span>
+<span id="cb50-284"><a href="#cb50-284"></a><span class="ss">-   </span>**All** R packages are free!</span>
+<span id="cb50-285"><a href="#cb50-285"></a>:::</span>
+<span id="cb50-286"><a href="#cb50-286"></a>:::</span>
+<span id="cb50-287"><a href="#cb50-287"></a></span>
+<span id="cb50-288"><a href="#cb50-288"></a><span class="fu">## Why Use RStudio (Pivot)</span></span>
+<span id="cb50-289"><a href="#cb50-289"></a></span>
+<span id="cb50-290"><a href="#cb50-290"></a>::: columns</span>
+<span id="cb50-291"><a href="#cb50-291"></a>::: {.column width=&quot;60%&quot;}</span>
+<span id="cb50-292"><a href="#cb50-292"></a><span class="ss">-   </span>Also free</span>
+<span id="cb50-293"><a href="#cb50-293"></a><span class="ss">-   </span>Basically a GUI for R</span>
+<span id="cb50-294"><a href="#cb50-294"></a><span class="ss">-   </span>Organize files, import data, etc. with ease</span>
+<span id="cb50-295"><a href="#cb50-295"></a><span class="ss">-   </span>RMarkdown, Quarto, and more are powerful tools (they were used to create these slides!)</span>
+<span id="cb50-296"><a href="#cb50-296"></a><span class="ss">-   </span>Lots of new features and support</span>
+<span id="cb50-297"><a href="#cb50-297"></a>:::</span>
+<span id="cb50-298"><a href="#cb50-298"></a></span>
+<span id="cb50-299"><a href="#cb50-299"></a>::: {.column width=&quot;40%&quot;}</span>
+<span id="cb50-302"><a href="#cb50-302"></a><span class="in">```{r}</span></span>
+<span id="cb50-303"><a href="#cb50-303"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/emoriebeck/psc290-data-viz-2022/raw/main/01-week1-intro/02-code/02-images/RStudio-Logo-Flat.png&quot;</span>)</span>
+<span id="cb50-304"><a href="#cb50-304"></a><span class="in">```</span></span>
+<span id="cb50-305"><a href="#cb50-305"></a>:::</span>
+<span id="cb50-306"><a href="#cb50-306"></a>:::</span>
+<span id="cb50-307"><a href="#cb50-307"></a></span>
+<span id="cb50-308"><a href="#cb50-308"></a><span class="fu">## Why Use the `tidyverse`</span></span>
+<span id="cb50-309"><a href="#cb50-309"></a></span>
+<span id="cb50-310"><a href="#cb50-310"></a>::: columns</span>
+<span id="cb50-311"><a href="#cb50-311"></a>::: {.column width=&quot;70%&quot;}</span>
+<span id="cb50-312"><a href="#cb50-312"></a><span class="ss">-   </span>Maintained by RStudio (Pivot)</span>
+<span id="cb50-313"><a href="#cb50-313"></a><span class="ss">-   </span>No one should have to use a for loop to change data from long to wide</span>
+<span id="cb50-314"><a href="#cb50-314"></a><span class="ss">-   </span>Tons of integrated tools for data cleaning, manipulation, transformation, and visualization</span>
+<span id="cb50-315"><a href="#cb50-315"></a><span class="ss">-   </span>Even increasing support for modeling (e.g., <span class="in">`tidymodels`</span>)</span>
+<span id="cb50-316"><a href="#cb50-316"></a>:::</span>
+<span id="cb50-317"><a href="#cb50-317"></a></span>
+<span id="cb50-318"><a href="#cb50-318"></a>::: {.column width=&quot;30%&quot;}</span>
+<span id="cb50-319"><a href="#cb50-319"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-320"><a href="#cb50-320"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/emoriebeck/psc290-data-viz-2022/raw/main/01-week1-intro/02-code/02-images/tidyverse.png&quot;</span>)</span>
+<span id="cb50-321"><a href="#cb50-321"></a><span class="in">```</span></span>
+<span id="cb50-322"><a href="#cb50-322"></a>:::</span>
+<span id="cb50-323"><a href="#cb50-323"></a>:::</span>
+<span id="cb50-324"><a href="#cb50-324"></a></span>
+<span id="cb50-325"><a href="#cb50-325"></a>::: {layout=&quot;[<span class="co">[</span><span class="ot">1,1, 1, 1, 1, 1</span><span class="co">]</span>, <span class="co">[</span><span class="ot">1,1, 1, 1, 1,1</span><span class="co">]</span>]&quot;}</span>
+<span id="cb50-326"><a href="#cb50-326"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-327"><a href="#cb50-327"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/tidyr.png&quot;</span>)</span>
+<span id="cb50-328"><a href="#cb50-328"></a><span class="in">```</span></span>
+<span id="cb50-329"><a href="#cb50-329"></a></span>
+<span id="cb50-330"><a href="#cb50-330"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-331"><a href="#cb50-331"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/stringr.png&quot;</span>)</span>
+<span id="cb50-332"><a href="#cb50-332"></a><span class="in">```</span></span>
+<span id="cb50-333"><a href="#cb50-333"></a></span>
+<span id="cb50-334"><a href="#cb50-334"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-335"><a href="#cb50-335"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/shiny.png&quot;</span>)</span>
+<span id="cb50-336"><a href="#cb50-336"></a><span class="in">```</span></span>
+<span id="cb50-337"><a href="#cb50-337"></a></span>
+<span id="cb50-338"><a href="#cb50-338"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-339"><a href="#cb50-339"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/rmarkdown.png&quot;</span>)</span>
+<span id="cb50-340"><a href="#cb50-340"></a><span class="in">```</span></span>
+<span id="cb50-341"><a href="#cb50-341"></a></span>
+<span id="cb50-342"><a href="#cb50-342"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-343"><a href="#cb50-343"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/quarto.png&quot;</span>)</span>
+<span id="cb50-344"><a href="#cb50-344"></a><span class="in">```</span></span>
+<span id="cb50-345"><a href="#cb50-345"></a></span>
+<span id="cb50-346"><a href="#cb50-346"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-347"><a href="#cb50-347"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/knitr.png&quot;</span>)</span>
+<span id="cb50-348"><a href="#cb50-348"></a><span class="in">```</span></span>
+<span id="cb50-349"><a href="#cb50-349"></a></span>
+<span id="cb50-350"><a href="#cb50-350"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-351"><a href="#cb50-351"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/ggplot2.png&quot;</span>)</span>
+<span id="cb50-352"><a href="#cb50-352"></a><span class="in">```</span></span>
+<span id="cb50-353"><a href="#cb50-353"></a></span>
+<span id="cb50-354"><a href="#cb50-354"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-355"><a href="#cb50-355"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/forcats.png&quot;</span>)</span>
+<span id="cb50-356"><a href="#cb50-356"></a><span class="in">```</span></span>
+<span id="cb50-357"><a href="#cb50-357"></a></span>
+<span id="cb50-358"><a href="#cb50-358"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-359"><a href="#cb50-359"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/dplyr.png&quot;</span>)</span>
+<span id="cb50-360"><a href="#cb50-360"></a><span class="in">```</span></span>
+<span id="cb50-361"><a href="#cb50-361"></a></span>
+<span id="cb50-362"><a href="#cb50-362"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-363"><a href="#cb50-363"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/broom.png&quot;</span>)</span>
+<span id="cb50-364"><a href="#cb50-364"></a><span class="in">```</span></span>
+<span id="cb50-365"><a href="#cb50-365"></a></span>
+<span id="cb50-366"><a href="#cb50-366"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-367"><a href="#cb50-367"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/tibble.png&quot;</span>)</span>
+<span id="cb50-368"><a href="#cb50-368"></a><span class="in">```</span></span>
+<span id="cb50-369"><a href="#cb50-369"></a></span>
+<span id="cb50-370"><a href="#cb50-370"></a><span class="in">```{r, fig.align=&#39;center&#39;}</span></span>
+<span id="cb50-371"><a href="#cb50-371"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/purrr.png&quot;</span>)</span>
+<span id="cb50-372"><a href="#cb50-372"></a><span class="in">```</span></span>
+<span id="cb50-373"><a href="#cb50-373"></a>:::</span>
+<span id="cb50-374"><a href="#cb50-374"></a></span>
+<span id="cb50-375"><a href="#cb50-375"></a><span class="fu">## Why use Quarto</span></span>
+<span id="cb50-376"><a href="#cb50-376"></a></span>
+<span id="cb50-377"><a href="#cb50-377"></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span></span>
+<span id="cb50-378"><a href="#cb50-378"></a></span>
+<span id="cb50-379"><a href="#cb50-379"></a><span class="al">![](quarto.png)</span>{fig-align=&quot;center&quot;} - These slides\</span>
+<span id="cb50-380"><a href="#cb50-380"></a><span class="ss">- </span>The course website\</span>
+<span id="cb50-381"><a href="#cb50-381"></a><span class="ss">- </span>Your homework\</span>
+<span id="cb50-382"><a href="#cb50-382"></a><span class="ss">- </span>All written in Quarto</span>
+<span id="cb50-383"><a href="#cb50-383"></a></span>
+<span id="cb50-384"><a href="#cb50-384"></a><span class="fu">## Some R Basics</span></span>
+<span id="cb50-385"><a href="#cb50-385"></a></span>
+<span id="cb50-386"><a href="#cb50-386"></a><span class="fu">### Executing R commands</span></span>
+<span id="cb50-387"><a href="#cb50-387"></a></span>
+<span id="cb50-388"><a href="#cb50-388"></a>Three ways to execute commands in R</span>
+<span id="cb50-389"><a href="#cb50-389"></a></span>
+<span id="cb50-390"><a href="#cb50-390"></a><span class="ss">1.  </span>Type/copy commands directly into the &quot;console&quot;</span>
+<span id="cb50-391"><a href="#cb50-391"></a><span class="ss">2.  </span><span class="sc">\`</span>code chunks&#39; in RMarkdown (.Rmd files)</span>
+<span id="cb50-392"><a href="#cb50-392"></a><span class="ss">    -   </span>**Cmd/Ctrl + Enter**: execute highlighted line(s) within chunk</span>
+<span id="cb50-393"><a href="#cb50-393"></a><span class="ss">    -   </span>**Cmd/Ctrl + Shift + k**: &quot;knit&quot; entire document</span>
+<span id="cb50-394"><a href="#cb50-394"></a><span class="ss">3.  </span>R scripts (.R files)</span>
+<span id="cb50-395"><a href="#cb50-395"></a><span class="ss">    -   </span>**Cmd/Ctrl + Enter**: execute highlighted line(s)</span>
+<span id="cb50-396"><a href="#cb50-396"></a><span class="ss">    -   </span>**Cmd/Ctrl + Shift + Enter** (without highlighting any lines): run entire script</span>
+<span id="cb50-397"><a href="#cb50-397"></a></span>
+<span id="cb50-398"><a href="#cb50-398"></a><span class="fu">### Assignment</span></span>
+<span id="cb50-399"><a href="#cb50-399"></a></span>
+<span id="cb50-400"><a href="#cb50-400"></a>**Assignment** refers to creating an &quot;object&quot; and assigning values to it</span>
+<span id="cb50-401"><a href="#cb50-401"></a></span>
+<span id="cb50-402"><a href="#cb50-402"></a><span class="ss">-   </span>The object may be a variable, a dataset, a bit of text that reads &quot;la la la&quot;</span>
+<span id="cb50-403"><a href="#cb50-403"></a><span class="ss">-   </span><span class="in">`&lt;-`</span> is the assignment operator</span>
+<span id="cb50-404"><a href="#cb50-404"></a><span class="ss">    -   </span>in other languages <span class="in">`=`</span> is the assignment operator</span>
+<span id="cb50-405"><a href="#cb50-405"></a><span class="ss">-   </span>general syntax:</span>
+<span id="cb50-406"><a href="#cb50-406"></a><span class="ss">    -   </span><span class="in">`object_name &lt;- object_values`</span></span>
+<span id="cb50-407"><a href="#cb50-407"></a><span class="ss">    -   </span>good practice to put a space before and after assignment operator</span>
+<span id="cb50-408"><a href="#cb50-408"></a></span>
+<span id="cb50-409"><a href="#cb50-409"></a><span class="fu">### Objects</span></span>
+<span id="cb50-410"><a href="#cb50-410"></a></span>
+<span id="cb50-411"><a href="#cb50-411"></a>R is an &quot;object-oriented&quot; programming language (like Python, JavaScript). So, what is an &quot;object&quot;?</span>
+<span id="cb50-412"><a href="#cb50-412"></a></span>
+<span id="cb50-413"><a href="#cb50-413"></a><span class="ss">-   </span>formal computer science definitions are confusing because they require knowledge of concepts we haven&#39;t introduced yet</span>
+<span id="cb50-414"><a href="#cb50-414"></a><span class="ss">-   </span>More intuitively, I think objects as anything I assign values to</span>
+<span id="cb50-415"><a href="#cb50-415"></a><span class="ss">    -   </span>For example, below, <span class="in">`a`</span> and <span class="in">`b`</span> are the names of objects I assigned values to</span>
+<span id="cb50-416"><a href="#cb50-416"></a></span>
+<span id="cb50-417"><a href="#cb50-417"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-418"><a href="#cb50-418"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb50-419"><a href="#cb50-419"></a>a</span>
+<span id="cb50-420"><a href="#cb50-420"></a>b <span class="ot">&lt;-</span> <span class="st">&quot;yay!&quot;</span></span>
+<span id="cb50-421"><a href="#cb50-421"></a>b</span>
+<span id="cb50-422"><a href="#cb50-422"></a><span class="in">```</span></span>
+<span id="cb50-423"><a href="#cb50-423"></a></span>
+<span id="cb50-424"><a href="#cb50-424"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Ben Skinner</span><span class="co">](https://www.btskinner.io)</span> says &quot;Objects are like boxes in which we can put things: data, functions, and even other objects.&quot;</span>
+<span id="cb50-425"><a href="#cb50-425"></a></span>
+<span id="cb50-426"><a href="#cb50-426"></a><span class="ss">-   </span>Many commercial statistical software packages (e.g., SPSS, Stata) operate on datasets, which consist of rows of observations and columns of variables</span>
+<span id="cb50-427"><a href="#cb50-427"></a></span>
+<span id="cb50-428"><a href="#cb50-428"></a><span class="ss">-   </span>Usually, these packages can open only one dataset at a time</span>
+<span id="cb50-429"><a href="#cb50-429"></a></span>
+<span id="cb50-430"><a href="#cb50-430"></a><span class="ss">-   </span>By contrast, in R everything is an object and there is no limit to the number of objects R can hold (except memory)</span>
+<span id="cb50-431"><a href="#cb50-431"></a></span>
+<span id="cb50-432"><a href="#cb50-432"></a><span class="fu">### Vectors</span></span>
+<span id="cb50-433"><a href="#cb50-433"></a></span>
+<span id="cb50-434"><a href="#cb50-434"></a>The fundamental data structure in R is the &quot;vector&quot;</span>
+<span id="cb50-435"><a href="#cb50-435"></a></span>
+<span id="cb50-436"><a href="#cb50-436"></a><span class="ss">-   </span>A vector is a collection of values</span>
+<span id="cb50-437"><a href="#cb50-437"></a></span>
+<span id="cb50-438"><a href="#cb50-438"></a><span class="ss">-   </span>The individual values within a vector are called &quot;elements&quot;</span>
+<span id="cb50-439"><a href="#cb50-439"></a></span>
+<span id="cb50-440"><a href="#cb50-440"></a><span class="ss">-   </span>Values in a vector can be numeric, character (e.g., &quot;Apple&quot;), or some other *type*</span>
+<span id="cb50-441"><a href="#cb50-441"></a></span>
+<span id="cb50-442"><a href="#cb50-442"></a><span class="ss">-   </span>Below we use the combine function <span class="in">`c()`</span> to create a numeric vector that contains three elements</span>
+<span id="cb50-443"><a href="#cb50-443"></a></span>
+<span id="cb50-444"><a href="#cb50-444"></a><span class="ss">-   </span>Help file says that <span class="in">`c()`</span> &quot;combines values into a vector or list&quot;</span>
+<span id="cb50-445"><a href="#cb50-445"></a></span>
+<span id="cb50-446"><a href="#cb50-446"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-447"><a href="#cb50-447"></a><span class="co">#?c # to see help file for the c() &quot;combine&quot; function</span></span>
+<span id="cb50-448"><a href="#cb50-448"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">9</span>) <span class="co"># create object called x, which is a vector with three elements </span></span>
+<span id="cb50-449"><a href="#cb50-449"></a><span class="co"># (each an integer)</span></span>
+<span id="cb50-450"><a href="#cb50-450"></a>x <span class="co"># print object x</span></span>
+<span id="cb50-451"><a href="#cb50-451"></a><span class="in">```</span></span>
+<span id="cb50-452"><a href="#cb50-452"></a></span>
+<span id="cb50-453"><a href="#cb50-453"></a>Vector where the elements are characters</span>
+<span id="cb50-454"><a href="#cb50-454"></a></span>
+<span id="cb50-455"><a href="#cb50-455"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-456"><a href="#cb50-456"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;lions&quot;</span>, <span class="st">&quot;tigers&quot;</span>, <span class="st">&quot;bears&quot;</span>, <span class="st">&quot;oh my&quot;</span>) <span class="co"># create object called animals</span></span>
+<span id="cb50-457"><a href="#cb50-457"></a>animals</span>
+<span id="cb50-458"><a href="#cb50-458"></a><span class="in">```</span></span>
+<span id="cb50-459"><a href="#cb50-459"></a></span>
+<span id="cb50-460"><a href="#cb50-460"></a><span class="fu">## EXERCISE</span></span>
+<span id="cb50-461"><a href="#cb50-461"></a></span>
+<span id="cb50-462"><a href="#cb50-462"></a>Either in the R console or within the R markdown file, do the following:</span>
+<span id="cb50-463"><a href="#cb50-463"></a></span>
+<span id="cb50-464"><a href="#cb50-464"></a><span class="ss">1.  </span>Create a vector called <span class="in">`v1`</span> with three elements, where all the elements are numbers. Then print the values.</span>
+<span id="cb50-465"><a href="#cb50-465"></a><span class="ss">2.  </span>Create a vector called <span class="in">`v2`</span> with four elements, where all the elements are characters (i.e., enclosed in single &#39;&#39; or double &quot;&quot; quotes). Then print the values.</span>
+<span id="cb50-466"><a href="#cb50-466"></a><span class="ss">3.  </span>Create a vector called <span class="in">`v3`</span> with five elements, where some elements are numeric and some elements are characters. Then print the values.</span>
+<span id="cb50-467"><a href="#cb50-467"></a></span>
+<span id="cb50-468"><a href="#cb50-468"></a><span class="fu">## Solution to Exercise</span></span>
+<span id="cb50-469"><a href="#cb50-469"></a></span>
+<span id="cb50-470"><a href="#cb50-470"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-471"><a href="#cb50-471"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) </span>
+<span id="cb50-472"><a href="#cb50-472"></a><span class="co"># create a vector called v1 with three elements</span></span>
+<span id="cb50-473"><a href="#cb50-473"></a><span class="co"># all the elements are numbers</span></span>
+<span id="cb50-474"><a href="#cb50-474"></a>v1 <span class="co"># print value</span></span>
+<span id="cb50-475"><a href="#cb50-475"></a><span class="in">```</span></span>
+<span id="cb50-476"><a href="#cb50-476"></a></span>
+<span id="cb50-477"><a href="#cb50-477"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-478"><a href="#cb50-478"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>) </span>
+<span id="cb50-479"><a href="#cb50-479"></a><span class="co"># create a vector called v2 with four elements</span></span>
+<span id="cb50-480"><a href="#cb50-480"></a><span class="co"># all the elements are characters</span></span>
+<span id="cb50-481"><a href="#cb50-481"></a>v2 <span class="co"># print value</span></span>
+<span id="cb50-482"><a href="#cb50-482"></a><span class="in">```</span></span>
+<span id="cb50-483"><a href="#cb50-483"></a></span>
+<span id="cb50-484"><a href="#cb50-484"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-485"><a href="#cb50-485"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>) </span>
+<span id="cb50-486"><a href="#cb50-486"></a><span class="co"># create a vector called v3 with five element</span></span>
+<span id="cb50-487"><a href="#cb50-487"></a><span class="co"># some elements are numeric and some elements are characters</span></span>
+<span id="cb50-488"><a href="#cb50-488"></a>v3 <span class="co"># print value</span></span>
+<span id="cb50-489"><a href="#cb50-489"></a><span class="in">```</span></span>
+<span id="cb50-490"><a href="#cb50-490"></a></span>
+<span id="cb50-491"><a href="#cb50-491"></a><span class="fu">## Formal classification of vectors in R</span></span>
+<span id="cb50-492"><a href="#cb50-492"></a></span>
+<span id="cb50-493"><a href="#cb50-493"></a><span class="ss">-   </span>Here, I introduce the classification of vectors by Grolemund and Wickham</span>
+<span id="cb50-494"><a href="#cb50-494"></a></span>
+<span id="cb50-495"><a href="#cb50-495"></a><span class="ss">-   </span>There are two broad types of vectors</span>
+<span id="cb50-496"><a href="#cb50-496"></a></span>
+<span id="cb50-497"><a href="#cb50-497"></a><span class="ss">1.  </span>**Atomic vectors**. An object that contains elements. Six &quot;types&quot; of atomic vectors:</span>
+<span id="cb50-498"><a href="#cb50-498"></a><span class="ss">    -   </span>**logical**, **integer**, **double**, **character**, **complex**, and **raw**.</span>
+<span id="cb50-499"><a href="#cb50-499"></a><span class="ss">        -   </span>**Integer** and **double** vectors are collectively known as **numeric** vectors.</span>
+<span id="cb50-500"><a href="#cb50-500"></a><span class="ss">2.  </span>**Lists**. Like atomic vectors, lists are objects that contain elements</span>
+<span id="cb50-501"><a href="#cb50-501"></a><span class="ss">    -   </span>elements within a list may be atomic vectors</span>
+<span id="cb50-502"><a href="#cb50-502"></a><span class="ss">    -   </span>elements within a list may also be other lists; that is lists can contain other lists</span>
+<span id="cb50-503"><a href="#cb50-503"></a></span>
+<span id="cb50-504"><a href="#cb50-504"></a>One difference between atomic vectors and lists: **homogeneous** vs. **heterogeneous** elements</span>
 <span id="cb50-505"><a href="#cb50-505"></a></span>
-<span id="cb50-506"><a href="#cb50-506"></a>Problem with this classification:</span>
-<span id="cb50-507"><a href="#cb50-507"></a></span>
-<span id="cb50-508"><a href="#cb50-508"></a><span class="ss">-   </span>Not conceptually intutive</span>
-<span id="cb50-509"><a href="#cb50-509"></a><span class="ss">-   </span>Technically, lists are a type of vector, but people often think of atomic vectors and lists as fundamentally different things</span>
+<span id="cb50-506"><a href="#cb50-506"></a><span class="ss">-   </span>atomic vectors are **homogeneous**: all elements within atomic vector must be of the same type</span>
+<span id="cb50-507"><a href="#cb50-507"></a><span class="ss">-   </span>lists can be **heterogeneous**: e.g., one element can be an integer and another element can be character</span>
+<span id="cb50-508"><a href="#cb50-508"></a></span>
+<span id="cb50-509"><a href="#cb50-509"></a>Problem with this classification:</span>
 <span id="cb50-510"><a href="#cb50-510"></a></span>
-<span id="cb50-511"><a href="#cb50-511"></a>**Classification used by Ben Skinner**:</span>
-<span id="cb50-512"><a href="#cb50-512"></a></span>
-<span id="cb50-513"><a href="#cb50-513"></a><span class="ss">-   </span>data **type**: logical, numeric (integer and double), character, etc.</span>
-<span id="cb50-514"><a href="#cb50-514"></a><span class="ss">-   </span>data **structure**: vector, list, matrix, etc.</span>
+<span id="cb50-511"><a href="#cb50-511"></a><span class="ss">-   </span>Not conceptually intutive</span>
+<span id="cb50-512"><a href="#cb50-512"></a><span class="ss">-   </span>Technically, lists are a type of vector, but people often think of atomic vectors and lists as fundamentally different things</span>
+<span id="cb50-513"><a href="#cb50-513"></a></span>
+<span id="cb50-514"><a href="#cb50-514"></a>**Classification used by Ben Skinner**:</span>
 <span id="cb50-515"><a href="#cb50-515"></a></span>
-<span id="cb50-516"><a href="#cb50-516"></a><span class="fu">## Using R functions</span></span>
-<span id="cb50-517"><a href="#cb50-517"></a></span>
-<span id="cb50-518"><a href="#cb50-518"></a><span class="fu">### What are functions</span></span>
-<span id="cb50-519"><a href="#cb50-519"></a></span>
-<span id="cb50-520"><a href="#cb50-520"></a><span class="ss">-   </span>**Functions** are pre-written bits of code that accomplish some task.</span>
-<span id="cb50-521"><a href="#cb50-521"></a></span>
-<span id="cb50-522"><a href="#cb50-522"></a><span class="ss">-   </span>Functions generally follow three sequential steps:</span>
-<span id="cb50-523"><a href="#cb50-523"></a></span>
-<span id="cb50-524"><a href="#cb50-524"></a><span class="ss">1.  </span>take in an **input** object(s)</span>
-<span id="cb50-525"><a href="#cb50-525"></a><span class="ss">2.  </span>**process** the input.</span>
-<span id="cb50-526"><a href="#cb50-526"></a><span class="ss">3.  </span>**return** (A) a new object or (B) a visualizatoin (e.g., plot)</span>
-<span id="cb50-527"><a href="#cb50-527"></a></span>
-<span id="cb50-528"><a href="#cb50-528"></a><span class="ss">-   </span>For example, <span class="in">`sum()`</span> function calculates sum of elements in a vector</span>
-<span id="cb50-529"><a href="#cb50-529"></a></span>
-<span id="cb50-530"><a href="#cb50-530"></a><span class="ss">1.  </span>**input**. takes in a vector of elements (numeric or logical)</span>
-<span id="cb50-531"><a href="#cb50-531"></a><span class="ss">2.  </span>**processing**. Calculates the sum of elements</span>
-<span id="cb50-532"><a href="#cb50-532"></a><span class="ss">3.  </span>**return**. Returns numeric vector of length=1; value is sum of input vector</span>
-<span id="cb50-533"><a href="#cb50-533"></a></span>
-<span id="cb50-534"><a href="#cb50-534"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-535"><a href="#cb50-535"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
-<span id="cb50-536"><a href="#cb50-536"></a><span class="fu">typeof</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))) <span class="co"># type of object created by sum()</span></span>
-<span id="cb50-537"><a href="#cb50-537"></a><span class="fu">length</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))) <span class="co"># length of object created by sum()</span></span>
-<span id="cb50-538"><a href="#cb50-538"></a><span class="in">```</span></span>
-<span id="cb50-539"><a href="#cb50-539"></a></span>
-<span id="cb50-540"><a href="#cb50-540"></a><span class="fu">### Function syntax</span></span>
-<span id="cb50-541"><a href="#cb50-541"></a></span>
-<span id="cb50-542"><a href="#cb50-542"></a>Components of a function</span>
-<span id="cb50-543"><a href="#cb50-543"></a></span>
-<span id="cb50-544"><a href="#cb50-544"></a><span class="ss">-   </span>function name (e.g., <span class="in">`sum()`</span>, <span class="in">`length()`</span>, <span class="in">`seq()`</span>)</span>
-<span id="cb50-545"><a href="#cb50-545"></a><span class="ss">-   </span>function arguments</span>
-<span id="cb50-546"><a href="#cb50-546"></a><span class="ss">    -   </span>Inputs that the function takes, which determine what function does</span>
-<span id="cb50-547"><a href="#cb50-547"></a><span class="ss">        -   </span>can be vectors, data frames, logical statements, etc.</span>
-<span id="cb50-548"><a href="#cb50-548"></a><span class="ss">    -   </span>In &quot;function call&quot; you specify values to assign to these function arguments</span>
-<span id="cb50-549"><a href="#cb50-549"></a><span class="ss">        -   </span>e.g., <span class="in">`sum(c(1,2,3))`</span></span>
-<span id="cb50-550"><a href="#cb50-550"></a><span class="ss">    -   </span>Separate arguments with a comma <span class="in">`,`</span></span>
-<span id="cb50-551"><a href="#cb50-551"></a><span class="ss">        -   </span>e.g., <span class="in">`seq(10,15)`</span></span>
-<span id="cb50-552"><a href="#cb50-552"></a><span class="ss">-   </span>Example: the sequence function, <span class="in">`seq()`</span></span>
-<span id="cb50-553"><a href="#cb50-553"></a></span>
-<span id="cb50-554"><a href="#cb50-554"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-555"><a href="#cb50-555"></a><span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">15</span>)</span>
-<span id="cb50-556"><a href="#cb50-556"></a><span class="in">```</span></span>
-<span id="cb50-557"><a href="#cb50-557"></a></span>
-<span id="cb50-558"><a href="#cb50-558"></a><span class="fu">### Function syntax: More on function arguments</span></span>
-<span id="cb50-559"><a href="#cb50-559"></a></span>
-<span id="cb50-560"><a href="#cb50-560"></a>Usually, function arguments have names</span>
-<span id="cb50-561"><a href="#cb50-561"></a></span>
-<span id="cb50-562"><a href="#cb50-562"></a><span class="ss">-   </span>e.g., the <span class="in">`seq()`</span> function includes the arguments <span class="in">`from`</span>, <span class="in">`to`</span>, <span class="in">`by`</span></span>
-<span id="cb50-563"><a href="#cb50-563"></a><span class="ss">-   </span>when you call the function, you need to assign values to these arguments; but you usually don&#39;t have to specify the name of the argument</span>
+<span id="cb50-516"><a href="#cb50-516"></a><span class="ss">-   </span>data **type**: logical, numeric (integer and double), character, etc.</span>
+<span id="cb50-517"><a href="#cb50-517"></a><span class="ss">-   </span>data **structure**: vector, list, matrix, etc.</span>
+<span id="cb50-518"><a href="#cb50-518"></a></span>
+<span id="cb50-519"><a href="#cb50-519"></a><span class="fu">## Using R functions</span></span>
+<span id="cb50-520"><a href="#cb50-520"></a></span>
+<span id="cb50-521"><a href="#cb50-521"></a><span class="fu">### What are functions</span></span>
+<span id="cb50-522"><a href="#cb50-522"></a></span>
+<span id="cb50-523"><a href="#cb50-523"></a><span class="ss">-   </span>**Functions** are pre-written bits of code that accomplish some task.</span>
+<span id="cb50-524"><a href="#cb50-524"></a></span>
+<span id="cb50-525"><a href="#cb50-525"></a><span class="ss">-   </span>Functions generally follow three sequential steps:</span>
+<span id="cb50-526"><a href="#cb50-526"></a></span>
+<span id="cb50-527"><a href="#cb50-527"></a><span class="ss">1.  </span>take in an **input** object(s)</span>
+<span id="cb50-528"><a href="#cb50-528"></a><span class="ss">2.  </span>**process** the input.</span>
+<span id="cb50-529"><a href="#cb50-529"></a><span class="ss">3.  </span>**return** (A) a new object or (B) a visualizatoin (e.g., plot)</span>
+<span id="cb50-530"><a href="#cb50-530"></a></span>
+<span id="cb50-531"><a href="#cb50-531"></a><span class="ss">-   </span>For example, <span class="in">`sum()`</span> function calculates sum of elements in a vector</span>
+<span id="cb50-532"><a href="#cb50-532"></a></span>
+<span id="cb50-533"><a href="#cb50-533"></a><span class="ss">1.  </span>**input**. takes in a vector of elements (numeric or logical)</span>
+<span id="cb50-534"><a href="#cb50-534"></a><span class="ss">2.  </span>**processing**. Calculates the sum of elements</span>
+<span id="cb50-535"><a href="#cb50-535"></a><span class="ss">3.  </span>**return**. Returns numeric vector of length=1; value is sum of input vector</span>
+<span id="cb50-536"><a href="#cb50-536"></a></span>
+<span id="cb50-537"><a href="#cb50-537"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-538"><a href="#cb50-538"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb50-539"><a href="#cb50-539"></a><span class="fu">typeof</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))) <span class="co"># type of object created by sum()</span></span>
+<span id="cb50-540"><a href="#cb50-540"></a><span class="fu">length</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))) <span class="co"># length of object created by sum()</span></span>
+<span id="cb50-541"><a href="#cb50-541"></a><span class="in">```</span></span>
+<span id="cb50-542"><a href="#cb50-542"></a></span>
+<span id="cb50-543"><a href="#cb50-543"></a><span class="fu">### Function syntax</span></span>
+<span id="cb50-544"><a href="#cb50-544"></a></span>
+<span id="cb50-545"><a href="#cb50-545"></a>Components of a function</span>
+<span id="cb50-546"><a href="#cb50-546"></a></span>
+<span id="cb50-547"><a href="#cb50-547"></a><span class="ss">-   </span>function name (e.g., <span class="in">`sum()`</span>, <span class="in">`length()`</span>, <span class="in">`seq()`</span>)</span>
+<span id="cb50-548"><a href="#cb50-548"></a><span class="ss">-   </span>function arguments</span>
+<span id="cb50-549"><a href="#cb50-549"></a><span class="ss">    -   </span>Inputs that the function takes, which determine what function does</span>
+<span id="cb50-550"><a href="#cb50-550"></a><span class="ss">        -   </span>can be vectors, data frames, logical statements, etc.</span>
+<span id="cb50-551"><a href="#cb50-551"></a><span class="ss">    -   </span>In &quot;function call&quot; you specify values to assign to these function arguments</span>
+<span id="cb50-552"><a href="#cb50-552"></a><span class="ss">        -   </span>e.g., <span class="in">`sum(c(1,2,3))`</span></span>
+<span id="cb50-553"><a href="#cb50-553"></a><span class="ss">    -   </span>Separate arguments with a comma <span class="in">`,`</span></span>
+<span id="cb50-554"><a href="#cb50-554"></a><span class="ss">        -   </span>e.g., <span class="in">`seq(10,15)`</span></span>
+<span id="cb50-555"><a href="#cb50-555"></a><span class="ss">-   </span>Example: the sequence function, <span class="in">`seq()`</span></span>
+<span id="cb50-556"><a href="#cb50-556"></a></span>
+<span id="cb50-557"><a href="#cb50-557"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-558"><a href="#cb50-558"></a><span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">15</span>)</span>
+<span id="cb50-559"><a href="#cb50-559"></a><span class="in">```</span></span>
+<span id="cb50-560"><a href="#cb50-560"></a></span>
+<span id="cb50-561"><a href="#cb50-561"></a><span class="fu">### Function syntax: More on function arguments</span></span>
+<span id="cb50-562"><a href="#cb50-562"></a></span>
+<span id="cb50-563"><a href="#cb50-563"></a>Usually, function arguments have names</span>
 <span id="cb50-564"><a href="#cb50-564"></a></span>
-<span id="cb50-565"><a href="#cb50-565"></a>::: fragment</span>
-<span id="cb50-566"><a href="#cb50-566"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-567"><a href="#cb50-567"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">10</span>, <span class="at">to=</span><span class="dv">20</span>, <span class="at">by=</span><span class="dv">2</span>)</span>
-<span id="cb50-568"><a href="#cb50-568"></a><span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">2</span>)</span>
-<span id="cb50-569"><a href="#cb50-569"></a><span class="in">```</span></span>
-<span id="cb50-570"><a href="#cb50-570"></a>:::</span>
-<span id="cb50-571"><a href="#cb50-571"></a></span>
-<span id="cb50-572"><a href="#cb50-572"></a>Many function arguments have &quot;default values&quot;, set by whoever wrote the function</span>
-<span id="cb50-573"><a href="#cb50-573"></a></span>
-<span id="cb50-574"><a href="#cb50-574"></a><span class="ss">-   </span>if you don&#39;t specify a value for that argument, the default value is inserted</span>
-<span id="cb50-575"><a href="#cb50-575"></a><span class="ss">-   </span>e.g., partial list of default values for <span class="in">`seq()`</span>: <span class="in">`seq(from=1, to=1, by=1)`</span></span>
+<span id="cb50-565"><a href="#cb50-565"></a><span class="ss">-   </span>e.g., the <span class="in">`seq()`</span> function includes the arguments <span class="in">`from`</span>, <span class="in">`to`</span>, <span class="in">`by`</span></span>
+<span id="cb50-566"><a href="#cb50-566"></a><span class="ss">-   </span>when you call the function, you need to assign values to these arguments; but you usually don&#39;t have to specify the name of the argument</span>
+<span id="cb50-567"><a href="#cb50-567"></a></span>
+<span id="cb50-568"><a href="#cb50-568"></a>::: fragment</span>
+<span id="cb50-569"><a href="#cb50-569"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-570"><a href="#cb50-570"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">10</span>, <span class="at">to=</span><span class="dv">20</span>, <span class="at">by=</span><span class="dv">2</span>)</span>
+<span id="cb50-571"><a href="#cb50-571"></a><span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">2</span>)</span>
+<span id="cb50-572"><a href="#cb50-572"></a><span class="in">```</span></span>
+<span id="cb50-573"><a href="#cb50-573"></a>:::</span>
+<span id="cb50-574"><a href="#cb50-574"></a></span>
+<span id="cb50-575"><a href="#cb50-575"></a>Many function arguments have &quot;default values&quot;, set by whoever wrote the function</span>
 <span id="cb50-576"><a href="#cb50-576"></a></span>
-<span id="cb50-577"><a href="#cb50-577"></a>::: fragment</span>
-<span id="cb50-578"><a href="#cb50-578"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb50-579"><a href="#cb50-579"></a><span class="fu">seq</span>()</span>
-<span id="cb50-580"><a href="#cb50-580"></a><span class="fu">seq</span>(<span class="at">to=</span><span class="dv">10</span>)</span>
-<span id="cb50-581"><a href="#cb50-581"></a><span class="fu">seq</span>(<span class="dv">10</span>) <span class="co"># R assigned value of 10 to &quot;to&quot; rather than &quot;from&quot; or &quot;by&quot;</span></span>
-<span id="cb50-582"><a href="#cb50-582"></a><span class="in">```</span></span>
-<span id="cb50-583"><a href="#cb50-583"></a>:::</span>
-<span id="cb50-584"><a href="#cb50-584"></a></span>
-<span id="cb50-585"><a href="#cb50-585"></a><span class="fu">### Help files for functions</span></span>
-<span id="cb50-586"><a href="#cb50-586"></a></span>
-<span id="cb50-587"><a href="#cb50-587"></a>::: columns</span>
-<span id="cb50-588"><a href="#cb50-588"></a>::: column</span>
-<span id="cb50-589"><a href="#cb50-589"></a>To see help file on a function, type <span class="in">`?function_name`</span> without parentheses</span>
-<span id="cb50-590"><a href="#cb50-590"></a></span>
-<span id="cb50-591"><a href="#cb50-591"></a><span class="in">```{r, eval=FALSE, echo = T}</span></span>
-<span id="cb50-592"><a href="#cb50-592"></a>?sum</span>
-<span id="cb50-593"><a href="#cb50-593"></a>?seq</span>
-<span id="cb50-594"><a href="#cb50-594"></a><span class="in">```</span></span>
-<span id="cb50-595"><a href="#cb50-595"></a>:::</span>
-<span id="cb50-596"><a href="#cb50-596"></a></span>
-<span id="cb50-597"><a href="#cb50-597"></a>::: column</span>
-<span id="cb50-598"><a href="#cb50-598"></a>**Contents of help files**</span>
+<span id="cb50-577"><a href="#cb50-577"></a><span class="ss">-   </span>if you don&#39;t specify a value for that argument, the default value is inserted</span>
+<span id="cb50-578"><a href="#cb50-578"></a><span class="ss">-   </span>e.g., partial list of default values for <span class="in">`seq()`</span>: <span class="in">`seq(from=1, to=1, by=1)`</span></span>
+<span id="cb50-579"><a href="#cb50-579"></a></span>
+<span id="cb50-580"><a href="#cb50-580"></a>::: fragment</span>
+<span id="cb50-581"><a href="#cb50-581"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb50-582"><a href="#cb50-582"></a><span class="fu">seq</span>()</span>
+<span id="cb50-583"><a href="#cb50-583"></a><span class="fu">seq</span>(<span class="at">to=</span><span class="dv">10</span>)</span>
+<span id="cb50-584"><a href="#cb50-584"></a><span class="fu">seq</span>(<span class="dv">10</span>) <span class="co"># R assigned value of 10 to &quot;to&quot; rather than &quot;from&quot; or &quot;by&quot;</span></span>
+<span id="cb50-585"><a href="#cb50-585"></a><span class="in">```</span></span>
+<span id="cb50-586"><a href="#cb50-586"></a>:::</span>
+<span id="cb50-587"><a href="#cb50-587"></a></span>
+<span id="cb50-588"><a href="#cb50-588"></a><span class="fu">### Help files for functions</span></span>
+<span id="cb50-589"><a href="#cb50-589"></a></span>
+<span id="cb50-590"><a href="#cb50-590"></a>::: columns</span>
+<span id="cb50-591"><a href="#cb50-591"></a>::: column</span>
+<span id="cb50-592"><a href="#cb50-592"></a>To see help file on a function, type <span class="in">`?function_name`</span> without parentheses</span>
+<span id="cb50-593"><a href="#cb50-593"></a></span>
+<span id="cb50-594"><a href="#cb50-594"></a><span class="in">```{r, eval=FALSE, echo = T}</span></span>
+<span id="cb50-595"><a href="#cb50-595"></a>?sum</span>
+<span id="cb50-596"><a href="#cb50-596"></a>?seq</span>
+<span id="cb50-597"><a href="#cb50-597"></a><span class="in">```</span></span>
+<span id="cb50-598"><a href="#cb50-598"></a>:::</span>
 <span id="cb50-599"><a href="#cb50-599"></a></span>
-<span id="cb50-600"><a href="#cb50-600"></a><span class="ss">-   </span>**Description**. What the function does</span>
-<span id="cb50-601"><a href="#cb50-601"></a><span class="ss">-   </span>**Usage**. Syntax, including default values for arguments</span>
-<span id="cb50-602"><a href="#cb50-602"></a><span class="ss">-   </span>**Arguments**. Description of function arguments</span>
-<span id="cb50-603"><a href="#cb50-603"></a><span class="ss">-   </span>**Details**. Details and idiosyncracies of about how the function works.</span>
-<span id="cb50-604"><a href="#cb50-604"></a><span class="ss">-   </span>**Value**. What (object) the function &quot;returns&quot;</span>
-<span id="cb50-605"><a href="#cb50-605"></a><span class="ss">    -   </span>e.g., <span class="in">`sum()`</span> returns vector of length 1 whose value is sum of input vector</span>
-<span id="cb50-606"><a href="#cb50-606"></a><span class="ss">-   </span>**References**. Additional reading</span>
-<span id="cb50-607"><a href="#cb50-607"></a><span class="ss">-   </span>**See Also**. Related functions</span>
-<span id="cb50-608"><a href="#cb50-608"></a><span class="ss">-   </span>**Examples**. Examples of function in action</span>
-<span id="cb50-609"><a href="#cb50-609"></a><span class="ss">-   </span>Bottom of help file identifies the package the function comes from</span>
-<span id="cb50-610"><a href="#cb50-610"></a>:::</span>
-<span id="cb50-611"><a href="#cb50-611"></a>:::</span>
-<span id="cb50-612"><a href="#cb50-612"></a></span>
-<span id="cb50-613"><a href="#cb50-613"></a><span class="fu"># Brief Quarto Overview</span></span>
-<span id="cb50-614"><a href="#cb50-614"></a></span>
-<span id="cb50-615"><a href="#cb50-615"></a><span class="fu">## What is Quarto</span></span>
-<span id="cb50-616"><a href="#cb50-616"></a></span>
-<span id="cb50-617"><a href="#cb50-617"></a><span class="ss">-   </span>Quarto documents embed R code, output associated with R code, and text into one document</span>
-<span id="cb50-618"><a href="#cb50-618"></a><span class="ss">-   </span>An Quarto document is a &quot;&#39;Living&#39; document that updates every time you compile <span class="sc">\[</span>&quot;Render&quot;<span class="sc">\]</span> it&quot;</span>
-<span id="cb50-619"><a href="#cb50-619"></a><span class="ss">-   </span>Quarto documents have the extension .qmd</span>
-<span id="cb50-620"><a href="#cb50-620"></a><span class="ss">    -   </span>Can think of them as text files with the extension .qmd rather than .txt</span>
-<span id="cb50-621"><a href="#cb50-621"></a><span class="ss">-   </span>At top of .qmd file you specify the &quot;output&quot; style, which dictates what kind of formatted document will be created</span>
-<span id="cb50-622"><a href="#cb50-622"></a><span class="ss">    -   </span>e.g., <span class="in">`html_document`</span> or <span class="in">`pdf_document`</span> (this document was created with <span class="in">`revealjs`</span>)</span>
-<span id="cb50-623"><a href="#cb50-623"></a><span class="ss">-   </span>When you compile <span class="sc">\[</span>&quot;Render&quot;<span class="sc">\]</span> a .qmd file, the resulting formatted document can be an HTML document, a PDF document, an MS Word document, or many other types</span>
-<span id="cb50-624"><a href="#cb50-624"></a></span>
-<span id="cb50-625"><a href="#cb50-625"></a><span class="fu">## Creating Quarto documents</span></span>
-<span id="cb50-626"><a href="#cb50-626"></a></span>
-<span id="cb50-627"><a href="#cb50-627"></a>**Do this with a partner**</span>
-<span id="cb50-628"><a href="#cb50-628"></a></span>
-<span id="cb50-629"><a href="#cb50-629"></a>Approach for creating a Quarto document.</span>
-<span id="cb50-630"><a href="#cb50-630"></a></span>
-<span id="cb50-631"><a href="#cb50-631"></a><span class="ss">1.  </span>Point-and-click from within RStudio</span>
-<span id="cb50-632"><a href="#cb50-632"></a><span class="ss">    -   </span>Click on *File* \&gt;\&gt; *New File* \&gt;\&gt; *Quarto Document...* \&gt;\&gt; choose *HTML* \&gt;\&gt; click *OK*</span>
-<span id="cb50-633"><a href="#cb50-633"></a><span class="ss">        -   </span>Optional: add title (this is not the file name, just what appears at the top of document)</span>
-<span id="cb50-634"><a href="#cb50-634"></a><span class="ss">        -   </span>Optional: add author name</span>
-<span id="cb50-635"><a href="#cb50-635"></a><span class="ss">    -   </span>Save the .qmd file; *File* \&gt;\&gt; *Save As*</span>
-<span id="cb50-636"><a href="#cb50-636"></a><span class="ss">        -   </span>Any file name</span>
-<span id="cb50-637"><a href="#cb50-637"></a><span class="ss">        -   </span>Recommend you save it in same folder you saved this lecture</span>
-<span id="cb50-638"><a href="#cb50-638"></a><span class="ss">    -   </span>&quot;Render&quot; the entire .qmd file</span>
-<span id="cb50-639"><a href="#cb50-639"></a><span class="ss">        -   </span>Point-and-click OR shortcut: **Cmd/Ctrl + Shift + k**</span>
-<span id="cb50-640"><a href="#cb50-640"></a></span>
-<span id="cb50-641"><a href="#cb50-641"></a><span class="fu">## Creating and Formatting Quarto Documents</span></span>
-<span id="cb50-642"><a href="#cb50-642"></a></span>
-<span id="cb50-643"><a href="#cb50-643"></a>Take a few minutes and have you peruse the <span class="co">[</span><span class="ot">Quarto site</span><span class="co">](https://quarto.org/docs/get-started/hello/rstudio.html)</span> to build familiarity (I still access it all the time when I forget how to do specific things)</span>
-<span id="cb50-644"><a href="#cb50-644"></a></span>
-<span id="cb50-645"><a href="#cb50-645"></a>I especially want you to take some time to peruse documents on YAML headers:</span>
-<span id="cb50-646"><a href="#cb50-646"></a></span>
-<span id="cb50-647"><a href="#cb50-647"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">HTML documents</span><span class="co">](https://quarto.org/docs/reference/formats/html.html)</span></span>
-<span id="cb50-648"><a href="#cb50-648"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">PDF documents</span><span class="co">](https://quarto.org/docs/reference/formats/pdf.html)</span></span>
-<span id="cb50-649"><a href="#cb50-649"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Word documents</span><span class="co">](https://quarto.org/docs/reference/formats/docx.html)</span></span>
-<span id="cb50-650"><a href="#cb50-650"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Webstes</span><span class="co">](https://quarto.org/docs/reference/projects/websites.html)</span></span>
-<span id="cb50-651"><a href="#cb50-651"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">RevealJS slides</span><span class="co">](https://quarto.org/docs/reference/formats/presentations/revealjs.html)</span></span>
-<span id="cb50-652"><a href="#cb50-652"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Beamer slides</span><span class="co">](https://quarto.org/docs/reference/formats/presentations/beamer.html)</span></span>
-<span id="cb50-653"><a href="#cb50-653"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Powerpoint Slides</span><span class="co">](https://quarto.org/docs/reference/formats/presentations/pptx.html)</span></span>
-<span id="cb50-654"><a href="#cb50-654"></a></span>
-<span id="cb50-655"><a href="#cb50-655"></a><span class="fu"># Course Reminders</span></span>
-<span id="cb50-656"><a href="#cb50-656"></a></span>
-<span id="cb50-657"><a href="#cb50-657"></a><span class="ss">-   </span>Problem set 1 due next Monday at 12:01 AM (grace period until 9 AM)</span>
-<span id="cb50-658"><a href="#cb50-658"></a><span class="ss">-   </span>Make sure to check out the readings</span>
-<span id="cb50-659"><a href="#cb50-659"></a><span class="ss">-   </span>There are exercises at the end that can be helpful to do. You can even download the directory of the bookdown/quarto book from GitHub (link in book)</span>
-<span id="cb50-660"><a href="#cb50-660"></a><span class="ss">-   </span>Next time:</span>
-<span id="cb50-661"><a href="#cb50-661"></a><span class="ss">    -   </span>Bring your data, ideally loaded into R (or at a piece of it is)</span>
-<span id="cb50-662"><a href="#cb50-662"></a><span class="ss">    -   </span>Part 1: Reproducibility and Using Workflows to Reflect Your Values</span>
-<span id="cb50-663"><a href="#cb50-663"></a><span class="ss">    -   </span>Part 2: Data Manipulation: <span class="in">`dplyr`</span></span>
+<span id="cb50-600"><a href="#cb50-600"></a>::: column</span>
+<span id="cb50-601"><a href="#cb50-601"></a>**Contents of help files**</span>
+<span id="cb50-602"><a href="#cb50-602"></a></span>
+<span id="cb50-603"><a href="#cb50-603"></a><span class="ss">-   </span>**Description**. What the function does</span>
+<span id="cb50-604"><a href="#cb50-604"></a><span class="ss">-   </span>**Usage**. Syntax, including default values for arguments</span>
+<span id="cb50-605"><a href="#cb50-605"></a><span class="ss">-   </span>**Arguments**. Description of function arguments</span>
+<span id="cb50-606"><a href="#cb50-606"></a><span class="ss">-   </span>**Details**. Details and idiosyncracies of about how the function works.</span>
+<span id="cb50-607"><a href="#cb50-607"></a><span class="ss">-   </span>**Value**. What (object) the function &quot;returns&quot;</span>
+<span id="cb50-608"><a href="#cb50-608"></a><span class="ss">    -   </span>e.g., <span class="in">`sum()`</span> returns vector of length 1 whose value is sum of input vector</span>
+<span id="cb50-609"><a href="#cb50-609"></a><span class="ss">-   </span>**References**. Additional reading</span>
+<span id="cb50-610"><a href="#cb50-610"></a><span class="ss">-   </span>**See Also**. Related functions</span>
+<span id="cb50-611"><a href="#cb50-611"></a><span class="ss">-   </span>**Examples**. Examples of function in action</span>
+<span id="cb50-612"><a href="#cb50-612"></a><span class="ss">-   </span>Bottom of help file identifies the package the function comes from</span>
+<span id="cb50-613"><a href="#cb50-613"></a>:::</span>
+<span id="cb50-614"><a href="#cb50-614"></a>:::</span>
+<span id="cb50-615"><a href="#cb50-615"></a></span>
+<span id="cb50-616"><a href="#cb50-616"></a><span class="fu"># Brief Quarto Overview</span></span>
+<span id="cb50-617"><a href="#cb50-617"></a></span>
+<span id="cb50-618"><a href="#cb50-618"></a><span class="fu">## What is Quarto</span></span>
+<span id="cb50-619"><a href="#cb50-619"></a></span>
+<span id="cb50-620"><a href="#cb50-620"></a><span class="ss">-   </span>Quarto documents embed R code, output associated with R code, and text into one document</span>
+<span id="cb50-621"><a href="#cb50-621"></a><span class="ss">-   </span>An Quarto document is a &quot;&#39;Living&#39; document that updates every time you compile <span class="sc">\[</span>&quot;Render&quot;<span class="sc">\]</span> it&quot;</span>
+<span id="cb50-622"><a href="#cb50-622"></a><span class="ss">-   </span>Quarto documents have the extension .qmd</span>
+<span id="cb50-623"><a href="#cb50-623"></a><span class="ss">    -   </span>Can think of them as text files with the extension .qmd rather than .txt</span>
+<span id="cb50-624"><a href="#cb50-624"></a><span class="ss">-   </span>At top of .qmd file you specify the &quot;output&quot; style, which dictates what kind of formatted document will be created</span>
+<span id="cb50-625"><a href="#cb50-625"></a><span class="ss">    -   </span>e.g., <span class="in">`html_document`</span> or <span class="in">`pdf_document`</span> (this document was created with <span class="in">`revealjs`</span>)</span>
+<span id="cb50-626"><a href="#cb50-626"></a><span class="ss">-   </span>When you compile <span class="sc">\[</span>&quot;Render&quot;<span class="sc">\]</span> a .qmd file, the resulting formatted document can be an HTML document, a PDF document, an MS Word document, or many other types</span>
+<span id="cb50-627"><a href="#cb50-627"></a></span>
+<span id="cb50-628"><a href="#cb50-628"></a><span class="fu">## Creating Quarto documents</span></span>
+<span id="cb50-629"><a href="#cb50-629"></a></span>
+<span id="cb50-630"><a href="#cb50-630"></a>**Do this with a partner**</span>
+<span id="cb50-631"><a href="#cb50-631"></a></span>
+<span id="cb50-632"><a href="#cb50-632"></a>Approach for creating a Quarto document.</span>
+<span id="cb50-633"><a href="#cb50-633"></a></span>
+<span id="cb50-634"><a href="#cb50-634"></a><span class="ss">1.  </span>Point-and-click from within RStudio</span>
+<span id="cb50-635"><a href="#cb50-635"></a><span class="ss">    -   </span>Click on *File* \&gt;\&gt; *New File* \&gt;\&gt; *Quarto Document...* \&gt;\&gt; choose *HTML* \&gt;\&gt; click *OK*</span>
+<span id="cb50-636"><a href="#cb50-636"></a><span class="ss">        -   </span>Optional: add title (this is not the file name, just what appears at the top of document)</span>
+<span id="cb50-637"><a href="#cb50-637"></a><span class="ss">        -   </span>Optional: add author name</span>
+<span id="cb50-638"><a href="#cb50-638"></a><span class="ss">    -   </span>Save the .qmd file; *File* \&gt;\&gt; *Save As*</span>
+<span id="cb50-639"><a href="#cb50-639"></a><span class="ss">        -   </span>Any file name</span>
+<span id="cb50-640"><a href="#cb50-640"></a><span class="ss">        -   </span>Recommend you save it in same folder you saved this lecture</span>
+<span id="cb50-641"><a href="#cb50-641"></a><span class="ss">    -   </span>&quot;Render&quot; the entire .qmd file</span>
+<span id="cb50-642"><a href="#cb50-642"></a><span class="ss">        -   </span>Point-and-click OR shortcut: **Cmd/Ctrl + Shift + k**</span>
+<span id="cb50-643"><a href="#cb50-643"></a></span>
+<span id="cb50-644"><a href="#cb50-644"></a><span class="fu">## Creating and Formatting Quarto Documents</span></span>
+<span id="cb50-645"><a href="#cb50-645"></a></span>
+<span id="cb50-646"><a href="#cb50-646"></a>Take a few minutes and have you peruse the <span class="co">[</span><span class="ot">Quarto site</span><span class="co">](https://quarto.org/docs/get-started/hello/rstudio.html)</span> to build familiarity (I still access it all the time when I forget how to do specific things)</span>
+<span id="cb50-647"><a href="#cb50-647"></a></span>
+<span id="cb50-648"><a href="#cb50-648"></a>I especially want you to take some time to peruse documents on YAML headers:</span>
+<span id="cb50-649"><a href="#cb50-649"></a></span>
+<span id="cb50-650"><a href="#cb50-650"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">HTML documents</span><span class="co">](https://quarto.org/docs/reference/formats/html.html)</span></span>
+<span id="cb50-651"><a href="#cb50-651"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">PDF documents</span><span class="co">](https://quarto.org/docs/reference/formats/pdf.html)</span></span>
+<span id="cb50-652"><a href="#cb50-652"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Word documents</span><span class="co">](https://quarto.org/docs/reference/formats/docx.html)</span></span>
+<span id="cb50-653"><a href="#cb50-653"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Webstes</span><span class="co">](https://quarto.org/docs/reference/projects/websites.html)</span></span>
+<span id="cb50-654"><a href="#cb50-654"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">RevealJS slides</span><span class="co">](https://quarto.org/docs/reference/formats/presentations/revealjs.html)</span></span>
+<span id="cb50-655"><a href="#cb50-655"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Beamer slides</span><span class="co">](https://quarto.org/docs/reference/formats/presentations/beamer.html)</span></span>
+<span id="cb50-656"><a href="#cb50-656"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Powerpoint Slides</span><span class="co">](https://quarto.org/docs/reference/formats/presentations/pptx.html)</span></span>
+<span id="cb50-657"><a href="#cb50-657"></a></span>
+<span id="cb50-658"><a href="#cb50-658"></a><span class="fu"># Course Reminders</span></span>
+<span id="cb50-659"><a href="#cb50-659"></a></span>
+<span id="cb50-660"><a href="#cb50-660"></a><span class="ss">-   </span>Problem set 1 due next Monday at 12:01 AM (grace period until 9 AM)</span>
+<span id="cb50-661"><a href="#cb50-661"></a><span class="ss">-   </span>Make sure to check out the readings</span>
+<span id="cb50-662"><a href="#cb50-662"></a><span class="ss">-   </span>There are exercises at the end that can be helpful to do. You can even download the directory of the bookdown/quarto book from GitHub (link in book)</span>
+<span id="cb50-663"><a href="#cb50-663"></a><span class="ss">-   </span>Next time:</span>
+<span id="cb50-664"><a href="#cb50-664"></a><span class="ss">    -   </span>Bring your data, ideally loaded into R (or at a piece of it is)</span>
+<span id="cb50-665"><a href="#cb50-665"></a><span class="ss">    -   </span>Part 1: Reproducibility and Using Workflows to Reflect Your Values</span>
+<span id="cb50-666"><a href="#cb50-666"></a><span class="ss">    -   </span>Part 2: Data Manipulation: <span class="in">`dplyr`</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

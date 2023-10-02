@@ -42,11 +42,37 @@ library(tidyverse)
 -   Fundamentals of R
 -   Brief Quarto Overview
 
-## Course Goals & Learning Outcomes
+## Why Am I Teaching This Course?
 
-1.  Understand the cognitive and psychological underpinnings of perceiving data visualization.
-2.  Identify good data visualizations and describe what makes them good.
-3.  Produce data visualizations according to types of questions, data, and more, with a particular emphasis on building a toolbox that you can carry into your own research.
+1.  Why me?
+2.  Why you?
+
+## Why Me?
+
+Early Career:
+
+-   My late undergrad / early grad career was mostly characterized by my advisors going on sabbatical / paternity leave and me teaching myself how to program when they did
+
+## Why Me?
+
+-   My work uses (1) messy timeseries from EMA / ESM and (2) messy secondary data from longitudinal panel studies
+
+-   I had some basic CS training that made this much, much easier
+
+## Why Me?
+
+-   I spent graduate school writing R tutorials and teaching R workshops
+
+-   This class let's me bring those together, coupling them what I've learned project management
+
+## Why You? 
+
+### **Learning Outcomes**
+
+After successful completion of this course, you will be able to:\
+1.    Build your own research workflow that can be ported to future projects. \
+2.    Learn new programming skills that will help you efficiently, accurately, and deliberately clean and manage your data.  \
+3.    Create a bank of code and tools that can be used for a variety of types of research. 
 
 ## Course Expectations
 
@@ -148,10 +174,12 @@ library(tidyverse)
 
 ## Goals for Today
 
+::: nonincremental
 -   ~~Course Overview~~
 -   **What Is a Workflow?**
 -   Fundamentals of R
 -   Brief Quarto Overview
+:::
 
 ## Workflow
 
@@ -175,6 +203,7 @@ library(tidyverse)
 
 ::: columns
 ::: column
+::: fragment
 **Example: New Data Collection**\
 1. Conceptualization\
 2. Funding acquisition\
@@ -188,8 +217,10 @@ library(tidyverse)
 10. Revision (and possibly crying)\
 11. ACCEPTANCE
 :::
+:::
 
 ::: column
+::: fragment
 **Example: Secondary Data**\
 1. Conceptualization\
 2. Data search\
@@ -204,13 +235,15 @@ library(tidyverse)
 11. ACCEPTANCE
 :::
 :::
+:::
 
 ## How Do I Build a Workflow? {.smaller}
 
-### Worflows Are Hierarchical: Data Cleaning Steps
+### Workflows Are Hierarchical: Data Cleaning Steps
 
 ::: columns
 ::: column
+::: fragment
 **Experimental Data**
 
 1\. Gather all data files\
@@ -223,8 +256,10 @@ library(tidyverse)
 8. Correlations and visualization\
 9. Restructure data for analyses
 :::
+:::
 
 ::: column
+::: fragment
 **Secondary Data**
 
 1\. Gather all data files\
@@ -237,6 +272,7 @@ library(tidyverse)
 7. Recheck all descriptives\
 8. Correlations and visualization\
 9. Restructure data for analyses
+:::
 :::
 :::
 
@@ -268,12 +304,14 @@ In this class, we will focus on building tools for:
 
 ## Goals for Today
 
+::: nonincremental
 -   ~~Course Overview~~
 -   ~~What Is a Workflow?~~
 -   **Fundamentals of R**
 -   Brief Quarto Overview
+:::
 
-## What is R? Why R?
+## What is R? Why R? {.smaller}
 
 -   An "open source" programming language and software that provide collections of interrelated "functions"
 -   "open source" means that *R* is free and created by the user community. The user community can modify basic things about *R* and add new capabilities to what R can do the user community can modify R and
@@ -285,7 +323,7 @@ In this class, we will focus on building tools for:
 
 ::: columns
 ::: column
-Base R
+**Base R**
 
 -   When you install R, you automatically install the ["Base R"](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) set of functions
 -   Example of a few of the functions in in Base R:
@@ -295,7 +333,7 @@ Base R
 :::
 
 ::: column
-R packages
+**R packages**
 
 -   an R "package" (or "library") is a collection of (related) functions developed by the R community
 -   Examples of R packages:
@@ -441,12 +479,14 @@ R is an "object-oriented" programming language (like Python, JavaScript). So, wh
 -   More intuitively, I think objects as anything I assign values to
     -   For example, below, `a` and `b` are the names of objects I assigned values to
 
+::: fragment
 ```{r, echo = T}
 a <- 5
 a
 b <- "yay!"
 b
 ```
+:::
 
 ## Objects
 
@@ -474,21 +514,25 @@ The fundamental data structure in R is the "vector"
 
 -   Help file says that `c()` "combines values into a vector or list"
 
+::: fragment
 ```{r, echo = T}
 #?c # to see help file for the c() "combine" function
 x <- c(4, 7, 9) # create object called x, which is a vector with three elements 
 # (each an integer)
 x # print object x
 ```
+:::
 
 ## Vectors
 
 Vector where the elements are characters
 
+::: fragment
 ```{r, echo = T}
 animals <- c("lions", "tigers", "bears", "oh my") # create object called animals
 animals
 ```
+:::
 
 ## EXERCISE
 
@@ -523,8 +567,6 @@ v3 # print value
 
 ## Formal classification of vectors in R
 
--   Here, I introduce the classification of vectors by Grolemund and Wickham
-
 -   There are two broad types of vectors
 
 1.  **Atomic vectors**. An object that contains elements. Six "types" of atomic vectors:
@@ -543,15 +585,12 @@ One difference between atomic vectors and lists: **homogeneous** vs. **heterogen
 
 ## Formal classification of vectors in R
 
-Problem with this classification:
-
--   Not conceptually intutive
--   Technically, lists are a type of vector, but people often think of atomic vectors and lists as fundamentally different things
-
-**Classification used by Ben Skinner**:
-
--   data **type**: logical, numeric (integer and double), character, etc.
--   data **structure**: vector, list, matrix, etc.
+-   **Problem with this classification:**
+    -   Not conceptually intuitive
+    -   Technically, lists are a type of vector, but people often think of atomic vectors and lists as fundamentally different things
+-   **Classification used by Ben Skinner**:
+    -   data **type**: logical, numeric (integer and double), character, etc.
+    -   data **structure**: vector, list, matrix, etc.
 
 # Using R functions
 
@@ -573,13 +612,15 @@ Problem with this classification:
 2.  **processing**. Calculates the sum of elements
 3.  **return**. Returns numeric vector of length=1; value is sum of input vector
 
+::: fragment
 ```{r, echo = T}
 sum(c(1,2,3))
 typeof(sum(c(1,2,3))) # type of object created by sum()
 length(sum(c(1,2,3))) # length of object created by sum()
 ```
+:::
 
-## Function syntax
+## Function syntax {.smaller}
 
 Components of a function
 
@@ -593,9 +634,11 @@ Components of a function
         -   e.g., `seq(10,15)`
 -   Example: the sequence function, `seq()`
 
+::: fragment
 ```{r, echo = T}
 seq(10,15)
 ```
+:::
 
 ## Function syntax: More on function arguments
 
@@ -626,7 +669,7 @@ seq(10) # R assigned value of 10 to "to" rather than "from" or "by"
 ```
 :::
 
-## Help files for functions
+## Help files for functions {.smaller}
 
 ::: columns
 ::: column
@@ -707,30 +750,33 @@ I especially want you to take some time to peruse documents on YAML headers:
 
 -   Depending on time, I'll either take us to RStudio and walk you through some steps and tricks hands on, or we'll call it a day go to the BBQ
 
+## Goals for Today {.smaller}
 
-## Goals for Today
-
-::::{.columns}
-:::{.column}
-
+::: columns
+::: column
 ::: nonincremental
 -   ~~Course Overview~~
 -   ~~What Is a Workflow?~~
 -   ~~Fundamentals of R~~
 -   ~~Brief Quarto Overview~~
 :::
-
 :::
-:::{.column}
 
-Reminders: 
-- Problem set 1 due next Monday at 12:01 AM (grace period until 9 AM) 
-- Make sure to check out the readings
-- There are exercises at the end that can be helpful to do. You can even download the directory of the bookdown/quarto book from GitHub (link in book)
-- Next time: 
-  - Bring your data, ideally loaded into R (or at a piece of it is)
-  - Part 1: Reproducibility and Using Workflows to Reflect Your Values
-  - Part 2: Data Manipulation: `dplyr`
+::: column
+Reminders:
 
+-   Problem set 1 due next Monday at 12:01 AM (grace period until 9 AM)
+
+-   Make sure to check out the readings
+
+    -   There are exercises at the end that can be helpful to do. You can even download the directory of the bookdown/quarto book from GitHub (link in book)
+
+-   Next time:
+
+    -   Bring your data, ideally loaded into R (or at a piece of it is)
+
+    -   Part 1: Reproducibility and Using Workflows to Reflect Your Values
+
+    -   Part 2: Data Manipulation: `dplyr`
 :::
-::::
+:::
