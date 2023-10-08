@@ -1,5 +1,5 @@
 ---
-title: "Week 2"
+title: "Week 2 Slides"
 ---
 
 Welcome to Week 2! This week, we'll talk about R Projects, Reproducibility, and `dplyr`.
