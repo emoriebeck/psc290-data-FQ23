@@ -26,7 +26,7 @@ website:
       contents:
         - 01-week1-slides.qmd
         - 01-week1-workbook.qmd
-        # - 02-week2.qmd
+        - 02-week2-slides.qmd
         
     - id: assignments
       title: "Problem Sets"

@@ -2,7 +2,7 @@
 title: "Week 2"
 ---
 
-Welcome to Week 1! This week, we're just getting started.
+Welcome to Week 2! This week, we'll talk about R Projects, Reproducibility, and `dplyr`.
 
 <div>
 

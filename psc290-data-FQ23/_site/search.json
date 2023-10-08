@@ -845,5 +845,12 @@
     "title": "Data Cleaning and Management (Fall 2023)",
     "section": "Course Description",
     "text": "Course Description\n\n\n\nIn graduate education, training on research (and statistical) methods and conceptual frameworks far outpaces training on key technical skills that underpin all research, empirical or otherwise. On average, researchers spend about 80% of their (analytic) time on data cleaning, but we spend comparatively little teaching those skills. This course aims to fill that gap by helping researchers to (1) build their reproducible research workflow and (2) improve their data cleaning and general statistical programming skills. To that end, each session will be split to address each of these goals, with the beginning of class focused on conceptual ideas about best practices in building a workflow and the latter half focused on technical training on programming and cleaning data in R. This course will be set up as a “bring your own data” course to allow students to anticipate specific challenges that face different types of research. \nThis course is not a “pure” data science (i.e. we won’t be working with databases, etc.) because it focuses on the skills and tools most common within the social sciences. Science is a collaborative enterprise, and these tools are widely used among many social scientists, which promotes an open, equitable workflow by using tools available and most commonly used by the majority of our peers."
+  },
+  {
+    "objectID": "02-week2-slides.html",
+    "href": "02-week2-slides.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "Welcome to Week 2! This week, we’ll talk about R Projects, Reproducibility, and dplyr."
   }
 ]
