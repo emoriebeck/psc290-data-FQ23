@@ -45,146 +45,137 @@ library(plyr)
 library(tidyverse)
 ```
 
-## Overview  
+## Overview
 
-Today's class outline:  
-- Welcome back, questions on homework (10-15 minutes)  
+Today's class outline:\
+- Welcome back, questions on homework (10-15 minutes)
 
-- Reproducibility and Your Personal Values (10 minutes)  
+-   Reproducibility and Your Personal Values (10 minutes)
 
-- Building a Reproducible Workflow Using Projects (45 miuntes)  
+-   Building a Reproducible Workflow Using Projects (45 miuntes)
 
-- Data Transformations using `dplyr` (45 minutes)  
+-   Data Transformations using `dplyr` (45 minutes)
 
-# Reproducibility and Your Personal Values  
+# Reproducibility and Your Personal Values
 
-## Why reproducibility AND values?  
+## Why reproducibility AND values?
 
-- The definition of reproducibility is somewhat debated  
-  * "'Reproducibility' refers to instances in which the original researcher's data and computer codes are used to regenerate the results"  
-  * "'Reproducibility' refers to independent researchers arriving at the same results using their own data and methods"  
-- But regardless of what definition you choose, reproducibility starts with a commitment in research to be 
+-   The definition of reproducibility is somewhat debated
+    -   "'Reproducibility' refers to instances in which the original researcher's data and computer codes are used to regenerate the results"\
+    -   "'Reproducibility' refers to independent researchers arriving at the same results using their own data and methods"\
+-   But regardless of what definition you choose, reproducibility starts with a commitment in research to be
 
-::::{.columns}
-:::{.column}
-
-  * clear  
-  * transparent  
-  
+::: columns
+::: column
+-   clear\
+-   transparent
 :::
-:::{.column}
 
-  * honest  
-  * thorough 
-
+::: column
+-   honest\
+-   thorough
 :::
-::::
+:::
 
-## Why reproducibility AND values?  
+## Why reproducibility AND values?
 
-- Reproducibility is *ethical*.  
+-   Reproducibility is *ethical*.
 
-- When I post a project, I pour over my code for hours, adding comments, rendering to multiple formats, trying to flag locations in online materials in the mansucript, etc. 
+-   When I post a project, I pour over my code for hours, adding comments, rendering to multiple formats, trying to flag locations in online materials in the mansucript, etc.
 
-- I am trying to prevent errors, but I am also trying to make sure that other people know what I did, especially if I did make errors  
+-   I am trying to prevent errors, but I am also trying to make sure that other people know what I did, especially if I did make errors
 
-## Why reproducibility AND values?  
+## Why reproducibility AND values?
 
-- Reproducible research is also *equitable.* 
+-   Reproducible research is also *equitable.*
 
-- A reproducible research workflow can be downloaded by another person as a starting point, providing tools to other researchers who may not have the same access to education and resources as you 
+-   A reproducible research workflow can be downloaded by another person as a starting point, providing tools to other researchers who may not have the same access to education and resources as you
 
-## Where should we reproducible? 
+## Where should we reproducible?
 
-- Planning 
-  * Study planning and design  
-  * Lab Protocols   
-  * Codebooks  
-  * etc.  
-- Analyses  
-  * Scripting  
-  * Communication  
-  * etc.  
+-   Planning
+    -   Study planning and design\
+    -   Lab Protocols\
+    -   Codebooks\
+    -   etc.\
+-   Analyses
+    -   Scripting\
+    -   Communication\
+    -   etc.
 
-## Aspects of Reproducibility 
+## Aspects of Reproducibility
 
-- Data within files should be 'tidy' (next week -- `tidyr`)
-- Project based approach (today)
-- Consistency: naming, space, style (today)
-- Documentation: commenting and README (today)
-- Literate programming e.g. Rmarkdown (every day!)
+-   Data within files should be 'tidy' (next week -- `tidyr`)
+-   Project based approach (today)
+-   Consistency: naming, space, style (today)
+-   Documentation: commenting and README (today)
+-   Literate programming e.g. Rmarkdown (every day!)
 
-
-# Building a Reproducible Workflow Using Projects 
+# Building a Reproducible Workflow Using Projects
 
 ## Reproducible Workflow
 
 A reproducible workflow is *organized*. What does it mean to be be organized? At least:
 
-* Use a project based approach, e.g., RStudio project or similar  
-* Have a hierarchical folder structure  
-* Have a consistent and informative naming system that 'plays nice'   
-* Document code with comments and analyses with README  
+-   Use a project based approach, e.g., RStudio project or similar\
+-   Have a hierarchical folder structure\
+-   Have a consistent and informative naming system that 'plays nice'\
+-   Document code with comments and analyses with README
 
-:::{.fragment}
+::: fragment
 More advanced (later in the class)
 :::
 
-* Generalize with functions and packages
-* version control  
-<!-- * [Pipeline and workflow tools](https://github.com/pditommaso/awesome-pipeline)  -->
+-   Generalize with functions and packages
+-   version control\
+    <!-- * [Pipeline and workflow tools](https://github.com/pditommaso/awesome-pipeline)  -->
 
-## What is a project? 
+## What is a project?
 
-::::{.columns}
-:::{.column}
+::: columns
+::: column
+-   A project is a discrete piece of work which has a number of files associated with it such as the data and scripts for an analysis and the production reports.
 
-- A project is a discrete piece of work which has a number of files associated with it such as the data and scripts for an analysis and the production reports.
-
-- Using a project-oriented workflow means to have a hierarchical folder structure with everything needed to reproduce an analysis.
-
+-   Using a project-oriented workflow means to have a hierarchical folder structure with everything needed to reproduce an analysis.
 :::
-:::{.column}
 
-:::{.fragment}
+::: column
+::: fragment
 One research project might have several organizational projects associated with it, for example:
 
-* data files and metadata (which may be made into a package) 
-* preregistration
-* analysis and reporting 
-* a package developed for the analysis 
-* an app for allowing data to be explored by others 
-
+-   data files and metadata (which may be made into a package)
+-   preregistration
+-   analysis and reporting
+-   a package developed for the analysis
+-   an app for allowing data to be explored by others
 :::
 :::
-::::
-
-## Example
-
-::::{.columns}
-:::{.column}
-
-Good Workflows are:  
-
-* structured  
-* systematic  
-* repeatable  
-
-:::{.fragment}
-**Naming** 
 :::
 
-* human and machine readable  
-  * no spaces  
-  * use snake/kebab case  
-  * ordering: numbers (zero left padded), dates  
-  * file extensions
+## Example {.smaller}
 
+::: columns
+::: column
+Good Workflows are:
+
+-   structured\
+-   systematic\
+-   repeatable
+
+::: fragment
+**Naming**
 :::
-:::{.column}
-:::{.fragment}
 
-```
+-   human and machine readable
+    -   no spaces\
+    -   use snake/kebab case\
+    -   ordering: numbers (zero left padded), dates\
+    -   file extensions
+:::
+
+::: column
+::: fragment
+```         
 -- ipcs_data_2019
    |__ipcs_data_2019.Rproj
    |__data
@@ -221,136 +212,151 @@ Good Workflows are:
       |__03_models.Rmd
       |__04_summary.Rmd
 ```
-
 :::
 :::
-::::
+:::
 
-## What is a path?
+## What is a path (Hierarchical File Structure)?
 
 A path gives the address - or location - of a filesystem object, such as a file or directory.
 
-* Paths appear in the address bar of your browser or file explorer.
-* We need to know a file path whenever we want to read, write or refer to a file using code rather than interactively pointing and clicking to navigate.
-* A path can be **absolute** or **relative**
-  * absolute = whole path from root
-  * relative = path from current directory
-
-
-## Absolute paths
-
-- An Absolute path is given from the "root directory" of the object. 
-
-- The root directory of a file system is the first or top directory in the hierarchy.
-
-- For example, `C:\` or `M:\` on windows or `/` on a Mac which is displayed as Macintosh HD in Finder.
+-   Paths appear in the address bar of your browser or file explorer.
+-   We need to know a file path whenever we want to read, write or refer to a file using code rather than interactively pointing and clicking to navigate.
+-   A path can be **absolute** or **relative**
+    -   absolute = whole path from root
+    -   relative = path from current directory
 
 ## Absolute paths
 
-The absolute path for a file, `pigeon.txt` could be:  
+-   An Absolute path is given from the "root directory" of the object.
 
-* windows: `C:/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`
-* Mac/unix systems: `/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`  
-* web: `http://github.com/emoriebeck/pigeons/data/pigeon.txt`  
+-   The root directory of a file system is the first or top directory in the hierarchy.
+
+-   For example, `C:\` or `M:\` on windows or `/` on a Mac which is displayed as Macintosh HD in Finder.
+
+## Absolute paths
+
+The absolute path for a file, `pigeon.txt` could be:
+
+-   windows: `C:/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`
+-   Mac/unix systems: `/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`\
+-   web: `http://github.com/emoriebeck/pigeons/data/pigeon.txt`
 
 ## What is a directory?
 
-* Directory is the old word for what many now call a folder `r emo::ji("folder")`.
-* Commands that act on directories in most programming languages and environments reflect this.
+-   Directory is the old word for what many now call a folder `r emo::ji("folder")`.
 
-*  For example, in `R` this means "tell me my working directory":
-  * `getwd()` **get** **w**orking **d**irectory in R
+-   Commands that act on directories in most programming languages and environments reflect this.
+
+-   For example, in `R` this means "tell me my working directory":
+  *    `getwd()` **get** **w**orking **d**irectory in R
 
 ## What is a working directory?
 
-- The working directory is the default location a program is using. It is where the program will read and write files by default. You have only one working directory at a time.
+-   The working directory is the default location a program is using. It is where the program will read and write files by default. You have only one working directory at a time.
 
-- The terms 'working directory', 'current working directory' and 'current directory' all mean the same thing.
+-   The terms 'working directory', 'current working directory' and 'current directory' all mean the same thing.
 
-:::{.fragment}
-
+::: fragment
 Find your current working directory with:
 
 ```{r}
 getwd()
 ```
-
 :::
 
 ## Relative paths
 
 A relative path gives the location of a filesystem object *relative* to the working directory, (i.e., that returned by `getwd()`).
 
-- When `pigeon.txt` is in the working directory the relative path is just the file        * name:  `pigeon.txt`  
+-   When `pigeon.txt` is in the working directory the relative path is just the file 
+  * name: `pigeon.txt`
 
-- If there is a folder in the working directory called `data-raw` and `pigeon.txt` is in there then the relative path is `data-raw/pigeon.txt`  
+-   If there is a folder in the working directory called `data-raw` and `pigeon.txt` is in there then the relative path is `data-raw/pigeon.txt`
 
 ## Paths: moving up the hierarchy
 
-- `../` allows you to look in the directory above the working directory
+-   `../` allows you to look in the directory above the working directory
 
-- When `pigeon.txt` is in folder above the working the relative path is `../pigeon.txt`  
+-   When `pigeon.txt` is in folder above the working the relative path is `../pigeon.txt`
 
-- And if it is in a folder called `data-raw` which is in the directory above the working directory then the relative path is `../data-raw/pigeon.txt`  
+-   And if it is in a folder called `data-raw` which is in the directory above the working directory then the relative path is `../data-raw/pigeon.txt`
 
 ## What's in my directory?
 
 You can list the contents of a directory using the `dir()` command
 
-* `dir()` list the contents of the working directory
-* `dir("..")` list the contents of the directory above the working directory
-* `dir("../..")` list the contents of the directory two directories above the working directory
-* `dir("data-raw")` list the contents of a folder call data-raw which is in the working directory.
+-   `dir()` list the contents of the working directory
+-   `dir("..")` list the contents of the directory above the working directory
+-   `dir("../..")` list the contents of the directory two directories above the working directory
+-   `dir("data-raw")` list the contents of a folder call data-raw which is in the working directory.
 
 ## Relative or absolute
 
-- Most of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).
+::::{.columns}
+:::{.column}
 
-- `r emo::ji("party")` The tab key is your friend!
-- You only need to use absolute paths when you are referring to filesystem outside the one you are using.
-- I often store the beginning of that path as object. 
-    * web_wd <- "https://github.com/emoriebeck/pigeons/"
-    * Then I can use `sprintf()` or `paste()` to add different endings
+-   Most of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).
 
+-   `r emo::ji("party")` The tab key is your friend!
+
+:::
+:::{.column}
 :::{.fragment}
+![](images/tab-paths.png)
+
+:::
+:::
+::::
+
+## Relative or absolute
+
+-   You only need to use absolute paths when you are referring to filesystem outside the one you are using.
+
+-   I often store the beginning of that path as object.
+
+    -   web_wd \<- "https://github.com/emoriebeck/pigeons/"
+    -   Then I can use `sprintf()` or `paste()` to add different endings
+
+::: fragment
 ```{r}
 web_wd <- "https://github.com/emoriebeck/pigeons/"
 sprintf("%s/data-raw/pigeon.txt", web_wd)
 ```
-
 :::
 
-# Example
+<!-- # Example -->
 
-Download and unzip [pigeons.zip](../pigeons.zip) which has the following structure:
+<!-- Download and unzip [pigeons.zip](../pigeons.zip) which has the following structure: -->
 
-```
--- pigeons
-   |__data-processed
-      |__pigeon_long.txt
-   |__data-raw
-      |__pigeon.txt
-   |__figures
-      |__fig1.tiff
-   |__scripts
-      |__analysis.R
-      |__import_reshape.R
-   |__pigeons.Rproj
-```
+<!-- ```          -->
+<!-- -- pigeons -->
+<!--    |__data-processed -->
+<!--       |__pigeon_long.txt -->
+<!--    |__data-raw -->
+<!--       |__pigeon.txt -->
+<!--    |__figures -->
+<!--       |__fig1.tiff -->
+<!--    |__scripts -->
+<!--       |__analysis.R -->
+<!--       |__import_reshape.R -->
+<!--    |__pigeons.Rproj -->
+<!-- ``` -->
+
+# RStudio Projects
 
 ## RStudio Projects
 
-- Project is obviously a commonly used word. When I am referring to an [RStudio Project](https://support.posit.co/hc/en-us/articles/200526207-Using-Projects) I will use the capitalised words 'RStudio Project' or 'Project'.
-- In other cases, I will use 'project'.
-- An RStudio Project is a directory with an `.Rproj` file in it. 
-- The name of the RStudio Project is the same as the name of the top level directory which is referred to as the Project directory.
-
+-   Project is obviously a commonly used word. When I am referring to an [RStudio Project](https://support.posit.co/hc/en-us/articles/200526207-Using-Projects) I will use the capitalised words 'RStudio Project' or 'Project'.
+-   In other cases, I will use 'project'.
+-   An RStudio Project is a directory with an `.Rproj` file in it.
+-   The name of the RStudio Project is the same as the name of the top level directory which is referred to as the Project directory.
 
 ## RStudio Projects
 
 For example, if you create an RStudio Project `ipcs_data_2019` your folder structure would look something like this:
 
-```
+```         
 -- ipcs_data_2019
    |__ipcs_data_2019.Rproj
    |__data
@@ -378,69 +384,65 @@ For example, if you create an RStudio Project `ipcs_data_2019` your folder struc
       |__04_summary.Rmd
 ```
 
-
-
 ## RStudio Projects
 
-- the `.RProj` file which is the defining feature of an RStudio Project
+-   the `.RProj` file which is the defining feature of an RStudio Project
 
-- When you open an RStudio Project, the working directory is set to the Project directory (i.e., the location of the `.Rproj` file).  
+-   When you open an RStudio Project, the working directory is set to the Project directory (i.e., the location of the `.Rproj` file).
 
-- This makes your work portable. You can zip up the project folder and send it to any person, including future you, or any computer. 
+-   This makes your work portable. You can zip up the project folder and send it to any person, including future you, or any computer.
 
-- They will be able to unzip, open the project and have all the code just work.
+-   They will be able to unzip, open the project and have all the code just work.
 
-- (This is great for sending code and/or results to your advisors)
+-   (This is great for sending code and/or results to your advisors)
 
 ## Directory structure
 
 You are aiming for structured, systematic and repeatable. For example, the Project directory might contain:
 
-* .RProj file  
-* README - tell people what the project is and how to use it  
-* License - tell people what they are allowed to do with your project 
-* Directories
+-   .RProj file\
+-   README - tell people what the project is and how to use it\
+-   License - tell people what they are allowed to do with your project
+-   Directories
 
-::::{.columns}
-:::{.column}
-
-  * data/  
-  * prereg/  
-  * scripts/ 
-
+::: columns
+::: column
+-   data/\
+-   prereg/\
+-   scripts/
 :::
-:::{.column}
 
-  * results/  
-  * manuscript/  
-
+::: column
+-   results/\
+-   manuscript/
 :::
-::::
+:::
 
 ## README
 
-- READMEs are a form of documentation which have been widely used for a long time. They contain all the information about the other files in a directory. They can be extensive.
+-   READMEs are a form of documentation which have been widely used for a long time. They contain all the information about the other files in a directory. They can be extensive.
 
-* Wikipedia [README page](https://en.wikipedia.org/wiki/README)  
-* GitHub Doc's [About READMEs
-](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-readmes)  
-* OSF 
+-   Wikipedia [README page](https://en.wikipedia.org/wiki/README)\
 
+-   GitHub Doc's [About READMEs](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-readmes)\
 
-## README
+-   OSF
+
+## README {.smaller}
 
 A minimal README might give:
 
-* Title 
-* Description, 50 words or so on what the project is
-* Technical Description of the project
-  * What software and packages are needed including versions
-  * Any instructions needed to run the analysis/use the software
-  * Any issues that a user might face in running the analysis/using the software
-* Instructions on how to use the work
-* Links to where other files, materials, etc. are stored
-  * E.g., an OSF readme may point to GitHub, PsyArxiv, etc. 
-  
+-   Title
+-   Description, 50 words or so on what the project is
+-   Technical Description of the project
+    -   What software and packages are needed including versions
+    -   Any instructions needed to run the analysis/use the software
+    -   Any issues that a user might face in running the analysis/using the software
+-   Instructions on how to use the work
+-   Links to where other files, materials, etc. are stored
+    -   E.g., an OSF readme may point to GitHub, PsyArxiv, etc.
+
+Here's an example from one of my [webapps](http://emoriebeck.shinyapps.io/personality-dementia-neuropath/)
 
 ## License
 
@@ -450,50 +452,49 @@ A license tells others what they can and can't do with your work.
 
 I typically use:
 
-* [MIT License](https://choosealicense.com/licenses/mit/) for software
-* [CC-BY-SA-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/) for other work
+-   [MIT License](https://choosealicense.com/licenses/mit/) for software
+-   [CC-BY-SA-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/) for other work
 
 # Exercise
 
 ## Exercise
-- You are going to create an RStudio Project with some directories and use it to organise a very simple analysis.
-- The analysis will import a data file, reformat it and write the new format to file. It will then create a figure and write the image to file. 
-- You'll get practice with tidying data (more on that next week) and plotting data.
+
+-   You are going to create an RStudio Project with some directories and use it to organise a very simple analysis.
+-   The analysis will import a data file, reformat it and write the new format to file. It will then create a figure and write the image to file.
+-   You'll get practice with tidying data (more on that next week) and plotting data.
 
 ## RStudio Project infrastructure
 
-`r emo::ji("clapper")` create a new Project called `iris` by:  
+ create a new Project called `iris` by:
 
-- clicking **File->New Project...** 
-- clicking on the little icon (second from the left) at the top
+-   clicking **File-\>New Project...**
 
-- Choose New Project, then New Directory, then New Project. Name the RStudio Project `iris`.
+-   clicking on the little icon (second from the left) at the top
 
-- Create folders in `iris` called `data-raw`, `data-processed` and `figures`.
+-   Choose New Project, then New Directory, then New Project. Name the RStudio Project `iris`.
 
-- Start new scripts called `01-import.R`, `02-tidy.R`,  and `03-figures.R`
+-   Create folders in `iris` called `data-raw`, `data-processed` and `figures`.
 
-## Save and Import 
+-   Start new scripts called `01-import.R`, `02-tidy.R`, and `03-figures.R`
 
-- Save a copy of [iris.csv](data/iris.csv) to your `data-raw` folder. These data give the information about different species of irises.
+## Save and Import
 
-- In your `01-import.R` script, load the tidyverse set of packages.
+-   Save a copy of [iris.csv](data/iris.csv) to your `data-raw` folder. These data give the information about different species of irises.
 
-:::{.fragment}
+-   In your `01-import.R` script, load the tidyverse set of packages.
 
+::: fragment
 ```{r eval=FALSE}
 library(tidyverse)
 write_csv(iris, file = "data-raw/iris.csv")
 ```
-
 :::
 
-## Save and Import 
+## Save and Import
 
-- Add the command to import the data:
+-   Add the command to import the data:
 
-:::{.fragment}
-
+::: fragment
 ```{r, eval = F}
 iris <- read_csv("data-raw/iris.csv")
 ```
@@ -501,45 +502,41 @@ iris <- read_csv("data-raw/iris.csv")
 ```{r, echo = F}
 data(iris)
 ```
-
 :::
 
-- The relative path is `data-raw/iris.csv` because your working directory is the Project directory, `iris`.
+-   The relative path is `data-raw/iris.csv` because your working directory is the Project directory, `iris`.
 
 ## Reformat the data
 
-This dataset has three observations in a row - it is not 'tidy'. 
+This dataset has three observations in a row - it is not 'tidy'.
 
-- Open your `02-tidy.R` script, and reshape the data using:
+-   Open your `02-tidy.R` script, and reshape the data using:
 
-:::{.fragment}
-
+::: fragment
 ```{r}
 iris <- pivot_longer(data = iris, 
                      cols = -Species, 
                      names_to = "attribute", 
                      values_to = "value")
 ```
-
 :::
 
-- This reformats the dataframe in R but does not overwrite the text file of the data.
+-   This reformats the dataframe in R but does not overwrite the text file of the data.
 
-- Don't worry too much about this right now. We'll spend a lot of time talking about reshaping data next week!
-
-## Writing files
-
-Often we want to write to files. 
-
-- My main reasons for doing so are to save copies of data that have been processed and to save manuscripts and graphics. 
-- Also, as someone who collects a lot of data, the de-identified, fully anonymized data files I can share and the identifiable data I collect require multiple versions (and encryption, keys, etc.)
+-   Don't worry too much about this right now. We'll spend a lot of time talking about reshaping data next week!
 
 ## Writing files
 
-- Write your dataframe `iris` to a csv file named `iris-long.csv` in your `data-processed` folder:
+Often we want to write to files.
 
-:::{.fragment}
+-   My main reasons for doing so are to save copies of data that have been processed and to save manuscripts and graphics.
+-   Also, as someone who collects a lot of data, the de-identified, fully anonymized data files I can share and the identifiable data I collect require multiple versions (and encryption, keys, etc.)
 
+## Writing files
+
+-   Write your dataframe `iris` to a csv file named `iris-long.csv` in your `data-processed` folder:
+
+::: fragment
 ```{r, eval = F}
 file <- "data-processed/iris-long.csv"
 write_csv(iris, file)
@@ -549,18 +546,16 @@ write_csv(iris, file)
 file <- "iris/data-processed/iris-long.csv"
 write_csv(iris, file)
 ```
-
 :::
 
-- Putting file paths into variables often makes your code easier to read especially when file paths are long or used multiple times.
+-   Putting file paths into variables often makes your code easier to read especially when file paths are long or used multiple times.
 
 ## Create a plot
 
 Open your `03-figures.R` script and create a simple plot of this data with:
 
-:::{.fragment}
-
-```{r} 
+::: fragment
+```{r}
 fig1 <- ggplot(
   data = iris
   , aes(y = Species, x = value, fill = Species)
@@ -572,36 +567,31 @@ fig1 <- ggplot(
   theme_classic() + 
   theme(legend.position = "none")
 ```
-
 :::
 
 ## View plot
 
 View plot with:
 
-```{r, fig.width = 8} 
+```{r, fig.width = 8}
 fig1
 ```
 
+## Write ggplot figure to file
+
+-   A useful function for saving ggplot figures is `ggsave()`.
+
+-   It has arguments for the size, resolution and device for the image. See the [`ggsave()` reference page](https://ggplot2.tidyverse.org/reference/ggsave.html).
 
 ## Write ggplot figure to file
 
-- A useful function for saving ggplot figures is `ggsave()`. 
+-   Since I often make more than one figure, I might set these arguments first.
 
-- It has arguments for the size, resolution and device for the image. See the [`ggsave()` reference page](https://ggplot2.tidyverse.org/reference/ggsave.html). 
+::: columns
+::: column
+-   Assign `ggsave` argument values to variables:
 
-
-## Write ggplot figure to file
-
-- Since I often make more than one figure, I might set these arguments first.
-
-::::{.columns}
-:::{.column}
-
-- Assign `ggsave` argument values to variables:
-
-:::{.fragment}
-
+::: fragment
 ```{r}
 # figure saving settings
 units <- "in"  
@@ -610,15 +600,13 @@ fig_h <- fig_w
 dpi <- 600
 device <- "tiff" 
 ```
-
 :::
 :::
-:::{.column}
 
-- Save the figure to your figures directory:
+::: column
+-   Save the figure to your figures directory:
 
-:::{.fragment}
-
+::: fragment
 ```{r, eval = F}
 ggsave("figures/fig1.tiff",
        plot = fig1,
@@ -638,34 +626,29 @@ ggsave("iris/figures/fig1.tiff",
        units = units,
        dpi = dpi)
 ```
-
 :::
 
-- Check it is there!
-
+-   Check it is there!
 :::
-::::
+:::
 
 ------------------------------------------------------------------------
 
-:::: {.columns style='display: flex !important; height: 90%;'}
-::: {.column width="70%" style='display: flex; align-items: center;'}
-
+::: {.columns style="display: flex !important; height: 90%;"}
+::: {.column width="70%" style="display: flex; align-items: center;"}
 <!-- <p style="font-size:160%;"> -->
 
 # Data Manipulation in `dplyr`
 
 <!-- </p> -->
-
 :::
 
-::: {.column width="30%" style='display: flex; justify-content: center; align-items: center;'}
-
+::: {.column width="30%" style="display: flex; justify-content: center; align-items: center;"}
 ```{r, fig.align='center', echo = F}
 knitr::include_graphics("https://github.com/rstudio/hex-stickers/raw/main/thumbs/dplyr.png")
 ```
 :::
-::::
+:::
 
 # `dplyr` Core Functions
 
