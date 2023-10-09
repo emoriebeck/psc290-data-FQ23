@@ -5640,7 +5640,7 @@ window.onload = function() {
 </li>
 </ul></section><section id="what-is-a-directory" class="level3"><h3 class="anchored" data-anchor-id="what-is-a-directory">What is a directory?</h3>
 <ul>
-<li><p>Directory is the old word for what many now call a folder 📁.</p></li>
+<li><p>Directory is the old word for what many now call a folder 📂.</p></li>
 <li><p>Commands that act on directories in most programming languages and environments reflect this.</p></li>
 <li><p>For example, in <code>R</code> this means “tell me my working directory”:</p></li>
 <li><p><code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> <strong>get</strong> <strong>w</strong>orking <strong>d</strong>irectory in R</p></li>
@@ -5680,7 +5680,7 @@ window.onload = function() {
 </ul></section><section id="relative-or-absolute" class="level3"><h3 class="anchored" data-anchor-id="relative-or-absolute">Relative or absolute</h3>
 <ul>
 <li><p>Most of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).</p></li>
-<li><p>🎉 The tab key is your friend!</p></li>
+<li><p>🎂 The tab key is your friend!</p></li>
 <li><p>You only need to use absolute paths when you are referring to filesystem outside the one you are using.</p></li>
 <li>
 <p>I often store the beginning of that path as object.</p>
@@ -6717,440 +6717,440 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb65-56"><a href="#cb65-56"></a><span class="fu">## Why reproducibility AND values?</span></span>
 <span id="cb65-57"><a href="#cb65-57"></a></span>
 <span id="cb65-58"><a href="#cb65-58"></a><span class="ss">-   </span>The definition of reproducibility is somewhat debated</span>
-<span id="cb65-59"><a href="#cb65-59"></a><span class="ss">    -   </span>&quot;&#39;Reproducibility&#39; refers to instances in which the original researcher&#39;s data and computer codes are used to regenerate the results&quot;\</span>
-<span id="cb65-60"><a href="#cb65-60"></a><span class="ss">    -   </span>&quot;&#39;Reproducibility&#39; refers to independent researchers arriving at the same results using their own data and methods&quot;\</span>
-<span id="cb65-61"><a href="#cb65-61"></a><span class="ss">-   </span>But regardless of what definition you choose, reproducibility starts with a commitment in research to be</span>
+<span id="cb65-59"><a href="#cb65-59"></a></span>
+<span id="cb65-60"><a href="#cb65-60"></a><span class="ss">    -   </span>&quot;&#39;Reproducibility&#39; refers to instances in which the original researcher&#39;s data and computer codes are used to regenerate the results&quot;\</span>
+<span id="cb65-61"><a href="#cb65-61"></a><span class="ss">    -   </span>&quot;&#39;Reproducibility&#39; refers to independent researchers arriving at the same results using their own data and methods&quot;\</span>
 <span id="cb65-62"><a href="#cb65-62"></a></span>
-<span id="cb65-63"><a href="#cb65-63"></a><span class="ss">-   </span>clear\</span>
-<span id="cb65-64"><a href="#cb65-64"></a><span class="ss">-   </span>transparent</span>
-<span id="cb65-65"><a href="#cb65-65"></a><span class="ss">-   </span>honest\</span>
-<span id="cb65-66"><a href="#cb65-66"></a><span class="ss">-   </span>thorough</span>
-<span id="cb65-67"><a href="#cb65-67"></a></span>
-<span id="cb65-68"><a href="#cb65-68"></a><span class="fu">## Why reproducibility AND values?</span></span>
-<span id="cb65-69"><a href="#cb65-69"></a></span>
-<span id="cb65-70"><a href="#cb65-70"></a><span class="ss">-   </span>Reproducibility is *ethical*.</span>
-<span id="cb65-71"><a href="#cb65-71"></a></span>
-<span id="cb65-72"><a href="#cb65-72"></a><span class="ss">-   </span>When I post a project, I pour over my code for hours, adding comments, rendering to multiple formats, trying to flag locations in online materials in the mansucript, etc.</span>
-<span id="cb65-73"><a href="#cb65-73"></a></span>
-<span id="cb65-74"><a href="#cb65-74"></a><span class="ss">-   </span>I am trying to prevent errors, but I am also trying to make sure that other people know what I did, especially if I did make errors</span>
-<span id="cb65-75"><a href="#cb65-75"></a></span>
-<span id="cb65-76"><a href="#cb65-76"></a><span class="ss">-   </span>Reproducible research is also *equitable.*</span>
-<span id="cb65-77"><a href="#cb65-77"></a></span>
-<span id="cb65-78"><a href="#cb65-78"></a><span class="ss">-   </span>A reproducible research workflow can be downloaded by another person as a starting point, providing tools to other researchers who may not have the same access to education and resources as you</span>
-<span id="cb65-79"><a href="#cb65-79"></a></span>
-<span id="cb65-80"><a href="#cb65-80"></a><span class="fu">## Where should we reproducible?</span></span>
-<span id="cb65-81"><a href="#cb65-81"></a></span>
-<span id="cb65-82"><a href="#cb65-82"></a><span class="ss">-   </span>Planning</span>
-<span id="cb65-83"><a href="#cb65-83"></a><span class="ss">    -   </span>Study planning and design\</span>
-<span id="cb65-84"><a href="#cb65-84"></a><span class="ss">    -   </span>Lab Protocols\</span>
-<span id="cb65-85"><a href="#cb65-85"></a><span class="ss">    -   </span>Codebooks\</span>
-<span id="cb65-86"><a href="#cb65-86"></a><span class="ss">    -   </span>etc.\</span>
-<span id="cb65-87"><a href="#cb65-87"></a><span class="ss">-   </span>Analyses</span>
-<span id="cb65-88"><a href="#cb65-88"></a><span class="ss">    -   </span>Scripting\</span>
-<span id="cb65-89"><a href="#cb65-89"></a><span class="ss">    -   </span>Communication\</span>
-<span id="cb65-90"><a href="#cb65-90"></a><span class="ss">    -   </span>etc.</span>
-<span id="cb65-91"><a href="#cb65-91"></a></span>
-<span id="cb65-92"><a href="#cb65-92"></a><span class="fu">## Aspects of Reproducibility</span></span>
-<span id="cb65-93"><a href="#cb65-93"></a></span>
-<span id="cb65-94"><a href="#cb65-94"></a><span class="ss">-   </span>Data within files should be &#39;tidy&#39; (next week -- <span class="in">`tidyr`</span>)</span>
-<span id="cb65-95"><a href="#cb65-95"></a><span class="ss">-   </span>Project based approach (today)</span>
-<span id="cb65-96"><a href="#cb65-96"></a><span class="ss">-   </span>Consistency: naming, space, style (today)</span>
-<span id="cb65-97"><a href="#cb65-97"></a><span class="ss">-   </span>Documentation: commenting and README (today)</span>
-<span id="cb65-98"><a href="#cb65-98"></a><span class="ss">-   </span>Literate programming e.g. Rmarkdown (every day!)</span>
-<span id="cb65-99"><a href="#cb65-99"></a></span>
-<span id="cb65-100"><a href="#cb65-100"></a><span class="fu"># Building a Reproducible Workflow Using Projects</span></span>
-<span id="cb65-101"><a href="#cb65-101"></a></span>
-<span id="cb65-102"><a href="#cb65-102"></a><span class="fu">## Reproducible Workflow</span></span>
-<span id="cb65-103"><a href="#cb65-103"></a></span>
-<span id="cb65-104"><a href="#cb65-104"></a>A reproducible workflow is *organized*. What does it mean to be be organized? At least:</span>
-<span id="cb65-105"><a href="#cb65-105"></a></span>
-<span id="cb65-106"><a href="#cb65-106"></a><span class="ss">-   </span>Use a project based approach, e.g., RStudio project or similar\</span>
-<span id="cb65-107"><a href="#cb65-107"></a><span class="ss">-   </span>Have a hierarchical folder structure\</span>
-<span id="cb65-108"><a href="#cb65-108"></a><span class="ss">-   </span>Have a consistent and informative naming system that &#39;plays nice&#39;\</span>
-<span id="cb65-109"><a href="#cb65-109"></a><span class="ss">-   </span>Document code with comments and analyses with README</span>
+<span id="cb65-63"><a href="#cb65-63"></a><span class="ss">-   </span>But regardless of what definition you choose, reproducibility starts with a commitment in research to be</span>
+<span id="cb65-64"><a href="#cb65-64"></a></span>
+<span id="cb65-65"><a href="#cb65-65"></a><span class="ss">-   </span>clear\</span>
+<span id="cb65-66"><a href="#cb65-66"></a></span>
+<span id="cb65-67"><a href="#cb65-67"></a><span class="ss">-   </span>transparent</span>
+<span id="cb65-68"><a href="#cb65-68"></a></span>
+<span id="cb65-69"><a href="#cb65-69"></a><span class="ss">-   </span>honest\</span>
+<span id="cb65-70"><a href="#cb65-70"></a></span>
+<span id="cb65-71"><a href="#cb65-71"></a><span class="ss">-   </span>thorough</span>
+<span id="cb65-72"><a href="#cb65-72"></a></span>
+<span id="cb65-73"><a href="#cb65-73"></a><span class="fu">## Why reproducibility AND values?</span></span>
+<span id="cb65-74"><a href="#cb65-74"></a></span>
+<span id="cb65-75"><a href="#cb65-75"></a><span class="ss">-   </span>Reproducibility is *ethical*.</span>
+<span id="cb65-76"><a href="#cb65-76"></a></span>
+<span id="cb65-77"><a href="#cb65-77"></a><span class="ss">-   </span>When I post a project, I pour over my code for hours, adding comments, rendering to multiple formats, trying to flag locations in online materials in the mansucript, etc.</span>
+<span id="cb65-78"><a href="#cb65-78"></a></span>
+<span id="cb65-79"><a href="#cb65-79"></a><span class="ss">-   </span>I am trying to prevent errors, but I am also trying to make sure that other people know what I did, especially if I did make errors</span>
+<span id="cb65-80"><a href="#cb65-80"></a></span>
+<span id="cb65-81"><a href="#cb65-81"></a><span class="ss">-   </span>Reproducible research is also *equitable.*</span>
+<span id="cb65-82"><a href="#cb65-82"></a></span>
+<span id="cb65-83"><a href="#cb65-83"></a><span class="ss">-   </span>A reproducible research workflow can be downloaded by another person as a starting point, providing tools to other researchers who may not have the same access to education and resources as you</span>
+<span id="cb65-84"><a href="#cb65-84"></a></span>
+<span id="cb65-85"><a href="#cb65-85"></a><span class="fu">## Where should we reproducible?</span></span>
+<span id="cb65-86"><a href="#cb65-86"></a></span>
+<span id="cb65-87"><a href="#cb65-87"></a><span class="ss">-   </span>Planning</span>
+<span id="cb65-88"><a href="#cb65-88"></a><span class="ss">    -   </span>Study planning and design\</span>
+<span id="cb65-89"><a href="#cb65-89"></a><span class="ss">    -   </span>Lab Protocols\</span>
+<span id="cb65-90"><a href="#cb65-90"></a><span class="ss">    -   </span>Codebooks\</span>
+<span id="cb65-91"><a href="#cb65-91"></a><span class="ss">    -   </span>etc.\</span>
+<span id="cb65-92"><a href="#cb65-92"></a><span class="ss">-   </span>Analyses</span>
+<span id="cb65-93"><a href="#cb65-93"></a><span class="ss">    -   </span>Scripting\</span>
+<span id="cb65-94"><a href="#cb65-94"></a><span class="ss">    -   </span>Communication\</span>
+<span id="cb65-95"><a href="#cb65-95"></a><span class="ss">    -   </span>etc.</span>
+<span id="cb65-96"><a href="#cb65-96"></a></span>
+<span id="cb65-97"><a href="#cb65-97"></a><span class="fu">## Aspects of Reproducibility</span></span>
+<span id="cb65-98"><a href="#cb65-98"></a></span>
+<span id="cb65-99"><a href="#cb65-99"></a><span class="ss">-   </span>Data within files should be &#39;tidy&#39; (next week -- <span class="in">`tidyr`</span>)</span>
+<span id="cb65-100"><a href="#cb65-100"></a><span class="ss">-   </span>Project based approach (today)</span>
+<span id="cb65-101"><a href="#cb65-101"></a><span class="ss">-   </span>Consistency: naming, space, style (today)</span>
+<span id="cb65-102"><a href="#cb65-102"></a><span class="ss">-   </span>Documentation: commenting and README (today)</span>
+<span id="cb65-103"><a href="#cb65-103"></a><span class="ss">-   </span>Literate programming e.g. Rmarkdown (every day!)</span>
+<span id="cb65-104"><a href="#cb65-104"></a></span>
+<span id="cb65-105"><a href="#cb65-105"></a><span class="fu"># Building a Reproducible Workflow Using Projects</span></span>
+<span id="cb65-106"><a href="#cb65-106"></a></span>
+<span id="cb65-107"><a href="#cb65-107"></a><span class="fu">## Reproducible Workflow</span></span>
+<span id="cb65-108"><a href="#cb65-108"></a></span>
+<span id="cb65-109"><a href="#cb65-109"></a>A reproducible workflow is *organized*. What does it mean to be be organized? At least:</span>
 <span id="cb65-110"><a href="#cb65-110"></a></span>
-<span id="cb65-111"><a href="#cb65-111"></a>::: fragment</span>
-<span id="cb65-112"><a href="#cb65-112"></a>More advanced (later in the class)</span>
-<span id="cb65-113"><a href="#cb65-113"></a>:::</span>
-<span id="cb65-114"><a href="#cb65-114"></a></span>
-<span id="cb65-115"><a href="#cb65-115"></a><span class="ss">-   </span>Generalize with functions and packages</span>
-<span id="cb65-116"><a href="#cb65-116"></a><span class="ss">-   </span>version control\</span>
-<span id="cb65-117"><a href="#cb65-117"></a>    <span class="co">&lt;!-- * [Pipeline and workflow tools](https://github.com/pditommaso/awesome-pipeline)  --&gt;</span></span>
-<span id="cb65-118"><a href="#cb65-118"></a></span>
-<span id="cb65-119"><a href="#cb65-119"></a><span class="fu">## What is a project?</span></span>
-<span id="cb65-120"><a href="#cb65-120"></a></span>
-<span id="cb65-121"><a href="#cb65-121"></a><span class="ss">-   </span>A project is a discrete piece of work which has a number of files associated with it such as the data and scripts for an analysis and the production reports.</span>
-<span id="cb65-122"><a href="#cb65-122"></a></span>
-<span id="cb65-123"><a href="#cb65-123"></a><span class="ss">-   </span>Using a project-oriented workflow means to have a hierarchical folder structure with everything needed to reproduce an analysis.</span>
-<span id="cb65-124"><a href="#cb65-124"></a></span>
-<span id="cb65-125"><a href="#cb65-125"></a>One research project might have several organizational projects associated with it, for example:</span>
-<span id="cb65-126"><a href="#cb65-126"></a></span>
-<span id="cb65-127"><a href="#cb65-127"></a><span class="ss">-   </span>data files and metadata (which may be made into a package)</span>
-<span id="cb65-128"><a href="#cb65-128"></a><span class="ss">-   </span>preregistration</span>
-<span id="cb65-129"><a href="#cb65-129"></a><span class="ss">-   </span>analysis and reporting</span>
-<span id="cb65-130"><a href="#cb65-130"></a><span class="ss">-   </span>a package developed for the analysis</span>
-<span id="cb65-131"><a href="#cb65-131"></a><span class="ss">-   </span>an app for allowing data to be explored by others</span>
-<span id="cb65-132"><a href="#cb65-132"></a></span>
-<span id="cb65-133"><a href="#cb65-133"></a><span class="fu">## Example</span></span>
-<span id="cb65-134"><a href="#cb65-134"></a></span>
-<span id="cb65-135"><a href="#cb65-135"></a>Good Workflows are:</span>
-<span id="cb65-136"><a href="#cb65-136"></a></span>
-<span id="cb65-137"><a href="#cb65-137"></a><span class="ss">-   </span>structured\</span>
-<span id="cb65-138"><a href="#cb65-138"></a><span class="ss">-   </span>systematic\</span>
-<span id="cb65-139"><a href="#cb65-139"></a><span class="ss">-   </span>repeatable</span>
-<span id="cb65-140"><a href="#cb65-140"></a></span>
-<span id="cb65-141"><a href="#cb65-141"></a>**Naming**</span>
-<span id="cb65-142"><a href="#cb65-142"></a></span>
-<span id="cb65-143"><a href="#cb65-143"></a><span class="ss">-   </span>human and machine readable</span>
-<span id="cb65-144"><a href="#cb65-144"></a><span class="ss">    -   </span>no spaces\</span>
-<span id="cb65-145"><a href="#cb65-145"></a><span class="ss">    -   </span>use snake/kebab case\</span>
-<span id="cb65-146"><a href="#cb65-146"></a><span class="ss">    -   </span>ordering: numbers (zero left padded), dates\</span>
-<span id="cb65-147"><a href="#cb65-147"></a><span class="ss">    -   </span>file extensions</span>
-<span id="cb65-148"><a href="#cb65-148"></a></span>
-<span id="cb65-149"><a href="#cb65-149"></a><span class="in">```         </span></span>
-<span id="cb65-150"><a href="#cb65-150"></a><span class="in">-- ipcs_data_2019</span></span>
-<span id="cb65-151"><a href="#cb65-151"></a><span class="in">   |__ipcs_data_2019.Rproj</span></span>
-<span id="cb65-152"><a href="#cb65-152"></a><span class="in">   |__data</span></span>
-<span id="cb65-153"><a href="#cb65-153"></a><span class="in">      |__raw_data</span></span>
-<span id="cb65-154"><a href="#cb65-154"></a><span class="in">         |__2019-03-21_ema_raw.csv</span></span>
-<span id="cb65-155"><a href="#cb65-155"></a><span class="in">         |__2019-03-21_baseline_raw.csv</span></span>
-<span id="cb65-156"><a href="#cb65-156"></a><span class="in">      |__clean_data</span></span>
-<span id="cb65-157"><a href="#cb65-157"></a><span class="in">         |__2019-06-21_ema_long.csv</span></span>
-<span id="cb65-158"><a href="#cb65-158"></a><span class="in">         |__2019-06-21_ema_long.RData</span></span>
-<span id="cb65-159"><a href="#cb65-159"></a><span class="in">         |__2019-06-21_baseline_wide.csv</span></span>
-<span id="cb65-160"><a href="#cb65-160"></a><span class="in">         |__2019-06-21_baseline_wide.RData</span></span>
-<span id="cb65-161"><a href="#cb65-161"></a><span class="in">   |__results</span></span>
-<span id="cb65-162"><a href="#cb65-162"></a><span class="in">      |__01_models</span></span>
-<span id="cb65-163"><a href="#cb65-163"></a><span class="in">         |__E_mortality.RData</span></span>
-<span id="cb65-164"><a href="#cb65-164"></a><span class="in">         |__A_mortality.RData</span></span>
-<span id="cb65-165"><a href="#cb65-165"></a><span class="in">      |__02_summaries</span></span>
-<span id="cb65-166"><a href="#cb65-166"></a><span class="in">         |__E_mortality.RData</span></span>
-<span id="cb65-167"><a href="#cb65-167"></a><span class="in">         |__A_mortality.RData</span></span>
-<span id="cb65-168"><a href="#cb65-168"></a><span class="in">      |__03_figures</span></span>
-<span id="cb65-169"><a href="#cb65-169"></a><span class="in">         |__mortality.png</span></span>
-<span id="cb65-170"><a href="#cb65-170"></a><span class="in">         |__mortality.pdf</span></span>
-<span id="cb65-171"><a href="#cb65-171"></a><span class="in">      |__04_tables</span></span>
-<span id="cb65-172"><a href="#cb65-172"></a><span class="in">         |__zero_order_cors.RData</span></span>
-<span id="cb65-173"><a href="#cb65-173"></a><span class="in">         |__descriptives.RData</span></span>
-<span id="cb65-174"><a href="#cb65-174"></a><span class="in">         |__key_terms.RData</span></span>
-<span id="cb65-175"><a href="#cb65-175"></a><span class="in">         |__all_model_terms.RData</span></span>
-<span id="cb65-176"><a href="#cb65-176"></a><span class="in">   |__README.md</span></span>
-<span id="cb65-177"><a href="#cb65-177"></a><span class="in">   |__refs</span></span>
-<span id="cb65-178"><a href="#cb65-178"></a><span class="in">      |__r_refs.bib</span></span>
-<span id="cb65-179"><a href="#cb65-179"></a><span class="in">      |__proj_refs.bib</span></span>
-<span id="cb65-180"><a href="#cb65-180"></a><span class="in">   |__analyses</span></span>
-<span id="cb65-181"><a href="#cb65-181"></a><span class="in">      |__01_background.Rmd</span></span>
-<span id="cb65-182"><a href="#cb65-182"></a><span class="in">      |__02_data_cleaning.Rmd</span></span>
-<span id="cb65-183"><a href="#cb65-183"></a><span class="in">      |__03_models.Rmd</span></span>
-<span id="cb65-184"><a href="#cb65-184"></a><span class="in">      |__04_summary.Rmd</span></span>
-<span id="cb65-185"><a href="#cb65-185"></a><span class="in">```</span></span>
-<span id="cb65-186"><a href="#cb65-186"></a><span class="fu">## What is a path?</span></span>
-<span id="cb65-187"><a href="#cb65-187"></a></span>
-<span id="cb65-188"><a href="#cb65-188"></a>A path gives the address - or location - of a filesystem object, such as a file or directory.</span>
-<span id="cb65-189"><a href="#cb65-189"></a></span>
-<span id="cb65-190"><a href="#cb65-190"></a><span class="ss">-   </span>Paths appear in the address bar of your browser or file explorer.</span>
-<span id="cb65-191"><a href="#cb65-191"></a><span class="ss">-   </span>We need to know a file path whenever we want to read, write or refer to a file using code rather than interactively pointing and clicking to navigate.</span>
-<span id="cb65-192"><a href="#cb65-192"></a><span class="ss">-   </span>A path can be **absolute** or **relative**</span>
-<span id="cb65-193"><a href="#cb65-193"></a><span class="ss">    -   </span>absolute = whole path from root</span>
-<span id="cb65-194"><a href="#cb65-194"></a><span class="ss">    -   </span>relative = path from current directory</span>
+<span id="cb65-111"><a href="#cb65-111"></a><span class="ss">-   </span>Use a project based approach, e.g., RStudio project or similar\</span>
+<span id="cb65-112"><a href="#cb65-112"></a><span class="ss">-   </span>Have a hierarchical folder structure\</span>
+<span id="cb65-113"><a href="#cb65-113"></a><span class="ss">-   </span>Have a consistent and informative naming system that &#39;plays nice&#39;\</span>
+<span id="cb65-114"><a href="#cb65-114"></a><span class="ss">-   </span>Document code with comments and analyses with README</span>
+<span id="cb65-115"><a href="#cb65-115"></a></span>
+<span id="cb65-116"><a href="#cb65-116"></a>::: fragment</span>
+<span id="cb65-117"><a href="#cb65-117"></a>More advanced (later in the class)</span>
+<span id="cb65-118"><a href="#cb65-118"></a>:::</span>
+<span id="cb65-119"><a href="#cb65-119"></a></span>
+<span id="cb65-120"><a href="#cb65-120"></a><span class="ss">-   </span>Generalize with functions and packages</span>
+<span id="cb65-121"><a href="#cb65-121"></a><span class="ss">-   </span>version control\</span>
+<span id="cb65-122"><a href="#cb65-122"></a>    <span class="co">&lt;!-- * [Pipeline and workflow tools](https://github.com/pditommaso/awesome-pipeline)  --&gt;</span></span>
+<span id="cb65-123"><a href="#cb65-123"></a></span>
+<span id="cb65-124"><a href="#cb65-124"></a><span class="fu">## What is a project?</span></span>
+<span id="cb65-125"><a href="#cb65-125"></a></span>
+<span id="cb65-126"><a href="#cb65-126"></a><span class="ss">-   </span>A project is a discrete piece of work which has a number of files associated with it such as the data and scripts for an analysis and the production reports.</span>
+<span id="cb65-127"><a href="#cb65-127"></a></span>
+<span id="cb65-128"><a href="#cb65-128"></a><span class="ss">-   </span>Using a project-oriented workflow means to have a hierarchical folder structure with everything needed to reproduce an analysis.</span>
+<span id="cb65-129"><a href="#cb65-129"></a></span>
+<span id="cb65-130"><a href="#cb65-130"></a>One research project might have several organizational projects associated with it, for example:</span>
+<span id="cb65-131"><a href="#cb65-131"></a></span>
+<span id="cb65-132"><a href="#cb65-132"></a><span class="ss">-   </span>data files and metadata (which may be made into a package)</span>
+<span id="cb65-133"><a href="#cb65-133"></a><span class="ss">-   </span>preregistration</span>
+<span id="cb65-134"><a href="#cb65-134"></a><span class="ss">-   </span>analysis and reporting</span>
+<span id="cb65-135"><a href="#cb65-135"></a><span class="ss">-   </span>a package developed for the analysis</span>
+<span id="cb65-136"><a href="#cb65-136"></a><span class="ss">-   </span>an app for allowing data to be explored by others</span>
+<span id="cb65-137"><a href="#cb65-137"></a></span>
+<span id="cb65-138"><a href="#cb65-138"></a><span class="fu">## Example</span></span>
+<span id="cb65-139"><a href="#cb65-139"></a></span>
+<span id="cb65-140"><a href="#cb65-140"></a>Good Workflows are:</span>
+<span id="cb65-141"><a href="#cb65-141"></a></span>
+<span id="cb65-142"><a href="#cb65-142"></a><span class="ss">-   </span>structured\</span>
+<span id="cb65-143"><a href="#cb65-143"></a><span class="ss">-   </span>systematic\</span>
+<span id="cb65-144"><a href="#cb65-144"></a><span class="ss">-   </span>repeatable</span>
+<span id="cb65-145"><a href="#cb65-145"></a></span>
+<span id="cb65-146"><a href="#cb65-146"></a>**Naming**</span>
+<span id="cb65-147"><a href="#cb65-147"></a></span>
+<span id="cb65-148"><a href="#cb65-148"></a><span class="ss">-   </span>human and machine readable</span>
+<span id="cb65-149"><a href="#cb65-149"></a><span class="ss">    -   </span>no spaces\</span>
+<span id="cb65-150"><a href="#cb65-150"></a><span class="ss">    -   </span>use snake/kebab case\</span>
+<span id="cb65-151"><a href="#cb65-151"></a><span class="ss">    -   </span>ordering: numbers (zero left padded), dates\</span>
+<span id="cb65-152"><a href="#cb65-152"></a><span class="ss">    -   </span>file extensions</span>
+<span id="cb65-153"><a href="#cb65-153"></a></span>
+<span id="cb65-154"><a href="#cb65-154"></a><span class="in">```         </span></span>
+<span id="cb65-155"><a href="#cb65-155"></a><span class="in">-- ipcs_data_2019</span></span>
+<span id="cb65-156"><a href="#cb65-156"></a><span class="in">   |__ipcs_data_2019.Rproj</span></span>
+<span id="cb65-157"><a href="#cb65-157"></a><span class="in">   |__data</span></span>
+<span id="cb65-158"><a href="#cb65-158"></a><span class="in">      |__raw_data</span></span>
+<span id="cb65-159"><a href="#cb65-159"></a><span class="in">         |__2019-03-21_ema_raw.csv</span></span>
+<span id="cb65-160"><a href="#cb65-160"></a><span class="in">         |__2019-03-21_baseline_raw.csv</span></span>
+<span id="cb65-161"><a href="#cb65-161"></a><span class="in">      |__clean_data</span></span>
+<span id="cb65-162"><a href="#cb65-162"></a><span class="in">         |__2019-06-21_ema_long.csv</span></span>
+<span id="cb65-163"><a href="#cb65-163"></a><span class="in">         |__2019-06-21_ema_long.RData</span></span>
+<span id="cb65-164"><a href="#cb65-164"></a><span class="in">         |__2019-06-21_baseline_wide.csv</span></span>
+<span id="cb65-165"><a href="#cb65-165"></a><span class="in">         |__2019-06-21_baseline_wide.RData</span></span>
+<span id="cb65-166"><a href="#cb65-166"></a><span class="in">   |__results</span></span>
+<span id="cb65-167"><a href="#cb65-167"></a><span class="in">      |__01_models</span></span>
+<span id="cb65-168"><a href="#cb65-168"></a><span class="in">         |__E_mortality.RData</span></span>
+<span id="cb65-169"><a href="#cb65-169"></a><span class="in">         |__A_mortality.RData</span></span>
+<span id="cb65-170"><a href="#cb65-170"></a><span class="in">      |__02_summaries</span></span>
+<span id="cb65-171"><a href="#cb65-171"></a><span class="in">         |__E_mortality.RData</span></span>
+<span id="cb65-172"><a href="#cb65-172"></a><span class="in">         |__A_mortality.RData</span></span>
+<span id="cb65-173"><a href="#cb65-173"></a><span class="in">      |__03_figures</span></span>
+<span id="cb65-174"><a href="#cb65-174"></a><span class="in">         |__mortality.png</span></span>
+<span id="cb65-175"><a href="#cb65-175"></a><span class="in">         |__mortality.pdf</span></span>
+<span id="cb65-176"><a href="#cb65-176"></a><span class="in">      |__04_tables</span></span>
+<span id="cb65-177"><a href="#cb65-177"></a><span class="in">         |__zero_order_cors.RData</span></span>
+<span id="cb65-178"><a href="#cb65-178"></a><span class="in">         |__descriptives.RData</span></span>
+<span id="cb65-179"><a href="#cb65-179"></a><span class="in">         |__key_terms.RData</span></span>
+<span id="cb65-180"><a href="#cb65-180"></a><span class="in">         |__all_model_terms.RData</span></span>
+<span id="cb65-181"><a href="#cb65-181"></a><span class="in">   |__README.md</span></span>
+<span id="cb65-182"><a href="#cb65-182"></a><span class="in">   |__refs</span></span>
+<span id="cb65-183"><a href="#cb65-183"></a><span class="in">      |__r_refs.bib</span></span>
+<span id="cb65-184"><a href="#cb65-184"></a><span class="in">      |__proj_refs.bib</span></span>
+<span id="cb65-185"><a href="#cb65-185"></a><span class="in">   |__analyses</span></span>
+<span id="cb65-186"><a href="#cb65-186"></a><span class="in">      |__01_background.Rmd</span></span>
+<span id="cb65-187"><a href="#cb65-187"></a><span class="in">      |__02_data_cleaning.Rmd</span></span>
+<span id="cb65-188"><a href="#cb65-188"></a><span class="in">      |__03_models.Rmd</span></span>
+<span id="cb65-189"><a href="#cb65-189"></a><span class="in">      |__04_summary.Rmd</span></span>
+<span id="cb65-190"><a href="#cb65-190"></a><span class="in">```</span></span>
+<span id="cb65-191"><a href="#cb65-191"></a></span>
+<span id="cb65-192"><a href="#cb65-192"></a><span class="fu">## What is a path?</span></span>
+<span id="cb65-193"><a href="#cb65-193"></a></span>
+<span id="cb65-194"><a href="#cb65-194"></a>A path gives the address - or location - of a filesystem object, such as a file or directory.</span>
 <span id="cb65-195"><a href="#cb65-195"></a></span>
-<span id="cb65-196"><a href="#cb65-196"></a><span class="fu">### Absolute paths</span></span>
-<span id="cb65-197"><a href="#cb65-197"></a></span>
-<span id="cb65-198"><a href="#cb65-198"></a><span class="ss">-   </span>An Absolute path is given from the &quot;root directory&quot; of the object.</span>
-<span id="cb65-199"><a href="#cb65-199"></a></span>
-<span id="cb65-200"><a href="#cb65-200"></a><span class="ss">-   </span>The root directory of a file system is the first or top directory in the hierarchy.</span>
+<span id="cb65-196"><a href="#cb65-196"></a><span class="ss">-   </span>Paths appear in the address bar of your browser or file explorer.</span>
+<span id="cb65-197"><a href="#cb65-197"></a><span class="ss">-   </span>We need to know a file path whenever we want to read, write or refer to a file using code rather than interactively pointing and clicking to navigate.</span>
+<span id="cb65-198"><a href="#cb65-198"></a><span class="ss">-   </span>A path can be **absolute** or **relative**</span>
+<span id="cb65-199"><a href="#cb65-199"></a><span class="ss">    -   </span>absolute = whole path from root</span>
+<span id="cb65-200"><a href="#cb65-200"></a><span class="ss">    -   </span>relative = path from current directory</span>
 <span id="cb65-201"><a href="#cb65-201"></a></span>
-<span id="cb65-202"><a href="#cb65-202"></a><span class="ss">-   </span>For example, <span class="in">`C:\`</span> or <span class="in">`M:\`</span> on windows or <span class="in">`/`</span> on a Mac which is displayed as Macintosh HD in Finder.</span>
+<span id="cb65-202"><a href="#cb65-202"></a><span class="fu">### Absolute paths</span></span>
 <span id="cb65-203"><a href="#cb65-203"></a></span>
-<span id="cb65-204"><a href="#cb65-204"></a>The absolute path for a file, <span class="in">`pigeon.txt`</span> could be:</span>
+<span id="cb65-204"><a href="#cb65-204"></a><span class="ss">-   </span>An Absolute path is given from the &quot;root directory&quot; of the object.</span>
 <span id="cb65-205"><a href="#cb65-205"></a></span>
-<span id="cb65-206"><a href="#cb65-206"></a><span class="ss">-   </span>windows: <span class="in">`C:/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`</span></span>
-<span id="cb65-207"><a href="#cb65-207"></a><span class="ss">-   </span>Mac/unix systems: <span class="in">`/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`</span>\</span>
-<span id="cb65-208"><a href="#cb65-208"></a><span class="ss">-   </span>web: <span class="in">`http://github.com/emoriebeck/pigeons/data/pigeon.txt`</span></span>
+<span id="cb65-206"><a href="#cb65-206"></a><span class="ss">-   </span>The root directory of a file system is the first or top directory in the hierarchy.</span>
+<span id="cb65-207"><a href="#cb65-207"></a></span>
+<span id="cb65-208"><a href="#cb65-208"></a><span class="ss">-   </span>For example, <span class="in">`C:\`</span> or <span class="in">`M:\`</span> on windows or <span class="in">`/`</span> on a Mac which is displayed as Macintosh HD in Finder.</span>
 <span id="cb65-209"><a href="#cb65-209"></a></span>
-<span id="cb65-210"><a href="#cb65-210"></a><span class="fu">### What is a directory?</span></span>
+<span id="cb65-210"><a href="#cb65-210"></a>The absolute path for a file, <span class="in">`pigeon.txt`</span> could be:</span>
 <span id="cb65-211"><a href="#cb65-211"></a></span>
-<span id="cb65-212"><a href="#cb65-212"></a><span class="ss">-   </span>Directory is the old word for what many now call a folder <span class="in">`r emo::ji(&quot;folder&quot;)`</span>.</span>
-<span id="cb65-213"><a href="#cb65-213"></a></span>
-<span id="cb65-214"><a href="#cb65-214"></a><span class="ss">-   </span>Commands that act on directories in most programming languages and environments reflect this.</span>
+<span id="cb65-212"><a href="#cb65-212"></a><span class="ss">-   </span>windows: <span class="in">`C:/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`</span></span>
+<span id="cb65-213"><a href="#cb65-213"></a><span class="ss">-   </span>Mac/unix systems: <span class="in">`/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt`</span>\</span>
+<span id="cb65-214"><a href="#cb65-214"></a><span class="ss">-   </span>web: <span class="in">`http://github.com/emoriebeck/pigeons/data/pigeon.txt`</span></span>
 <span id="cb65-215"><a href="#cb65-215"></a></span>
-<span id="cb65-216"><a href="#cb65-216"></a><span class="ss">-   </span>For example, in <span class="in">`R`</span> this means &quot;tell me my working directory&quot;:</span>
+<span id="cb65-216"><a href="#cb65-216"></a><span class="fu">### What is a directory?</span></span>
 <span id="cb65-217"><a href="#cb65-217"></a></span>
-<span id="cb65-218"><a href="#cb65-218"></a><span class="ss">-   </span><span class="in">`getwd()`</span> **get** **w**orking **d**irectory in R</span>
+<span id="cb65-218"><a href="#cb65-218"></a><span class="ss">-   </span>Directory is the old word for what many now call a folder <span class="in">`r emo::ji(&quot;folder&quot;)`</span>.</span>
 <span id="cb65-219"><a href="#cb65-219"></a></span>
-<span id="cb65-220"><a href="#cb65-220"></a><span class="fu">### What is a working directory?</span></span>
+<span id="cb65-220"><a href="#cb65-220"></a><span class="ss">-   </span>Commands that act on directories in most programming languages and environments reflect this.</span>
 <span id="cb65-221"><a href="#cb65-221"></a></span>
-<span id="cb65-222"><a href="#cb65-222"></a><span class="ss">-   </span>The working directory is the default location a program is using. It is where the program will read and write files by default. You have only one working directory at a time.</span>
+<span id="cb65-222"><a href="#cb65-222"></a><span class="ss">-   </span>For example, in <span class="in">`R`</span> this means &quot;tell me my working directory&quot;:</span>
 <span id="cb65-223"><a href="#cb65-223"></a></span>
-<span id="cb65-224"><a href="#cb65-224"></a><span class="ss">-   </span>The terms &#39;working directory&#39;, &#39;current working directory&#39; and &#39;current directory&#39; all mean the same thing.</span>
+<span id="cb65-224"><a href="#cb65-224"></a><span class="ss">-   </span><span class="in">`getwd()`</span> **get** **w**orking **d**irectory in R</span>
 <span id="cb65-225"><a href="#cb65-225"></a></span>
-<span id="cb65-226"><a href="#cb65-226"></a>Find your current working directory with:</span>
+<span id="cb65-226"><a href="#cb65-226"></a><span class="fu">### What is a working directory?</span></span>
 <span id="cb65-227"><a href="#cb65-227"></a></span>
-<span id="cb65-230"><a href="#cb65-230"></a><span class="in">```{r}</span></span>
-<span id="cb65-231"><a href="#cb65-231"></a><span class="fu">getwd</span>()</span>
-<span id="cb65-232"><a href="#cb65-232"></a><span class="in">```</span></span>
+<span id="cb65-228"><a href="#cb65-228"></a><span class="ss">-   </span>The working directory is the default location a program is using. It is where the program will read and write files by default. You have only one working directory at a time.</span>
+<span id="cb65-229"><a href="#cb65-229"></a></span>
+<span id="cb65-230"><a href="#cb65-230"></a><span class="ss">-   </span>The terms &#39;working directory&#39;, &#39;current working directory&#39; and &#39;current directory&#39; all mean the same thing.</span>
+<span id="cb65-231"><a href="#cb65-231"></a></span>
+<span id="cb65-232"><a href="#cb65-232"></a>Find your current working directory with:</span>
 <span id="cb65-233"><a href="#cb65-233"></a></span>
-<span id="cb65-234"><a href="#cb65-234"></a><span class="fu">### Relative paths</span></span>
-<span id="cb65-235"><a href="#cb65-235"></a></span>
-<span id="cb65-236"><a href="#cb65-236"></a>A relative path gives the location of a filesystem object *relative* to the working directory, (i.e., that returned by <span class="in">`getwd()`</span>).</span>
-<span id="cb65-237"><a href="#cb65-237"></a></span>
-<span id="cb65-238"><a href="#cb65-238"></a><span class="ss">-   </span>When <span class="in">`pigeon.txt`</span> is in the working directory the relative path is just the file <span class="sc">\*</span> name: <span class="in">`pigeon.txt`</span></span>
+<span id="cb65-236"><a href="#cb65-236"></a><span class="in">```{r}</span></span>
+<span id="cb65-237"><a href="#cb65-237"></a><span class="fu">getwd</span>()</span>
+<span id="cb65-238"><a href="#cb65-238"></a><span class="in">```</span></span>
 <span id="cb65-239"><a href="#cb65-239"></a></span>
-<span id="cb65-240"><a href="#cb65-240"></a><span class="ss">-   </span>If there is a folder in the working directory called <span class="in">`data-raw`</span> and <span class="in">`pigeon.txt`</span> is in there then the relative path is <span class="in">`data-raw/pigeon.txt`</span></span>
+<span id="cb65-240"><a href="#cb65-240"></a><span class="fu">### Relative paths</span></span>
 <span id="cb65-241"><a href="#cb65-241"></a></span>
-<span id="cb65-242"><a href="#cb65-242"></a><span class="fu">### Paths: moving up the hierarchy</span></span>
+<span id="cb65-242"><a href="#cb65-242"></a>A relative path gives the location of a filesystem object *relative* to the working directory, (i.e., that returned by <span class="in">`getwd()`</span>).</span>
 <span id="cb65-243"><a href="#cb65-243"></a></span>
-<span id="cb65-244"><a href="#cb65-244"></a><span class="ss">-   </span><span class="in">`../`</span> allows you to look in the directory above the working directory</span>
+<span id="cb65-244"><a href="#cb65-244"></a><span class="ss">-   </span>When <span class="in">`pigeon.txt`</span> is in the working directory the relative path is just the file <span class="sc">\*</span> name: <span class="in">`pigeon.txt`</span></span>
 <span id="cb65-245"><a href="#cb65-245"></a></span>
-<span id="cb65-246"><a href="#cb65-246"></a><span class="ss">-   </span>When <span class="in">`pigeon.txt`</span> is in folder above the working the relative path is <span class="in">`../pigeon.txt`</span></span>
+<span id="cb65-246"><a href="#cb65-246"></a><span class="ss">-   </span>If there is a folder in the working directory called <span class="in">`data-raw`</span> and <span class="in">`pigeon.txt`</span> is in there then the relative path is <span class="in">`data-raw/pigeon.txt`</span></span>
 <span id="cb65-247"><a href="#cb65-247"></a></span>
-<span id="cb65-248"><a href="#cb65-248"></a><span class="ss">-   </span>And if it is in a folder called <span class="in">`data-raw`</span> which is in the directory above the working directory then the relative path is <span class="in">`../data-raw/pigeon.txt`</span></span>
+<span id="cb65-248"><a href="#cb65-248"></a><span class="fu">### Paths: moving up the hierarchy</span></span>
 <span id="cb65-249"><a href="#cb65-249"></a></span>
-<span id="cb65-250"><a href="#cb65-250"></a><span class="fu">### What&#39;s in my directory?</span></span>
+<span id="cb65-250"><a href="#cb65-250"></a><span class="ss">-   </span><span class="in">`../`</span> allows you to look in the directory above the working directory</span>
 <span id="cb65-251"><a href="#cb65-251"></a></span>
-<span id="cb65-252"><a href="#cb65-252"></a>You can list the contents of a directory using the <span class="in">`dir()`</span> command</span>
+<span id="cb65-252"><a href="#cb65-252"></a><span class="ss">-   </span>When <span class="in">`pigeon.txt`</span> is in folder above the working the relative path is <span class="in">`../pigeon.txt`</span></span>
 <span id="cb65-253"><a href="#cb65-253"></a></span>
-<span id="cb65-254"><a href="#cb65-254"></a><span class="ss">-   </span><span class="in">`dir()`</span> list the contents of the working directory</span>
-<span id="cb65-255"><a href="#cb65-255"></a><span class="ss">-   </span><span class="in">`dir(&quot;..&quot;)`</span> list the contents of the directory above the working directory</span>
-<span id="cb65-256"><a href="#cb65-256"></a><span class="ss">-   </span><span class="in">`dir(&quot;../..&quot;)`</span> list the contents of the directory two directories above the working directory</span>
-<span id="cb65-257"><a href="#cb65-257"></a><span class="ss">-   </span><span class="in">`dir(&quot;data-raw&quot;)`</span> list the contents of a folder call data-raw which is in the working directory.</span>
-<span id="cb65-258"><a href="#cb65-258"></a></span>
-<span id="cb65-259"><a href="#cb65-259"></a><span class="fu">### Relative or absolute</span></span>
-<span id="cb65-260"><a href="#cb65-260"></a></span>
-<span id="cb65-261"><a href="#cb65-261"></a><span class="ss">-   </span>Most of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).</span>
-<span id="cb65-262"><a href="#cb65-262"></a></span>
-<span id="cb65-263"><a href="#cb65-263"></a><span class="ss">-   </span><span class="in">`r emo::ji(&quot;party&quot;)`</span> The tab key is your friend!</span>
+<span id="cb65-254"><a href="#cb65-254"></a><span class="ss">-   </span>And if it is in a folder called <span class="in">`data-raw`</span> which is in the directory above the working directory then the relative path is <span class="in">`../data-raw/pigeon.txt`</span></span>
+<span id="cb65-255"><a href="#cb65-255"></a></span>
+<span id="cb65-256"><a href="#cb65-256"></a><span class="fu">### What&#39;s in my directory?</span></span>
+<span id="cb65-257"><a href="#cb65-257"></a></span>
+<span id="cb65-258"><a href="#cb65-258"></a>You can list the contents of a directory using the <span class="in">`dir()`</span> command</span>
+<span id="cb65-259"><a href="#cb65-259"></a></span>
+<span id="cb65-260"><a href="#cb65-260"></a><span class="ss">-   </span><span class="in">`dir()`</span> list the contents of the working directory</span>
+<span id="cb65-261"><a href="#cb65-261"></a><span class="ss">-   </span><span class="in">`dir(&quot;..&quot;)`</span> list the contents of the directory above the working directory</span>
+<span id="cb65-262"><a href="#cb65-262"></a><span class="ss">-   </span><span class="in">`dir(&quot;../..&quot;)`</span> list the contents of the directory two directories above the working directory</span>
+<span id="cb65-263"><a href="#cb65-263"></a><span class="ss">-   </span><span class="in">`dir(&quot;data-raw&quot;)`</span> list the contents of a folder call data-raw which is in the working directory.</span>
 <span id="cb65-264"><a href="#cb65-264"></a></span>
-<span id="cb65-265"><a href="#cb65-265"></a><span class="ss">-   </span>You only need to use absolute paths when you are referring to filesystem outside the one you are using.</span>
+<span id="cb65-265"><a href="#cb65-265"></a><span class="fu">### Relative or absolute</span></span>
 <span id="cb65-266"><a href="#cb65-266"></a></span>
-<span id="cb65-267"><a href="#cb65-267"></a><span class="ss">-   </span>I often store the beginning of that path as object.</span>
+<span id="cb65-267"><a href="#cb65-267"></a><span class="ss">-   </span>Most of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).</span>
 <span id="cb65-268"><a href="#cb65-268"></a></span>
-<span id="cb65-269"><a href="#cb65-269"></a><span class="ss">    -   </span>web_wd <span class="sc">\&lt;</span>- &quot;https://github.com/emoriebeck/pigeons/&quot;</span>
-<span id="cb65-270"><a href="#cb65-270"></a><span class="ss">    -   </span>Then I can use <span class="in">`sprintf()`</span> or <span class="in">`paste()`</span> to add different endings</span>
-<span id="cb65-271"><a href="#cb65-271"></a></span>
+<span id="cb65-269"><a href="#cb65-269"></a><span class="ss">-   </span><span class="in">`r emo::ji(&quot;party&quot;)`</span> The tab key is your friend!</span>
+<span id="cb65-270"><a href="#cb65-270"></a></span>
+<span id="cb65-271"><a href="#cb65-271"></a><span class="ss">-   </span>You only need to use absolute paths when you are referring to filesystem outside the one you are using.</span>
 <span id="cb65-272"><a href="#cb65-272"></a></span>
-<span id="cb65-275"><a href="#cb65-275"></a><span class="in">```{r}</span></span>
-<span id="cb65-276"><a href="#cb65-276"></a>web_wd <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/emoriebeck/pigeons/&quot;</span></span>
-<span id="cb65-277"><a href="#cb65-277"></a><span class="fu">sprintf</span>(<span class="st">&quot;%s/data-raw/pigeon.txt&quot;</span>, web_wd)</span>
-<span id="cb65-278"><a href="#cb65-278"></a><span class="in">```</span></span>
-<span id="cb65-279"><a href="#cb65-279"></a></span>
-<span id="cb65-280"><a href="#cb65-280"></a><span class="fu"># RStudio Projects  </span></span>
-<span id="cb65-281"><a href="#cb65-281"></a><span class="fu">## Example</span></span>
-<span id="cb65-282"><a href="#cb65-282"></a></span>
-<span id="cb65-283"><a href="#cb65-283"></a>Download and unzip <span class="co">[</span><span class="ot">pigeons.zip</span><span class="co">](../pigeons.zip)</span> which has the following structure:</span>
+<span id="cb65-273"><a href="#cb65-273"></a><span class="ss">-   </span>I often store the beginning of that path as object.</span>
+<span id="cb65-274"><a href="#cb65-274"></a></span>
+<span id="cb65-275"><a href="#cb65-275"></a><span class="ss">    -   </span>web_wd <span class="sc">\&lt;</span>- &quot;https://github.com/emoriebeck/pigeons/&quot;</span>
+<span id="cb65-276"><a href="#cb65-276"></a><span class="ss">    -   </span>Then I can use <span class="in">`sprintf()`</span> or <span class="in">`paste()`</span> to add different endings</span>
+<span id="cb65-277"><a href="#cb65-277"></a></span>
+<span id="cb65-280"><a href="#cb65-280"></a><span class="in">```{r}</span></span>
+<span id="cb65-281"><a href="#cb65-281"></a>web_wd <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/emoriebeck/pigeons/&quot;</span></span>
+<span id="cb65-282"><a href="#cb65-282"></a><span class="fu">sprintf</span>(<span class="st">&quot;%s/data-raw/pigeon.txt&quot;</span>, web_wd)</span>
+<span id="cb65-283"><a href="#cb65-283"></a><span class="in">```</span></span>
 <span id="cb65-284"><a href="#cb65-284"></a></span>
-<span id="cb65-285"><a href="#cb65-285"></a><span class="in">```         </span></span>
-<span id="cb65-286"><a href="#cb65-286"></a><span class="in">-- pigeons</span></span>
-<span id="cb65-287"><a href="#cb65-287"></a><span class="in">   |__data-processed</span></span>
-<span id="cb65-288"><a href="#cb65-288"></a><span class="in">      |__pigeon_long.txt</span></span>
-<span id="cb65-289"><a href="#cb65-289"></a><span class="in">   |__data-raw</span></span>
-<span id="cb65-290"><a href="#cb65-290"></a><span class="in">      |__pigeon.txt</span></span>
-<span id="cb65-291"><a href="#cb65-291"></a><span class="in">   |__figures</span></span>
-<span id="cb65-292"><a href="#cb65-292"></a><span class="in">      |__fig1.tiff</span></span>
-<span id="cb65-293"><a href="#cb65-293"></a><span class="in">   |__scripts</span></span>
-<span id="cb65-294"><a href="#cb65-294"></a><span class="in">      |__analysis.R</span></span>
-<span id="cb65-295"><a href="#cb65-295"></a><span class="in">      |__import_reshape.R</span></span>
-<span id="cb65-296"><a href="#cb65-296"></a><span class="in">   |__pigeons.Rproj</span></span>
-<span id="cb65-297"><a href="#cb65-297"></a><span class="in">```</span></span>
-<span id="cb65-298"><a href="#cb65-298"></a></span>
-<span id="cb65-299"><a href="#cb65-299"></a><span class="fu">## RStudio Projects</span></span>
-<span id="cb65-300"><a href="#cb65-300"></a></span>
-<span id="cb65-301"><a href="#cb65-301"></a><span class="ss">-   </span>Project is obviously a commonly used word. When I am referring to an <span class="co">[</span><span class="ot">RStudio Project</span><span class="co">](https://support.posit.co/hc/en-us/articles/200526207-Using-Projects)</span> I will use the capitalised words &#39;RStudio Project&#39; or &#39;Project&#39;.</span>
-<span id="cb65-302"><a href="#cb65-302"></a><span class="ss">-   </span>In other cases, I will use &#39;project&#39;.</span>
-<span id="cb65-303"><a href="#cb65-303"></a><span class="ss">-   </span>An RStudio Project is a directory with an <span class="in">`.Rproj`</span> file in it.</span>
-<span id="cb65-304"><a href="#cb65-304"></a><span class="ss">-   </span>The name of the RStudio Project is the same as the name of the top level directory which is referred to as the Project directory.</span>
-<span id="cb65-305"><a href="#cb65-305"></a></span>
-<span id="cb65-306"><a href="#cb65-306"></a>For example, if you create an RStudio Project <span class="in">`ipcs_data_2019`</span> your folder structure would look something like this:</span>
-<span id="cb65-307"><a href="#cb65-307"></a></span>
-<span id="cb65-308"><a href="#cb65-308"></a><span class="in">```         </span></span>
-<span id="cb65-309"><a href="#cb65-309"></a><span class="in">-- ipcs_data_2019</span></span>
-<span id="cb65-310"><a href="#cb65-310"></a><span class="in">   |__ipcs_data_2019.Rproj</span></span>
-<span id="cb65-311"><a href="#cb65-311"></a><span class="in">   |__data</span></span>
-<span id="cb65-312"><a href="#cb65-312"></a><span class="in">      |__raw_data</span></span>
-<span id="cb65-313"><a href="#cb65-313"></a><span class="in">         |__2019-03-21_ema_raw.csv</span></span>
-<span id="cb65-314"><a href="#cb65-314"></a><span class="in">         |__2019-03-21_baseline_raw.csv</span></span>
-<span id="cb65-315"><a href="#cb65-315"></a><span class="in">      |__clean_data</span></span>
-<span id="cb65-316"><a href="#cb65-316"></a><span class="in">         |__2019-06-21_ema_long.csv</span></span>
-<span id="cb65-317"><a href="#cb65-317"></a><span class="in">         |__2019-06-21_ema_long.RData</span></span>
-<span id="cb65-318"><a href="#cb65-318"></a><span class="in">         |__2019-06-21_baseline_wide.csv</span></span>
-<span id="cb65-319"><a href="#cb65-319"></a><span class="in">         |__2019-06-21_baseline_wide.RData</span></span>
-<span id="cb65-320"><a href="#cb65-320"></a><span class="in">   |__results</span></span>
-<span id="cb65-321"><a href="#cb65-321"></a><span class="in">      |__01_models</span></span>
-<span id="cb65-322"><a href="#cb65-322"></a><span class="in">      |__02_summaries</span></span>
-<span id="cb65-323"><a href="#cb65-323"></a><span class="in">      |__03_figures</span></span>
-<span id="cb65-324"><a href="#cb65-324"></a><span class="in">      |__04_tables</span></span>
-<span id="cb65-325"><a href="#cb65-325"></a><span class="in">   |__README.md</span></span>
-<span id="cb65-326"><a href="#cb65-326"></a><span class="in">   |__refs</span></span>
-<span id="cb65-327"><a href="#cb65-327"></a><span class="in">      |__r_refs.bib</span></span>
-<span id="cb65-328"><a href="#cb65-328"></a><span class="in">      |__proj_refs.bib</span></span>
-<span id="cb65-329"><a href="#cb65-329"></a><span class="in">   |__analyses</span></span>
-<span id="cb65-330"><a href="#cb65-330"></a><span class="in">      |__01_background.Rmd</span></span>
-<span id="cb65-331"><a href="#cb65-331"></a><span class="in">      |__02_data_cleaning.Rmd</span></span>
-<span id="cb65-332"><a href="#cb65-332"></a><span class="in">      |__03_models.Rmd</span></span>
-<span id="cb65-333"><a href="#cb65-333"></a><span class="in">      |__04_summary.Rmd</span></span>
-<span id="cb65-334"><a href="#cb65-334"></a><span class="in">```</span></span>
-<span id="cb65-335"><a href="#cb65-335"></a></span>
-<span id="cb65-336"><a href="#cb65-336"></a><span class="ss">-   </span>the <span class="in">`.RProj`</span> file which is the defining feature of an RStudio Project</span>
-<span id="cb65-337"><a href="#cb65-337"></a></span>
-<span id="cb65-338"><a href="#cb65-338"></a><span class="ss">-   </span>When you open an RStudio Project, the working directory is set to the Project directory (i.e., the location of the <span class="in">`.Rproj`</span> file).</span>
-<span id="cb65-339"><a href="#cb65-339"></a></span>
-<span id="cb65-340"><a href="#cb65-340"></a><span class="ss">-   </span>This makes your work portable. You can zip up the project folder and send it to any person, including future you, or any computer.</span>
+<span id="cb65-285"><a href="#cb65-285"></a><span class="fu"># RStudio Projects</span></span>
+<span id="cb65-286"><a href="#cb65-286"></a></span>
+<span id="cb65-287"><a href="#cb65-287"></a><span class="fu">## Example</span></span>
+<span id="cb65-288"><a href="#cb65-288"></a></span>
+<span id="cb65-289"><a href="#cb65-289"></a>Download and unzip <span class="co">[</span><span class="ot">pigeons.zip</span><span class="co">](../pigeons.zip)</span> which has the following structure:</span>
+<span id="cb65-290"><a href="#cb65-290"></a></span>
+<span id="cb65-291"><a href="#cb65-291"></a><span class="in">```         </span></span>
+<span id="cb65-292"><a href="#cb65-292"></a><span class="in">-- pigeons</span></span>
+<span id="cb65-293"><a href="#cb65-293"></a><span class="in">   |__data-processed</span></span>
+<span id="cb65-294"><a href="#cb65-294"></a><span class="in">      |__pigeon_long.txt</span></span>
+<span id="cb65-295"><a href="#cb65-295"></a><span class="in">   |__data-raw</span></span>
+<span id="cb65-296"><a href="#cb65-296"></a><span class="in">      |__pigeon.txt</span></span>
+<span id="cb65-297"><a href="#cb65-297"></a><span class="in">   |__figures</span></span>
+<span id="cb65-298"><a href="#cb65-298"></a><span class="in">      |__fig1.tiff</span></span>
+<span id="cb65-299"><a href="#cb65-299"></a><span class="in">   |__scripts</span></span>
+<span id="cb65-300"><a href="#cb65-300"></a><span class="in">      |__analysis.R</span></span>
+<span id="cb65-301"><a href="#cb65-301"></a><span class="in">      |__import_reshape.R</span></span>
+<span id="cb65-302"><a href="#cb65-302"></a><span class="in">   |__pigeons.Rproj</span></span>
+<span id="cb65-303"><a href="#cb65-303"></a><span class="in">```</span></span>
+<span id="cb65-304"><a href="#cb65-304"></a></span>
+<span id="cb65-305"><a href="#cb65-305"></a><span class="fu">## RStudio Projects</span></span>
+<span id="cb65-306"><a href="#cb65-306"></a></span>
+<span id="cb65-307"><a href="#cb65-307"></a><span class="ss">-   </span>Project is obviously a commonly used word. When I am referring to an <span class="co">[</span><span class="ot">RStudio Project</span><span class="co">](https://support.posit.co/hc/en-us/articles/200526207-Using-Projects)</span> I will use the capitalised words &#39;RStudio Project&#39; or &#39;Project&#39;.</span>
+<span id="cb65-308"><a href="#cb65-308"></a><span class="ss">-   </span>In other cases, I will use &#39;project&#39;.</span>
+<span id="cb65-309"><a href="#cb65-309"></a><span class="ss">-   </span>An RStudio Project is a directory with an <span class="in">`.Rproj`</span> file in it.</span>
+<span id="cb65-310"><a href="#cb65-310"></a><span class="ss">-   </span>The name of the RStudio Project is the same as the name of the top level directory which is referred to as the Project directory.</span>
+<span id="cb65-311"><a href="#cb65-311"></a></span>
+<span id="cb65-312"><a href="#cb65-312"></a>For example, if you create an RStudio Project <span class="in">`ipcs_data_2019`</span> your folder structure would look something like this:</span>
+<span id="cb65-313"><a href="#cb65-313"></a></span>
+<span id="cb65-314"><a href="#cb65-314"></a><span class="in">```         </span></span>
+<span id="cb65-315"><a href="#cb65-315"></a><span class="in">-- ipcs_data_2019</span></span>
+<span id="cb65-316"><a href="#cb65-316"></a><span class="in">   |__ipcs_data_2019.Rproj</span></span>
+<span id="cb65-317"><a href="#cb65-317"></a><span class="in">   |__data</span></span>
+<span id="cb65-318"><a href="#cb65-318"></a><span class="in">      |__raw_data</span></span>
+<span id="cb65-319"><a href="#cb65-319"></a><span class="in">         |__2019-03-21_ema_raw.csv</span></span>
+<span id="cb65-320"><a href="#cb65-320"></a><span class="in">         |__2019-03-21_baseline_raw.csv</span></span>
+<span id="cb65-321"><a href="#cb65-321"></a><span class="in">      |__clean_data</span></span>
+<span id="cb65-322"><a href="#cb65-322"></a><span class="in">         |__2019-06-21_ema_long.csv</span></span>
+<span id="cb65-323"><a href="#cb65-323"></a><span class="in">         |__2019-06-21_ema_long.RData</span></span>
+<span id="cb65-324"><a href="#cb65-324"></a><span class="in">         |__2019-06-21_baseline_wide.csv</span></span>
+<span id="cb65-325"><a href="#cb65-325"></a><span class="in">         |__2019-06-21_baseline_wide.RData</span></span>
+<span id="cb65-326"><a href="#cb65-326"></a><span class="in">   |__results</span></span>
+<span id="cb65-327"><a href="#cb65-327"></a><span class="in">      |__01_models</span></span>
+<span id="cb65-328"><a href="#cb65-328"></a><span class="in">      |__02_summaries</span></span>
+<span id="cb65-329"><a href="#cb65-329"></a><span class="in">      |__03_figures</span></span>
+<span id="cb65-330"><a href="#cb65-330"></a><span class="in">      |__04_tables</span></span>
+<span id="cb65-331"><a href="#cb65-331"></a><span class="in">   |__README.md</span></span>
+<span id="cb65-332"><a href="#cb65-332"></a><span class="in">   |__refs</span></span>
+<span id="cb65-333"><a href="#cb65-333"></a><span class="in">      |__r_refs.bib</span></span>
+<span id="cb65-334"><a href="#cb65-334"></a><span class="in">      |__proj_refs.bib</span></span>
+<span id="cb65-335"><a href="#cb65-335"></a><span class="in">   |__analyses</span></span>
+<span id="cb65-336"><a href="#cb65-336"></a><span class="in">      |__01_background.Rmd</span></span>
+<span id="cb65-337"><a href="#cb65-337"></a><span class="in">      |__02_data_cleaning.Rmd</span></span>
+<span id="cb65-338"><a href="#cb65-338"></a><span class="in">      |__03_models.Rmd</span></span>
+<span id="cb65-339"><a href="#cb65-339"></a><span class="in">      |__04_summary.Rmd</span></span>
+<span id="cb65-340"><a href="#cb65-340"></a><span class="in">```</span></span>
 <span id="cb65-341"><a href="#cb65-341"></a></span>
-<span id="cb65-342"><a href="#cb65-342"></a><span class="ss">-   </span>They will be able to unzip, open the project and have all the code just work.</span>
+<span id="cb65-342"><a href="#cb65-342"></a><span class="ss">-   </span>the <span class="in">`.RProj`</span> file which is the defining feature of an RStudio Project</span>
 <span id="cb65-343"><a href="#cb65-343"></a></span>
-<span id="cb65-344"><a href="#cb65-344"></a><span class="ss">-   </span>(This is great for sending code and/or results to your advisors)</span>
+<span id="cb65-344"><a href="#cb65-344"></a><span class="ss">-   </span>When you open an RStudio Project, the working directory is set to the Project directory (i.e., the location of the <span class="in">`.Rproj`</span> file).</span>
 <span id="cb65-345"><a href="#cb65-345"></a></span>
-<span id="cb65-346"><a href="#cb65-346"></a><span class="fu">## Directory structure</span></span>
+<span id="cb65-346"><a href="#cb65-346"></a><span class="ss">-   </span>This makes your work portable. You can zip up the project folder and send it to any person, including future you, or any computer.</span>
 <span id="cb65-347"><a href="#cb65-347"></a></span>
-<span id="cb65-348"><a href="#cb65-348"></a>You are aiming for structured, systematic and repeatable. For example, the Project directory might contain:</span>
+<span id="cb65-348"><a href="#cb65-348"></a><span class="ss">-   </span>They will be able to unzip, open the project and have all the code just work.</span>
 <span id="cb65-349"><a href="#cb65-349"></a></span>
-<span id="cb65-350"><a href="#cb65-350"></a><span class="ss">-   </span>.RProj file\</span>
-<span id="cb65-351"><a href="#cb65-351"></a><span class="ss">-   </span>README - tell people what the project is and how to use it\</span>
-<span id="cb65-352"><a href="#cb65-352"></a><span class="ss">-   </span>License - tell people what they are allowed to do with your project</span>
-<span id="cb65-353"><a href="#cb65-353"></a><span class="ss">-   </span>Directories</span>
-<span id="cb65-354"><a href="#cb65-354"></a><span class="ss">  *   </span>data/\</span>
-<span id="cb65-355"><a href="#cb65-355"></a><span class="ss">  *   </span>prereg/\</span>
-<span id="cb65-356"><a href="#cb65-356"></a><span class="ss">  *   </span>scripts/</span>
-<span id="cb65-357"><a href="#cb65-357"></a><span class="ss">  *   </span>results/\</span>
-<span id="cb65-358"><a href="#cb65-358"></a><span class="ss">  *   </span>manuscript/</span>
-<span id="cb65-359"><a href="#cb65-359"></a></span>
-<span id="cb65-360"><a href="#cb65-360"></a><span class="fu">## README</span></span>
-<span id="cb65-361"><a href="#cb65-361"></a></span>
-<span id="cb65-362"><a href="#cb65-362"></a><span class="ss">-   </span>READMEs are a form of documentation which have been widely used for a long time. They contain all the information about the other files in a directory. They can be extensive.</span>
-<span id="cb65-363"><a href="#cb65-363"></a></span>
-<span id="cb65-364"><a href="#cb65-364"></a><span class="ss">-   </span>Wikipedia <span class="co">[</span><span class="ot">README page</span><span class="co">](https://en.wikipedia.org/wiki/README)</span>\</span>
+<span id="cb65-350"><a href="#cb65-350"></a><span class="ss">-   </span>(This is great for sending code and/or results to your advisors)</span>
+<span id="cb65-351"><a href="#cb65-351"></a></span>
+<span id="cb65-352"><a href="#cb65-352"></a><span class="fu">## Directory structure</span></span>
+<span id="cb65-353"><a href="#cb65-353"></a></span>
+<span id="cb65-354"><a href="#cb65-354"></a>You are aiming for structured, systematic and repeatable. For example, the Project directory might contain:</span>
+<span id="cb65-355"><a href="#cb65-355"></a></span>
+<span id="cb65-356"><a href="#cb65-356"></a><span class="ss">-   </span>.RProj file\</span>
+<span id="cb65-357"><a href="#cb65-357"></a><span class="ss">-   </span>README - tell people what the project is and how to use it\</span>
+<span id="cb65-358"><a href="#cb65-358"></a><span class="ss">-   </span>License - tell people what they are allowed to do with your project</span>
+<span id="cb65-359"><a href="#cb65-359"></a><span class="ss">-   </span>Directories</span>
+<span id="cb65-360"><a href="#cb65-360"></a><span class="ss">-   </span>data/\</span>
+<span id="cb65-361"><a href="#cb65-361"></a><span class="ss">-   </span>prereg/\</span>
+<span id="cb65-362"><a href="#cb65-362"></a><span class="ss">-   </span>scripts/</span>
+<span id="cb65-363"><a href="#cb65-363"></a><span class="ss">-   </span>results/\</span>
+<span id="cb65-364"><a href="#cb65-364"></a><span class="ss">-   </span>manuscript/</span>
 <span id="cb65-365"><a href="#cb65-365"></a></span>
-<span id="cb65-366"><a href="#cb65-366"></a><span class="ss">-   </span>GitHub Doc&#39;s <span class="co">[</span><span class="ot">About READMEs</span><span class="co">](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-readmes)</span>\</span>
+<span id="cb65-366"><a href="#cb65-366"></a><span class="fu">## README</span></span>
 <span id="cb65-367"><a href="#cb65-367"></a></span>
-<span id="cb65-368"><a href="#cb65-368"></a><span class="ss">-   </span>OSF</span>
+<span id="cb65-368"><a href="#cb65-368"></a><span class="ss">-   </span>READMEs are a form of documentation which have been widely used for a long time. They contain all the information about the other files in a directory. They can be extensive.</span>
 <span id="cb65-369"><a href="#cb65-369"></a></span>
-<span id="cb65-370"><a href="#cb65-370"></a>A minimal README might give:</span>
+<span id="cb65-370"><a href="#cb65-370"></a><span class="ss">-   </span>Wikipedia <span class="co">[</span><span class="ot">README page</span><span class="co">](https://en.wikipedia.org/wiki/README)</span>\</span>
 <span id="cb65-371"><a href="#cb65-371"></a></span>
-<span id="cb65-372"><a href="#cb65-372"></a><span class="ss">-   </span>Title</span>
-<span id="cb65-373"><a href="#cb65-373"></a><span class="ss">-   </span>Description, 50 words or so on what the project is</span>
-<span id="cb65-374"><a href="#cb65-374"></a><span class="ss">-   </span>Technical Description of the project</span>
-<span id="cb65-375"><a href="#cb65-375"></a><span class="ss">    -   </span>What software and packages are needed including versions</span>
-<span id="cb65-376"><a href="#cb65-376"></a><span class="ss">    -   </span>Any instructions needed to run the analysis/use the software</span>
-<span id="cb65-377"><a href="#cb65-377"></a><span class="ss">    -   </span>Any issues that a user might face in running the analysis/using the software</span>
-<span id="cb65-378"><a href="#cb65-378"></a><span class="ss">-   </span>Instructions on how to use the work</span>
-<span id="cb65-379"><a href="#cb65-379"></a><span class="ss">-   </span>Links to where other files, materials, etc. are stored</span>
-<span id="cb65-380"><a href="#cb65-380"></a><span class="ss">    -   </span>E.g., an OSF readme may point to GitHub, PsyArxiv, etc.</span>
-<span id="cb65-381"><a href="#cb65-381"></a></span>
-<span id="cb65-382"><a href="#cb65-382"></a><span class="fu">## License</span></span>
-<span id="cb65-383"><a href="#cb65-383"></a></span>
-<span id="cb65-384"><a href="#cb65-384"></a>A license tells others what they can and can&#39;t do with your work.</span>
-<span id="cb65-385"><a href="#cb65-385"></a></span>
-<span id="cb65-386"><a href="#cb65-386"></a><span class="co">[</span><span class="ot">choosealicense.com</span><span class="co">](https://choosealicense.com/)</span> is a useful explainer.</span>
+<span id="cb65-372"><a href="#cb65-372"></a><span class="ss">-   </span>GitHub Doc&#39;s <span class="co">[</span><span class="ot">About READMEs</span><span class="co">](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-readmes)</span>\</span>
+<span id="cb65-373"><a href="#cb65-373"></a></span>
+<span id="cb65-374"><a href="#cb65-374"></a><span class="ss">-   </span>OSF</span>
+<span id="cb65-375"><a href="#cb65-375"></a></span>
+<span id="cb65-376"><a href="#cb65-376"></a>A minimal README might give:</span>
+<span id="cb65-377"><a href="#cb65-377"></a></span>
+<span id="cb65-378"><a href="#cb65-378"></a><span class="ss">-   </span>Title</span>
+<span id="cb65-379"><a href="#cb65-379"></a><span class="ss">-   </span>Description, 50 words or so on what the project is</span>
+<span id="cb65-380"><a href="#cb65-380"></a><span class="ss">-   </span>Technical Description of the project</span>
+<span id="cb65-381"><a href="#cb65-381"></a><span class="ss">    -   </span>What software and packages are needed including versions</span>
+<span id="cb65-382"><a href="#cb65-382"></a><span class="ss">    -   </span>Any instructions needed to run the analysis/use the software</span>
+<span id="cb65-383"><a href="#cb65-383"></a><span class="ss">    -   </span>Any issues that a user might face in running the analysis/using the software</span>
+<span id="cb65-384"><a href="#cb65-384"></a><span class="ss">-   </span>Instructions on how to use the work</span>
+<span id="cb65-385"><a href="#cb65-385"></a><span class="ss">-   </span>Links to where other files, materials, etc. are stored</span>
+<span id="cb65-386"><a href="#cb65-386"></a><span class="ss">    -   </span>E.g., an OSF readme may point to GitHub, PsyArxiv, etc.</span>
 <span id="cb65-387"><a href="#cb65-387"></a></span>
-<span id="cb65-388"><a href="#cb65-388"></a>I typically use:</span>
+<span id="cb65-388"><a href="#cb65-388"></a><span class="fu">## License</span></span>
 <span id="cb65-389"><a href="#cb65-389"></a></span>
-<span id="cb65-390"><a href="#cb65-390"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">MIT License</span><span class="co">](https://choosealicense.com/licenses/mit/)</span> for software</span>
-<span id="cb65-391"><a href="#cb65-391"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">CC-BY-SA-4.0</span><span class="co">](https://choosealicense.com/licenses/cc-by-sa-4.0/)</span> for other work</span>
-<span id="cb65-392"><a href="#cb65-392"></a></span>
-<span id="cb65-393"><a href="#cb65-393"></a><span class="fu"># Exercise</span></span>
-<span id="cb65-394"><a href="#cb65-394"></a></span>
-<span id="cb65-395"><a href="#cb65-395"></a><span class="ss">-   </span>You are going to create an RStudio Project with some directories and use it to organise a very simple analysis.</span>
-<span id="cb65-396"><a href="#cb65-396"></a><span class="ss">-   </span>The analysis will import a data file, reformat it and write the new format to file. It will then create a figure and write the image to file.</span>
-<span id="cb65-397"><a href="#cb65-397"></a><span class="ss">-   </span>You&#39;ll get practice with tidying data (more on that next week) and plotting data.</span>
+<span id="cb65-390"><a href="#cb65-390"></a>A license tells others what they can and can&#39;t do with your work.</span>
+<span id="cb65-391"><a href="#cb65-391"></a></span>
+<span id="cb65-392"><a href="#cb65-392"></a><span class="co">[</span><span class="ot">choosealicense.com</span><span class="co">](https://choosealicense.com/)</span> is a useful explainer.</span>
+<span id="cb65-393"><a href="#cb65-393"></a></span>
+<span id="cb65-394"><a href="#cb65-394"></a>I typically use:</span>
+<span id="cb65-395"><a href="#cb65-395"></a></span>
+<span id="cb65-396"><a href="#cb65-396"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">MIT License</span><span class="co">](https://choosealicense.com/licenses/mit/)</span> for software</span>
+<span id="cb65-397"><a href="#cb65-397"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">CC-BY-SA-4.0</span><span class="co">](https://choosealicense.com/licenses/cc-by-sa-4.0/)</span> for other work</span>
 <span id="cb65-398"><a href="#cb65-398"></a></span>
-<span id="cb65-399"><a href="#cb65-399"></a><span class="fu">## RStudio Project infrastructure</span></span>
+<span id="cb65-399"><a href="#cb65-399"></a><span class="fu"># Exercise</span></span>
 <span id="cb65-400"><a href="#cb65-400"></a></span>
-<span id="cb65-401"><a href="#cb65-401"></a><span class="in">`r emo::ji(&quot;clapper&quot;)`</span> create a new Project called <span class="in">`iris`</span> by:</span>
-<span id="cb65-402"><a href="#cb65-402"></a></span>
-<span id="cb65-403"><a href="#cb65-403"></a><span class="ss">-   </span>clicking **File-\&gt;New Project...**</span>
+<span id="cb65-401"><a href="#cb65-401"></a><span class="ss">-   </span>You are going to create an RStudio Project with some directories and use it to organise a very simple analysis.</span>
+<span id="cb65-402"><a href="#cb65-402"></a><span class="ss">-   </span>The analysis will import a data file, reformat it and write the new format to file. It will then create a figure and write the image to file.</span>
+<span id="cb65-403"><a href="#cb65-403"></a><span class="ss">-   </span>You&#39;ll get practice with tidying data (more on that next week) and plotting data.</span>
 <span id="cb65-404"><a href="#cb65-404"></a></span>
-<span id="cb65-405"><a href="#cb65-405"></a><span class="ss">-   </span>clicking on the little icon (second from the left) at the top</span>
+<span id="cb65-405"><a href="#cb65-405"></a><span class="fu">## RStudio Project infrastructure</span></span>
 <span id="cb65-406"><a href="#cb65-406"></a></span>
-<span id="cb65-407"><a href="#cb65-407"></a><span class="ss">-   </span>Choose New Project, then New Directory, then New Project. Name the RStudio Project <span class="in">`iris`</span>.</span>
+<span id="cb65-407"><a href="#cb65-407"></a><span class="in">`r emo::ji(&quot;clapper&quot;)`</span> create a new Project called <span class="in">`iris`</span> by:</span>
 <span id="cb65-408"><a href="#cb65-408"></a></span>
-<span id="cb65-409"><a href="#cb65-409"></a><span class="ss">-   </span>Create folders in <span class="in">`iris`</span> called <span class="in">`data-raw`</span>, <span class="in">`data-processed`</span> and <span class="in">`figures`</span>.</span>
+<span id="cb65-409"><a href="#cb65-409"></a><span class="ss">-   </span>clicking **File-\&gt;New Project...**</span>
 <span id="cb65-410"><a href="#cb65-410"></a></span>
-<span id="cb65-411"><a href="#cb65-411"></a><span class="ss">-   </span>Start new scripts called <span class="in">`01-import.R`</span>, <span class="in">`02-tidy.R`</span>, and <span class="in">`03-figures.R`</span></span>
+<span id="cb65-411"><a href="#cb65-411"></a><span class="ss">-   </span>clicking on the little icon (second from the left) at the top</span>
 <span id="cb65-412"><a href="#cb65-412"></a></span>
-<span id="cb65-413"><a href="#cb65-413"></a><span class="fu">## Save and Import</span></span>
+<span id="cb65-413"><a href="#cb65-413"></a><span class="ss">-   </span>Choose New Project, then New Directory, then New Project. Name the RStudio Project <span class="in">`iris`</span>.</span>
 <span id="cb65-414"><a href="#cb65-414"></a></span>
-<span id="cb65-415"><a href="#cb65-415"></a><span class="ss">-   </span>Save a copy of <span class="co">[</span><span class="ot">iris.csv</span><span class="co">](data/iris.csv)</span> to your <span class="in">`data-raw`</span> folder. These data give the information about different species of irises.</span>
+<span id="cb65-415"><a href="#cb65-415"></a><span class="ss">-   </span>Create folders in <span class="in">`iris`</span> called <span class="in">`data-raw`</span>, <span class="in">`data-processed`</span> and <span class="in">`figures`</span>.</span>
 <span id="cb65-416"><a href="#cb65-416"></a></span>
-<span id="cb65-417"><a href="#cb65-417"></a><span class="ss">-   </span>In your <span class="in">`01-import.R`</span> script, load the tidyverse set of packages.</span>
+<span id="cb65-417"><a href="#cb65-417"></a><span class="ss">-   </span>Start new scripts called <span class="in">`01-import.R`</span>, <span class="in">`02-tidy.R`</span>, and <span class="in">`03-figures.R`</span></span>
 <span id="cb65-418"><a href="#cb65-418"></a></span>
-<span id="cb65-419"><a href="#cb65-419"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb65-420"><a href="#cb65-420"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb65-421"><a href="#cb65-421"></a><span class="fu">write_csv</span>(iris, <span class="at">file =</span> <span class="st">&quot;data-raw/iris.csv&quot;</span>)</span>
-<span id="cb65-422"><a href="#cb65-422"></a><span class="in">```</span></span>
-<span id="cb65-423"><a href="#cb65-423"></a></span>
-<span id="cb65-424"><a href="#cb65-424"></a><span class="ss">-   </span>Add the command to import the data:</span>
-<span id="cb65-425"><a href="#cb65-425"></a></span>
-<span id="cb65-426"><a href="#cb65-426"></a></span>
-<span id="cb65-427"><a href="#cb65-427"></a><span class="in">```{r, eval = F}</span></span>
-<span id="cb65-428"><a href="#cb65-428"></a>iris <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data-raw/iris.csv&quot;</span>)</span>
-<span id="cb65-429"><a href="#cb65-429"></a><span class="in">```</span></span>
-<span id="cb65-430"><a href="#cb65-430"></a></span>
-<span id="cb65-431"><a href="#cb65-431"></a><span class="in">```{r, echo = F}</span></span>
-<span id="cb65-432"><a href="#cb65-432"></a><span class="fu">data</span>(iris)</span>
-<span id="cb65-433"><a href="#cb65-433"></a><span class="in">```</span></span>
-<span id="cb65-434"><a href="#cb65-434"></a></span>
+<span id="cb65-419"><a href="#cb65-419"></a><span class="fu">## Save and Import</span></span>
+<span id="cb65-420"><a href="#cb65-420"></a></span>
+<span id="cb65-421"><a href="#cb65-421"></a><span class="ss">-   </span>Save a copy of <span class="co">[</span><span class="ot">iris.csv</span><span class="co">](data/iris.csv)</span> to your <span class="in">`data-raw`</span> folder. These data give the information about different species of irises.</span>
+<span id="cb65-422"><a href="#cb65-422"></a></span>
+<span id="cb65-423"><a href="#cb65-423"></a><span class="ss">-   </span>In your <span class="in">`01-import.R`</span> script, load the tidyverse set of packages.</span>
+<span id="cb65-424"><a href="#cb65-424"></a></span>
+<span id="cb65-425"><a href="#cb65-425"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb65-426"><a href="#cb65-426"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb65-427"><a href="#cb65-427"></a><span class="fu">write_csv</span>(iris, <span class="at">file =</span> <span class="st">&quot;data-raw/iris.csv&quot;</span>)</span>
+<span id="cb65-428"><a href="#cb65-428"></a><span class="in">```</span></span>
+<span id="cb65-429"><a href="#cb65-429"></a></span>
+<span id="cb65-430"><a href="#cb65-430"></a><span class="ss">-   </span>Add the command to import the data:</span>
+<span id="cb65-431"><a href="#cb65-431"></a></span>
+<span id="cb65-432"><a href="#cb65-432"></a><span class="in">```{r, eval = F}</span></span>
+<span id="cb65-433"><a href="#cb65-433"></a>iris <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data-raw/iris.csv&quot;</span>)</span>
+<span id="cb65-434"><a href="#cb65-434"></a><span class="in">```</span></span>
 <span id="cb65-435"><a href="#cb65-435"></a></span>
-<span id="cb65-436"><a href="#cb65-436"></a><span class="ss">-   </span>The relative path is <span class="in">`data-raw/iris.csv`</span> because your working directory is the Project directory, <span class="in">`iris`</span>.</span>
-<span id="cb65-437"><a href="#cb65-437"></a></span>
-<span id="cb65-438"><a href="#cb65-438"></a><span class="fu">## Reformat the data</span></span>
+<span id="cb65-436"><a href="#cb65-436"></a><span class="in">```{r, echo = F}</span></span>
+<span id="cb65-437"><a href="#cb65-437"></a><span class="fu">data</span>(iris)</span>
+<span id="cb65-438"><a href="#cb65-438"></a><span class="in">```</span></span>
 <span id="cb65-439"><a href="#cb65-439"></a></span>
-<span id="cb65-440"><a href="#cb65-440"></a>This dataset has three observations in a row - it is not &#39;tidy&#39;.</span>
+<span id="cb65-440"><a href="#cb65-440"></a><span class="ss">-   </span>The relative path is <span class="in">`data-raw/iris.csv`</span> because your working directory is the Project directory, <span class="in">`iris`</span>.</span>
 <span id="cb65-441"><a href="#cb65-441"></a></span>
-<span id="cb65-442"><a href="#cb65-442"></a><span class="ss">-   </span>Open your <span class="in">`02-tidy.R`</span> script, and reshape the data using:</span>
+<span id="cb65-442"><a href="#cb65-442"></a><span class="fu">## Reformat the data</span></span>
 <span id="cb65-443"><a href="#cb65-443"></a></span>
-<span id="cb65-446"><a href="#cb65-446"></a><span class="in">```{r}</span></span>
-<span id="cb65-447"><a href="#cb65-447"></a>iris <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(<span class="at">data =</span> iris, </span>
-<span id="cb65-448"><a href="#cb65-448"></a>                     <span class="at">cols =</span> <span class="sc">-</span>Species, </span>
-<span id="cb65-449"><a href="#cb65-449"></a>                     <span class="at">names_to =</span> <span class="st">&quot;attribute&quot;</span>, </span>
-<span id="cb65-450"><a href="#cb65-450"></a>                     <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>)</span>
-<span id="cb65-451"><a href="#cb65-451"></a><span class="in">```</span></span>
-<span id="cb65-452"><a href="#cb65-452"></a></span>
-<span id="cb65-453"><a href="#cb65-453"></a></span>
-<span id="cb65-454"><a href="#cb65-454"></a><span class="ss">-   </span>This reformats the dataframe in R but does not overwrite the text file of the data.</span>
-<span id="cb65-455"><a href="#cb65-455"></a></span>
-<span id="cb65-456"><a href="#cb65-456"></a><span class="ss">-   </span>Don&#39;t worry too much about this right now. We&#39;ll spend a lot of time talking about reshaping data next week!</span>
-<span id="cb65-457"><a href="#cb65-457"></a></span>
-<span id="cb65-458"><a href="#cb65-458"></a><span class="fu">## Writing files</span></span>
-<span id="cb65-459"><a href="#cb65-459"></a></span>
-<span id="cb65-460"><a href="#cb65-460"></a>Often we want to write to files.</span>
-<span id="cb65-461"><a href="#cb65-461"></a></span>
-<span id="cb65-462"><a href="#cb65-462"></a><span class="ss">-   </span>My main reasons for doing so are to save copies of data that have been processed and to save manuscripts and graphics.</span>
-<span id="cb65-463"><a href="#cb65-463"></a><span class="ss">-   </span>Also, as someone who collects a lot of data, the de-identified, fully anonymized data files I can share and the identifiable data I collect require multiple versions (and encryption, keys, etc.)</span>
+<span id="cb65-444"><a href="#cb65-444"></a>This dataset has three observations in a row - it is not &#39;tidy&#39;.</span>
+<span id="cb65-445"><a href="#cb65-445"></a></span>
+<span id="cb65-446"><a href="#cb65-446"></a><span class="ss">-   </span>Open your <span class="in">`02-tidy.R`</span> script, and reshape the data using:</span>
+<span id="cb65-447"><a href="#cb65-447"></a></span>
+<span id="cb65-450"><a href="#cb65-450"></a><span class="in">```{r}</span></span>
+<span id="cb65-451"><a href="#cb65-451"></a>iris <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(<span class="at">data =</span> iris, </span>
+<span id="cb65-452"><a href="#cb65-452"></a>                     <span class="at">cols =</span> <span class="sc">-</span>Species, </span>
+<span id="cb65-453"><a href="#cb65-453"></a>                     <span class="at">names_to =</span> <span class="st">&quot;attribute&quot;</span>, </span>
+<span id="cb65-454"><a href="#cb65-454"></a>                     <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>)</span>
+<span id="cb65-455"><a href="#cb65-455"></a><span class="in">```</span></span>
+<span id="cb65-456"><a href="#cb65-456"></a></span>
+<span id="cb65-457"><a href="#cb65-457"></a><span class="ss">-   </span>This reformats the dataframe in R but does not overwrite the text file of the data.</span>
+<span id="cb65-458"><a href="#cb65-458"></a></span>
+<span id="cb65-459"><a href="#cb65-459"></a><span class="ss">-   </span>Don&#39;t worry too much about this right now. We&#39;ll spend a lot of time talking about reshaping data next week!</span>
+<span id="cb65-460"><a href="#cb65-460"></a></span>
+<span id="cb65-461"><a href="#cb65-461"></a><span class="fu">## Writing files</span></span>
+<span id="cb65-462"><a href="#cb65-462"></a></span>
+<span id="cb65-463"><a href="#cb65-463"></a>Often we want to write to files.</span>
 <span id="cb65-464"><a href="#cb65-464"></a></span>
-<span id="cb65-465"><a href="#cb65-465"></a></span>
-<span id="cb65-466"><a href="#cb65-466"></a><span class="ss">-   </span>Write your dataframe <span class="in">`iris`</span> to a csv file named <span class="in">`iris-long.csv`</span> in your <span class="in">`data-processed`</span> folder:</span>
-<span id="cb65-467"><a href="#cb65-467"></a></span>
+<span id="cb65-465"><a href="#cb65-465"></a><span class="ss">-   </span>My main reasons for doing so are to save copies of data that have been processed and to save manuscripts and graphics.</span>
+<span id="cb65-466"><a href="#cb65-466"></a></span>
+<span id="cb65-467"><a href="#cb65-467"></a><span class="ss">-   </span>Also, as someone who collects a lot of data, the de-identified, fully anonymized data files I can share and the identifiable data I collect require multiple versions (and encryption, keys, etc.)</span>
 <span id="cb65-468"><a href="#cb65-468"></a></span>
-<span id="cb65-469"><a href="#cb65-469"></a><span class="in">```{r, eval = F}</span></span>
-<span id="cb65-470"><a href="#cb65-470"></a>file <span class="ot">&lt;-</span> <span class="st">&quot;data-processed/iris-long.csv&quot;</span></span>
-<span id="cb65-471"><a href="#cb65-471"></a><span class="fu">write_csv</span>(iris, file)</span>
-<span id="cb65-472"><a href="#cb65-472"></a><span class="in">```</span></span>
-<span id="cb65-473"><a href="#cb65-473"></a></span>
-<span id="cb65-474"><a href="#cb65-474"></a><span class="in">```{r, echo = F, eval = F}</span></span>
-<span id="cb65-475"><a href="#cb65-475"></a>file <span class="ot">&lt;-</span> <span class="st">&quot;iris/data-processed/iris-long.csv&quot;</span></span>
-<span id="cb65-476"><a href="#cb65-476"></a><span class="fu">write_csv</span>(iris, file)</span>
-<span id="cb65-477"><a href="#cb65-477"></a><span class="in">```</span></span>
-<span id="cb65-478"><a href="#cb65-478"></a></span>
-<span id="cb65-479"><a href="#cb65-479"></a><span class="ss">-   </span>Putting file paths into variables often makes your code easier to read especially when file paths are long or used multiple times.</span>
+<span id="cb65-469"><a href="#cb65-469"></a><span class="ss">-   </span>Write your dataframe <span class="in">`iris`</span> to a csv file named <span class="in">`iris-long.csv`</span> in your <span class="in">`data-processed`</span> folder:</span>
+<span id="cb65-470"><a href="#cb65-470"></a></span>
+<span id="cb65-471"><a href="#cb65-471"></a><span class="in">```{r, eval = F}</span></span>
+<span id="cb65-472"><a href="#cb65-472"></a>file <span class="ot">&lt;-</span> <span class="st">&quot;data-processed/iris-long.csv&quot;</span></span>
+<span id="cb65-473"><a href="#cb65-473"></a><span class="fu">write_csv</span>(iris, file)</span>
+<span id="cb65-474"><a href="#cb65-474"></a><span class="in">```</span></span>
+<span id="cb65-475"><a href="#cb65-475"></a></span>
+<span id="cb65-476"><a href="#cb65-476"></a><span class="in">```{r, echo = F, eval = F}</span></span>
+<span id="cb65-477"><a href="#cb65-477"></a>file <span class="ot">&lt;-</span> <span class="st">&quot;iris/data-processed/iris-long.csv&quot;</span></span>
+<span id="cb65-478"><a href="#cb65-478"></a><span class="fu">write_csv</span>(iris, file)</span>
+<span id="cb65-479"><a href="#cb65-479"></a><span class="in">```</span></span>
 <span id="cb65-480"><a href="#cb65-480"></a></span>
-<span id="cb65-481"><a href="#cb65-481"></a><span class="fu">## Create a plot</span></span>
+<span id="cb65-481"><a href="#cb65-481"></a><span class="ss">-   </span>Putting file paths into variables often makes your code easier to read especially when file paths are long or used multiple times.</span>
 <span id="cb65-482"><a href="#cb65-482"></a></span>
-<span id="cb65-483"><a href="#cb65-483"></a>Open your <span class="in">`03-figures.R`</span> script and create a simple plot of this data with:</span>
+<span id="cb65-483"><a href="#cb65-483"></a><span class="fu">## Create a plot</span></span>
 <span id="cb65-484"><a href="#cb65-484"></a></span>
-<span id="cb65-485"><a href="#cb65-485"></a></span>
-<span id="cb65-488"><a href="#cb65-488"></a><span class="in">```{r}</span></span>
-<span id="cb65-489"><a href="#cb65-489"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb65-490"><a href="#cb65-490"></a>  <span class="at">data =</span> iris</span>
-<span id="cb65-491"><a href="#cb65-491"></a>  , <span class="fu">aes</span>(<span class="at">y =</span> Species, <span class="at">x =</span> value, <span class="at">fill =</span> Species)</span>
-<span id="cb65-492"><a href="#cb65-492"></a>  ) <span class="sc">+</span> </span>
-<span id="cb65-493"><a href="#cb65-493"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>                       </span>
-<span id="cb65-494"><a href="#cb65-494"></a>  <span class="fu">facet_grid</span>(attribute<span class="sc">~</span>.) <span class="sc">+</span> </span>
-<span id="cb65-495"><a href="#cb65-495"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Attribute&quot;</span>) <span class="sc">+</span></span>
-<span id="cb65-496"><a href="#cb65-496"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Species&quot;</span>) <span class="sc">+</span></span>
-<span id="cb65-497"><a href="#cb65-497"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
-<span id="cb65-498"><a href="#cb65-498"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb65-499"><a href="#cb65-499"></a><span class="in">```</span></span>
-<span id="cb65-500"><a href="#cb65-500"></a></span>
+<span id="cb65-485"><a href="#cb65-485"></a>Open your <span class="in">`03-figures.R`</span> script and create a simple plot of this data with:</span>
+<span id="cb65-486"><a href="#cb65-486"></a></span>
+<span id="cb65-489"><a href="#cb65-489"></a><span class="in">```{r}</span></span>
+<span id="cb65-490"><a href="#cb65-490"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb65-491"><a href="#cb65-491"></a>  <span class="at">data =</span> iris</span>
+<span id="cb65-492"><a href="#cb65-492"></a>  , <span class="fu">aes</span>(<span class="at">y =</span> Species, <span class="at">x =</span> value, <span class="at">fill =</span> Species)</span>
+<span id="cb65-493"><a href="#cb65-493"></a>  ) <span class="sc">+</span> </span>
+<span id="cb65-494"><a href="#cb65-494"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>                       </span>
+<span id="cb65-495"><a href="#cb65-495"></a>  <span class="fu">facet_grid</span>(attribute<span class="sc">~</span>.) <span class="sc">+</span> </span>
+<span id="cb65-496"><a href="#cb65-496"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Attribute&quot;</span>) <span class="sc">+</span></span>
+<span id="cb65-497"><a href="#cb65-497"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Species&quot;</span>) <span class="sc">+</span></span>
+<span id="cb65-498"><a href="#cb65-498"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb65-499"><a href="#cb65-499"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb65-500"><a href="#cb65-500"></a><span class="in">```</span></span>
 <span id="cb65-501"><a href="#cb65-501"></a></span>
 <span id="cb65-502"><a href="#cb65-502"></a><span class="fu">## View plot</span></span>
 <span id="cb65-503"><a href="#cb65-503"></a></span>
@@ -7180,407 +7180,393 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb65-529"><a href="#cb65-529"></a>dpi <span class="ot">&lt;-</span> <span class="dv">600</span></span>
 <span id="cb65-530"><a href="#cb65-530"></a>device <span class="ot">&lt;-</span> <span class="st">&quot;tiff&quot;</span> </span>
 <span id="cb65-531"><a href="#cb65-531"></a><span class="in">```</span></span>
-<span id="cb65-532"><a href="#cb65-532"></a></span>
-<span id="cb65-533"><a href="#cb65-533"></a>:::</span>
-<span id="cb65-534"><a href="#cb65-534"></a></span>
-<span id="cb65-535"><a href="#cb65-535"></a>::: column</span>
-<span id="cb65-536"><a href="#cb65-536"></a><span class="ss">-   </span>Save the figure to your figures directory:</span>
-<span id="cb65-537"><a href="#cb65-537"></a></span>
-<span id="cb65-538"><a href="#cb65-538"></a></span>
-<span id="cb65-539"><a href="#cb65-539"></a><span class="in">```{r, eval = F}</span></span>
-<span id="cb65-540"><a href="#cb65-540"></a><span class="fu">ggsave</span>(<span class="st">&quot;figures/fig1.tiff&quot;</span>,</span>
-<span id="cb65-541"><a href="#cb65-541"></a>       <span class="at">plot =</span> fig1,</span>
-<span id="cb65-542"><a href="#cb65-542"></a>       <span class="at">device =</span> device,</span>
-<span id="cb65-543"><a href="#cb65-543"></a>       <span class="at">width =</span> fig_w,</span>
-<span id="cb65-544"><a href="#cb65-544"></a>       <span class="at">height =</span> fig_h,</span>
-<span id="cb65-545"><a href="#cb65-545"></a>       <span class="at">units =</span> units,</span>
-<span id="cb65-546"><a href="#cb65-546"></a>       <span class="at">dpi =</span> dpi)</span>
-<span id="cb65-547"><a href="#cb65-547"></a><span class="in">```</span></span>
-<span id="cb65-548"><a href="#cb65-548"></a></span>
-<span id="cb65-549"><a href="#cb65-549"></a><span class="in">```{r, echo = F}</span></span>
-<span id="cb65-550"><a href="#cb65-550"></a><span class="fu">ggsave</span>(<span class="st">&quot;iris/figures/fig1.tiff&quot;</span>,</span>
-<span id="cb65-551"><a href="#cb65-551"></a>       <span class="at">plot =</span> fig1,</span>
-<span id="cb65-552"><a href="#cb65-552"></a>       <span class="at">device =</span> device,</span>
-<span id="cb65-553"><a href="#cb65-553"></a>       <span class="at">width =</span> fig_w,</span>
-<span id="cb65-554"><a href="#cb65-554"></a>       <span class="at">height =</span> fig_h,</span>
-<span id="cb65-555"><a href="#cb65-555"></a>       <span class="at">units =</span> units,</span>
-<span id="cb65-556"><a href="#cb65-556"></a>       <span class="at">dpi =</span> dpi)</span>
-<span id="cb65-557"><a href="#cb65-557"></a><span class="in">```</span></span>
-<span id="cb65-558"><a href="#cb65-558"></a></span>
-<span id="cb65-559"><a href="#cb65-559"></a></span>
-<span id="cb65-560"><a href="#cb65-560"></a><span class="ss">-   </span>Check it is there!</span>
-<span id="cb65-561"><a href="#cb65-561"></a>:::</span>
-<span id="cb65-562"><a href="#cb65-562"></a>:::</span>
-<span id="cb65-563"><a href="#cb65-563"></a></span>
-<span id="cb65-564"><a href="#cb65-564"></a>------------------------------------------------------------------------</span>
-<span id="cb65-565"><a href="#cb65-565"></a></span>
-<span id="cb65-566"><a href="#cb65-566"></a>::: {.columns style=&quot;display: flex !important; height: 90%;&quot;}</span>
-<span id="cb65-567"><a href="#cb65-567"></a>::: {.column width=&quot;70%&quot; style=&quot;display: flex; align-items: center;&quot;}</span>
-<span id="cb65-568"><a href="#cb65-568"></a><span class="co">&lt;!-- &lt;p style=&quot;font-size:160%;&quot;&gt; --&gt;</span></span>
-<span id="cb65-569"><a href="#cb65-569"></a></span>
-<span id="cb65-570"><a href="#cb65-570"></a><span class="fu"># Data Manipulation in `dplyr`</span></span>
+<span id="cb65-532"><a href="#cb65-532"></a>:::</span>
+<span id="cb65-533"><a href="#cb65-533"></a></span>
+<span id="cb65-534"><a href="#cb65-534"></a>::: column</span>
+<span id="cb65-535"><a href="#cb65-535"></a><span class="ss">-   </span>Save the figure to your figures directory:</span>
+<span id="cb65-536"><a href="#cb65-536"></a></span>
+<span id="cb65-537"><a href="#cb65-537"></a><span class="in">```{r, eval = F}</span></span>
+<span id="cb65-538"><a href="#cb65-538"></a><span class="fu">ggsave</span>(<span class="st">&quot;figures/fig1.tiff&quot;</span>,</span>
+<span id="cb65-539"><a href="#cb65-539"></a>       <span class="at">plot =</span> fig1,</span>
+<span id="cb65-540"><a href="#cb65-540"></a>       <span class="at">device =</span> device,</span>
+<span id="cb65-541"><a href="#cb65-541"></a>       <span class="at">width =</span> fig_w,</span>
+<span id="cb65-542"><a href="#cb65-542"></a>       <span class="at">height =</span> fig_h,</span>
+<span id="cb65-543"><a href="#cb65-543"></a>       <span class="at">units =</span> units,</span>
+<span id="cb65-544"><a href="#cb65-544"></a>       <span class="at">dpi =</span> dpi)</span>
+<span id="cb65-545"><a href="#cb65-545"></a><span class="in">```</span></span>
+<span id="cb65-546"><a href="#cb65-546"></a></span>
+<span id="cb65-547"><a href="#cb65-547"></a><span class="in">```{r, echo = F}</span></span>
+<span id="cb65-548"><a href="#cb65-548"></a><span class="fu">ggsave</span>(<span class="st">&quot;iris/figures/fig1.tiff&quot;</span>,</span>
+<span id="cb65-549"><a href="#cb65-549"></a>       <span class="at">plot =</span> fig1,</span>
+<span id="cb65-550"><a href="#cb65-550"></a>       <span class="at">device =</span> device,</span>
+<span id="cb65-551"><a href="#cb65-551"></a>       <span class="at">width =</span> fig_w,</span>
+<span id="cb65-552"><a href="#cb65-552"></a>       <span class="at">height =</span> fig_h,</span>
+<span id="cb65-553"><a href="#cb65-553"></a>       <span class="at">units =</span> units,</span>
+<span id="cb65-554"><a href="#cb65-554"></a>       <span class="at">dpi =</span> dpi)</span>
+<span id="cb65-555"><a href="#cb65-555"></a><span class="in">```</span></span>
+<span id="cb65-556"><a href="#cb65-556"></a></span>
+<span id="cb65-557"><a href="#cb65-557"></a><span class="ss">-   </span>Check it is there!</span>
+<span id="cb65-558"><a href="#cb65-558"></a>:::</span>
+<span id="cb65-559"><a href="#cb65-559"></a>:::</span>
+<span id="cb65-560"><a href="#cb65-560"></a></span>
+<span id="cb65-561"><a href="#cb65-561"></a>------------------------------------------------------------------------</span>
+<span id="cb65-562"><a href="#cb65-562"></a></span>
+<span id="cb65-563"><a href="#cb65-563"></a>::: {.columns style=&quot;display: flex !important; height: 90%;&quot;}</span>
+<span id="cb65-564"><a href="#cb65-564"></a>::: {.column width=&quot;70%&quot; style=&quot;display: flex; align-items: center;&quot;}</span>
+<span id="cb65-565"><a href="#cb65-565"></a><span class="co">&lt;!-- &lt;p style=&quot;font-size:160%;&quot;&gt; --&gt;</span></span>
+<span id="cb65-566"><a href="#cb65-566"></a></span>
+<span id="cb65-567"><a href="#cb65-567"></a><span class="fu"># Data Manipulation in `dplyr`</span></span>
+<span id="cb65-568"><a href="#cb65-568"></a></span>
+<span id="cb65-569"><a href="#cb65-569"></a><span class="co">&lt;!-- &lt;/p&gt; --&gt;</span></span>
+<span id="cb65-570"><a href="#cb65-570"></a>:::</span>
 <span id="cb65-571"><a href="#cb65-571"></a></span>
-<span id="cb65-572"><a href="#cb65-572"></a><span class="co">&lt;!-- &lt;/p&gt; --&gt;</span></span>
-<span id="cb65-573"><a href="#cb65-573"></a>:::</span>
-<span id="cb65-574"><a href="#cb65-574"></a></span>
-<span id="cb65-575"><a href="#cb65-575"></a>::: {.column width=&quot;30%&quot; style=&quot;display: flex; justify-content: center; align-items: center;&quot;}</span>
-<span id="cb65-576"><a href="#cb65-576"></a><span class="in">```{r, fig.align=&#39;center&#39;, echo = F}</span></span>
-<span id="cb65-577"><a href="#cb65-577"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/dplyr.png&quot;</span>)</span>
-<span id="cb65-578"><a href="#cb65-578"></a><span class="in">```</span></span>
-<span id="cb65-579"><a href="#cb65-579"></a>:::</span>
-<span id="cb65-580"><a href="#cb65-580"></a>:::</span>
-<span id="cb65-581"><a href="#cb65-581"></a></span>
-<span id="cb65-582"><a href="#cb65-582"></a><span class="fu"># `dplyr` Core Functions</span></span>
-<span id="cb65-583"><a href="#cb65-583"></a></span>
-<span id="cb65-584"><a href="#cb65-584"></a><span class="ss">1.  </span>**`%&gt;%`**: The pipe. Read as &quot;and then.&quot;</span>
-<span id="cb65-585"><a href="#cb65-585"></a><span class="ss">2.  </span>**`filter()`**: Pick observations (rows) by their values.</span>
-<span id="cb65-586"><a href="#cb65-586"></a><span class="ss">3.  </span>**`select()`**: Pick variables (columns) by their names.</span>
-<span id="cb65-587"><a href="#cb65-587"></a><span class="ss">4.  </span>**`arrange()`**: Reorder the rows.</span>
-<span id="cb65-588"><a href="#cb65-588"></a><span class="ss">5.  </span>**`group_by()`**: Implicitly split the data set by grouping by names (columns).</span>
-<span id="cb65-589"><a href="#cb65-589"></a><span class="ss">6.  </span>**`mutate()`**: Create new variables with functions of existing variables.</span>
-<span id="cb65-590"><a href="#cb65-590"></a><span class="ss">7.  </span>**`summarize()` / `summarise()`**: Collapse many values down to a single summary.</span>
-<span id="cb65-591"><a href="#cb65-591"></a></span>
-<span id="cb65-592"><a href="#cb65-592"></a><span class="fu">## Core Functions</span></span>
-<span id="cb65-593"><a href="#cb65-593"></a></span>
-<span id="cb65-594"><a href="#cb65-594"></a>::: columns</span>
-<span id="cb65-595"><a href="#cb65-595"></a>::: {.column width=&quot;40%&quot;}</span>
-<span id="cb65-596"><a href="#cb65-596"></a>::: nonincremental</span>
-<span id="cb65-597"><a href="#cb65-597"></a><span class="ss">1.  </span>**`%&gt;%`**</span>
-<span id="cb65-598"><a href="#cb65-598"></a><span class="ss">2.  </span>**`filter()`**</span>
-<span id="cb65-599"><a href="#cb65-599"></a><span class="ss">3.  </span>**`select()`**</span>
-<span id="cb65-600"><a href="#cb65-600"></a><span class="ss">4.  </span>**`arrange()`**</span>
-<span id="cb65-601"><a href="#cb65-601"></a><span class="ss">5.  </span>**`group_by()`**</span>
-<span id="cb65-602"><a href="#cb65-602"></a><span class="ss">6.  </span>**`mutate()`**</span>
-<span id="cb65-603"><a href="#cb65-603"></a><span class="ss">7.  </span>**`summarize()`**</span>
-<span id="cb65-604"><a href="#cb65-604"></a>:::</span>
-<span id="cb65-605"><a href="#cb65-605"></a>:::</span>
-<span id="cb65-606"><a href="#cb65-606"></a></span>
-<span id="cb65-607"><a href="#cb65-607"></a>::: {.column width=&quot;60%&quot; style=&quot;text-align: center; background-color: #FFD966; color: black; border: 5px solid #033266;&quot;}</span>
-<span id="cb65-608"><a href="#cb65-608"></a>Although each of these functions are powerful alone, they are incredibly powerful in conjunction with one another. So below, I&#39;ll briefly introduce each function, then link them all together using an example of basic data cleaning and summary.</span>
-<span id="cb65-609"><a href="#cb65-609"></a>:::</span>
-<span id="cb65-610"><a href="#cb65-610"></a>:::</span>
-<span id="cb65-611"><a href="#cb65-611"></a></span>
-<span id="cb65-612"><a href="#cb65-612"></a><span class="fu">## 1. `%&gt;%`</span></span>
-<span id="cb65-613"><a href="#cb65-613"></a></span>
-<span id="cb65-614"><a href="#cb65-614"></a><span class="ss">-   </span>The pipe <span class="in">`%&gt;%`</span> is wonderful. It makes coding intuitive. Often in coding, you need to use so-called nested functions. For example, you might want to round a number after taking the square of 43.</span>
-<span id="cb65-615"><a href="#cb65-615"></a></span>
-<span id="cb65-616"><a href="#cb65-616"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-617"><a href="#cb65-617"></a><span class="fu">sqrt</span>(<span class="dv">43</span>)</span>
-<span id="cb65-618"><a href="#cb65-618"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(<span class="dv">43</span>), <span class="dv">2</span>)</span>
-<span id="cb65-619"><a href="#cb65-619"></a><span class="in">```</span></span>
-<span id="cb65-620"><a href="#cb65-620"></a></span>
-<span id="cb65-621"><a href="#cb65-621"></a>The issue with this comes whenever we need to do a series of operations on a data set or other type of object. In such cases, if we run it in a single call, then we have to start in the middle and read our way out.</span>
-<span id="cb65-622"><a href="#cb65-622"></a></span>
-<span id="cb65-623"><a href="#cb65-623"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-624"><a href="#cb65-624"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(<span class="dv">43</span><span class="sc">/</span><span class="dv">2</span>), <span class="dv">2</span>)</span>
-<span id="cb65-625"><a href="#cb65-625"></a><span class="in">```</span></span>
-<span id="cb65-626"><a href="#cb65-626"></a></span>
-<span id="cb65-627"><a href="#cb65-627"></a>The pipe solves this by allowing you to read from left to right (or top to bottom). The easiest way to think of it is that each call of <span class="in">`%&gt;%`</span> reads and operates as &quot;and then.&quot; So with the rounded square root of 43, for example:</span>
-<span id="cb65-628"><a href="#cb65-628"></a></span>
-<span id="cb65-629"><a href="#cb65-629"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-630"><a href="#cb65-630"></a><span class="fu">sqrt</span>(<span class="dv">43</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb65-631"><a href="#cb65-631"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb65-632"><a href="#cb65-632"></a><span class="in">```</span></span>
-<span id="cb65-633"><a href="#cb65-633"></a></span>
-<span id="cb65-634"><a href="#cb65-634"></a><span class="fu">## 2. `filter()`</span></span>
-<span id="cb65-635"><a href="#cb65-635"></a></span>
+<span id="cb65-572"><a href="#cb65-572"></a>::: {.column width=&quot;30%&quot; style=&quot;display: flex; justify-content: center; align-items: center;&quot;}</span>
+<span id="cb65-573"><a href="#cb65-573"></a><span class="in">```{r, fig.align=&#39;center&#39;, echo = F}</span></span>
+<span id="cb65-574"><a href="#cb65-574"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://github.com/rstudio/hex-stickers/raw/main/thumbs/dplyr.png&quot;</span>)</span>
+<span id="cb65-575"><a href="#cb65-575"></a><span class="in">```</span></span>
+<span id="cb65-576"><a href="#cb65-576"></a>:::</span>
+<span id="cb65-577"><a href="#cb65-577"></a>:::</span>
+<span id="cb65-578"><a href="#cb65-578"></a></span>
+<span id="cb65-579"><a href="#cb65-579"></a><span class="fu"># `dplyr` Core Functions</span></span>
+<span id="cb65-580"><a href="#cb65-580"></a></span>
+<span id="cb65-581"><a href="#cb65-581"></a><span class="ss">1.  </span>**`%&gt;%`**: The pipe. Read as &quot;and then.&quot;</span>
+<span id="cb65-582"><a href="#cb65-582"></a><span class="ss">2.  </span>**`filter()`**: Pick observations (rows) by their values.</span>
+<span id="cb65-583"><a href="#cb65-583"></a><span class="ss">3.  </span>**`select()`**: Pick variables (columns) by their names.</span>
+<span id="cb65-584"><a href="#cb65-584"></a><span class="ss">4.  </span>**`arrange()`**: Reorder the rows.</span>
+<span id="cb65-585"><a href="#cb65-585"></a><span class="ss">5.  </span>**`group_by()`**: Implicitly split the data set by grouping by names (columns).</span>
+<span id="cb65-586"><a href="#cb65-586"></a><span class="ss">6.  </span>**`mutate()`**: Create new variables with functions of existing variables.</span>
+<span id="cb65-587"><a href="#cb65-587"></a><span class="ss">7.  </span>**`summarize()` / `summarise()`**: Collapse many values down to a single summary.</span>
+<span id="cb65-588"><a href="#cb65-588"></a></span>
+<span id="cb65-589"><a href="#cb65-589"></a><span class="fu">## Core Functions</span></span>
+<span id="cb65-590"><a href="#cb65-590"></a></span>
+<span id="cb65-591"><a href="#cb65-591"></a>::: columns</span>
+<span id="cb65-592"><a href="#cb65-592"></a>::: {.column width=&quot;40%&quot;}</span>
+<span id="cb65-593"><a href="#cb65-593"></a>::: nonincremental</span>
+<span id="cb65-594"><a href="#cb65-594"></a><span class="ss">1.  </span>**`%&gt;%`**</span>
+<span id="cb65-595"><a href="#cb65-595"></a><span class="ss">2.  </span>**`filter()`**</span>
+<span id="cb65-596"><a href="#cb65-596"></a><span class="ss">3.  </span>**`select()`**</span>
+<span id="cb65-597"><a href="#cb65-597"></a><span class="ss">4.  </span>**`arrange()`**</span>
+<span id="cb65-598"><a href="#cb65-598"></a><span class="ss">5.  </span>**`group_by()`**</span>
+<span id="cb65-599"><a href="#cb65-599"></a><span class="ss">6.  </span>**`mutate()`**</span>
+<span id="cb65-600"><a href="#cb65-600"></a><span class="ss">7.  </span>**`summarize()`**</span>
+<span id="cb65-601"><a href="#cb65-601"></a>:::</span>
+<span id="cb65-602"><a href="#cb65-602"></a>:::</span>
+<span id="cb65-603"><a href="#cb65-603"></a></span>
+<span id="cb65-604"><a href="#cb65-604"></a>::: {.column width=&quot;60%&quot; style=&quot;text-align: center; background-color: #FFD966; color: black; border: 5px solid #033266;&quot;}</span>
+<span id="cb65-605"><a href="#cb65-605"></a>Although each of these functions are powerful alone, they are incredibly powerful in conjunction with one another. So below, I&#39;ll briefly introduce each function, then link them all together using an example of basic data cleaning and summary.</span>
+<span id="cb65-606"><a href="#cb65-606"></a>:::</span>
+<span id="cb65-607"><a href="#cb65-607"></a>:::</span>
+<span id="cb65-608"><a href="#cb65-608"></a></span>
+<span id="cb65-609"><a href="#cb65-609"></a><span class="fu">## 1. `%&gt;%`</span></span>
+<span id="cb65-610"><a href="#cb65-610"></a></span>
+<span id="cb65-611"><a href="#cb65-611"></a><span class="ss">-   </span>The pipe <span class="in">`%&gt;%`</span> is wonderful. It makes coding intuitive. Often in coding, you need to use so-called nested functions. For example, you might want to round a number after taking the square of 43.</span>
+<span id="cb65-612"><a href="#cb65-612"></a></span>
+<span id="cb65-613"><a href="#cb65-613"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-614"><a href="#cb65-614"></a><span class="fu">sqrt</span>(<span class="dv">43</span>)</span>
+<span id="cb65-615"><a href="#cb65-615"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(<span class="dv">43</span>), <span class="dv">2</span>)</span>
+<span id="cb65-616"><a href="#cb65-616"></a><span class="in">```</span></span>
+<span id="cb65-617"><a href="#cb65-617"></a></span>
+<span id="cb65-618"><a href="#cb65-618"></a>The issue with this comes whenever we need to do a series of operations on a data set or other type of object. In such cases, if we run it in a single call, then we have to start in the middle and read our way out.</span>
+<span id="cb65-619"><a href="#cb65-619"></a></span>
+<span id="cb65-620"><a href="#cb65-620"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-621"><a href="#cb65-621"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(<span class="dv">43</span><span class="sc">/</span><span class="dv">2</span>), <span class="dv">2</span>)</span>
+<span id="cb65-622"><a href="#cb65-622"></a><span class="in">```</span></span>
+<span id="cb65-623"><a href="#cb65-623"></a></span>
+<span id="cb65-624"><a href="#cb65-624"></a>The pipe solves this by allowing you to read from left to right (or top to bottom). The easiest way to think of it is that each call of <span class="in">`%&gt;%`</span> reads and operates as &quot;and then.&quot; So with the rounded square root of 43, for example:</span>
+<span id="cb65-625"><a href="#cb65-625"></a></span>
+<span id="cb65-626"><a href="#cb65-626"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-627"><a href="#cb65-627"></a><span class="fu">sqrt</span>(<span class="dv">43</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb65-628"><a href="#cb65-628"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb65-629"><a href="#cb65-629"></a><span class="in">```</span></span>
+<span id="cb65-630"><a href="#cb65-630"></a></span>
+<span id="cb65-631"><a href="#cb65-631"></a><span class="fu">## 2. `filter()`</span></span>
+<span id="cb65-632"><a href="#cb65-632"></a></span>
+<span id="cb65-633"><a href="#cb65-633"></a>Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don&#39;t want to include.</span>
+<span id="cb65-634"><a href="#cb65-634"></a></span>
+<span id="cb65-635"><a href="#cb65-635"></a><span class="co">&lt;!-- Say for example, that you&#39;re interested personality change in adolescence, but you just opened a survey up online. So when you actually download and examine your data, you realize that you have an age range of something like 3-86, not 12-18. In this case, you want to get rid of the people over 18 -- that is, `filter()` them out.   --&gt;</span></span>
 <span id="cb65-636"><a href="#cb65-636"></a></span>
-<span id="cb65-637"><a href="#cb65-637"></a>Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don&#39;t want to include.</span>
-<span id="cb65-638"><a href="#cb65-638"></a></span>
-<span id="cb65-639"><a href="#cb65-639"></a><span class="co">&lt;!-- Say for example, that you&#39;re interested personality change in adolescence, but you just opened a survey up online. So when you actually download and examine your data, you realize that you have an age range of something like 3-86, not 12-18. In this case, you want to get rid of the people over 18 -- that is, `filter()` them out.   --&gt;</span></span>
-<span id="cb65-640"><a href="#cb65-640"></a></span>
-<span id="cb65-641"><a href="#cb65-641"></a></span>
-<span id="cb65-642"><a href="#cb65-642"></a><span class="in">```{r, echo=TRUE}</span></span>
-<span id="cb65-643"><a href="#cb65-643"></a><span class="fu">data</span>(bfi) <span class="co"># grab the bfi data from the psych package</span></span>
-<span id="cb65-644"><a href="#cb65-644"></a>bfi <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
-<span id="cb65-645"><a href="#cb65-645"></a><span class="fu">head</span>(bfi)</span>
-<span id="cb65-646"><a href="#cb65-646"></a><span class="in">```</span></span>
-<span id="cb65-647"><a href="#cb65-647"></a></span>
-<span id="cb65-648"><a href="#cb65-648"></a>Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don&#39;t want to include.</span>
-<span id="cb65-649"><a href="#cb65-649"></a></span>
+<span id="cb65-637"><a href="#cb65-637"></a><span class="in">```{r, echo=TRUE}</span></span>
+<span id="cb65-638"><a href="#cb65-638"></a><span class="fu">data</span>(bfi) <span class="co"># grab the bfi data from the psych package</span></span>
+<span id="cb65-639"><a href="#cb65-639"></a>bfi <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
+<span id="cb65-640"><a href="#cb65-640"></a><span class="fu">head</span>(bfi)</span>
+<span id="cb65-641"><a href="#cb65-641"></a><span class="in">```</span></span>
+<span id="cb65-642"><a href="#cb65-642"></a></span>
+<span id="cb65-643"><a href="#cb65-643"></a>Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don&#39;t want to include.</span>
+<span id="cb65-644"><a href="#cb65-644"></a></span>
+<span id="cb65-645"><a href="#cb65-645"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-646"><a href="#cb65-646"></a><span class="fu">summary</span>(bfi<span class="sc">$</span>age) <span class="co"># get age descriptives</span></span>
+<span id="cb65-647"><a href="#cb65-647"></a><span class="in">```</span></span>
+<span id="cb65-648"><a href="#cb65-648"></a></span>
+<span id="cb65-649"><a href="#cb65-649"></a>Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don&#39;t want to include.</span>
 <span id="cb65-650"><a href="#cb65-650"></a></span>
 <span id="cb65-651"><a href="#cb65-651"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-652"><a href="#cb65-652"></a><span class="fu">summary</span>(bfi<span class="sc">$</span>age) <span class="co"># get age descriptives</span></span>
-<span id="cb65-653"><a href="#cb65-653"></a><span class="in">```</span></span>
-<span id="cb65-654"><a href="#cb65-654"></a></span>
+<span id="cb65-652"><a href="#cb65-652"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
+<span id="cb65-653"><a href="#cb65-653"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span> <span class="co"># see a pipe!</span></span>
+<span id="cb65-654"><a href="#cb65-654"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;=</span> <span class="dv">18</span>) <span class="co"># filter to age up to 18</span></span>
 <span id="cb65-655"><a href="#cb65-655"></a></span>
-<span id="cb65-656"><a href="#cb65-656"></a>Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don&#39;t want to include.</span>
-<span id="cb65-657"><a href="#cb65-657"></a></span>
+<span id="cb65-656"><a href="#cb65-656"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age) <span class="co"># summary of the new data </span></span>
+<span id="cb65-657"><a href="#cb65-657"></a><span class="in">```</span></span>
 <span id="cb65-658"><a href="#cb65-658"></a></span>
-<span id="cb65-659"><a href="#cb65-659"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-660"><a href="#cb65-660"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
-<span id="cb65-661"><a href="#cb65-661"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span> <span class="co"># see a pipe!</span></span>
-<span id="cb65-662"><a href="#cb65-662"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;=</span> <span class="dv">18</span>) <span class="co"># filter to age up to 18</span></span>
-<span id="cb65-663"><a href="#cb65-663"></a></span>
-<span id="cb65-664"><a href="#cb65-664"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age) <span class="co"># summary of the new data </span></span>
-<span id="cb65-665"><a href="#cb65-665"></a><span class="in">```</span></span>
-<span id="cb65-666"><a href="#cb65-666"></a></span>
-<span id="cb65-667"><a href="#cb65-667"></a>But this isn&#39;t quite right. We still have folks below 12. But, the beauty of <span class="in">`filter()`</span> is that you can do sequence of <span class="in">`OR`</span> and <span class="in">`AND`</span> statements when there is more than one condition, such as up to 18 <span class="in">`AND`</span> at least 12.</span>
-<span id="cb65-668"><a href="#cb65-668"></a></span>
-<span id="cb65-669"><a href="#cb65-669"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-670"><a href="#cb65-670"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-671"><a href="#cb65-671"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> age <span class="sc">&gt;=</span> <span class="dv">12</span>) <span class="co"># filter to age up to 18 and at least 12</span></span>
-<span id="cb65-672"><a href="#cb65-672"></a></span>
-<span id="cb65-673"><a href="#cb65-673"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age) <span class="co"># summary of the new data </span></span>
-<span id="cb65-674"><a href="#cb65-674"></a><span class="in">```</span></span>
+<span id="cb65-659"><a href="#cb65-659"></a>But this isn&#39;t quite right. We still have folks below 12. But, the beauty of <span class="in">`filter()`</span> is that you can do sequence of <span class="in">`OR`</span> and <span class="in">`AND`</span> statements when there is more than one condition, such as up to 18 <span class="in">`AND`</span> at least 12.</span>
+<span id="cb65-660"><a href="#cb65-660"></a></span>
+<span id="cb65-661"><a href="#cb65-661"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-662"><a href="#cb65-662"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-663"><a href="#cb65-663"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> age <span class="sc">&gt;=</span> <span class="dv">12</span>) <span class="co"># filter to age up to 18 and at least 12</span></span>
+<span id="cb65-664"><a href="#cb65-664"></a></span>
+<span id="cb65-665"><a href="#cb65-665"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age) <span class="co"># summary of the new data </span></span>
+<span id="cb65-666"><a href="#cb65-666"></a><span class="in">```</span></span>
+<span id="cb65-667"><a href="#cb65-667"></a></span>
+<span id="cb65-668"><a href="#cb65-668"></a>Got it!</span>
+<span id="cb65-669"><a href="#cb65-669"></a></span>
+<span id="cb65-670"><a href="#cb65-670"></a><span class="ss">-   </span>But filter works for more use cases than just conditional</span>
+<span id="cb65-671"><a href="#cb65-671"></a><span class="ss">    -   </span><span class="in">`&lt;`</span>, <span class="in">`&gt;`</span>, <span class="in">`&lt;=`</span>, and <span class="in">`&gt;=`</span></span>
+<span id="cb65-672"><a href="#cb65-672"></a><span class="ss">-   </span>It can also be used for cases where we want a single values to match cases with text.</span>
+<span id="cb65-673"><a href="#cb65-673"></a><span class="ss">-   </span>To do that, let&#39;s convert one of the variables in the <span class="in">`bfi`</span> data frame to a string.</span>
+<span id="cb65-674"><a href="#cb65-674"></a><span class="ss">-   </span>So let&#39;s change gender (1 = male, 2 = female) to text (we&#39;ll get into factors later).</span>
 <span id="cb65-675"><a href="#cb65-675"></a></span>
-<span id="cb65-676"><a href="#cb65-676"></a>Got it!</span>
-<span id="cb65-677"><a href="#cb65-677"></a></span>
-<span id="cb65-678"><a href="#cb65-678"></a><span class="ss">-   </span>But filter works for more use cases than just conditional</span>
-<span id="cb65-679"><a href="#cb65-679"></a><span class="ss">    -   </span><span class="in">`&lt;`</span>, <span class="in">`&gt;`</span>, <span class="in">`&lt;=`</span>, and <span class="in">`&gt;=`</span></span>
-<span id="cb65-680"><a href="#cb65-680"></a><span class="ss">-   </span>It can also be used for cases where we want a single values to match cases with text.</span>
-<span id="cb65-681"><a href="#cb65-681"></a><span class="ss">-   </span>To do that, let&#39;s convert one of the variables in the <span class="in">`bfi`</span> data frame to a string.</span>
-<span id="cb65-682"><a href="#cb65-682"></a><span class="ss">-   </span>So let&#39;s change gender (1 = male, 2 = female) to text (we&#39;ll get into factors later).</span>
+<span id="cb65-676"><a href="#cb65-676"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-677"><a href="#cb65-677"></a>bfi<span class="sc">$</span>education <span class="ot">&lt;-</span> plyr<span class="sc">::</span><span class="fu">mapvalues</span>(bfi<span class="sc">$</span>education, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="st">&quot;Below HS&quot;</span>, <span class="st">&quot;HS&quot;</span>, <span class="st">&quot;Some College&quot;</span>, <span class="st">&quot;College&quot;</span>, <span class="st">&quot;Higher Degree&quot;</span>))</span>
+<span id="cb65-678"><a href="#cb65-678"></a><span class="in">```</span></span>
+<span id="cb65-679"><a href="#cb65-679"></a></span>
+<span id="cb65-680"><a href="#cb65-680"></a>Now let&#39;s try a few things:</span>
+<span id="cb65-681"><a href="#cb65-681"></a></span>
+<span id="cb65-682"><a href="#cb65-682"></a><span class="kw">&lt;font</span> <span class="er">color</span> <span class="ot">=</span> <span class="st">&quot;#033266&quot;</span><span class="kw">&gt;</span>**1. Create a data set with only individuals with some college (`==`).**<span class="kw">&lt;/font&gt;</span></span>
 <span id="cb65-683"><a href="#cb65-683"></a></span>
-<span id="cb65-684"><a href="#cb65-684"></a></span>
-<span id="cb65-685"><a href="#cb65-685"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-686"><a href="#cb65-686"></a>bfi<span class="sc">$</span>education <span class="ot">&lt;-</span> plyr<span class="sc">::</span><span class="fu">mapvalues</span>(bfi<span class="sc">$</span>education, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="st">&quot;Below HS&quot;</span>, <span class="st">&quot;HS&quot;</span>, <span class="st">&quot;Some College&quot;</span>, <span class="st">&quot;College&quot;</span>, <span class="st">&quot;Higher Degree&quot;</span>))</span>
-<span id="cb65-687"><a href="#cb65-687"></a><span class="in">```</span></span>
-<span id="cb65-688"><a href="#cb65-688"></a></span>
-<span id="cb65-689"><a href="#cb65-689"></a>Now let&#39;s try a few things:</span>
-<span id="cb65-690"><a href="#cb65-690"></a></span>
-<span id="cb65-691"><a href="#cb65-691"></a><span class="kw">&lt;font</span> <span class="er">color</span> <span class="ot">=</span> <span class="st">&quot;#033266&quot;</span><span class="kw">&gt;</span>**1. Create a data set with only individuals with some college (`==`).**<span class="kw">&lt;/font&gt;</span></span>
-<span id="cb65-692"><a href="#cb65-692"></a></span>
-<span id="cb65-693"><a href="#cb65-693"></a></span>
-<span id="cb65-694"><a href="#cb65-694"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-695"><a href="#cb65-695"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span> </span>
-<span id="cb65-696"><a href="#cb65-696"></a>  <span class="fu">filter</span>(education <span class="sc">==</span> <span class="st">&quot;Some College&quot;</span>)</span>
-<span id="cb65-697"><a href="#cb65-697"></a><span class="fu">unique</span>(bfi2<span class="sc">$</span>education)</span>
-<span id="cb65-698"><a href="#cb65-698"></a><span class="in">```</span></span>
+<span id="cb65-684"><a href="#cb65-684"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-685"><a href="#cb65-685"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span> </span>
+<span id="cb65-686"><a href="#cb65-686"></a>  <span class="fu">filter</span>(education <span class="sc">==</span> <span class="st">&quot;Some College&quot;</span>)</span>
+<span id="cb65-687"><a href="#cb65-687"></a><span class="fu">unique</span>(bfi2<span class="sc">$</span>education)</span>
+<span id="cb65-688"><a href="#cb65-688"></a><span class="in">```</span></span>
+<span id="cb65-689"><a href="#cb65-689"></a></span>
+<span id="cb65-690"><a href="#cb65-690"></a><span class="kw">&lt;font</span> <span class="er">color</span> <span class="ot">=</span> <span class="st">&quot;#033266&quot;</span><span class="kw">&gt;</span>**2. Create a data set with only people age 18 (`==`).**<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb65-691"><a href="#cb65-691"></a></span>
+<span id="cb65-692"><a href="#cb65-692"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-693"><a href="#cb65-693"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-694"><a href="#cb65-694"></a>  <span class="fu">filter</span>(age <span class="sc">==</span> <span class="dv">18</span>)</span>
+<span id="cb65-695"><a href="#cb65-695"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age)</span>
+<span id="cb65-696"><a href="#cb65-696"></a><span class="in">```</span></span>
+<span id="cb65-697"><a href="#cb65-697"></a></span>
+<span id="cb65-698"><a href="#cb65-698"></a><span class="kw">&lt;font</span> <span class="er">color</span> <span class="ot">=</span> <span class="st">&quot;#033266&quot;</span><span class="kw">&gt;</span>**3. Create a data set with individuals with some college or above (`%in%`).**<span class="kw">&lt;/font&gt;</span></span>
 <span id="cb65-699"><a href="#cb65-699"></a></span>
-<span id="cb65-700"><a href="#cb65-700"></a></span>
-<span id="cb65-701"><a href="#cb65-701"></a><span class="kw">&lt;font</span> <span class="er">color</span> <span class="ot">=</span> <span class="st">&quot;#033266&quot;</span><span class="kw">&gt;</span>**2. Create a data set with only people age 18 (`==`).**<span class="kw">&lt;/font&gt;</span></span>
-<span id="cb65-702"><a href="#cb65-702"></a></span>
-<span id="cb65-703"><a href="#cb65-703"></a></span>
-<span id="cb65-704"><a href="#cb65-704"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-705"><a href="#cb65-705"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-706"><a href="#cb65-706"></a>  <span class="fu">filter</span>(age <span class="sc">==</span> <span class="dv">18</span>)</span>
-<span id="cb65-707"><a href="#cb65-707"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age)</span>
-<span id="cb65-708"><a href="#cb65-708"></a><span class="in">```</span></span>
-<span id="cb65-709"><a href="#cb65-709"></a></span>
-<span id="cb65-710"><a href="#cb65-710"></a></span>
-<span id="cb65-711"><a href="#cb65-711"></a><span class="kw">&lt;font</span> <span class="er">color</span> <span class="ot">=</span> <span class="st">&quot;#033266&quot;</span><span class="kw">&gt;</span>**3. Create a data set with individuals with some college or above (`%in%`).**<span class="kw">&lt;/font&gt;</span></span>
-<span id="cb65-712"><a href="#cb65-712"></a></span>
+<span id="cb65-700"><a href="#cb65-700"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-701"><a href="#cb65-701"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-702"><a href="#cb65-702"></a>  <span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Some College&quot;</span>, <span class="st">&quot;College&quot;</span>, <span class="st">&quot;Higher Degree&quot;</span>))</span>
+<span id="cb65-703"><a href="#cb65-703"></a><span class="fu">unique</span>(bfi2<span class="sc">$</span>education)</span>
+<span id="cb65-704"><a href="#cb65-704"></a><span class="in">```</span></span>
+<span id="cb65-705"><a href="#cb65-705"></a></span>
+<span id="cb65-706"><a href="#cb65-706"></a><span class="in">`%in%`</span> is great. It compares a column to a vector rather than just a single value, you can compare it to several</span>
+<span id="cb65-707"><a href="#cb65-707"></a></span>
+<span id="cb65-708"><a href="#cb65-708"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-709"><a href="#cb65-709"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-710"><a href="#cb65-710"></a>  <span class="fu">filter</span>(age <span class="sc">%in%</span> <span class="dv">12</span><span class="sc">:</span><span class="dv">18</span>)</span>
+<span id="cb65-711"><a href="#cb65-711"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age)</span>
+<span id="cb65-712"><a href="#cb65-712"></a><span class="in">```</span></span>
 <span id="cb65-713"><a href="#cb65-713"></a></span>
-<span id="cb65-714"><a href="#cb65-714"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-715"><a href="#cb65-715"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-716"><a href="#cb65-716"></a>  <span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Some College&quot;</span>, <span class="st">&quot;College&quot;</span>, <span class="st">&quot;Higher Degree&quot;</span>))</span>
-<span id="cb65-717"><a href="#cb65-717"></a><span class="fu">unique</span>(bfi2<span class="sc">$</span>education)</span>
-<span id="cb65-718"><a href="#cb65-718"></a><span class="in">```</span></span>
-<span id="cb65-719"><a href="#cb65-719"></a></span>
-<span id="cb65-720"><a href="#cb65-720"></a><span class="in">`%in%`</span> is great. It compares a column to a vector rather than just a single value, you can compare it to several</span>
-<span id="cb65-721"><a href="#cb65-721"></a></span>
-<span id="cb65-722"><a href="#cb65-722"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-723"><a href="#cb65-723"></a>bfi2 <span class="ot">&lt;-</span> bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-724"><a href="#cb65-724"></a>  <span class="fu">filter</span>(age <span class="sc">%in%</span> <span class="dv">12</span><span class="sc">:</span><span class="dv">18</span>)</span>
-<span id="cb65-725"><a href="#cb65-725"></a><span class="fu">summary</span>(bfi2<span class="sc">$</span>age)</span>
-<span id="cb65-726"><a href="#cb65-726"></a><span class="in">```</span></span>
-<span id="cb65-727"><a href="#cb65-727"></a></span>
-<span id="cb65-728"><a href="#cb65-728"></a><span class="fu">## 3. `select()`</span></span>
-<span id="cb65-729"><a href="#cb65-729"></a></span>
-<span id="cb65-730"><a href="#cb65-730"></a><span class="ss">-   </span>If <span class="in">`filter()`</span> is for pulling certain observations (rows), then <span class="in">`select()`</span> is for pulling certain variables (columns).</span>
-<span id="cb65-731"><a href="#cb65-731"></a><span class="ss">-   </span>it&#39;s good practice to remove these columns to stop your environment from becoming cluttered and eating up your RAM.</span>
-<span id="cb65-732"><a href="#cb65-732"></a><span class="ss">-   </span>In our <span class="in">`bfi`</span> data, most of these have been pre-removed, so instead, we&#39;ll imagine we don&#39;t want to use any indicators of Agreeableness (A1-A5) and that we aren&#39;t interested in gender.</span>
-<span id="cb65-733"><a href="#cb65-733"></a><span class="ss">-   </span>With <span class="in">`select()`</span>, there are few ways choose variables. We can bare quote name the ones we want to keep, bare quote names we want to remove, or use any of a number of <span class="in">`select()`</span> helper functions.</span>
-<span id="cb65-734"><a href="#cb65-734"></a></span>
-<span id="cb65-735"><a href="#cb65-735"></a><span class="fu">### A. Bare quote columns we want to keep:</span></span>
-<span id="cb65-736"><a href="#cb65-736"></a></span>
-<span id="cb65-737"><a href="#cb65-737"></a>::: columns</span>
-<span id="cb65-738"><a href="#cb65-738"></a>::: column</span>
-<span id="cb65-739"><a href="#cb65-739"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-740"><a href="#cb65-740"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
-<span id="cb65-741"><a href="#cb65-741"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-742"><a href="#cb65-742"></a>  <span class="fu">select</span>(C1, C2, C3, C4, C5) <span class="sc">%&gt;%</span></span>
-<span id="cb65-743"><a href="#cb65-743"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-744"><a href="#cb65-744"></a><span class="in">```</span></span>
-<span id="cb65-745"><a href="#cb65-745"></a>:::</span>
+<span id="cb65-714"><a href="#cb65-714"></a><span class="fu">## 3. `select()`</span></span>
+<span id="cb65-715"><a href="#cb65-715"></a></span>
+<span id="cb65-716"><a href="#cb65-716"></a><span class="ss">-   </span>If <span class="in">`filter()`</span> is for pulling certain observations (rows), then <span class="in">`select()`</span> is for pulling certain variables (columns).</span>
+<span id="cb65-717"><a href="#cb65-717"></a><span class="ss">-   </span>it&#39;s good practice to remove these columns to stop your environment from becoming cluttered and eating up your RAM.</span>
+<span id="cb65-718"><a href="#cb65-718"></a><span class="ss">-   </span>In our <span class="in">`bfi`</span> data, most of these have been pre-removed, so instead, we&#39;ll imagine we don&#39;t want to use any indicators of Agreeableness (A1-A5) and that we aren&#39;t interested in gender.</span>
+<span id="cb65-719"><a href="#cb65-719"></a><span class="ss">-   </span>With <span class="in">`select()`</span>, there are few ways choose variables. We can bare quote name the ones we want to keep, bare quote names we want to remove, or use any of a number of <span class="in">`select()`</span> helper functions.</span>
+<span id="cb65-720"><a href="#cb65-720"></a></span>
+<span id="cb65-721"><a href="#cb65-721"></a><span class="fu">### A. Bare quote columns we want to keep:</span></span>
+<span id="cb65-722"><a href="#cb65-722"></a></span>
+<span id="cb65-723"><a href="#cb65-723"></a>::: columns</span>
+<span id="cb65-724"><a href="#cb65-724"></a>::: column</span>
+<span id="cb65-725"><a href="#cb65-725"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-726"><a href="#cb65-726"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
+<span id="cb65-727"><a href="#cb65-727"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-728"><a href="#cb65-728"></a>  <span class="fu">select</span>(C1, C2, C3, C4, C5) <span class="sc">%&gt;%</span></span>
+<span id="cb65-729"><a href="#cb65-729"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-730"><a href="#cb65-730"></a><span class="in">```</span></span>
+<span id="cb65-731"><a href="#cb65-731"></a>:::</span>
+<span id="cb65-732"><a href="#cb65-732"></a></span>
+<span id="cb65-733"><a href="#cb65-733"></a>::: column</span>
+<span id="cb65-734"><a href="#cb65-734"></a><span class="in">```{r, echo=T}</span></span>
+<span id="cb65-735"><a href="#cb65-735"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
+<span id="cb65-736"><a href="#cb65-736"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-737"><a href="#cb65-737"></a>  <span class="fu">select</span>(C1<span class="sc">:</span>C5) <span class="sc">%&gt;%</span></span>
+<span id="cb65-738"><a href="#cb65-738"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-739"><a href="#cb65-739"></a><span class="in">```</span></span>
+<span id="cb65-740"><a href="#cb65-740"></a></span>
+<span id="cb65-741"><a href="#cb65-741"></a><span class="co">&lt;!-- We can also use `:` to grab a *range* of columns.   --&gt;</span></span>
+<span id="cb65-742"><a href="#cb65-742"></a>:::</span>
+<span id="cb65-743"><a href="#cb65-743"></a>:::</span>
+<span id="cb65-744"><a href="#cb65-744"></a></span>
+<span id="cb65-745"><a href="#cb65-745"></a><span class="fu">### B. Bare quote columns we don&#39;t want to keep:</span></span>
 <span id="cb65-746"><a href="#cb65-746"></a></span>
-<span id="cb65-747"><a href="#cb65-747"></a>::: column</span>
-<span id="cb65-748"><a href="#cb65-748"></a><span class="in">```{r, echo=T}</span></span>
-<span id="cb65-749"><a href="#cb65-749"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
-<span id="cb65-750"><a href="#cb65-750"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-751"><a href="#cb65-751"></a>  <span class="fu">select</span>(C1<span class="sc">:</span>C5) <span class="sc">%&gt;%</span></span>
-<span id="cb65-752"><a href="#cb65-752"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-753"><a href="#cb65-753"></a><span class="in">```</span></span>
-<span id="cb65-754"><a href="#cb65-754"></a></span>
-<span id="cb65-755"><a href="#cb65-755"></a><span class="co">&lt;!-- We can also use `:` to grab a *range* of columns.   --&gt;</span></span>
-<span id="cb65-756"><a href="#cb65-756"></a>:::</span>
-<span id="cb65-757"><a href="#cb65-757"></a>:::</span>
-<span id="cb65-758"><a href="#cb65-758"></a></span>
-<span id="cb65-759"><a href="#cb65-759"></a><span class="fu">### B. Bare quote columns we don&#39;t want to keep:</span></span>
-<span id="cb65-760"><a href="#cb65-760"></a></span>
-<span id="cb65-761"><a href="#cb65-761"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-762"><a href="#cb65-762"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
-<span id="cb65-763"><a href="#cb65-763"></a>bfi <span class="sc">%&gt;%</span> </span>
-<span id="cb65-764"><a href="#cb65-764"></a>  <span class="fu">select</span>(<span class="sc">-</span>(A1<span class="sc">:</span>A5), <span class="sc">-</span>gender) <span class="sc">%&gt;%</span> <span class="co"># Note the `()` around the columns</span></span>
-<span id="cb65-765"><a href="#cb65-765"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-766"><a href="#cb65-766"></a><span class="in">```</span></span>
-<span id="cb65-767"><a href="#cb65-767"></a></span>
-<span id="cb65-768"><a href="#cb65-768"></a><span class="fu">### C. Add or remove using `select()` helper functions.</span></span>
-<span id="cb65-769"><a href="#cb65-769"></a></span>
-<span id="cb65-770"><a href="#cb65-770"></a>::: columns</span>
-<span id="cb65-771"><a href="#cb65-771"></a>::: {.column width=&quot;40%&quot;}</span>
-<span id="cb65-772"><a href="#cb65-772"></a><span class="ss">-   </span><span class="in">`starts_with()`</span>\</span>
-<span id="cb65-773"><a href="#cb65-773"></a><span class="ss">-   </span><span class="in">`ends_with()`</span></span>
-<span id="cb65-774"><a href="#cb65-774"></a><span class="ss">-   </span><span class="in">`contains()`</span></span>
-<span id="cb65-775"><a href="#cb65-775"></a><span class="ss">-   </span><span class="in">`matches()`</span></span>
-<span id="cb65-776"><a href="#cb65-776"></a><span class="ss">-   </span><span class="in">`num_range()`</span></span>
-<span id="cb65-777"><a href="#cb65-777"></a><span class="ss">-   </span><span class="in">`one_of()`</span></span>
-<span id="cb65-778"><a href="#cb65-778"></a><span class="ss">-   </span><span class="in">`all_of()`</span></span>
-<span id="cb65-779"><a href="#cb65-779"></a>:::</span>
-<span id="cb65-780"><a href="#cb65-780"></a></span>
-<span id="cb65-781"><a href="#cb65-781"></a>::: {.column width=&quot;60%&quot;}</span>
-<span id="cb65-782"><a href="#cb65-782"></a>::: fragment</span>
-<span id="cb65-783"><a href="#cb65-783"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-784"><a href="#cb65-784"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-785"><a href="#cb65-785"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>))</span>
-<span id="cb65-786"><a href="#cb65-786"></a><span class="in">```</span></span>
-<span id="cb65-787"><a href="#cb65-787"></a>:::</span>
-<span id="cb65-788"><a href="#cb65-788"></a>:::</span>
-<span id="cb65-789"><a href="#cb65-789"></a>:::</span>
-<span id="cb65-790"><a href="#cb65-790"></a></span>
-<span id="cb65-791"><a href="#cb65-791"></a><span class="fu">## 4. `arrange()`</span></span>
-<span id="cb65-792"><a href="#cb65-792"></a></span>
-<span id="cb65-793"><a href="#cb65-793"></a><span class="ss">-   </span>Sometimes, either in order to get a better sense of our data or in order to well, order our data, we want to sort it</span>
-<span id="cb65-794"><a href="#cb65-794"></a><span class="ss">-   </span>Although there is a base <span class="in">`R`</span> <span class="in">`sort()`</span> function, the <span class="in">`arrange()`</span> function is <span class="in">`tidyverse`</span> version that plays nicely with other <span class="in">`tidyverse functions`</span>.</span>
+<span id="cb65-747"><a href="#cb65-747"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-748"><a href="#cb65-748"></a><span class="co">#| code-line-numbers: &quot;|2&quot;</span></span>
+<span id="cb65-749"><a href="#cb65-749"></a>bfi <span class="sc">%&gt;%</span> </span>
+<span id="cb65-750"><a href="#cb65-750"></a>  <span class="fu">select</span>(<span class="sc">-</span>(A1<span class="sc">:</span>A5), <span class="sc">-</span>gender) <span class="sc">%&gt;%</span> <span class="co"># Note the `()` around the columns</span></span>
+<span id="cb65-751"><a href="#cb65-751"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-752"><a href="#cb65-752"></a><span class="in">```</span></span>
+<span id="cb65-753"><a href="#cb65-753"></a></span>
+<span id="cb65-754"><a href="#cb65-754"></a><span class="fu">### C. Add or remove using `select()` helper functions.</span></span>
+<span id="cb65-755"><a href="#cb65-755"></a></span>
+<span id="cb65-756"><a href="#cb65-756"></a>::: columns</span>
+<span id="cb65-757"><a href="#cb65-757"></a>::: {.column width=&quot;40%&quot;}</span>
+<span id="cb65-758"><a href="#cb65-758"></a><span class="ss">-   </span><span class="in">`starts_with()`</span>\</span>
+<span id="cb65-759"><a href="#cb65-759"></a><span class="ss">-   </span><span class="in">`ends_with()`</span></span>
+<span id="cb65-760"><a href="#cb65-760"></a><span class="ss">-   </span><span class="in">`contains()`</span></span>
+<span id="cb65-761"><a href="#cb65-761"></a><span class="ss">-   </span><span class="in">`matches()`</span></span>
+<span id="cb65-762"><a href="#cb65-762"></a><span class="ss">-   </span><span class="in">`num_range()`</span></span>
+<span id="cb65-763"><a href="#cb65-763"></a><span class="ss">-   </span><span class="in">`one_of()`</span></span>
+<span id="cb65-764"><a href="#cb65-764"></a><span class="ss">-   </span><span class="in">`all_of()`</span></span>
+<span id="cb65-765"><a href="#cb65-765"></a>:::</span>
+<span id="cb65-766"><a href="#cb65-766"></a></span>
+<span id="cb65-767"><a href="#cb65-767"></a>::: {.column width=&quot;60%&quot;}</span>
+<span id="cb65-768"><a href="#cb65-768"></a>::: fragment</span>
+<span id="cb65-769"><a href="#cb65-769"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-770"><a href="#cb65-770"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-771"><a href="#cb65-771"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>))</span>
+<span id="cb65-772"><a href="#cb65-772"></a><span class="in">```</span></span>
+<span id="cb65-773"><a href="#cb65-773"></a>:::</span>
+<span id="cb65-774"><a href="#cb65-774"></a>:::</span>
+<span id="cb65-775"><a href="#cb65-775"></a>:::</span>
+<span id="cb65-776"><a href="#cb65-776"></a></span>
+<span id="cb65-777"><a href="#cb65-777"></a><span class="fu">## 4. `arrange()`</span></span>
+<span id="cb65-778"><a href="#cb65-778"></a></span>
+<span id="cb65-779"><a href="#cb65-779"></a><span class="ss">-   </span>Sometimes, either in order to get a better sense of our data or in order to well, order our data, we want to sort it</span>
+<span id="cb65-780"><a href="#cb65-780"></a><span class="ss">-   </span>Although there is a base <span class="in">`R`</span> <span class="in">`sort()`</span> function, the <span class="in">`arrange()`</span> function is <span class="in">`tidyverse`</span> version that plays nicely with other <span class="in">`tidyverse functions`</span>.</span>
+<span id="cb65-781"><a href="#cb65-781"></a></span>
+<span id="cb65-782"><a href="#cb65-782"></a>::: columns</span>
+<span id="cb65-783"><a href="#cb65-783"></a>So in our previous examples, we could also <span class="in">`arrange()`</span> our data by age or education, rather than simply filtering. (Or as we&#39;ll see later, we can do both!)</span>
+<span id="cb65-784"><a href="#cb65-784"></a></span>
+<span id="cb65-785"><a href="#cb65-785"></a>::: {.column width=&quot;50%&quot;}</span>
+<span id="cb65-786"><a href="#cb65-786"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-787"><a href="#cb65-787"></a><span class="co">#| code-line-numbers: &quot;|4&quot;</span></span>
+<span id="cb65-788"><a href="#cb65-788"></a><span class="co"># sort by age</span></span>
+<span id="cb65-789"><a href="#cb65-789"></a>bfi <span class="sc">%&gt;%</span> </span>
+<span id="cb65-790"><a href="#cb65-790"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age) <span class="sc">%&gt;%</span></span>
+<span id="cb65-791"><a href="#cb65-791"></a>  <span class="fu">arrange</span>(age) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-792"><a href="#cb65-792"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-793"><a href="#cb65-793"></a><span class="in">```</span></span>
+<span id="cb65-794"><a href="#cb65-794"></a>:::</span>
 <span id="cb65-795"><a href="#cb65-795"></a></span>
-<span id="cb65-796"><a href="#cb65-796"></a>::: columns</span>
-<span id="cb65-797"><a href="#cb65-797"></a>So in our previous examples, we could also <span class="in">`arrange()`</span> our data by age or education, rather than simply filtering. (Or as we&#39;ll see later, we can do both!)</span>
-<span id="cb65-798"><a href="#cb65-798"></a></span>
-<span id="cb65-799"><a href="#cb65-799"></a>::: {.column width=&quot;50%&quot;}</span>
-<span id="cb65-800"><a href="#cb65-800"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-801"><a href="#cb65-801"></a><span class="co">#| code-line-numbers: &quot;|4&quot;</span></span>
-<span id="cb65-802"><a href="#cb65-802"></a><span class="co"># sort by age</span></span>
-<span id="cb65-803"><a href="#cb65-803"></a>bfi <span class="sc">%&gt;%</span> </span>
-<span id="cb65-804"><a href="#cb65-804"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age) <span class="sc">%&gt;%</span></span>
-<span id="cb65-805"><a href="#cb65-805"></a>  <span class="fu">arrange</span>(age) <span class="sc">%&gt;%</span> </span>
-<span id="cb65-806"><a href="#cb65-806"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-807"><a href="#cb65-807"></a><span class="in">```</span></span>
-<span id="cb65-808"><a href="#cb65-808"></a>:::</span>
+<span id="cb65-796"><a href="#cb65-796"></a>::: {.column width=&quot;50%&quot;}</span>
+<span id="cb65-797"><a href="#cb65-797"></a><span class="in">```{r, echo=TRUE}</span></span>
+<span id="cb65-798"><a href="#cb65-798"></a><span class="co">#| code-line-numbers: &quot;|4&quot;</span></span>
+<span id="cb65-799"><a href="#cb65-799"></a><span class="co"># sort by education</span></span>
+<span id="cb65-800"><a href="#cb65-800"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-801"><a href="#cb65-801"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age) <span class="sc">%&gt;%</span></span>
+<span id="cb65-802"><a href="#cb65-802"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-803"><a href="#cb65-803"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-804"><a href="#cb65-804"></a><span class="in">```</span></span>
+<span id="cb65-805"><a href="#cb65-805"></a>:::</span>
+<span id="cb65-806"><a href="#cb65-806"></a>:::</span>
+<span id="cb65-807"><a href="#cb65-807"></a></span>
+<span id="cb65-808"><a href="#cb65-808"></a>We can also arrange by multiple columns, like if we wanted to sort by gender then education:</span>
 <span id="cb65-809"><a href="#cb65-809"></a></span>
-<span id="cb65-810"><a href="#cb65-810"></a>::: {.column width=&quot;50%&quot;}</span>
-<span id="cb65-811"><a href="#cb65-811"></a><span class="in">```{r, echo=TRUE}</span></span>
-<span id="cb65-812"><a href="#cb65-812"></a><span class="co">#| code-line-numbers: &quot;|4&quot;</span></span>
-<span id="cb65-813"><a href="#cb65-813"></a><span class="co"># sort by education</span></span>
-<span id="cb65-814"><a href="#cb65-814"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-815"><a href="#cb65-815"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age) <span class="sc">%&gt;%</span></span>
-<span id="cb65-816"><a href="#cb65-816"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-817"><a href="#cb65-817"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-818"><a href="#cb65-818"></a><span class="in">```</span></span>
-<span id="cb65-819"><a href="#cb65-819"></a>:::</span>
-<span id="cb65-820"><a href="#cb65-820"></a>:::</span>
-<span id="cb65-821"><a href="#cb65-821"></a></span>
-<span id="cb65-822"><a href="#cb65-822"></a>We can also arrange by multiple columns, like if we wanted to sort by gender then education:</span>
-<span id="cb65-823"><a href="#cb65-823"></a></span>
-<span id="cb65-824"><a href="#cb65-824"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-825"><a href="#cb65-825"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-826"><a href="#cb65-826"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age) <span class="sc">%&gt;%</span></span>
-<span id="cb65-827"><a href="#cb65-827"></a>  <span class="fu">arrange</span>(gender, education) <span class="sc">%&gt;%</span> </span>
-<span id="cb65-828"><a href="#cb65-828"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-829"><a href="#cb65-829"></a><span class="in">```</span></span>
-<span id="cb65-830"><a href="#cb65-830"></a></span>
-<span id="cb65-831"><a href="#cb65-831"></a><span class="fu"># Bringing it all together: Split-Apply-Combine</span></span>
-<span id="cb65-832"><a href="#cb65-832"></a></span>
-<span id="cb65-833"><a href="#cb65-833"></a><span class="ss">-   </span>Much of the power of <span class="in">`dplyr`</span> functions lay in the split-apply-combine method</span>
-<span id="cb65-834"><a href="#cb65-834"></a></span>
-<span id="cb65-835"><a href="#cb65-835"></a><span class="ss">-   </span>A given set of of data are:</span>
-<span id="cb65-836"><a href="#cb65-836"></a></span>
-<span id="cb65-837"><a href="#cb65-837"></a><span class="ss">    -   </span>*split* into smaller chunks</span>
-<span id="cb65-838"><a href="#cb65-838"></a><span class="ss">    -   </span>then a function or series of functions are *applied* to each chunk</span>
-<span id="cb65-839"><a href="#cb65-839"></a><span class="ss">    -   </span>and then the chunks are *combined* back together</span>
+<span id="cb65-810"><a href="#cb65-810"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-811"><a href="#cb65-811"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-812"><a href="#cb65-812"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age) <span class="sc">%&gt;%</span></span>
+<span id="cb65-813"><a href="#cb65-813"></a>  <span class="fu">arrange</span>(gender, education) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-814"><a href="#cb65-814"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-815"><a href="#cb65-815"></a><span class="in">```</span></span>
+<span id="cb65-816"><a href="#cb65-816"></a></span>
+<span id="cb65-817"><a href="#cb65-817"></a><span class="fu"># Bringing it all together: Split-Apply-Combine</span></span>
+<span id="cb65-818"><a href="#cb65-818"></a></span>
+<span id="cb65-819"><a href="#cb65-819"></a><span class="ss">-   </span>Much of the power of <span class="in">`dplyr`</span> functions lay in the split-apply-combine method</span>
+<span id="cb65-820"><a href="#cb65-820"></a></span>
+<span id="cb65-821"><a href="#cb65-821"></a><span class="ss">-   </span>A given set of of data are:</span>
+<span id="cb65-822"><a href="#cb65-822"></a></span>
+<span id="cb65-823"><a href="#cb65-823"></a><span class="ss">    -   </span>*split* into smaller chunks</span>
+<span id="cb65-824"><a href="#cb65-824"></a><span class="ss">    -   </span>then a function or series of functions are *applied* to each chunk</span>
+<span id="cb65-825"><a href="#cb65-825"></a><span class="ss">    -   </span>and then the chunks are *combined* back together</span>
+<span id="cb65-826"><a href="#cb65-826"></a></span>
+<span id="cb65-827"><a href="#cb65-827"></a><span class="fu">## 5. `group_by()`</span></span>
+<span id="cb65-828"><a href="#cb65-828"></a></span>
+<span id="cb65-829"><a href="#cb65-829"></a><span class="ss">-   </span>The <span class="in">`group_by()`</span> function is the &quot;split&quot; of the method</span>
+<span id="cb65-830"><a href="#cb65-830"></a><span class="ss">-   </span>It basically implicitly breaks the data set into chunks by whatever bare quoted column(s)/variable(s) are supplied as arguments.</span>
+<span id="cb65-831"><a href="#cb65-831"></a></span>
+<span id="cb65-832"><a href="#cb65-832"></a>So imagine that we wanted to <span class="in">`group_by()`</span> education levels to get average ages at each level</span>
+<span id="cb65-833"><a href="#cb65-833"></a></span>
+<span id="cb65-834"><a href="#cb65-834"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-835"><a href="#cb65-835"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-836"><a href="#cb65-836"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-837"><a href="#cb65-837"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-838"><a href="#cb65-838"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-839"><a href="#cb65-839"></a><span class="in">```</span></span>
 <span id="cb65-840"><a href="#cb65-840"></a></span>
-<span id="cb65-841"><a href="#cb65-841"></a><span class="fu">## 5. `group_by()`</span></span>
-<span id="cb65-842"><a href="#cb65-842"></a></span>
-<span id="cb65-843"><a href="#cb65-843"></a><span class="ss">-   </span>The <span class="in">`group_by()`</span> function is the &quot;split&quot; of the method</span>
-<span id="cb65-844"><a href="#cb65-844"></a><span class="ss">-   </span>It basically implicitly breaks the data set into chunks by whatever bare quoted column(s)/variable(s) are supplied as arguments.</span>
-<span id="cb65-845"><a href="#cb65-845"></a></span>
-<span id="cb65-846"><a href="#cb65-846"></a>So imagine that we wanted to <span class="in">`group_by()`</span> education levels to get average ages at each level</span>
-<span id="cb65-847"><a href="#cb65-847"></a></span>
-<span id="cb65-848"><a href="#cb65-848"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-849"><a href="#cb65-849"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-850"><a href="#cb65-850"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-851"><a href="#cb65-851"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-852"><a href="#cb65-852"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-853"><a href="#cb65-853"></a><span class="in">```</span></span>
-<span id="cb65-854"><a href="#cb65-854"></a></span>
-<span id="cb65-855"><a href="#cb65-855"></a><span class="ss">-   </span>Hadley&#39;s first law of data cleaning: &quot;What is split, must be combined&quot;</span>
-<span id="cb65-856"><a href="#cb65-856"></a><span class="ss">-   </span>This is super easy with the <span class="in">`ungroup()`</span> function:</span>
-<span id="cb65-857"><a href="#cb65-857"></a></span>
-<span id="cb65-858"><a href="#cb65-858"></a><span class="in">```{r, echo=TRUE}</span></span>
-<span id="cb65-859"><a href="#cb65-859"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-860"><a href="#cb65-860"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-861"><a href="#cb65-861"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-862"><a href="#cb65-862"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb65-863"><a href="#cb65-863"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-864"><a href="#cb65-864"></a><span class="in">```</span></span>
-<span id="cb65-865"><a href="#cb65-865"></a></span>
-<span id="cb65-866"><a href="#cb65-866"></a>Multiple <span class="in">`group_by()`</span> calls overwrites previous calls:</span>
+<span id="cb65-841"><a href="#cb65-841"></a><span class="ss">-   </span>Hadley&#39;s first law of data cleaning: &quot;What is split, must be combined&quot;</span>
+<span id="cb65-842"><a href="#cb65-842"></a><span class="ss">-   </span>This is super easy with the <span class="in">`ungroup()`</span> function:</span>
+<span id="cb65-843"><a href="#cb65-843"></a></span>
+<span id="cb65-844"><a href="#cb65-844"></a><span class="in">```{r, echo=TRUE}</span></span>
+<span id="cb65-845"><a href="#cb65-845"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-846"><a href="#cb65-846"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-847"><a href="#cb65-847"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-848"><a href="#cb65-848"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb65-849"><a href="#cb65-849"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-850"><a href="#cb65-850"></a><span class="in">```</span></span>
+<span id="cb65-851"><a href="#cb65-851"></a></span>
+<span id="cb65-852"><a href="#cb65-852"></a>Multiple <span class="in">`group_by()`</span> calls overwrites previous calls:</span>
+<span id="cb65-853"><a href="#cb65-853"></a></span>
+<span id="cb65-854"><a href="#cb65-854"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-855"><a href="#cb65-855"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-856"><a href="#cb65-856"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-857"><a href="#cb65-857"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-858"><a href="#cb65-858"></a>  <span class="fu">group_by</span>(gender, age) <span class="sc">%&gt;%</span></span>
+<span id="cb65-859"><a href="#cb65-859"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-860"><a href="#cb65-860"></a><span class="in">```</span></span>
+<span id="cb65-861"><a href="#cb65-861"></a></span>
+<span id="cb65-862"><a href="#cb65-862"></a><span class="fu">## 6. `mutate()`</span></span>
+<span id="cb65-863"><a href="#cb65-863"></a></span>
+<span id="cb65-864"><a href="#cb65-864"></a><span class="ss">-   </span><span class="in">`mutate()`</span> is one of your &quot;apply&quot; functions</span>
+<span id="cb65-865"><a href="#cb65-865"></a><span class="ss">-   </span>When you use <span class="in">`mutate()`</span>, the resulting data frame will have the same number of rows you started with</span>
+<span id="cb65-866"><a href="#cb65-866"></a><span class="ss">-   </span>You are directly mutating the existing data frame, either modifying existing columns or creating new ones</span>
 <span id="cb65-867"><a href="#cb65-867"></a></span>
-<span id="cb65-868"><a href="#cb65-868"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-869"><a href="#cb65-869"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-870"><a href="#cb65-870"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-871"><a href="#cb65-871"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-872"><a href="#cb65-872"></a>  <span class="fu">group_by</span>(gender, age) <span class="sc">%&gt;%</span></span>
-<span id="cb65-873"><a href="#cb65-873"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-874"><a href="#cb65-874"></a><span class="in">```</span></span>
-<span id="cb65-875"><a href="#cb65-875"></a></span>
-<span id="cb65-876"><a href="#cb65-876"></a><span class="fu">## 6. `mutate()`</span></span>
-<span id="cb65-877"><a href="#cb65-877"></a></span>
-<span id="cb65-878"><a href="#cb65-878"></a><span class="ss">-   </span><span class="in">`mutate()`</span> is one of your &quot;apply&quot; functions</span>
-<span id="cb65-879"><a href="#cb65-879"></a><span class="ss">-   </span>When you use <span class="in">`mutate()`</span>, the resulting data frame will have the same number of rows you started with</span>
-<span id="cb65-880"><a href="#cb65-880"></a><span class="ss">-   </span>You are directly mutating the existing data frame, either modifying existing columns or creating new ones</span>
-<span id="cb65-881"><a href="#cb65-881"></a></span>
-<span id="cb65-882"><a href="#cb65-882"></a>To demonstrate, let&#39;s add a column that indicated average age levels within each age group</span>
-<span id="cb65-883"><a href="#cb65-883"></a></span>
-<span id="cb65-884"><a href="#cb65-884"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-885"><a href="#cb65-885"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-886"><a href="#cb65-886"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-887"><a href="#cb65-887"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-888"><a href="#cb65-888"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span> </span>
-<span id="cb65-889"><a href="#cb65-889"></a>  <span class="fu">mutate</span>(<span class="at">age_by_edu =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span></span>
-<span id="cb65-890"><a href="#cb65-890"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
-<span id="cb65-891"><a href="#cb65-891"></a><span class="in">```</span></span>
-<span id="cb65-892"><a href="#cb65-892"></a></span>
-<span id="cb65-893"><a href="#cb65-893"></a><span class="in">`mutate()`</span> is also super useful even when you aren&#39;t grouping</span>
-<span id="cb65-894"><a href="#cb65-894"></a></span>
-<span id="cb65-895"><a href="#cb65-895"></a>We can create a new category</span>
+<span id="cb65-868"><a href="#cb65-868"></a>To demonstrate, let&#39;s add a column that indicated average age levels within each age group</span>
+<span id="cb65-869"><a href="#cb65-869"></a></span>
+<span id="cb65-870"><a href="#cb65-870"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-871"><a href="#cb65-871"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-872"><a href="#cb65-872"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-873"><a href="#cb65-873"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-874"><a href="#cb65-874"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-875"><a href="#cb65-875"></a>  <span class="fu">mutate</span>(<span class="at">age_by_edu =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span></span>
+<span id="cb65-876"><a href="#cb65-876"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb65-877"><a href="#cb65-877"></a><span class="in">```</span></span>
+<span id="cb65-878"><a href="#cb65-878"></a></span>
+<span id="cb65-879"><a href="#cb65-879"></a><span class="in">`mutate()`</span> is also super useful even when you aren&#39;t grouping</span>
+<span id="cb65-880"><a href="#cb65-880"></a></span>
+<span id="cb65-881"><a href="#cb65-881"></a>We can create a new category</span>
+<span id="cb65-882"><a href="#cb65-882"></a></span>
+<span id="cb65-883"><a href="#cb65-883"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-884"><a href="#cb65-884"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-885"><a href="#cb65-885"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-886"><a href="#cb65-886"></a>  <span class="fu">mutate</span>(<span class="at">gender_cat =</span> plyr<span class="sc">::</span><span class="fu">mapvalues</span>(gender, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)))</span>
+<span id="cb65-887"><a href="#cb65-887"></a><span class="in">```</span></span>
+<span id="cb65-888"><a href="#cb65-888"></a></span>
+<span id="cb65-889"><a href="#cb65-889"></a>We could also just overwrite it:</span>
+<span id="cb65-890"><a href="#cb65-890"></a></span>
+<span id="cb65-891"><a href="#cb65-891"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-892"><a href="#cb65-892"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-893"><a href="#cb65-893"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-894"><a href="#cb65-894"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> plyr<span class="sc">::</span><span class="fu">mapvalues</span>(gender, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)))</span>
+<span id="cb65-895"><a href="#cb65-895"></a><span class="in">```</span></span>
 <span id="cb65-896"><a href="#cb65-896"></a></span>
-<span id="cb65-897"><a href="#cb65-897"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-898"><a href="#cb65-898"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-899"><a href="#cb65-899"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-900"><a href="#cb65-900"></a>  <span class="fu">mutate</span>(<span class="at">gender_cat =</span> plyr<span class="sc">::</span><span class="fu">mapvalues</span>(gender, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)))</span>
-<span id="cb65-901"><a href="#cb65-901"></a><span class="in">```</span></span>
+<span id="cb65-897"><a href="#cb65-897"></a><span class="fu">## 7. `summarize()` / `summarise()`</span></span>
+<span id="cb65-898"><a href="#cb65-898"></a></span>
+<span id="cb65-899"><a href="#cb65-899"></a><span class="ss">-   </span><span class="in">`summarize()`</span> is one of your &quot;apply&quot; functions</span>
+<span id="cb65-900"><a href="#cb65-900"></a><span class="ss">-   </span>The resulting data frame will have the same number of rows as your grouping variable</span>
+<span id="cb65-901"><a href="#cb65-901"></a><span class="ss">-   </span>You number of groups is 1 for ungrouped data frames</span>
 <span id="cb65-902"><a href="#cb65-902"></a></span>
-<span id="cb65-903"><a href="#cb65-903"></a>We could also just overwrite it:</span>
-<span id="cb65-904"><a href="#cb65-904"></a></span>
-<span id="cb65-905"><a href="#cb65-905"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-906"><a href="#cb65-906"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-907"><a href="#cb65-907"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-908"><a href="#cb65-908"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> plyr<span class="sc">::</span><span class="fu">mapvalues</span>(gender, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)))</span>
-<span id="cb65-909"><a href="#cb65-909"></a><span class="in">```</span></span>
-<span id="cb65-910"><a href="#cb65-910"></a></span>
-<span id="cb65-911"><a href="#cb65-911"></a><span class="fu">## 7. `summarize()` / `summarise()`</span></span>
-<span id="cb65-912"><a href="#cb65-912"></a></span>
-<span id="cb65-913"><a href="#cb65-913"></a><span class="ss">-   </span><span class="in">`summarize()`</span> is one of your &quot;apply&quot; functions</span>
-<span id="cb65-914"><a href="#cb65-914"></a><span class="ss">-   </span>The resulting data frame will have the same number of rows as your grouping variable</span>
-<span id="cb65-915"><a href="#cb65-915"></a><span class="ss">-   </span>You number of groups is 1 for ungrouped data frames</span>
-<span id="cb65-916"><a href="#cb65-916"></a></span>
-<span id="cb65-917"><a href="#cb65-917"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-918"><a href="#cb65-918"></a><span class="co"># group_by() education</span></span>
-<span id="cb65-919"><a href="#cb65-919"></a>bfi <span class="sc">%&gt;%</span></span>
-<span id="cb65-920"><a href="#cb65-920"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-921"><a href="#cb65-921"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-922"><a href="#cb65-922"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span> </span>
-<span id="cb65-923"><a href="#cb65-923"></a>  <span class="fu">summarize</span>(<span class="at">age_by_edu =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> T))  </span>
-<span id="cb65-924"><a href="#cb65-924"></a><span class="in">```</span></span>
-<span id="cb65-925"><a href="#cb65-925"></a></span>
-<span id="cb65-926"><a href="#cb65-926"></a><span class="in">```{r, echo = T}</span></span>
-<span id="cb65-927"><a href="#cb65-927"></a><span class="co"># no groups  </span></span>
-<span id="cb65-928"><a href="#cb65-928"></a>bfi <span class="sc">%&gt;%</span> </span>
-<span id="cb65-929"><a href="#cb65-929"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-930"><a href="#cb65-930"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb65-931"><a href="#cb65-931"></a>  <span class="fu">summarize</span>(<span class="at">age_by_edu =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> T))  </span>
-<span id="cb65-932"><a href="#cb65-932"></a><span class="in">```</span></span>
+<span id="cb65-903"><a href="#cb65-903"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-904"><a href="#cb65-904"></a><span class="co"># group_by() education</span></span>
+<span id="cb65-905"><a href="#cb65-905"></a>bfi <span class="sc">%&gt;%</span></span>
+<span id="cb65-906"><a href="#cb65-906"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-907"><a href="#cb65-907"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-908"><a href="#cb65-908"></a>  <span class="fu">group_by</span>(education) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-909"><a href="#cb65-909"></a>  <span class="fu">summarize</span>(<span class="at">age_by_edu =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> T))  </span>
+<span id="cb65-910"><a href="#cb65-910"></a><span class="in">```</span></span>
+<span id="cb65-911"><a href="#cb65-911"></a></span>
+<span id="cb65-912"><a href="#cb65-912"></a><span class="in">```{r, echo = T}</span></span>
+<span id="cb65-913"><a href="#cb65-913"></a><span class="co"># no groups  </span></span>
+<span id="cb65-914"><a href="#cb65-914"></a>bfi <span class="sc">%&gt;%</span> </span>
+<span id="cb65-915"><a href="#cb65-915"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;C&quot;</span>), age, gender, education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-916"><a href="#cb65-916"></a>  <span class="fu">arrange</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb65-917"><a href="#cb65-917"></a>  <span class="fu">summarize</span>(<span class="at">age_by_edu =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> T))  </span>
+<span id="cb65-918"><a href="#cb65-918"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

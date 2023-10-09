@@ -56,13 +56,18 @@ Today's class outline:\
 ## Why reproducibility AND values?
 
 -   The definition of reproducibility is somewhat debated
+
     -   "'Reproducibility' refers to instances in which the original researcher's data and computer codes are used to regenerate the results"\
     -   "'Reproducibility' refers to independent researchers arriving at the same results using their own data and methods"\
+
 -   But regardless of what definition you choose, reproducibility starts with a commitment in research to be
 
 -   clear\
+
 -   transparent
+
 -   honest\
+
 -   thorough
 
 ## Why reproducibility AND values?
@@ -183,6 +188,7 @@ Good Workflows are:
       |__03_models.Rmd
       |__04_summary.Rmd
 ```
+
 ## What is a path?
 
 A path gives the address - or location - of a filesystem object, such as a file or directory.
@@ -267,13 +273,13 @@ You can list the contents of a directory using the `dir()` command
     -   web_wd \<- "https://github.com/emoriebeck/pigeons/"
     -   Then I can use `sprintf()` or `paste()` to add different endings
 
-
 ```{r}
 web_wd <- "https://github.com/emoriebeck/pigeons/"
 sprintf("%s/data-raw/pigeon.txt", web_wd)
 ```
 
-# RStudio Projects  
+# RStudio Projects
+
 ## Example
 
 Download and unzip [pigeons.zip](../pigeons.zip) which has the following structure:
@@ -347,11 +353,11 @@ You are aiming for structured, systematic and repeatable. For example, the Proje
 -   README - tell people what the project is and how to use it\
 -   License - tell people what they are allowed to do with your project
 -   Directories
-  *   data/\
-  *   prereg/\
-  *   scripts/
-  *   results/\
-  *   manuscript/
+-   data/\
+-   prereg/\
+-   scripts/
+-   results/\
+-   manuscript/
 
 ## README
 
@@ -419,7 +425,6 @@ write_csv(iris, file = "data-raw/iris.csv")
 
 -   Add the command to import the data:
 
-
 ```{r, eval = F}
 iris <- read_csv("data-raw/iris.csv")
 ```
@@ -427,7 +432,6 @@ iris <- read_csv("data-raw/iris.csv")
 ```{r, echo = F}
 data(iris)
 ```
-
 
 -   The relative path is `data-raw/iris.csv` because your working directory is the Project directory, `iris`.
 
@@ -444,7 +448,6 @@ iris <- pivot_longer(data = iris,
                      values_to = "value")
 ```
 
-
 -   This reformats the dataframe in R but does not overwrite the text file of the data.
 
 -   Don't worry too much about this right now. We'll spend a lot of time talking about reshaping data next week!
@@ -454,11 +457,10 @@ iris <- pivot_longer(data = iris,
 Often we want to write to files.
 
 -   My main reasons for doing so are to save copies of data that have been processed and to save manuscripts and graphics.
+
 -   Also, as someone who collects a lot of data, the de-identified, fully anonymized data files I can share and the identifiable data I collect require multiple versions (and encryption, keys, etc.)
 
-
 -   Write your dataframe `iris` to a csv file named `iris-long.csv` in your `data-processed` folder:
-
 
 ```{r, eval = F}
 file <- "data-processed/iris-long.csv"
@@ -476,7 +478,6 @@ write_csv(iris, file)
 
 Open your `03-figures.R` script and create a simple plot of this data with:
 
-
 ```{r}
 fig1 <- ggplot(
   data = iris
@@ -489,7 +490,6 @@ fig1 <- ggplot(
   theme_classic() + 
   theme(legend.position = "none")
 ```
-
 
 ## View plot
 
@@ -519,12 +519,10 @@ fig_h <- fig_w
 dpi <- 600
 device <- "tiff" 
 ```
-
 :::
 
 ::: column
 -   Save the figure to your figures directory:
-
 
 ```{r, eval = F}
 ggsave("figures/fig1.tiff",
@@ -545,7 +543,6 @@ ggsave("iris/figures/fig1.tiff",
        units = units,
        dpi = dpi)
 ```
-
 
 -   Check it is there!
 :::
@@ -623,11 +620,9 @@ sqrt(43) %>%
 
 ## 2. `filter()`
 
-
 Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don't want to include.
 
 <!-- Say for example, that you're interested personality change in adolescence, but you just opened a survey up online. So when you actually download and examine your data, you realize that you have an age range of something like 3-86, not 12-18. In this case, you want to get rid of the people over 18 -- that is, `filter()` them out.   -->
-
 
 ```{r, echo=TRUE}
 data(bfi) # grab the bfi data from the psych package
@@ -637,14 +632,11 @@ head(bfi)
 
 Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don't want to include.
 
-
 ```{r, echo = T}
 summary(bfi$age) # get age descriptives
 ```
 
-
 Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don't want to include.
-
 
 ```{r, echo = T}
 #| code-line-numbers: "|2"
@@ -671,7 +663,6 @@ Got it!
 -   To do that, let's convert one of the variables in the `bfi` data frame to a string.
 -   So let's change gender (1 = male, 2 = female) to text (we'll get into factors later).
 
-
 ```{r, echo = T}
 bfi$education <- plyr::mapvalues(bfi$education, 1:5, c("Below HS", "HS", "Some College", "College", "Higher Degree"))
 ```
@@ -680,16 +671,13 @@ Now let's try a few things:
 
 <font color = "#033266">**1. Create a data set with only individuals with some college (`==`).**</font>
 
-
 ```{r, echo = T}
 bfi2 <- bfi %>% 
   filter(education == "Some College")
 unique(bfi2$education)
 ```
 
-
 <font color = "#033266">**2. Create a data set with only people age 18 (`==`).**</font>
-
 
 ```{r, echo = T}
 bfi2 <- bfi %>%
@@ -697,9 +685,7 @@ bfi2 <- bfi %>%
 summary(bfi2$age)
 ```
 
-
 <font color = "#033266">**3. Create a data set with individuals with some college or above (`%in%`).**</font>
-
 
 ```{r, echo = T}
 bfi2 <- bfi %>%
