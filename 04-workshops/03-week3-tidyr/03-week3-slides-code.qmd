@@ -35,6 +35,18 @@ library(plyr)
 library(tidyverse)
 ```
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE,	
+                      warning = FALSE,
+                      results = 'show',
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      fig.retina = 3)
+options(htmltools.dir.version = FALSE)
+```
+
 ## Outline
 
 1. Welcome & Q's on homework
@@ -135,8 +147,7 @@ EDA is not a linear process, and the process will vary across people and project
 Some broad steps: 
 
 1. Understand how input data sources were created
-    - e.g., when working with survey data, have survey questionnaire and codebooks on hand
-    - watch out for skip patterns!!!
+    - e.g., when working with survey data, have survey questionnaire and codebooks on hand (watch out for skip patterns!!!)
 2. For each input data source, identify the "unit of analysis" and which combination of variables uniquely identify observations
 3. Investigate patterns in input variables
 4. Create analysis variable from input variable(s)
@@ -193,8 +204,11 @@ Use `read_csv()` function from `readr` (loaded with `tidyverse`) to import .csv 
 ```{r, results="hide"}
 library(plyr)
 library(tidyverse)
-gsoep <- read_csv(file="https://github.com/emoriebeck/R-tutorials/raw/master/07_descriptives/data/07-descriptives-data.csv")
+soep_long <- read_csv(file="https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/03-week3-tidyr/gsoep.csv")
+soep_long
 ```
+
+## Data we will use
 
 Let's examine the data [you __must__ run this code chunk]
 ```{r, results="hide"}
@@ -215,27 +229,67 @@ class(soep_long$LifeEvent__Married)
 
 - I already did this before the data were loaded in. I renamed all the input variables with interpretable names and reshaped them so the time variable (year) is long and the other variables are wide
 
-## Rule 2 
+## Rule 2 {.smaller}
+
+::::{.columns}
+:::{.column}
+
 2. Investigate input variable(s) and relationship between input variables 
 
 - We'll talk more about this in a bit when we discuss different kinds of descriptives, but briefly let's look at basic descriptives + zero-order correlations  
+
+:::
+:::{.column}
+
+:::{.fragment}
 
 ```{r}
 describe(soep_long)
 ```
 
+:::
+
+:::{.fragment}
+
 This doesn't look great because we've negative values where we shouldn't, which represent flags for different kinds of missing variables. We'll have to fix that
 
-## Rule 2 
+:::
+:::
+::::
+
+## Rule 2 {.smaller}
+
+::::{.columns}
+:::{.column}
+:::{.nonincremental}
 2. Investigate input variable(s) and relationship between input variables 
 
 - I'll show you a better way later, but we haven't learned everything to do it nicely yet. So instead, we'll use `cor.plot()` from the `psych` package to make a simple heat map of the correlations. 
 - We shouldn't see that many negative correlations, which flags that we need to reverse score some items 
+:::
+:::{.fragment}
 
-```{r}
+```{r, fig.width = 12, fig.height = 12, eval = F}
 soep_2005 <- soep_long %>% filter(year == 2005) %>% select(-year)
 cor.plot(soep_2005, diag = F)
 ```
+
+:::
+
+:::
+:::{.column}
+
+:::{.fragment}
+
+```{r, fig.width = 12, fig.height = 12, echo = F}
+soep_2005 <- soep_long %>% filter(year == 2005) %>% select(-year)
+cor.plot(soep_2005, diag = F)
+```
+
+:::
+
+:::
+::::
 
 ## Rule 3  
 3. Developing a plan for creation of analysis variable
@@ -246,9 +300,19 @@ cor.plot(soep_2005, diag = F)
 
 ## Rule 4  
 
+::::{.columns}
+:::{.column}
+
 4. Write code to create analysis variable 
 - From Rule 2, we know we need to recode missing values to NA and reverse code some items. From Rule 3, we know we need to create some composites. 
 - Let's do that now! 
+
+:::
+:::{.column}
+:::{.fragment}
+
+Recoding:
+
 
 ```{r}
 soep_long <- soep_long %>%
@@ -262,7 +326,21 @@ soep_long <- soep_long %>%
     )
 ```
 
+:::
+:::
+::::
 
+## Rule 4  
+
+:::{.nonincremental}
+
+4. Write code to create analysis variable 
+
+:::
+
+:::{.fragment}
+
+Reverse Coding: 
 ```{r}
 rev_code <- c("Big5__A_coarse", "Big5__C_lazy", "Big5__E_reserved", "Big5__N_dealStress")
 soep_long <- soep_long %>%
@@ -272,18 +350,51 @@ soep_long <- soep_long %>%
     )
 ```
 
+:::
+
 ## Rule 4  
+
+::::{.columns}
+:::{.column}
+:::{.nonincremental}
 
 4. Write code to create analysis variable 
 
-```{r}
+:::
+
+:::{.fragment}
+Let's check to make sure some correlations just reversed:
+
+```{r, fig.width = 12, fig.height = 12, eval = F}
 soep_2005 <- soep_long %>% filter(year == 2005) %>% select(-year)
 cor.plot(soep_2005, diag = F)
 ```
 
-## Rule 4  
+:::
+:::
+:::{.column}
+
+
+:::{.fragment}
+
+```{r, fig.width = 12, fig.height = 12, echo = F}
+soep_2005 <- soep_long %>% filter(year == 2005) %>% select(-year)
+cor.plot(soep_2005, diag = F)
+```
+
+:::
+:::
+::::
+
+## Rule 4  {.smaller}
+
+:::{.nonincremental}
 
 4. Write code to create analysis variable 
+
+:::
+:::{.fragment}
+Create Composites
 (Note: I honestly wouldn't normally do it like this, but we haven't learned how to reshape data yet! Check the online materials for code on how to do this)
 
 ```{r}
@@ -305,7 +416,9 @@ soep_long <- soep_long %>%
   filter(year %in% c(2005, 2009, 2013))
 ```
 
-```{r}
+:::
+
+```{r, echo = F}
 soep_clean <- soep_long %>%
   pivot_longer(
     cols = contains("Big5")
@@ -337,56 +450,118 @@ soep_clean <- soep_long %>%
   )
 ```
 
-## Rule 5  
+## Rule 5  {.smaller}
+
+::::{.columns}
+:::{.column}
+:::{.nonincremental}
+
 5. Run descriptive checks to verify new variables are constructed correctly
     - Can "comment out" these checks, but don't delete them
-    
+
+:::
+:::
+:::{.column}
+:::{.fragment}
+
 ```{r}
 soep_long %>% 
   select(Big5__E:LifeEvent__SepPart_ever) %>%
   describe()
 ```
 
+:::
+:::
+::::
+
 
 ## Rule 5  
+
+:::{.nonincremental}
+
 5. Run descriptive checks to verify new variables are constructed correctly
     - Can "comment out" these checks, but don't delete them
+
+:::
 
 - Uh oh, `Inf` values popping up what went wrong?
 - `-Inf` pops up when there were no non-missing values and you use `na.rm = T`
 - Let's recode those as `NA`
 
 ## Rule 5  
+
+:::{.nonincremental}
+
 5. Run descriptive checks to verify new variables are constructed correctly
     - Can "comment out" these checks, but don't delete them
+    
+:::
+
+:::{.fragment}
 
 ```{r}
 soep_long <- soep_long %>%
   mutate_all(~ifelse(is.infinite(.) | is.nan(.), NA, .))
 ```
 
+:::
+
 ## Rule 5  
+
+:::{.nonincremental}
+
 5. Run descriptive checks to verify new variables are constructed correctly
     - Can "comment out" these checks, but don't delete them
     
+:::
+    
+:::{.fragment}
+
 ```{r}
 soep_long %>% 
   select(Big5__E:LifeEvent__SepPart_ever) %>%
   describe()
 ```
 
+:::
+
 ## Rule 5  
+
+::::{.columns}
+:::{.column}
+:::{.nonincremental}
+
 5. Run descriptive checks to verify new variables are constructed correctly
     - Can "comment out" these checks, but don't delete them
+    
+:::
+:::{.fragment}
 
-```{r}
+```{r, fig.width = 12, fig.height = 12, eval = F}
 soep_long %>%
   filter(year == 2005) %>%
   select(Big5__E:LifeEvent__SepPart_ever) %>%
   cor.plot(., diag = F)
 ```
 
+:::
+:::
+:::{.column}
+:::{.fragment}
+
+```{r, fig.width = 12, fig.height = 12, echo = F}
+soep_long %>%
+  filter(year == 2005) %>%
+  select(Big5__E:LifeEvent__SepPart_ever) %>%
+  cor.plot(., diag = F)
+```
+
+:::
+:::
+::::
+
 ## Rule 6  
+
 6. Document new variables with notes and labels
 - Again, I do this in my codebooks, so more on this next week!!
 
@@ -406,10 +581,10 @@ soep_long %>%
 
 :::{.nonicremental}
 
-~~1. Welcome & Q's on homework~~
-**2. Part 1: Data Quality and Descriptives **
-3. Part 2: `tidyr`
-4. Problem set & Q time
+~~1. Welcome & Q's on homework~~  
+**2. Part 1: Data Quality and Descriptives **  
+3. Part 2: `tidyr`  
+4. Problem set & Q time  
 
 :::
 
@@ -417,10 +592,10 @@ soep_long %>%
 
 :::{.nonicremental}
 
-~~1. Welcome & Q's on homework~~
-~~2. Part 1: Data Quality and Descriptives~~ 
-**3. Part 2: `tidyr`**
-4. Problem set & Q time
+~~1. Welcome & Q's on homework~~  
+~~2. Part 1: Data Quality and Descriptives~~  
+**3. Part 2: `tidyr`**  
+4. Problem set & Q time  
 
 :::
 
@@ -808,7 +983,11 @@ bfi %>%
 
 ## One-way descriptive analyses: Continuous
 
-```{r}
+:::{.fragment}
+::::{.columns}
+:::{.column}
+
+```{r, eval = F}
 soep_long %>% 
   select(Procedural__SID,year,Big5__E:Big5__O) %>%
   pivot_longer(
@@ -826,9 +1005,39 @@ soep_long %>%
   ungroup()
 ```
 
+:::
+:::{.column}
+
+```{r, echo = F}
+soep_long %>% 
+  select(Procedural__SID,year,Big5__E:Big5__O) %>%
+  pivot_longer(
+    cols = contains("Big5")
+    , names_to = "trait"
+    , values_to = "value"
+    , values_drop_na = T
+  ) %>%
+  group_by(year, trait) %>%
+  summarize_at(
+    vars(value)
+    , lst(mean, sd, min, max)
+    , na.rm = T
+  ) %>%
+  ungroup()
+```
+
+:::
+:::
+::::
+
 ## One-way descriptive analyses: Categorical / Count
 
-```{r}
+:::{.fragment}
+
+::::{.columns}
+:::{.column}
+
+```{r, eval = F}
 soep_long %>%
   select(Procedural__SID, contains("_ever")) %>%
   distinct() %>%
@@ -845,6 +1054,30 @@ soep_long %>%
          , perc = n/total*100)
 ```
 
+:::
+:::{.column}
+
+```{r, echo = F}
+soep_long %>%
+  select(Procedural__SID, contains("_ever")) %>%
+  distinct() %>%
+  pivot_longer(
+    cols = contains("LifeEvent")
+    , names_to = "event"
+    , values_to = "value"
+    , values_drop_na = T
+  ) %>%
+  group_by(event, value) %>%
+  tally() %>%
+  group_by(event) %>%
+  mutate(total = sum(n)
+         , perc = n/total*100)
+```
+
+:::
+::::
+:::
+
 
 ## Two-way descriptive analyses
 
@@ -857,7 +1090,9 @@ soep_long %>%
 - Continuous by continuous
   - correlations, covariances, etc. 
 
-## Two-way descriptive analyses: Categorical x Categorical
+## Two-way descriptive analyses: Categorical x Categorical {.smaller}
+
+:::{.fragment}
 
 ```{r}
 soep_long %>%
@@ -881,9 +1116,15 @@ soep_long %>%
   )
 ```
 
-## Two-way descriptive analyses: Categorical x Continuous  
+:::
 
-```{r}
+## Two-way descriptive analyses: Categorical x Continuous {.smaller} 
+
+:::{.fragment}
+::::{.columns}
+:::{.column}
+
+```{r, eval = F}
 soep_twoway <- soep_long %>% 
   filter(year == 2005) %>%
   select(Procedural__SID, Big5__E:Big5__O) %>%
@@ -907,9 +1148,44 @@ soep_twoway <- soep_long %>%
   )
 ```
 
+:::
+:::{.column}
+
+```{r, echo = F}
+soep_twoway <- soep_long %>% 
+  filter(year == 2005) %>%
+  select(Procedural__SID, Big5__E:Big5__O) %>%
+  pivot_longer(
+    cols = contains("Big5")
+    , names_to = "trait"
+    , values_to = "value"
+    , values_drop_na = T
+  ) %>%
+  left_join(
+    soep_long %>%
+      select(Procedural__SID, contains("_ever")) %>%
+      distinct() %>%
+      pivot_longer(
+        cols = contains("LifeEvent")
+        , names_to = "event"
+        , values_to = "occurred"
+        , values_drop_na = T
+      ) %>%
+      mutate(occurred = mapvalues(occurred, c(0,1), c("No Event", "Event")))
+  )
+```
+
+:::
+::::
+:::
+
 ## Two-way descriptive analyses: Categorical x Continuous  
 
-```{r}
+:::{.fragment}
+::::{.columns}
+:::{.column}
+
+```{r, eval = F}
 soep_twoway %>%
   group_by(trait, event, occurred) %>%
   summarize_at(
@@ -924,10 +1200,37 @@ soep_twoway %>%
   )
 ```
 
+:::
+:::{.column}
 
-## Two-way descriptive analyses: Continuous x continuous
+```{r, echo = F}
+soep_twoway %>%
+  group_by(trait, event, occurred) %>%
+  summarize_at(
+    vars(value)
+    , lst(mean, sd, min, max)
+    , na.rm = T
+  ) %>%
+  ungroup() %>%
+  pivot_wider(
+    names_from = trait
+    , values_from = c(mean, sd, min, max)
+  )
+```
 
-```{r}
+:::
+::::
+:::
+
+
+## Two-way descriptive analyses: Continuous x continuous {.smaller}
+
+
+:::{.fragment}
+::::{.columns}
+:::{.column} 
+
+```{r, eval = F}
 r <- soep_long %>% 
   filter(year == 2005) %>%
   select(Big5__E:Big5__O) %>%
@@ -970,7 +1273,56 @@ r %>%
   )
 ```
 
+:::
+:::{.column} 
+
+```{r, echo = F}
+r <- soep_long %>% 
+  filter(year == 2005) %>%
+  select(Big5__E:Big5__O) %>%
+  cor(., use = "pairwise") 
+
+r[lower.tri(r, diag = T)] <- NA
+vars <- rownames(r)
+r %>%
+  data.frame() %>%
+  rownames_to_column("V1") %>%
+  pivot_longer(
+    cols = -V1
+    , names_to = "V2"
+    , values_to = "r"
+  ) %>%
+  mutate(V1 = factor(V1, levels = vars)
+         , V2 = factor(V2, levels = rev(vars))) %>%
+  ggplot(aes(x = V1, y = V2, fill = r)) + 
+    geom_raster() + 
+  geom_text(aes(label = round(r, 2))) + 
+  scale_fill_gradient2(
+    limits = c(-1,1)
+    , breaks = c(-1, -.5, 0, .5, 1)
+    , low = "blue", high = "red"
+    , mid = "white", na.value = "white") + 
+  labs(
+    x = NULL
+    , y = NULL
+    , fill = "Zero-Order Correlation"
+    , title = "Zero-Order Correlations Among Variables"
+    ) + 
+  theme_classic() + 
+  theme(
+    legend.position = "bottom"
+    , axis.text = element_text(face = "bold")
+    , axis.text.x = element_text(angle = 45, hjust = 1)
+    , plot.title = element_text(face = "bold", hjust = .5)
+    , plot.subtitle = element_text(face = "italic", hjust = .5)
+    , panel.background = element_rect(color = "black", size = 1)
+  )
+```
+
+:::
+::::
+:::
 
 ## Attributions
 
-Part 1 of these slides was adapted from 
+Parts of Part 1 of these slides was adapted from Ozan Jaquette's [EDUC 260A](https://anyone-can-cook.github.io/rclass1/#syllabus) at UCLA. 
