@@ -1,5 +1,5 @@
 ---
-title: "Week 2: Reproducibility and Data Transformations"
+title: "Week 2 Workbook"
 author: "Emorie D Beck"
 format: 
   html:
@@ -22,6 +22,8 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Week 2: Reproducibility and Data Transformations
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,	
@@ -32,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE,
 options(htmltools.dir.version = FALSE)
 ```
 
-```{r, echo = F}
+```{r, echo = T}
 library(knitr)
 library(psych)
 library(emo)

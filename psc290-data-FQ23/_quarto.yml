@@ -28,6 +28,8 @@ website:
         - 01-week1-workbook.qmd
         - 02-week2-slides.qmd
         - 02-week2-workbook.qmd
+        - 03-week3-slides.qmd
+        - 03-week3-workbook.qmd
         
     - id: assignments
       title: "Problem Sets"
@@ -37,6 +39,7 @@ website:
       contents:
         - ps1-week1.qmd
         - ps2-week2.qmd
+        - ps3-week3.qmd
 
 format:
   html:

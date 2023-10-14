@@ -212,196 +212,196 @@
   {
     "objectID": "02-week2-workbook.html#why-reproducibility-and-values",
     "href": "02-week2-workbook.html#why-reproducibility-and-values",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Why reproducibility AND values?",
     "text": "Why reproducibility AND values?\n\n\nThe definition of reproducibility is somewhat debated\n\n“‘Reproducibility’ refers to instances in which the original researcher’s data and computer codes are used to regenerate the results”\n\n“‘Reproducibility’ refers to independent researchers arriving at the same results using their own data and methods”\n\n\n\nBut regardless of what definition you choose, reproducibility starts with a commitment in research to be\nclear\ntransparent\nhonest\nthorough"
   },
   {
     "objectID": "02-week2-workbook.html#why-reproducibility-and-values-1",
     "href": "02-week2-workbook.html#why-reproducibility-and-values-1",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Why reproducibility AND values?",
     "text": "Why reproducibility AND values?\n\nReproducibility is ethical.\nWhen I post a project, I pour over my code for hours, adding comments, rendering to multiple formats, trying to flag locations in online materials in the mansucript, etc.\nI am trying to prevent errors, but I am also trying to make sure that other people know what I did, especially if I did make errors\nReproducible research is also equitable.\nA reproducible research workflow can be downloaded by another person as a starting point, providing tools to other researchers who may not have the same access to education and resources as you"
   },
   {
     "objectID": "02-week2-workbook.html#where-should-we-reproducible",
     "href": "02-week2-workbook.html#where-should-we-reproducible",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Where should we reproducible?",
     "text": "Where should we reproducible?\n\nPlanning\n\nStudy planning and design\n\nLab Protocols\n\nCodebooks\n\netc.\n\n\n\nAnalyses\n\nScripting\n\nCommunication\n\netc."
   },
   {
     "objectID": "02-week2-workbook.html#aspects-of-reproducibility",
     "href": "02-week2-workbook.html#aspects-of-reproducibility",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Aspects of Reproducibility",
     "text": "Aspects of Reproducibility\n\nData within files should be ‘tidy’ (next week – tidyr)\nProject based approach (today)\nConsistency: naming, space, style (today)\nDocumentation: commenting and README (today)\nLiterate programming e.g. Rmarkdown (every day!)"
   },
   {
     "objectID": "02-week2-workbook.html#reproducible-workflow",
     "href": "02-week2-workbook.html#reproducible-workflow",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Reproducible Workflow",
     "text": "Reproducible Workflow\nA reproducible workflow is organized. What does it mean to be be organized? At least:\n\nUse a project based approach, e.g., RStudio project or similar\n\nHave a hierarchical folder structure\n\nHave a consistent and informative naming system that ‘plays nice’\n\nDocument code with comments and analyses with README\n\n\nMore advanced (later in the class)\n\n\nGeneralize with functions and packages\nversion control"
   },
   {
     "objectID": "02-week2-workbook.html#what-is-a-project",
     "href": "02-week2-workbook.html#what-is-a-project",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "What is a project?",
     "text": "What is a project?\n\nA project is a discrete piece of work which has a number of files associated with it such as the data and scripts for an analysis and the production reports.\nUsing a project-oriented workflow means to have a hierarchical folder structure with everything needed to reproduce an analysis.\n\nOne research project might have several organizational projects associated with it, for example:\n\ndata files and metadata (which may be made into a package)\npreregistration\nanalysis and reporting\na package developed for the analysis\nan app for allowing data to be explored by others"
   },
   {
     "objectID": "02-week2-workbook.html#example",
     "href": "02-week2-workbook.html#example",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Example",
     "text": "Example\nGood Workflows are:\n\nstructured\n\nsystematic\n\nrepeatable\n\nNaming\n\nhuman and machine readable\n\nno spaces\n\nuse snake/kebab case\n\nordering: numbers (zero left padded), dates\n\nfile extensions\n\n\n\n-- ipcs_data_2019\n   |__ipcs_data_2019.Rproj\n   |__data\n      |__raw_data\n         |__2019-03-21_ema_raw.csv\n         |__2019-03-21_baseline_raw.csv\n      |__clean_data\n         |__2019-06-21_ema_long.csv\n         |__2019-06-21_ema_long.RData\n         |__2019-06-21_baseline_wide.csv\n         |__2019-06-21_baseline_wide.RData\n   |__results\n      |__01_models\n         |__E_mortality.RData\n         |__A_mortality.RData\n      |__02_summaries\n         |__E_mortality.RData\n         |__A_mortality.RData\n      |__03_figures\n         |__mortality.png\n         |__mortality.pdf\n      |__04_tables\n         |__zero_order_cors.RData\n         |__descriptives.RData\n         |__key_terms.RData\n         |__all_model_terms.RData\n   |__README.md\n   |__refs\n      |__r_refs.bib\n      |__proj_refs.bib\n   |__analyses\n      |__01_background.Rmd\n      |__02_data_cleaning.Rmd\n      |__03_models.Rmd\n      |__04_summary.Rmd"
   },
   {
     "objectID": "02-week2-workbook.html#what-is-a-path",
     "href": "02-week2-workbook.html#what-is-a-path",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "What is a path?",
-    "text": "What is a path?\nA path gives the address - or location - of a filesystem object, such as a file or directory.\n\nPaths appear in the address bar of your browser or file explorer.\nWe need to know a file path whenever we want to read, write or refer to a file using code rather than interactively pointing and clicking to navigate.\nA path can be absolute or relative\n\nabsolute = whole path from root\nrelative = path from current directory\n\n\n\nAbsolute paths\n\nAn Absolute path is given from the “root directory” of the object.\nThe root directory of a file system is the first or top directory in the hierarchy.\nFor example, C:\\ or M:\\ on windows or / on a Mac which is displayed as Macintosh HD in Finder.\n\nThe absolute path for a file, pigeon.txt could be:\n\nwindows: C:/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt\n\nMac/unix systems: /Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt\n\nweb: http://github.com/emoriebeck/pigeons/data/pigeon.txt\n\nWhat is a directory?\n\nDirectory is the old word for what many now call a folder 📂.\nCommands that act on directories in most programming languages and environments reflect this.\nFor example, in R this means “tell me my working directory”:\ngetwd() get working directory in R\nWhat is a working directory?\n\nThe working directory is the default location a program is using. It is where the program will read and write files by default. You have only one working directory at a time.\nThe terms ‘working directory’, ‘current working directory’ and ‘current directory’ all mean the same thing.\n\nFind your current working directory with:\n\nCodegetwd()\n\n[1] \"/Users/emoriebeck/Documents/teaching/PSC290-cleaning-fall-2023/psc290-data-FQ23/psc290-data-FQ23\"\n\n\nRelative paths\nA relative path gives the location of a filesystem object relative to the working directory, (i.e., that returned by getwd()).\n\nWhen pigeon.txt is in the working directory the relative path is just the file * name: pigeon.txt\nIf there is a folder in the working directory called data-raw and pigeon.txt is in there then the relative path is data-raw/pigeon.txt\nPaths: moving up the hierarchy\n\n../ allows you to look in the directory above the working directory\nWhen pigeon.txt is in folder above the working the relative path is ../pigeon.txt\nAnd if it is in a folder called data-raw which is in the directory above the working directory then the relative path is ../data-raw/pigeon.txt\nWhat’s in my directory?\nYou can list the contents of a directory using the dir() command\n\n\ndir() list the contents of the working directory\n\ndir(\"..\") list the contents of the directory above the working directory\n\ndir(\"../..\") list the contents of the directory two directories above the working directory\n\ndir(\"data-raw\") list the contents of a folder call data-raw which is in the working directory.\nRelative or absolute\n\nMost of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).\n🎂 The tab key is your friend!\nYou only need to use absolute paths when you are referring to filesystem outside the one you are using.\n\nI often store the beginning of that path as object.\n\nweb_wd <- “https://github.com/emoriebeck/pigeons/”\nThen I can use sprintf() or paste() to add different endings\n\n\n\n\nCodeweb_wd <- \"https://github.com/emoriebeck/pigeons/\"\nsprintf(\"%s/data-raw/pigeon.txt\", web_wd)\n\n[1] \"https://github.com/emoriebeck/pigeons//data-raw/pigeon.txt\""
+    "text": "What is a path?\nA path gives the address - or location - of a filesystem object, such as a file or directory.\n\nPaths appear in the address bar of your browser or file explorer.\nWe need to know a file path whenever we want to read, write or refer to a file using code rather than interactively pointing and clicking to navigate.\nA path can be absolute or relative\n\nabsolute = whole path from root\nrelative = path from current directory\n\n\n\nAbsolute paths\n\nAn Absolute path is given from the “root directory” of the object.\nThe root directory of a file system is the first or top directory in the hierarchy.\nFor example, C:\\ or M:\\ on windows or / on a Mac which is displayed as Macintosh HD in Finder.\n\nThe absolute path for a file, pigeon.txt could be:\n\nwindows: C:/Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt\n\nMac/unix systems: /Users/edbeck/Desktop/pigeons/data-raw/pigeon.txt\n\nweb: http://github.com/emoriebeck/pigeons/data/pigeon.txt\n\nWhat is a directory?\n\nDirectory is the old word for what many now call a folder 📁.\nCommands that act on directories in most programming languages and environments reflect this.\nFor example, in R this means “tell me my working directory”:\ngetwd() get working directory in R\nWhat is a working directory?\n\nThe working directory is the default location a program is using. It is where the program will read and write files by default. You have only one working directory at a time.\nThe terms ‘working directory’, ‘current working directory’ and ‘current directory’ all mean the same thing.\n\nFind your current working directory with:\n\nCodegetwd()\n\n[1] \"/Users/emoriebeck/Documents/teaching/PSC290-cleaning-fall-2023/psc290-data-FQ23/psc290-data-FQ23\"\n\n\nRelative paths\nA relative path gives the location of a filesystem object relative to the working directory, (i.e., that returned by getwd()).\n\nWhen pigeon.txt is in the working directory the relative path is just the file * name: pigeon.txt\nIf there is a folder in the working directory called data-raw and pigeon.txt is in there then the relative path is data-raw/pigeon.txt\nPaths: moving up the hierarchy\n\n../ allows you to look in the directory above the working directory\nWhen pigeon.txt is in folder above the working the relative path is ../pigeon.txt\nAnd if it is in a folder called data-raw which is in the directory above the working directory then the relative path is ../data-raw/pigeon.txt\nWhat’s in my directory?\nYou can list the contents of a directory using the dir() command\n\n\ndir() list the contents of the working directory\n\ndir(\"..\") list the contents of the directory above the working directory\n\ndir(\"../..\") list the contents of the directory two directories above the working directory\n\ndir(\"data-raw\") list the contents of a folder call data-raw which is in the working directory.\nRelative or absolute\n\nMost of the time you should use relative paths because that makes your work portable (i.e. to a different machine / user / etc.).\n🥳 The tab key is your friend!\nYou only need to use absolute paths when you are referring to filesystem outside the one you are using.\n\nI often store the beginning of that path as object.\n\nweb_wd <- “https://github.com/emoriebeck/pigeons/”\nThen I can use sprintf() or paste() to add different endings\n\n\n\n\nCodeweb_wd <- \"https://github.com/emoriebeck/pigeons/\"\nsprintf(\"%s/data-raw/pigeon.txt\", web_wd)\n\n[1] \"https://github.com/emoriebeck/pigeons//data-raw/pigeon.txt\""
   },
   {
     "objectID": "02-week2-workbook.html#example-1",
     "href": "02-week2-workbook.html#example-1",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Example",
     "text": "Example\nDownload and unzip pigeons.zip which has the following structure:\n-- pigeons\n   |__data-processed\n      |__pigeon_long.txt\n   |__data-raw\n      |__pigeon.txt\n   |__figures\n      |__fig1.tiff\n   |__scripts\n      |__analysis.R\n      |__import_reshape.R\n   |__pigeons.Rproj"
   },
   {
     "objectID": "02-week2-workbook.html#rstudio-projects-1",
     "href": "02-week2-workbook.html#rstudio-projects-1",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "RStudio Projects",
     "text": "RStudio Projects\n\nProject is obviously a commonly used word. When I am referring to an RStudio Project I will use the capitalised words ‘RStudio Project’ or ‘Project’.\nIn other cases, I will use ‘project’.\nAn RStudio Project is a directory with an .Rproj file in it.\nThe name of the RStudio Project is the same as the name of the top level directory which is referred to as the Project directory.\n\nFor example, if you create an RStudio Project ipcs_data_2019 your folder structure would look something like this:\n-- ipcs_data_2019\n   |__ipcs_data_2019.Rproj\n   |__data\n      |__raw_data\n         |__2019-03-21_ema_raw.csv\n         |__2019-03-21_baseline_raw.csv\n      |__clean_data\n         |__2019-06-21_ema_long.csv\n         |__2019-06-21_ema_long.RData\n         |__2019-06-21_baseline_wide.csv\n         |__2019-06-21_baseline_wide.RData\n   |__results\n      |__01_models\n      |__02_summaries\n      |__03_figures\n      |__04_tables\n   |__README.md\n   |__refs\n      |__r_refs.bib\n      |__proj_refs.bib\n   |__analyses\n      |__01_background.Rmd\n      |__02_data_cleaning.Rmd\n      |__03_models.Rmd\n      |__04_summary.Rmd\n\nthe .RProj file which is the defining feature of an RStudio Project\nWhen you open an RStudio Project, the working directory is set to the Project directory (i.e., the location of the .Rproj file).\nThis makes your work portable. You can zip up the project folder and send it to any person, including future you, or any computer.\nThey will be able to unzip, open the project and have all the code just work.\n(This is great for sending code and/or results to your advisors)"
   },
   {
     "objectID": "02-week2-workbook.html#directory-structure",
     "href": "02-week2-workbook.html#directory-structure",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Directory structure",
     "text": "Directory structure\nYou are aiming for structured, systematic and repeatable. For example, the Project directory might contain:\n\n.RProj file\n\nREADME - tell people what the project is and how to use it\n\nLicense - tell people what they are allowed to do with your project\nDirectories\ndata/\n\nprereg/\n\nscripts/\nresults/\n\nmanuscript/"
   },
   {
     "objectID": "02-week2-workbook.html#readme",
     "href": "02-week2-workbook.html#readme",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "README",
     "text": "README\n\nREADMEs are a form of documentation which have been widely used for a long time. They contain all the information about the other files in a directory. They can be extensive.\nWikipedia README page\nGitHub Doc’s About READMEs\nOSF\n\nA minimal README might give:\n\nTitle\nDescription, 50 words or so on what the project is\nTechnical Description of the project\n\nWhat software and packages are needed including versions\nAny instructions needed to run the analysis/use the software\nAny issues that a user might face in running the analysis/using the software\n\n\nInstructions on how to use the work\nLinks to where other files, materials, etc. are stored\n\nE.g., an OSF readme may point to GitHub, PsyArxiv, etc."
   },
   {
     "objectID": "02-week2-workbook.html#license",
     "href": "02-week2-workbook.html#license",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "License",
     "text": "License\nA license tells others what they can and can’t do with your work.\nchoosealicense.com is a useful explainer.\nI typically use:\n\n\nMIT License for software\n\nCC-BY-SA-4.0 for other work"
   },
   {
     "objectID": "02-week2-workbook.html#rstudio-project-infrastructure",
     "href": "02-week2-workbook.html#rstudio-project-infrastructure",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "RStudio Project infrastructure",
     "text": "RStudio Project infrastructure\n🎬 create a new Project called iris by:\n\nclicking File->New Project…\nclicking on the little icon (second from the left) at the top\nChoose New Project, then New Directory, then New Project. Name the RStudio Project iris.\nCreate folders in iris called data-raw, data-processed and figures.\nStart new scripts called 01-import.R, 02-tidy.R, and 03-figures.R"
   },
   {
     "objectID": "02-week2-workbook.html#save-and-import",
     "href": "02-week2-workbook.html#save-and-import",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Save and Import",
     "text": "Save and Import\n\nSave a copy of iris.csv to your data-raw folder. These data give the information about different species of irises.\nIn your 01-import.R script, load the tidyverse set of packages.\n\n\nCodelibrary(tidyverse)\nwrite_csv(iris, file = \"data-raw/iris.csv\")\n\n\n\nAdd the command to import the data:\n\n\nCodeiris <- read_csv(\"data-raw/iris.csv\")\n\n\n\n\n\n\nThe relative path is data-raw/iris.csv because your working directory is the Project directory, iris."
   },
   {
     "objectID": "02-week2-workbook.html#reformat-the-data",
     "href": "02-week2-workbook.html#reformat-the-data",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Reformat the data",
     "text": "Reformat the data\nThis dataset has three observations in a row - it is not ‘tidy’.\n\nOpen your 02-tidy.R script, and reshape the data using:\n\n\nCodeiris <- pivot_longer(data = iris, \n                     cols = -Species, \n                     names_to = \"attribute\", \n                     values_to = \"value\")\n\n\n\nThis reformats the dataframe in R but does not overwrite the text file of the data.\nDon’t worry too much about this right now. We’ll spend a lot of time talking about reshaping data next week!"
   },
   {
     "objectID": "02-week2-workbook.html#writing-files",
     "href": "02-week2-workbook.html#writing-files",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Writing files",
     "text": "Writing files\nOften we want to write to files.\n\nMy main reasons for doing so are to save copies of data that have been processed and to save manuscripts and graphics.\nAlso, as someone who collects a lot of data, the de-identified, fully anonymized data files I can share and the identifiable data I collect require multiple versions (and encryption, keys, etc.)\nWrite your dataframe iris to a csv file named iris-long.csv in your data-processed folder:\n\n\nCodefile <- \"data-processed/iris-long.csv\"\nwrite_csv(iris, file)\n\n\n\n\n\n\nPutting file paths into variables often makes your code easier to read especially when file paths are long or used multiple times."
   },
   {
     "objectID": "02-week2-workbook.html#create-a-plot",
     "href": "02-week2-workbook.html#create-a-plot",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Create a plot",
     "text": "Create a plot\nOpen your 03-figures.R script and create a simple plot of this data with:\n\nCodefig1 <- ggplot(\n  data = iris\n  , aes(y = Species, x = value, fill = Species)\n  ) + \n  geom_boxplot() +                       \n  facet_grid(attribute~.) + \n  scale_x_continuous(name = \"Attribute\") +\n  scale_y_discrete(name = \"Species\") +\n  theme_classic() + \n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "02-week2-workbook.html#view-plot",
     "href": "02-week2-workbook.html#view-plot",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "View plot",
     "text": "View plot\nView plot with:\n\nCodefig1"
   },
   {
     "objectID": "02-week2-workbook.html#write-ggplot-figure-to-file",
     "href": "02-week2-workbook.html#write-ggplot-figure-to-file",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Write ggplot figure to file",
     "text": "Write ggplot figure to file\n\nA useful function for saving ggplot figures is ggsave().\nIt has arguments for the size, resolution and device for the image. See the ggsave() reference page.\nSince I often make more than one figure, I might set these arguments first.\n\n\n\n\nAssign ggsave argument values to variables:\n\n\nCode# figure saving settings\nunits <- \"in\"  \nfig_w <- 3.2\nfig_h <- fig_w\ndpi <- 600\ndevice <- \"tiff\" \n\n\n\n\nSave the figure to your figures directory:\n\n\nCodeggsave(\"figures/fig1.tiff\",\n       plot = fig1,\n       device = device,\n       width = fig_w,\n       height = fig_h,\n       units = units,\n       dpi = dpi)\n\n\n\n\n\n\nCheck it is there!\n\n\n\n\n\n\n\nData Manipulation in dplyr"
   },
   {
     "objectID": "02-week2-workbook.html#core-functions",
     "href": "02-week2-workbook.html#core-functions",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "Core Functions",
     "text": "Core Functions\n\n\n\n\n%>%\nfilter()\nselect()\narrange()\ngroup_by()\nmutate()\nsummarize()\n\n\n\nAlthough each of these functions are powerful alone, they are incredibly powerful in conjunction with one another. So below, I’ll briefly introduce each function, then link them all together using an example of basic data cleaning and summary."
   },
   {
     "objectID": "02-week2-workbook.html#section",
     "href": "02-week2-workbook.html#section",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "1. %>%\n",
     "text": "1. %>%\n\n\nThe pipe %>% is wonderful. It makes coding intuitive. Often in coding, you need to use so-called nested functions. For example, you might want to round a number after taking the square of 43.\n\n\nCodesqrt(43)\n\n[1] 6.557439\n\nCoderound(sqrt(43), 2)\n\n[1] 6.56\n\n\nThe issue with this comes whenever we need to do a series of operations on a data set or other type of object. In such cases, if we run it in a single call, then we have to start in the middle and read our way out.\n\nCoderound(sqrt(43/2), 2)\n\n[1] 4.64\n\n\nThe pipe solves this by allowing you to read from left to right (or top to bottom). The easiest way to think of it is that each call of %>% reads and operates as “and then.” So with the rounded square root of 43, for example:\n\nCodesqrt(43) %>%\n  round(2)\n\n[1] 6.56"
   },
   {
     "objectID": "02-week2-workbook.html#filter",
     "href": "02-week2-workbook.html#filter",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "2. filter()\n",
     "text": "2. filter()\n\nOften times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don’t want to include.\n\n\nCodedata(bfi) # grab the bfi data from the psych package\nbfi <- bfi %>% as_tibble()\nhead(bfi)\n\n\n\n  \n\n\n\nOften times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don’t want to include.\n\nCodesummary(bfi$age) # get age descriptives\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   3.00   20.00   26.00   28.78   35.00   86.00 \n\n\nOften times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don’t want to include.\n\nCodebfi2 <- bfi %>% # see a pipe!\n  filter(age <= 18) # filter to age up to 18\n\nsummary(bfi2$age) # summary of the new data \n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    3.0    16.0    17.0    16.3    18.0    18.0 \n\n\nBut this isn’t quite right. We still have folks below 12. But, the beauty of filter() is that you can do sequence of OR and AND statements when there is more than one condition, such as up to 18 AND at least 12.\n\nCodebfi2 <- bfi %>%\n  filter(age <= 18 & age >= 12) # filter to age up to 18 and at least 12\n\nsummary(bfi2$age) # summary of the new data \n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   12.0    16.0    17.0    16.4    18.0    18.0 \n\n\nGot it!\n\nBut filter works for more use cases than just conditional\n\n\n<, >, <=, and >=\n\n\n\nIt can also be used for cases where we want a single values to match cases with text.\nTo do that, let’s convert one of the variables in the bfi data frame to a string.\nSo let’s change gender (1 = male, 2 = female) to text (we’ll get into factors later).\n\n\nCodebfi$education <- plyr::mapvalues(bfi$education, 1:5, c(\"Below HS\", \"HS\", \"Some College\", \"College\", \"Higher Degree\"))\n\n\nNow let’s try a few things:\n1. Create a data set with only individuals with some college (==).\n\nCodebfi2 <- bfi %>% \n  filter(education == \"Some College\")\nunique(bfi2$education)\n\n[1] \"Some College\"\n\n\n2. Create a data set with only people age 18 (==).\n\nCodebfi2 <- bfi %>%\n  filter(age == 18)\nsummary(bfi2$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n     18      18      18      18      18      18 \n\n\n3. Create a data set with individuals with some college or above (%in%).\n\nCodebfi2 <- bfi %>%\n  filter(education %in% c(\"Some College\", \"College\", \"Higher Degree\"))\nunique(bfi2$education)\n\n[1] \"Some College\"  \"Higher Degree\" \"College\"      \n\n\n%in% is great. It compares a column to a vector rather than just a single value, you can compare it to several\n\nCodebfi2 <- bfi %>%\n  filter(age %in% 12:18)\nsummary(bfi2$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   12.0    16.0    17.0    16.4    18.0    18.0"
   },
   {
     "objectID": "02-week2-workbook.html#select",
     "href": "02-week2-workbook.html#select",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "3. select()\n",
     "text": "3. select()\n\n\nIf filter() is for pulling certain observations (rows), then select() is for pulling certain variables (columns).\nit’s good practice to remove these columns to stop your environment from becoming cluttered and eating up your RAM.\nIn our bfi data, most of these have been pre-removed, so instead, we’ll imagine we don’t want to use any indicators of Agreeableness (A1-A5) and that we aren’t interested in gender.\nWith select(), there are few ways choose variables. We can bare quote name the ones we want to keep, bare quote names we want to remove, or use any of a number of select() helper functions.\n\nA. Bare quote columns we want to keep:\n\n\n\nCodebfi %>%\n  select(C1, C2, C3, C4, C5) %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 5\n     C1    C2    C3    C4    C5\n  <int> <int> <int> <int> <int>\n1     2     3     3     4     4\n2     5     4     4     3     4\n3     4     5     4     2     5\n4     4     4     3     5     5\n5     4     4     5     3     2\n6     6     6     6     1     3\n# ℹ 2,794 more rows\n\n\n\n\nCodebfi %>%\n  select(C1:C5) %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 5\n     C1    C2    C3    C4    C5\n  <int> <int> <int> <int> <int>\n1     2     3     3     4     4\n2     5     4     4     3     4\n3     4     5     4     2     5\n4     4     4     3     5     5\n5     4     4     5     3     2\n6     6     6     6     1     3\n# ℹ 2,794 more rows\n\n\n\n\n\nB. Bare quote columns we don’t want to keep:\n\nCodebfi %>% \n  select(-(A1:A5), -gender) %>% # Note the `()` around the columns\n  print(n = 6)\n\n# A tibble: 2,800 × 22\n     C1    C2    C3    C4    C5    E1    E2    E3    E4    E5    N1    N2    N3\n  <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1     2     3     3     4     4     3     3     3     4     4     3     4     2\n2     5     4     4     3     4     1     1     6     4     3     3     3     3\n3     4     5     4     2     5     2     4     4     4     5     4     5     4\n4     4     4     3     5     5     5     3     4     4     4     2     5     2\n5     4     4     5     3     2     2     2     5     4     5     2     3     4\n6     6     6     6     1     3     2     1     6     5     6     3     5     2\n# ℹ 2,794 more rows\n# ℹ 9 more variables: N4 <int>, N5 <int>, O1 <int>, O2 <int>, O3 <int>,\n#   O4 <int>, O5 <int>, education <chr>, age <int>\n\n\nC. Add or remove using select() helper functions.\n\n\n\n\nstarts_with()\n\nends_with()\ncontains()\nmatches()\nnum_range()\none_of()\nall_of()\n\n\n\n\nCodebfi %>%\n  select(starts_with(\"C\"))"
   },
   {
     "objectID": "02-week2-workbook.html#arrange",
     "href": "02-week2-workbook.html#arrange",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "4. arrange()\n",
     "text": "4. arrange()\n\n\nSometimes, either in order to get a better sense of our data or in order to well, order our data, we want to sort it\nAlthough there is a base R sort() function, the arrange() function is tidyverse version that plays nicely with other tidyverse functions.\n\n\nSo in our previous examples, we could also arrange() our data by age or education, rather than simply filtering. (Or as we’ll see later, we can do both!)\n\n\nCode# sort by age\nbfi %>% \n  select(gender:age) %>%\n  arrange(age) %>% \n  print(n = 6)\n\n# A tibble: 2,800 × 3\n  gender education       age\n   <int> <chr>         <int>\n1      1 Higher Degree     3\n2      2 <NA>              9\n3      2 Some College     11\n4      2 <NA>             11\n5      2 <NA>             11\n6      2 <NA>             12\n# ℹ 2,794 more rows\n\n\n\n\nCode# sort by education\nbfi %>%\n  select(gender:age) %>%\n  arrange(education) %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 3\n  gender education   age\n   <int> <chr>     <int>\n1      1 Below HS     19\n2      1 Below HS     21\n3      1 Below HS     17\n4      1 Below HS     18\n5      1 Below HS     18\n6      2 Below HS     18\n# ℹ 2,794 more rows\n\n\n\n\nWe can also arrange by multiple columns, like if we wanted to sort by gender then education:\n\nCodebfi %>%\n  select(gender:age) %>%\n  arrange(gender, education) %>% \n  print(n = 6)\n\n# A tibble: 2,800 × 3\n  gender education   age\n   <int> <chr>     <int>\n1      1 Below HS     19\n2      1 Below HS     21\n3      1 Below HS     17\n4      1 Below HS     18\n5      1 Below HS     18\n6      1 Below HS     32\n# ℹ 2,794 more rows"
   },
   {
     "objectID": "02-week2-workbook.html#group_by",
     "href": "02-week2-workbook.html#group_by",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "5. group_by()\n",
     "text": "5. group_by()\n\n\nThe group_by() function is the “split” of the method\nIt basically implicitly breaks the data set into chunks by whatever bare quoted column(s)/variable(s) are supplied as arguments.\n\nSo imagine that we wanted to group_by() education levels to get average ages at each level\n\nCodebfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  group_by(education) %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 8\n# Groups:   education [6]\n     C1    C2    C3    C4    C5   age gender education   \n  <int> <int> <int> <int> <int> <int>  <int> <chr>       \n1     2     3     3     4     4    16      1 <NA>        \n2     5     4     4     3     4    18      2 <NA>        \n3     4     5     4     2     5    17      2 <NA>        \n4     4     4     3     5     5    17      2 <NA>        \n5     4     4     5     3     2    17      1 <NA>        \n6     6     6     6     1     3    21      2 Some College\n# ℹ 2,794 more rows\n\n\n\nHadley’s first law of data cleaning: “What is split, must be combined”\nThis is super easy with the ungroup() function:\n\n\nCodebfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  group_by(education) %>%\n  ungroup() %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 8\n     C1    C2    C3    C4    C5   age gender education   \n  <int> <int> <int> <int> <int> <int>  <int> <chr>       \n1     2     3     3     4     4    16      1 <NA>        \n2     5     4     4     3     4    18      2 <NA>        \n3     4     5     4     2     5    17      2 <NA>        \n4     4     4     3     5     5    17      2 <NA>        \n5     4     4     5     3     2    17      1 <NA>        \n6     6     6     6     1     3    21      2 Some College\n# ℹ 2,794 more rows\n\n\nMultiple group_by() calls overwrites previous calls:\n\nCodebfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  group_by(education) %>%\n  group_by(gender, age) %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 8\n# Groups:   gender, age [115]\n     C1    C2    C3    C4    C5   age gender education   \n  <int> <int> <int> <int> <int> <int>  <int> <chr>       \n1     2     3     3     4     4    16      1 <NA>        \n2     5     4     4     3     4    18      2 <NA>        \n3     4     5     4     2     5    17      2 <NA>        \n4     4     4     3     5     5    17      2 <NA>        \n5     4     4     5     3     2    17      1 <NA>        \n6     6     6     6     1     3    21      2 Some College\n# ℹ 2,794 more rows"
   },
   {
     "objectID": "02-week2-workbook.html#mutate",
     "href": "02-week2-workbook.html#mutate",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "6. mutate()\n",
     "text": "6. mutate()\n\n\n\nmutate() is one of your “apply” functions\nWhen you use mutate(), the resulting data frame will have the same number of rows you started with\nYou are directly mutating the existing data frame, either modifying existing columns or creating new ones\n\nTo demonstrate, let’s add a column that indicated average age levels within each age group\n\nCodebfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  arrange(education) %>%\n  group_by(education) %>% \n  mutate(age_by_edu = mean(age, na.rm = T)) %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 9\n# Groups:   education [6]\n     C1    C2    C3    C4    C5   age gender education age_by_edu\n  <int> <int> <int> <int> <int> <int>  <int> <chr>          <dbl>\n1     6     6     3     4     5    19      1 Below HS        25.1\n2     4     3     5     3     2    21      1 Below HS        25.1\n3     5     5     5     2     2    17      1 Below HS        25.1\n4     5     5     4     1     1    18      1 Below HS        25.1\n5     4     5     4     3     3    18      1 Below HS        25.1\n6     3     2     3     4     6    18      2 Below HS        25.1\n# ℹ 2,794 more rows\n\n\nmutate() is also super useful even when you aren’t grouping\nWe can create a new category\n\nCodebfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  mutate(gender_cat = plyr::mapvalues(gender, c(1,2), c(\"Male\", \"Female\")))\n\n\n\n  \n\n\n\nWe could also just overwrite it:\n\nCodebfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  mutate(gender = plyr::mapvalues(gender, c(1,2), c(\"Male\", \"Female\")))"
   },
   {
     "objectID": "02-week2-workbook.html#summarize-summarise",
     "href": "02-week2-workbook.html#summarize-summarise",
-    "title": "Week 2: Reproducibility and Data Transformations",
+    "title": "Week 2 Workbook",
     "section": "7. summarize() / summarise()\n",
     "text": "7. summarize() / summarise()\n\n\n\nsummarize() is one of your “apply” functions\nThe resulting data frame will have the same number of rows as your grouping variable\nYou number of groups is 1 for ungrouped data frames\n\n\nCode# group_by() education\nbfi %>%\n  select(starts_with(\"C\"), age, gender, education) %>%\n  arrange(education) %>%\n  group_by(education) %>% \n  summarize(age_by_edu = mean(age, na.rm = T))  \n\n\n\n  \n\n\n\n\nCode# no groups  \nbfi %>% \n  select(starts_with(\"C\"), age, gender, education) %>%\n  arrange(education) %>%\n  summarize(age_by_edu = mean(age, na.rm = T))"
   },
@@ -467,5 +467,243 @@
     "title": "Schedule",
     "section": "",
     "text": "Course Schedule\n\n\n\nDay\nDate\nTopic\nDue Today\n\n\n\n\nFirst Day of Classes September 27\n\n\n\n1\n10/02/2023\nLecture: Basics of Workflow\nWorkshop: Introduction to R & Workflow Basics; Quarto\nReadings:\n-       r4ds: Ch. 3, 5, 7, 29\nZoom Recording\n\n\n\n2\n10/09/2023\nLecture: Reproducibility and Workflow Values\nWorkshop: Data Transformation: Introduction to dplyr\nReadings:\n-       r4ds: Ch. 4\nZoom Recording\nProblem Set 1 Due\n\n\n3\n10/16/2023\nLecture: Understanding and Assessing Data Quality\nWorkshop: Reshaping and Joining: Introduction to tidyr\nReadings:\n-       r4ds: Ch. 6\nProblem Set 2 Due\n\n\n4\n10/23/2023\nLecture: Documenting Data and Procedures\nWorkshop: Using Codebooks to Aid Data Import\nReadings:\n-       r4ds: Ch. 8, 21, 24\nProblem Set 3 Due\n\n\n5\n10/30/2023\nLecture: Data Structures in R\nWorkshop: Data Transformation: Dates, Strings, regex, and Other Tricky Classes\nReadings: r4ds: Ch. 13-19\n\n\n\nProblem Set 4 Due\n\n\n6\n11/06/2023\nLecture: Open, Reproducible Science: OSF, GitHub, and Versioning\nWorkshop: Functions and Iteration: Introduction to purrr\nReadings:\n-       r4ds: Ch. 26, 27\nProblem Set 5 Due\n\n\n7\n11/13/2023\nLecture: Using R Resources Efficiently\nWorkshop: Parallelization: Introduction to future and furrr\nReadings:\n-       https://dcgerard.github.io/advancedr/09_future.html\nProblem Set 6 Due\nPROPOSALS DUE\n\n\n8\n11/20/2023\nLecture:\nWorkshop: (Functional) Tables & Figures\nReadings:\n-       TBD (Probably none )\nProblem Set 7 Due\n\n\n\n\nThanksgiving Break\n\n\n\n9\n11/27/2023\nLecture: None (in class help with projects instead)\nWorkshop: Odds, Ends, and Requested Topics\nReadings:\n-       TBD (Probably none )\nProblem Set 8 Due\n\n\n10\n12/04/2023\nIn-Class Presentations\n\n\n\n\n\nFinal Exam"
+  },
+  {
+    "objectID": "ps3-week3.html",
+    "href": "ps3-week3.html",
+    "title": "Problem Set Week 3",
+    "section": "",
+    "text": "Due Date: Monday, October 23, 12:01 AM PST.\nDownload your problem set for week 2 below or on Canvas.\nAnswers will be posted after the due date."
+  },
+  {
+    "objectID": "02-week3-slides.html",
+    "href": "02-week3-slides.html",
+    "title": "Week 3 Slides",
+    "section": "",
+    "text": "Welcome to Week 3! This week, we’ll talk about data quality, descriptive statistics / exploratory data analysis, and tidyr."
+  },
+  {
+    "objectID": "03-week3-slides.html",
+    "href": "03-week3-slides.html",
+    "title": "Week 3 Slides",
+    "section": "",
+    "text": "Welcome to Week 3! This week, we’ll talk about data quality, descriptive statistics / exploratory data analysis, and tidyr."
+  },
+  {
+    "objectID": "03-week3-workbook.html",
+    "href": "03-week3-workbook.html",
+    "title": "Week 3 Workbook",
+    "section": "",
+    "text": "Codelibrary(knitr)\nlibrary(psych)\nlibrary(plyr)\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.2     ✔ purrr   1.0.2\n✔ tibble  3.2.1     ✔ dplyr   1.1.3\n✔ tidyr   1.2.1     ✔ stringr 1.5.0\n✔ readr   2.1.2     ✔ forcats 0.5.2\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ ggplot2::%+%()     masks psych::%+%()\n✖ ggplot2::alpha()   masks psych::alpha()\n✖ dplyr::arrange()   masks plyr::arrange()\n✖ purrr::compact()   masks plyr::compact()\n✖ dplyr::count()     masks plyr::count()\n✖ dplyr::desc()      masks plyr::desc()\n✖ dplyr::failwith()  masks plyr::failwith()\n✖ dplyr::filter()    masks stats::filter()\n✖ dplyr::id()        masks plyr::id()\n✖ dplyr::lag()       masks stats::lag()\n✖ dplyr::mutate()    masks plyr::mutate()\n✖ dplyr::rename()    masks plyr::rename()\n✖ dplyr::summarise() masks plyr::summarise()\n✖ dplyr::summarize() masks plyr::summarize()"
+  },
+  {
+    "objectID": "03-week3-workbook.html#outline",
+    "href": "03-week3-workbook.html#outline",
+    "title": "Week 3 Workbook",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome & Q’s on homework\nPart 1: Data Quality and Descriptives\nPart 2: tidyr\n\nProblem set & Q time"
+  },
+  {
+    "objectID": "03-week3-workbook.html#what-is-data-quality",
+    "href": "03-week3-workbook.html#what-is-data-quality",
+    "title": "Week 3 Workbook",
+    "section": "What is data quality",
+    "text": "What is data quality\nIBM’s definition of data quality:\n\n“Data quality measures how well a dataset meets criteria for accuracy, completeness, validity, consistency, uniqueness, timeliness, and fitness for purpose”"
+  },
+  {
+    "objectID": "03-week3-workbook.html#aspects-of-data-quality",
+    "href": "03-week3-workbook.html#aspects-of-data-quality",
+    "title": "Week 3 Workbook",
+    "section": "Aspects of data quality",
+    "text": "Aspects of data quality\n\n\nAccuracy: Do the data reflect reality / truth?\n\nCompleteness: Are the data usable or complete (no missing people, values, etc. beyond random)\n\n\nUniqueness: There is no duplicated data\n\nValidity: Do the data have the correct properties (values, ranges, etc.)\n\nConsistency: When integrating across multiple data sources, information should converge across sources and match reality\n\nTimeliness: Can the data be maintained and distributed within a specified time frame\n\nFitness for purpose: Do the data meet your research need?"
+  },
+  {
+    "objectID": "03-week3-workbook.html#why-should-we-care-about-data-quality",
+    "href": "03-week3-workbook.html#why-should-we-care-about-data-quality",
+    "title": "Week 3 Workbook",
+    "section": "Why should we care about data quality",
+    "text": "Why should we care about data quality\n\nYou aren’t responsible for poor quality data you receive, but you are responsible for the data products you work with – that is, you are responsible for improving data quality\nPoor quality data threatens scientific integrity\n\nPoor quality data are a pain for you to work with and for others to work with"
+  },
+  {
+    "objectID": "03-week3-workbook.html#what-can-data-quality-do-for-my-career",
+    "href": "03-week3-workbook.html#what-can-data-quality-do-for-my-career",
+    "title": "Week 3 Workbook",
+    "section": "What can data quality do for my career?",
+    "text": "What can data quality do for my career?\n\nThe virtuous cycle of data cleaning\n\nSome people get a reputation for getting their data, analyses, etc. right\nThis is important for publications, grant funding, etc.\nIt tends to be inter-generational – you inherit some of your reputation on this from your advisor\nStart paying it forward now to build your own career, whether it’s in academia or industry"
+  },
+  {
+    "objectID": "03-week3-workbook.html#how-do-i-ensure-data-quality",
+    "href": "03-week3-workbook.html#how-do-i-ensure-data-quality",
+    "title": "Week 3 Workbook",
+    "section": "How do I ensure data quality?",
+    "text": "How do I ensure data quality?\nThe Towards Data Science website has a nice definition of EDA:\n\n“Exploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics”\n\n\nSo EDA is basically a fancy word for the descriptive statistics you’ve been learning about for years\n\nI think about “exploratory data analysis for data quality”\n\nInvestigating values and patterns of variables from “input data”\nIdentifying and cleaning errors or values that need to be changed\nCreating analysis variables\nChecking values of analysis variables against values of input variables"
+  },
+  {
+    "objectID": "03-week3-workbook.html#how-i-will-teach-exploratory-data-analysis",
+    "href": "03-week3-workbook.html#how-i-will-teach-exploratory-data-analysis",
+    "title": "Week 3 Workbook",
+    "section": "How I will teach exploratory data analysis",
+    "text": "How I will teach exploratory data analysis\nWill teach exploratory data analysis (EDA) in two sub-sections:\n\nProvide “Guidelines for EDA”\n\nLess about coding, more about practices you should follow and mentality necessary to ensure high data quality\n\n\nIntroduce “Tools of EDA”:\n\nDemonstrate code to investigate variables and relationship between variables\nMost of these tools are just the application of programming skills you have already learned (or will learn soon!)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#guidelines-for-eda-for-data-quality",
+    "href": "03-week3-workbook.html#guidelines-for-eda-for-data-quality",
+    "title": "Week 3 Workbook",
+    "section": "Guidelines for “EDA for data quality”",
+    "text": "Guidelines for “EDA for data quality”\nAssume that your goal in “EDA for data quality” is to investigate “input” data sources and create “analysis variables”\n\nUsually, your analysis dataset will incorporate multiple sources of input data, including data you collect (primary data) and/or data collected by others (secondary data)\n\nEDA is not a linear process, and the process will vary across people and projects Some broad steps:\n\nUnderstand how input data sources were created\n\ne.g., when working with survey data, have survey questionnaire and codebooks on hand (watch out for skip patterns!!!)\n\n\nFor each input data source, identify the “unit of analysis” and which combination of variables uniquely identify observations\nInvestigate patterns in input variables\nCreate analysis variable from input variable(s)\nVerify that analysis variable is created correctly through descriptive statistics that compare values of input variable(s) against values of the analysis variable\n\n\nIt is critically important to step through EDA processes at multiple points during data cleaning, from the input / raw data to the output / analysis / clean data.\nAlways be aware of missing values\nThey will not always be coded as NA in input variables (e.g., some projects code them as 99, 99999, negative values, etc.)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#unit-of-analysis-and-which-variables-uniquely-identify-observations",
+    "href": "03-week3-workbook.html#unit-of-analysis-and-which-variables-uniquely-identify-observations",
+    "title": "Week 3 Workbook",
+    "section": "“Unit of analysis” and which variables uniquely identify observations",
+    "text": "“Unit of analysis” and which variables uniquely identify observations\n“Unit of analysis” refers to “what does each observation represent” in an input data source\n\nIf each obs represents a trial in an experiment, you have “trial level data”\nIf each obs represents a participant, you have “participant level data”\nIf each obs represents a sample, you have “sample-level data”\nIf each obs represents a year, you have “year level data” (i.e. longitudinal)\n\nHow to identify unit of analysis\n\ndata documentation\ninvestigating the data set\nThis is very important because we often conduct analyses that span multiple units of analysis (e.g., between- v within-person, person- v stimuli-level, etc.)\nWe have to be careful and thoughtful about identifiers that let us do that (important for joining data together, which will be the focus on our R workshop today)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rules-for-creating-new-variables",
+    "href": "03-week3-workbook.html#rules-for-creating-new-variables",
+    "title": "Week 3 Workbook",
+    "section": "Rules for creating new variables",
+    "text": "Rules for creating new variables\nRules I follow for variable creation\n\nNever modify “input variable”; instead create new variable based on input variable(s)\n\nAlways keep input variables used to create new variables\n\n\nInvestigate input variable(s) and relationship between input variables\nDeveloping a plan for creation of analysis variable\n\ne.g., for each possible value of input variables, what should value of analysis variable be?\n\n\nWrite code to create analysis variable\nRun descriptive checks to verify new variables are constructed correctly\n\nCan “comment out” these checks, but don’t delete them\n\n\nDocument new variables with notes and labels"
+  },
+  {
+    "objectID": "03-week3-workbook.html#data-we-will-use",
+    "href": "03-week3-workbook.html#data-we-will-use",
+    "title": "Week 3 Workbook",
+    "section": "Data we will use",
+    "text": "Data we will use\nUse read_csv() function from readr (loaded with tidyverse) to import .csv dataset into R.\n\nCodelibrary(plyr)\nlibrary(tidyverse)\nsoep_long <- read_csv(file=\"https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/03-week3-tidyr/gsoep.csv\")\nsoep_long\n\n\nLet’s examine the data [you must run this code chunk]\n\nCodesoep_long %>% names()\nsoep_long %>% names() %>% str()\n\nstr(soep_long) # ugh\n\nstr(soep_long$LifeEvent__Married)\nattributes(soep_long$LifeEvent__Married)\ntypeof(soep_long$LifeEvent__Married)\nclass(soep_long$LifeEvent__Married)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rule-1",
+    "href": "03-week3-workbook.html#rule-1",
+    "title": "Week 3 Workbook",
+    "section": "Rule 1",
+    "text": "Rule 1\n\nNever modify “input variable”; instead create new variable based on input variable(s)\n\nAlways keep input variables used to create new variables\n\n\n\n\nI already did this before the data were loaded in. I renamed all the input variables with interpretable names and reshaped them so the time variable (year) is long and the other variables are wide"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rule-2",
+    "href": "03-week3-workbook.html#rule-2",
+    "title": "Week 3 Workbook",
+    "section": "Rule 2",
+    "text": "Rule 2\n\nInvestigate input variable(s) and relationship between input variables\n\n\nWe’ll talk more about this in a bit when we discuss different kinds of descriptives, but briefly let’s look at basic descriptives + zero-order correlations\n\n\nCodedescribe(soep_long)\n\n\n\n  \n\n\n\nThis doesn’t look great because we’ve negative values where we shouldn’t, which represent flags for different kinds of missing variables. We’ll have to fix that\n\nI’ll show you a better way later, but we haven’t learned everything to do it nicely yet. So instead, we’ll use cor.plot() from the psych package to make a simple heat map of the correlations.\nWe shouldn’t see that many negative correlations, which flags that we need to reverse score some items\n\n\nCodesoep_2005 <- soep_long %>% filter(year == 2005) %>% select(-year)\ncor.plot(soep_2005, diag = F)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rule-3",
+    "href": "03-week3-workbook.html#rule-3",
+    "title": "Week 3 Workbook",
+    "section": "Rule 3",
+    "text": "Rule 3\n\nDeveloping a plan for creation of analysis variable\n\ne.g., for each possible value of input variables, what should value of analysis variable be?\n\n\n\n\nI do this in my codebooks, and this topic warrants a discussion in itself. This is our focal topic for next week!\nIn this case, we want Big Five (EACNO) composites for each wave and to create composites of life events experienced across all years"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rule-4",
+    "href": "03-week3-workbook.html#rule-4",
+    "title": "Week 3 Workbook",
+    "section": "Rule 4",
+    "text": "Rule 4\n\nWrite code to create analysis variable\n\n\nFrom Rule 2, we know we need to recode missing values to NA and reverse code some items. From Rule 3, we know we need to create some composites.\nLet’s do that now!\n\nRecoding:\n\nCodesoep_long <- soep_long %>%\n  mutate_at(\n    vars(contains(\"Big5\"))\n    , ~ifelse(. < 0 | is.na(.), NA, .)\n    ) %>%\n  mutate_at(\n    vars(contains(\"LifeEvent\"))\n    , ~mapvalues(., seq(-7,1), c(rep(NA, 5), 0, NA, NA, 1), warn_missing = F)\n    )\n\n\nReverse Coding:\n\nCoderev_code <- c(\"Big5__A_coarse\", \"Big5__C_lazy\", \"Big5__E_reserved\", \"Big5__N_dealStress\")\nsoep_long <- soep_long %>%\n  mutate_at(\n    vars(all_of(rev_code))\n    , ~as.numeric(reverse.code(., keys = -1, mini = 1, maxi = 7))\n    )\n\n\nLet’s check to make sure some correlations just reversed:\n\nCodesoep_2005 <- soep_long %>% filter(year == 2005) %>% select(-year)\ncor.plot(soep_2005, diag = F)\n\n\n\n\nCreate Composites:\n(Note: I honestly wouldn’t normally do it like this, but we haven’t learned how to reshape data yet! Check the online materials for code on how to do this)\n\nCodesoep_long <- soep_long %>% \n  group_by(year, Procedural__SID) %>%\n  rowwise() %>%\n  mutate(\n    Big5__E = mean(cbind(Big5__E_reserved, Big5__E_communic, Big5__E_sociable), na.rm = T),\n    Big5__A = mean(cbind(Big5__A_coarse, Big5__A_friendly, Big5__A_forgive), na.rm = T),\n    Big5__C = mean(cbind(Big5__C_thorough, Big5__C_efficient, Big5__C_lazy), na.rm = T),\n    Big5__N = mean(cbind(Big5__N_worry, Big5__N_nervous, Big5__N_dealStress), na.rm = T),\n    Big5__O = mean(cbind(Big5__O_original, Big5__O_artistic, Big5__O_imagin), na.rm = T)) %>%\n  group_by(Procedural__SID) %>%\n  mutate_at(\n    vars(contains(\"LifeEvent\"))\n    , lst(ever = ~max(., na.rm = T))\n    ) %>%\n  ungroup() %>%\n  filter(year %in% c(2005, 2009, 2013))"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rule-5",
+    "href": "03-week3-workbook.html#rule-5",
+    "title": "Week 3 Workbook",
+    "section": "Rule 5",
+    "text": "Rule 5\n\nRun descriptive checks to verify new variables are constructed correctly\n\nCan “comment out” these checks, but don’t delete them\n\n\n\n\nCodesoep_long %>% \n  select(Big5__E:LifeEvent__SepPart_ever) %>%\n  describe()\n\n\n\n  \n\n\n\n\nUh oh, Inf values popping up what went wrong?\n\n-Inf pops up when there were no non-missing values and you use na.rm = T\n\nLet’s recode those as NA\n\n\n\nCodesoep_long <- soep_long %>%\n  mutate_all(~ifelse(is.infinite(.) | is.nan(.), NA, .))\n\n\nAnd check out the descriptives again\n\nCodesoep_long %>% \n  select(Big5__E:LifeEvent__SepPart_ever) %>%\n  describe()\n\n\n\n  \n\n\n\n\nCodesoep_long %>%\n  filter(year == 2005) %>%\n  select(Big5__E:LifeEvent__SepPart_ever) %>%\n  cor.plot(., diag = F)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#rule-6",
+    "href": "03-week3-workbook.html#rule-6",
+    "title": "Week 3 Workbook",
+    "section": "Rule 6",
+    "text": "Rule 6\n\nDocument new variables with notes and labels\n\n\nAgain, I do this in my codebooks, so more on this next week!!"
+  },
+  {
+    "objectID": "03-week3-workbook.html#eda",
+    "href": "03-week3-workbook.html#eda",
+    "title": "Week 3 Workbook",
+    "section": "EDA",
+    "text": "EDA\n\n\nOne-way descriptive analyses (i.e,. focus on one variable)\n\nDescriptive analyses for continuous variables\nDescriptive analyses for discreet/categorical variables\n\n\n\nTwo-way descriptive analyses (relationship between two variables)\n\nCategorical by categorical\nCategorical by continuous\nContinuous by continuous\n\n\nRealistically, we’ve actually already covered all this above, so we’ll loop back to this after learning tidyr\n\n\n\n\n\n\n\nData Wrangling in tidyr\n\n\n\nCodeknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/raw/master/thumbs/tidyr.png\")"
+  },
+  {
+    "objectID": "03-week3-workbook.html#pivot_longer",
+    "href": "03-week3-workbook.html#pivot_longer",
+    "title": "Week 3 Workbook",
+    "section": "1. pivot_longer()\n",
+    "text": "1. pivot_longer()\n\n\n(Formerly gather()) Makes wide data long, based on a key \n\nCore arguments:\n\n\ndata: the data, blank if piped\n\ncols: columns to be made long, selected via select() calls\n\nnames_to: name(s) of key column(s) in new long data frame (string or string vector)\n\nvalues_to: name of values in new long data frame (string)\n\nnames_sep: separator in column headers, if multiple keys\n\nvalues_drop_na: drop missing cells (similar to na.rm = T) \n\n\n\nBasic Application\nLet’s start with an easy one – one key, one value:\n\nCodebfi %>%\n  rownames_to_column(\"SID\") %>%\n  pivot_longer(\n    cols = A1:O5\n    , names_to = \"item\"\n    , values_to = \"values\"\n    , values_drop_na = T\n  ) %>%\n  print(n = 8)\n\n# A tibble: 69,492 × 6\n  SID   gender education   age item  values\n  <chr>  <int>     <int> <int> <chr>  <int>\n1 61617      1        NA    16 A1         2\n2 61617      1        NA    16 A2         4\n3 61617      1        NA    16 A3         3\n4 61617      1        NA    16 A4         4\n5 61617      1        NA    16 A5         4\n6 61617      1        NA    16 C1         2\n7 61617      1        NA    16 C2         3\n8 61617      1        NA    16 C3         3\n# ℹ 69,484 more rows\n\n\nMore Advanced Application\nNow a harder one – two keys, one value:\n\nCodebfi %>%\n  rownames_to_column(\"SID\") %>%\n  pivot_longer(\n    cols = A1:O5\n    , names_to = c(\"trait\", \"item_num\")\n    , names_sep = -1\n    , values_to = \"values\"\n    , values_drop_na = T\n  ) %>%\n  print(n = 8)\n\n# A tibble: 69,492 × 7\n  SID   gender education   age trait item_num values\n  <chr>  <int>     <int> <int> <chr> <chr>     <int>\n1 61617      1        NA    16 A     1             2\n2 61617      1        NA    16 A     2             4\n3 61617      1        NA    16 A     3             3\n4 61617      1        NA    16 A     4             4\n5 61617      1        NA    16 A     5             4\n6 61617      1        NA    16 C     1             2\n7 61617      1        NA    16 C     2             3\n8 61617      1        NA    16 C     3             3\n# ℹ 69,484 more rows"
+  },
+  {
+    "objectID": "03-week3-workbook.html#pivot_wider",
+    "href": "03-week3-workbook.html#pivot_wider",
+    "title": "Week 3 Workbook",
+    "section": "2. pivot_wider()\n",
+    "text": "2. pivot_wider()\n\n\n(Formerly spread()) Makes wide data long, based on a key \n\nCore arguments:\n\n\ndata: the data, blank if piped\n\nnames_from: name(s) of key column(s) in new long data frame (string or string vector)\n\nnames_sep: separator in column headers, if multiple keys\n\nnames_glue: specify multiple or custom separators of multiple keys\n\nvalues_from: name of values in new long data frame (string)\n\nvalues_fn: function applied to data with duplicate labels \n\n\n\nBasic Application\n\nCodebfi_long <- bfi %>%\n  rownames_to_column(\"SID\") %>%\n  pivot_longer(\n    cols = A1:O5\n    , names_to = \"item\"\n    , values_to = \"values\"\n    , values_drop_na = T\n  )\n\n\nMore Advanced\n\nCodebfi_long <- bfi %>%\n  rownames_to_column(\"SID\") %>%\n  pivot_longer(\n    cols = A1:O5\n    , names_to = c(\"trait\", \"item_num\")\n    , names_sep = -1\n    , values_to = \"values\"\n    , values_drop_na = T\n  )\n\n\n\nCodebfi_long %>%\n  pivot_wider(\n    names_from = c(\"trait\", \"item_num\")\n    , values_from = \"values\"\n    , names_sep = \"_\"\n  )\n\n\n\n  \n\n\n\nA Little More Advanced\n\nCodebfi_long %>%\n  select(-item_num) %>%\n  pivot_wider(\n    names_from = \"trait\"\n    , values_from = \"values\"\n    , names_sep = \"_\"\n    , values_fn = mean\n  )"
+  },
+  {
+    "objectID": "03-week3-workbook.html#the-_join-functions",
+    "href": "03-week3-workbook.html#the-_join-functions",
+    "title": "Week 3 Workbook",
+    "section": "The _join() Functions",
+    "text": "The _join() Functions\n\nOften we may need to pull different data from different sources\nThere are lots of reasons to need to do this\nWe don’t have time to get into all the use cases here, so we’ll talk about them in high level terms\n\nWe’ll focus on:\n\nfull_join()\ninner_join()\nleft_join()\nright_join()\n\n\nLet’s separate demographic and BFI data\n\n\nCodebfi_only <- bfi %>% \n  rownames_to_column(\"SID\") %>%\n  select(SID, matches(\"[0-9]\"))\nbfi_only %>% as_tibble() %>% print(n = 6)\n\n# A tibble: 2,800 × 26\n  SID      A1    A2    A3    A4    A5    C1    C2    C3    C4    C5    E1    E2\n  <chr> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1 61617     2     4     3     4     4     2     3     3     4     4     3     3\n2 61618     2     4     5     2     5     5     4     4     3     4     1     1\n3 61620     5     4     5     4     4     4     5     4     2     5     2     4\n4 61621     4     4     6     5     5     4     4     3     5     5     5     3\n5 61622     2     3     3     4     5     4     4     5     3     2     2     2\n6 61623     6     6     5     6     5     6     6     6     1     3     2     1\n# ℹ 2,794 more rows\n# ℹ 13 more variables: E3 <int>, E4 <int>, E5 <int>, N1 <int>, N2 <int>,\n#   N3 <int>, N4 <int>, N5 <int>, O1 <int>, O2 <int>, O3 <int>, O4 <int>,\n#   O5 <int>\n\n\n\nCodebfi_dem <- bfi %>%\n  rownames_to_column(\"SID\") %>%\n  select(SID, education, gender, age)\nbfi_dem %>% as_tibble() %>% print(n = 6)\n\n# A tibble: 2,800 × 4\n  SID   education gender   age\n  <chr>     <int>  <int> <int>\n1 61617        NA      1    16\n2 61618        NA      2    18\n3 61620        NA      2    17\n4 61621        NA      2    17\n5 61622        NA      1    17\n6 61623         3      2    21\n# ℹ 2,794 more rows\n\n\nBefore we get into it, as a reminder, this is what the data set looks like before we do any joining:\n\nCodebfi %>%\n  rownames_to_column(\"SID\") %>%\n  as_tibble() %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 29\n  SID      A1    A2    A3    A4    A5    C1    C2    C3    C4    C5    E1    E2\n  <chr> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1 61617     2     4     3     4     4     2     3     3     4     4     3     3\n2 61618     2     4     5     2     5     5     4     4     3     4     1     1\n3 61620     5     4     5     4     4     4     5     4     2     5     2     4\n4 61621     4     4     6     5     5     4     4     3     5     5     5     3\n5 61622     2     3     3     4     5     4     4     5     3     2     2     2\n6 61623     6     6     5     6     5     6     6     6     1     3     2     1\n# ℹ 2,794 more rows\n# ℹ 16 more variables: E3 <int>, E4 <int>, E5 <int>, N1 <int>, N2 <int>,\n#   N3 <int>, N4 <int>, N5 <int>, O1 <int>, O2 <int>, O3 <int>, O4 <int>,\n#   O5 <int>, gender <int>, education <int>, age <int>"
+  },
+  {
+    "objectID": "03-week3-workbook.html#full_join",
+    "href": "03-week3-workbook.html#full_join",
+    "title": "Week 3 Workbook",
+    "section": "3. full_join()\n",
+    "text": "3. full_join()\n\nMost simply, we can put those back together keeping all observations.\n\nCodebfi_only %>%\n  full_join(bfi_dem) %>%\n  as_tibble() %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 29\n  SID      A1    A2    A3    A4    A5    C1    C2    C3    C4    C5    E1    E2\n  <chr> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1 61617     2     4     3     4     4     2     3     3     4     4     3     3\n2 61618     2     4     5     2     5     5     4     4     3     4     1     1\n3 61620     5     4     5     4     4     4     5     4     2     5     2     4\n4 61621     4     4     6     5     5     4     4     3     5     5     5     3\n5 61622     2     3     3     4     5     4     4     5     3     2     2     2\n6 61623     6     6     5     6     5     6     6     6     1     3     2     1\n# ℹ 2,794 more rows\n# ℹ 16 more variables: E3 <int>, E4 <int>, E5 <int>, N1 <int>, N2 <int>,\n#   N3 <int>, N4 <int>, N5 <int>, O1 <int>, O2 <int>, O3 <int>, O4 <int>,\n#   O5 <int>, education <int>, gender <int>, age <int>"
+  },
+  {
+    "objectID": "03-week3-workbook.html#inner_join",
+    "href": "03-week3-workbook.html#inner_join",
+    "title": "Week 3 Workbook",
+    "section": "4. inner_join()\n",
+    "text": "4. inner_join()\n\nWe can also keep all rows present in both data frames\n\nCodebfi_dem %>%\n  filter(row_number() %in% 1:1700) %>%\n  inner_join(\n    bfi_only %>%\n      filter(row_number() %in% 1200:2800)\n  ) %>%\n  as_tibble() %>%\n  print(n = 6)\n\n# A tibble: 501 × 29\n  SID   education gender   age    A1    A2    A3    A4    A5    C1    C2    C3\n  <chr>     <int>  <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1 64151         3      2    18     1     5     6     5     5     5     6     5\n2 64152         4      2    29     1     5     6     5     5     2     1     4\n3 64154         5      1    46     2     5     6     5     6     6     6     6\n4 64155         5      1    58     5     4     4     4     5     4     4     5\n5 64156         5      2    38     1     4     6     6     6     4     4     5\n6 64158         5      2    27     2     3     1     1     1     4     2     2\n# ℹ 495 more rows\n# ℹ 17 more variables: C4 <int>, C5 <int>, E1 <int>, E2 <int>, E3 <int>,\n#   E4 <int>, E5 <int>, N1 <int>, N2 <int>, N3 <int>, N4 <int>, N5 <int>,\n#   O1 <int>, O2 <int>, O3 <int>, O4 <int>, O5 <int>"
+  },
+  {
+    "objectID": "03-week3-workbook.html#left_join",
+    "href": "03-week3-workbook.html#left_join",
+    "title": "Week 3 Workbook",
+    "section": "5. left_join()\n",
+    "text": "5. left_join()\n\nOr all rows present in the left (first) data frame, perhaps if it’s a subset of people with complete data\n\nCodebfi_dem %>%\n  drop_na() %>%\n  left_join(bfi_only) %>%\n  as_tibble() %>%\n  print(n = 6)\n\n# A tibble: 2,577 × 29\n  SID   education gender   age    A1    A2    A3    A4    A5    C1    C2    C3\n  <chr>     <int>  <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1 61623         3      2    21     6     6     5     6     5     6     6     6\n2 61629         2      1    19     4     3     1     5     1     3     2     4\n3 61630         1      1    19     4     3     6     3     3     6     6     3\n4 61634         1      1    21     4     4     5     6     5     4     3     5\n5 61640         1      1    17     4     5     2     2     1     5     5     5\n6 61661         5      1    68     1     5     6     5     6     4     3     2\n# ℹ 2,571 more rows\n# ℹ 17 more variables: C4 <int>, C5 <int>, E1 <int>, E2 <int>, E3 <int>,\n#   E4 <int>, E5 <int>, N1 <int>, N2 <int>, N3 <int>, N4 <int>, N5 <int>,\n#   O1 <int>, O2 <int>, O3 <int>, O4 <int>, O5 <int>"
+  },
+  {
+    "objectID": "03-week3-workbook.html#right_join",
+    "href": "03-week3-workbook.html#right_join",
+    "title": "Week 3 Workbook",
+    "section": "6. right_join()\n",
+    "text": "6. right_join()\n\nOr all rows present in the right (second) data frame, such as I do when I join a codebook with raw data\n\nCodebfi_dem %>%\n  drop_na() %>%\n  right_join(bfi_only) %>%\n  as_tibble() %>%\n  print(n = 6)\n\n# A tibble: 2,800 × 29\n  SID   education gender   age    A1    A2    A3    A4    A5    C1    C2    C3\n  <chr>     <int>  <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>\n1 61623         3      2    21     6     6     5     6     5     6     6     6\n2 61629         2      1    19     4     3     1     5     1     3     2     4\n3 61630         1      1    19     4     3     6     3     3     6     6     3\n4 61634         1      1    21     4     4     5     6     5     4     3     5\n5 61640         1      1    17     4     5     2     2     1     5     5     5\n6 61661         5      1    68     1     5     6     5     6     4     3     2\n# ℹ 2,794 more rows\n# ℹ 17 more variables: C4 <int>, C5 <int>, E1 <int>, E2 <int>, E3 <int>,\n#   E4 <int>, E5 <int>, N1 <int>, N2 <int>, N3 <int>, N4 <int>, N5 <int>,\n#   O1 <int>, O2 <int>, O3 <int>, O4 <int>, O5 <int>"
+  },
+  {
+    "objectID": "03-week3-workbook.html#eda-1",
+    "href": "03-week3-workbook.html#eda-1",
+    "title": "Week 3 Workbook",
+    "section": "EDA",
+    "text": "EDA\n\n\nOne-way descriptive analyses (i.e,. focus on one variable)\n\nDescriptive analyses for continuous variables\nDescriptive analyses for discreet/categorical variables\n\n\n\nTwo-way descriptive analyses (relationship between two variables)\n\nCategorical by categorical\nCategorical by continuous\nContinuous by continuous"
+  },
+  {
+    "objectID": "03-week3-workbook.html#one-way-descriptive-analyses",
+    "href": "03-week3-workbook.html#one-way-descriptive-analyses",
+    "title": "Week 3 Workbook",
+    "section": "One-way descriptive analyses",
+    "text": "One-way descriptive analyses\n\nThese are basically what they sound like – the focus is on single variables\nDescriptive analyses for continuous variables\n\nmeans, standard deviations, minima, maxima, counts\n\n\nDescriptive analyses for discreet/categorical variables\n\ncounts, percentages\n\n\n\nContinuous\n\nCodesoep_long %>% \n  select(Procedural__SID,year,Big5__E:Big5__O) %>%\n  pivot_longer(\n    cols = contains(\"Big5\")\n    , names_to = \"trait\"\n    , values_to = \"value\"\n    , values_drop_na = T\n  ) %>%\n  group_by(year, trait) %>%\n  summarize_at(\n    vars(value)\n    , lst(mean, sd, min, max)\n    , na.rm = T\n  ) %>%\n  ungroup()\n\n\n\n  \n\n\n\nCategorical / Count\n\nCodesoep_long %>%\n  select(Procedural__SID, contains(\"_ever\")) %>%\n  distinct() %>%\n  pivot_longer(\n    cols = contains(\"LifeEvent\")\n    , names_to = \"event\"\n    , values_to = \"value\"\n    , values_drop_na = T\n  ) %>%\n  group_by(event, value) %>%\n  tally() %>%\n  group_by(event) %>%\n  mutate(total = sum(n)\n         , perc = n/total*100)"
+  },
+  {
+    "objectID": "03-week3-workbook.html#two-way-descriptive-analyses",
+    "href": "03-week3-workbook.html#two-way-descriptive-analyses",
+    "title": "Week 3 Workbook",
+    "section": "Two-way descriptive analyses",
+    "text": "Two-way descriptive analyses\n\nAims to capture relationships between variables\n\nCategorical by categorical\n\ncross-tabs, percentages\n\n\n\nCategorical by continuous\n\nmeans, standard deviations, etc. within categories\n\n\n\nContinuous by continuous\n\ncorrelations, covariances, etc.\n\n\n\nCategorical x Categorical\n\nCodesoep_long %>%\n  select(Procedural__SID, Demographic__Sex, contains(\"_ever\")) %>%\n  distinct() %>%\n  pivot_longer(\n    cols = contains(\"LifeEvent\")\n    , names_to = \"event\"\n    , values_to = \"occurred\"\n    , values_drop_na = T\n  ) %>%\n  mutate(Demographic__Sex = mapvalues(Demographic__Sex, c(1,2), c(\"Male\", \"Female\"))\n         , occurred = mapvalues(occurred, c(0,1), c(\"No Event\", \"Event\"))) %>%\n  group_by(event, occurred, Demographic__Sex) %>%\n  tally() %>%\n  group_by(event) %>%\n  mutate(perc = n/sum(n)*100) %>%\n  pivot_wider(\n    names_from = c(occurred)\n    , values_from = c(n, perc)\n  )\n\n\n\n  \n\n\n\nCategorical x Continuous\nSet up the data\n\nCodesoep_twoway <- soep_long %>% \n  filter(year == 2005) %>%\n  select(Procedural__SID, Big5__E:Big5__O) %>%\n  pivot_longer(\n    cols = contains(\"Big5\")\n    , names_to = \"trait\"\n    , values_to = \"value\"\n    , values_drop_na = T\n  ) %>%\n  left_join(\n    soep_long %>%\n      select(Procedural__SID, contains(\"_ever\")) %>%\n      distinct() %>%\n      pivot_longer(\n        cols = contains(\"LifeEvent\")\n        , names_to = \"event\"\n        , values_to = \"occurred\"\n        , values_drop_na = T\n      ) %>%\n      mutate(occurred = mapvalues(occurred, c(0,1), c(\"No Event\", \"Event\")))\n  )\n\n\nRun the descriptives\n\nCodesoep_twoway %>%\n  group_by(trait, event, occurred) %>%\n  summarize_at(\n    vars(value)\n    , lst(mean, sd, min, max)\n    , na.rm = T\n  ) %>%\n  ungroup() %>%\n  pivot_wider(\n    names_from = trait\n    , values_from = c(mean, sd, min, max)\n  )\n\n\n\n  \n\n\n\nContinuous x continuous\nHere’s how I create more customizable heat maps in ggplot2 for those who would like a reference for themselves.\n\nCoder <- soep_long %>% \n  filter(year == 2005) %>%\n  select(Big5__E:Big5__O) %>%\n  cor(., use = \"pairwise\") \n\nr[lower.tri(r, diag = T)] <- NA\nvars <- rownames(r)\nr %>%\n  data.frame() %>%\n  rownames_to_column(\"V1\") %>%\n  pivot_longer(\n    cols = -V1\n    , names_to = \"V2\"\n    , values_to = \"r\"\n  ) %>%\n  mutate(V1 = factor(V1, levels = vars)\n         , V2 = factor(V2, levels = rev(vars))) %>%\n  ggplot(aes(x = V1, y = V2, fill = r)) + \n    geom_raster() + \n  geom_text(aes(label = round(r, 2))) + \n  scale_fill_gradient2(\n    limits = c(-1,1)\n    , breaks = c(-1, -.5, 0, .5, 1)\n    , low = \"blue\", high = \"red\"\n    , mid = \"white\", na.value = \"white\") + \n  labs(\n    x = NULL\n    , y = NULL\n    , fill = \"Zero-Order Correlation\"\n    , title = \"Zero-Order Correlations Among Variables\"\n    ) + \n  theme_classic() + \n  theme(\n    legend.position = \"bottom\"\n    , axis.text = element_text(face = \"bold\")\n    , axis.text.x = element_text(angle = 45, hjust = 1)\n    , plot.title = element_text(face = \"bold\", hjust = .5)\n    , plot.subtitle = element_text(face = \"italic\", hjust = .5)\n    , panel.background = element_rect(color = \"black\", size = 1)\n  )"
+  },
+  {
+    "objectID": "03-week3-workbook.html#attributions",
+    "href": "03-week3-workbook.html#attributions",
+    "title": "Week 3 Workbook",
+    "section": "Attributions",
+    "text": "Attributions\nParts of Part 1 of these slides was adapted from Ozan Jaquette’s EDUC 260A at UCLA."
+  },
+  {
+    "objectID": "02-week2-workbook.html",
+    "href": "02-week2-workbook.html",
+    "title": "Week 2 Workbook",
+    "section": "",
+    "text": "Codelibrary(knitr)\nlibrary(psych)\nlibrary(emo)\nlibrary(plyr)\nlibrary(tidyverse)"
   }
 ]
