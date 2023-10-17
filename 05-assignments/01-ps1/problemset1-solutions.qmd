@@ -1,0 +1,190 @@
+---
+title: "Problem Set #1"
+author: "Emorie D Beck"
+date: "10/09/2023"
+format: pdf
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview 
+
+Welcome to Data Cleaning and Management using R! This problem set is intended to give you some practice becoming familiar with using R. In this problem set, I'm asking you to: create an R project; render to pdf; load and investigate an R data frame that is stored on the web; and apply some basic functions to atomic vectors.
+
+- Note: Change the values of the YAML header above to your name and the date. 
+
+```{r}
+library(tidyverse)
+```
+
+
+## Question 1: Creating an R project
+
+**Create an R project**  
+
+- Create a folder where you want to save files associated with problem set 1. Let's call that folder "problemset1", but you can name it whatever you want.
+  - For instance, it could be psc290-fq23 >> problem-sets >> problemset1.
+- In RStudio, click on "File" >> "New Project" >> "Existing Directory" >> "Browse".
+- Browse to find and select your problem set 1 folder.
+- Click on "Create Project".
+  - An R project file has the extension ".Rproj".
+  - The name of the file should be "problemset1.Rproj", or whatever you named the folder.
+
+Save this problemset1.qmd file anywhere in the folder named problemset1.
+
+- Use this naming convention "lastname-firstname-ps#" for your .qmd files (e.g. beck_emorie_ps1.qmd).
+  - If you want, you can change the name of this file to include your first and last name.
+- Run the `getwd()` function and the `list.files()` function in the code chunk below.
+- What is the output? Why?  
+
+```{r, eval=FALSE}
+getwd() # list current directory
+list.files() # list files in current directory
+# mine may be different from yours because I have the data
+```
+
+
+**ANSWER:** `getwd()` lists the current directory path, which is important for relative file paths. `list.files()` lists all the files in current working directory (listed in `getwd()`).  
+
+## Question 2: Render to pdf  
+
+- At the top of this .qmd file, type in your first and last name in the appropriate place in the YAML header (e.g. "Hadley Wickham").
+- In the date field of the YAML header, insert the date within quotations (any date format is fine).
+- Now click the "Render" button near the top of your RStudio window (icon with blue yarn ball).
+  - Alternatively you can use the shortcut: __Cmd/Ctrl + Shift + k__.
+
+  - *Note*: One goal of this assignment is to make sure you are able to render to a PDF without running into errors.
+
+## Question 3: Load .Rdata directly with url and then investigate the data frame
+
+1. This question asks you to load a dataframe by specifying the `url()` function within the `load()` function.
+- Url link for data frame: https://github.com/emoriebeck/psc290-data-FQ23/raw/main/05-assignments/01-ps1/pwe-ps1-small.RData
+
+  - Hint: to load .Rdata use the `load()` and `url()` functions because you are using a link. follow this approach: `load(url("url_link"))`.
+    - Note: the `url_link` is put within quotes
+
+Load the dataframe within this code chunk below.
+```{r}
+#?load
+load(url("https://github.com/emoriebeck/psc290-data-FQ23/raw/main/05-assignments/01-ps1/pwe-ps1-small.RData"))
+```
+
+2. Print the data frame `df_pwe` by typing its name.
+```{r}
+df_pwe
+```
+
+3. Use the `typeof()` function to investigate the type of data frame `df_pwe`.
+```{r}
+typeof(df_pwe) # tibble
+```
+
+4. Apply the `length()` function to the data frame `df_pwe`. What does this output mean in your own words?
+```{r}
+length(df_pwe)
+```
+
+
+**ANSWER:** `length()` captures the number of columns in the data frame. It's better practice to use `ncol()` and `nrow()`, which have more interpretable behavior. 
+
+5. Use the `str()` function to investigate the structure of the data frame `df_pwe`.
+
+```{r}
+str(df_pwe)
+```
+
+6. Use the `names` function to list the names of the elements (variables) within `df_pwe`.
+```{r}
+names(df_pwe)
+```
+
+7. Wrap your answer above --- `names(data_frame_name)` --- within the `typeof()` function. Do the same for the `length()` function, and the `str()` function as well. Interpret what the output means in your own words.
+
+```{r}
+typeof(names(df_pwe))
+length(names(df_pwe))
+```
+
+
+
+**ANSWER:** `names()` provides a character vector listing the column names of `df_pwe`. Thus, `typeof(names())` will always tell you it's a character vector, and `length(names())` will always provide an integer with the number of columns in the data frame.
+
+## Question 4: Applying basic functions to atomic vectors
+
+1. Create an atomic vector object named age with the following values: 3, 6, 41, 43.
+```{r}
+age <- c(3, 6, 41, 43)
+```
+
+2. Apply the `typeof()`, `length()`, and `str()` functions to the object `age`.
+```{r}
+typeof(age) # double
+length(age) # 4
+str(age)    # num [1:4] 3 6 41 43
+```
+
+3. Apply the `sum()` function to `age`.
+```{r}
+sum(age)
+```
+
+4. Apply the `sum()` function to `age` but this time include the argument `na.rm = FALSE`.
+```{r}
+sum(age, na.rm = F)
+```
+
+5. In general, what is a function "argument name" and what is an "argument value"? What does the argument `na.rm` do?
+
+**ANSWER:** Argument names are generally the names of function-specific arguments. Argument values are the input to those function-specific arguments. ?function (e.g., ?sum) will help you understand what arguments a function takes and what accurate argument values will be. 
+
+6. Create a new object `age2` with the following values: 3, 6, 41, 43, NA. Now calculate the sum of `age2` using the argument `na.rm = FALSE` and then calculate the sum using the argument `na.rm = TRUE`. Explain why the outputs of these two `sum()` functions differ.
+```{r}
+age2 <- c(3, 6, 41, 43, NA)
+sum(age2, na.rm = F)
+sum(age2, na.rm = T)
+```
+
+**ANSWER:** Now that there is a missing (`NA`) value, any sums, means, etc. will return as `NA` unless `na.rm = T`. When `na.rm = T`, the missing values are removed (hence the .rm).
+
+7. Create a vector `tf` using the following code: `tf <- c(TRUE,FALSE,TRUE,FALSE,TRUE)`. Next apply the  `typeof()`, `length()`, and `str()` functions to the object `tf`. Based on this output, briefly describe the object `tf` in your own words (one sentence is fine).
+```{r}
+tf <- c(TRUE,FALSE,TRUE,FALSE,TRUE)
+typeof(tf)
+length(tf)
+str(tf)
+```
+
+
+
+**ANSWER:** tf is a logical vector containing `TRUE`'s and `FALSE`s. 
+
+8. Apply the `sum()` function to the object, using the option to remove `NA` values prior to calculation. What numeric value do mathematical calculations in `R` assign to `TRUE` values and what do they assign to `FALSE` values?
+```{r}
+sum(tf, na.rm = T)
+```
+
+
+
+**ANSWER:** `TRUE`s are assigned 1's and `FALSE`s are 0's. So the result here indicates that there are 3 trues in the vector.
+
+9. This is the syntax of the `mean()` function that includes both argument names and the default values for arguments: `mean(x, trim = 0, na.rm = FALSE)`. 
+
+When using a function, `R` requires you to type the values you assign to each argument, but typing in the argument names is usually optional. Even though it takes a bit more time, I usually like typing in both argument names and argument values, because it forces me to be more conscious about what value I am assigning to which argument, especially when a function is new to me. 
+
+Use the `mean()` function to calculate the mean of object `tf` (removing `NA` values prior to calculation). In your function call, include both the argument name and the argument value for each argument (argument value for the `trim` argument can be `0`). Then run the same function, but without typing any argument names.
+
+```{r}
+mean(tf, trim = 0, na.rm = T)
+mean(tf, 0, T)
+```
+
+# Render to pdf and submit problem set  
+
+**Render to pdf** by clicking the "Render" button near the top of your RStudio window (icon with blue yarn ball) or drop down and select "Knit to PDF".
+
+- Go to the Canvas and under the "Assignments", submit to the Problem Set 1 Assignment.  
+- Submit both .qmd and .pdf files.  
+- Use this naming convention "lastname_firstname_ps#" for your .qmd and pdf files (e.g. beck-emorie-ps1.rmd & beck-emorie-ps1.pdf).
