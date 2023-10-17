@@ -58,10 +58,10 @@ options(htmltools.dir.version = FALSE)
 
 :::{.nonicremental}
 
-**1. Welcome & Q's on homework**
-2. Part 1: Data Quality and Descriptives 
-3. Part 2: `tidyr`
-4. Problem set & Q time
+**1. Welcome & Q's on homework**  
+2. Part 1: Data Quality and Descriptives  
+3. Part 2: `tidyr`  
+4. Problem set & Q time  
 
 :::
 
@@ -69,22 +69,22 @@ options(htmltools.dir.version = FALSE)
 
 :::{.nonicremental}
 
-~~1. Welcome & Q's on homework~~
-**2. Part 1: Data Quality and Descriptives **
-3. Part 2: `tidyr`
-4. Problem set & Q time
+~~1. Welcome & Q's on homework~~  
+**2. Part 1: Data Quality and Descriptives **  
+3. Part 2: `tidyr`  
+4. Problem set & Q time  
 
 :::
 
 # DATA QUALITY
 
-## What is data quality  
+## What is data quality?  
 
 [IBM's](https://www.ibm.com/topics/data-quality#:~:text=the%20next%20step-,What%20is%20data%20quality%3F,governance%20initiatives%20within%20an%20organization.) definition of data quality:
 
 > "Data quality measures how well a dataset meets criteria for accuracy, completeness, validity, consistency, uniqueness, timeliness, and fitness for purpose"
 
-## Aspects of data quality
+## Aspects of data quality?
 
 - **Accuracy**: Do the data reflect reality / truth?
 - **Completeness**: Are the data usable or complete (no missing people, values, etc. beyond random)  
@@ -94,7 +94,7 @@ options(htmltools.dir.version = FALSE)
 - **Timeliness**: Can the data be maintained and distributed within a specified time frame 
 - **Fitness for purpose**: Do the data meet your research need?  
 
-## Why should we care about data quality  
+## Why should we care about data quality?  
 
 - You aren't responsible for poor quality data you receive, but you are responsible for the data products you work with -- that is, you are responsible for improving data quality
 - Poor quality data threatens scientific integrity  
@@ -201,7 +201,7 @@ Rules I follow for variable creation
 
 Use `read_csv()` function from `readr` (loaded with `tidyverse`) to import .csv dataset into `R`.
 
-```{r, results="hide"}
+```{r, results="show"}
 library(plyr)
 library(tidyverse)
 soep_long <- read_csv(file="https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/03-week3-tidyr/gsoep.csv")
@@ -215,7 +215,7 @@ Let's examine the data [you __must__ run this code chunk]
 soep_long %>% names()
 soep_long %>% names() %>% str()
 
-str(soep_long) # ugh
+str(soep_long) 
 
 str(soep_long$LifeEvent__Married)
 attributes(soep_long$LifeEvent__Married)
@@ -224,22 +224,23 @@ class(soep_long$LifeEvent__Married)
 ```
 
 ## Rule 1 
-1. Never modify "input variable"; instead create new variable based on input variable(s)
-    - Always keep input variables used to create new variables
+### 1. Never modify "input variable"; instead create new variable based on input variable(s)  
+
+- Always keep input variables used to create new variables
 
 - I already did this before the data were loaded in. I renamed all the input variables with interpretable names and reshaped them so the time variable (year) is long and the other variables are wide
 
 ## Rule 2 {.smaller}
+### 2. Investigate input variable(s) and relationship between input variables 
 
 ::::{.columns}
-:::{.column}
+:::{.column width="35%"}
 
-2. Investigate input variable(s) and relationship between input variables 
 
 - We'll talk more about this in a bit when we discuss different kinds of descriptives, but briefly let's look at basic descriptives + zero-order correlations  
 
 :::
-:::{.column}
+:::{.column width="65%"}
 
 :::{.fragment}
 
@@ -258,15 +259,14 @@ This doesn't look great because we've negative values where we shouldn't, which 
 ::::
 
 ## Rule 2 {.smaller}
+### 2. Investigate input variable(s) and relationship between input variables 
 
 ::::{.columns}
 :::{.column}
-:::{.nonincremental}
-2. Investigate input variable(s) and relationship between input variables 
 
 - I'll show you a better way later, but we haven't learned everything to do it nicely yet. So instead, we'll use `cor.plot()` from the `psych` package to make a simple heat map of the correlations. 
 - We shouldn't see that many negative correlations, which flags that we need to reverse score some items 
-:::
+
 :::{.fragment}
 
 ```{r, fig.width = 12, fig.height = 12, eval = F}
@@ -292,8 +292,9 @@ cor.plot(soep_2005, diag = F)
 ::::
 
 ## Rule 3  
-3. Developing a plan for creation of analysis variable
-    - e.g., for each possible value of input variables, what should value of analysis variable be?
+### 3. Developing a plan for creation of analysis variable
+
+- e.g., for each possible value of input variables, what should value of analysis variable be?
 
 - I do this in my codebooks, and this topic warrants a discussion in itself. This is our focal topic for next week! 
 - In this case, we want Big Five (EACNO) composites for each wave and to create composites of life events experienced across all years  
@@ -303,7 +304,8 @@ cor.plot(soep_2005, diag = F)
 ::::{.columns}
 :::{.column}
 
-4. Write code to create analysis variable 
+### 4. Write code to create analysis variable 
+
 - From Rule 2, we know we need to recode missing values to NA and reverse code some items. From Rule 3, we know we need to create some composites. 
 - Let's do that now! 
 
@@ -331,16 +333,12 @@ soep_long <- soep_long %>%
 ::::
 
 ## Rule 4  
-
-:::{.nonincremental}
-
-4. Write code to create analysis variable 
-
-:::
+### 4. Write code to create analysis variable 
 
 :::{.fragment}
 
 Reverse Coding: 
+
 ```{r}
 rev_code <- c("Big5__A_coarse", "Big5__C_lazy", "Big5__E_reserved", "Big5__N_dealStress")
 soep_long <- soep_long %>%
@@ -356,13 +354,11 @@ soep_long <- soep_long %>%
 
 ::::{.columns}
 :::{.column}
-:::{.nonincremental}
 
-4. Write code to create analysis variable 
-
-:::
+### 4. Write code to create analysis variable 
 
 :::{.fragment}
+
 Let's check to make sure some correlations just reversed:
 
 ```{r, fig.width = 12, fig.height = 12, eval = F}
@@ -388,11 +384,8 @@ cor.plot(soep_2005, diag = F)
 
 ## Rule 4  {.smaller}
 
-:::{.nonincremental}
+### 4. Write code to create analysis variable 
 
-4. Write code to create analysis variable 
-
-:::
 :::{.fragment}
 Create Composites
 (Note: I honestly wouldn't normally do it like this, but we haven't learned how to reshape data yet! Check the online materials for code on how to do this)
@@ -454,12 +447,11 @@ soep_clean <- soep_long %>%
 
 ::::{.columns}
 :::{.column}
-:::{.nonincremental}
 
-5. Run descriptive checks to verify new variables are constructed correctly
-    - Can "comment out" these checks, but don't delete them
+### 5. Run descriptive checks to verify new variables are constructed correctly
 
-:::
+Can "comment out" these checks, but don't delete them
+
 :::
 :::{.column}
 :::{.fragment}
@@ -476,26 +468,16 @@ soep_long %>%
 
 
 ## Rule 5  
-
-:::{.nonincremental}
-
-5. Run descriptive checks to verify new variables are constructed correctly
-    - Can "comment out" these checks, but don't delete them
-
-:::
+### 5. Run descriptive checks to verify new variables are constructed correctly
+Can "comment out" these checks, but don't delete them
 
 - Uh oh, `Inf` values popping up what went wrong?
 - `-Inf` pops up when there were no non-missing values and you use `na.rm = T`
 - Let's recode those as `NA`
 
 ## Rule 5  
-
-:::{.nonincremental}
-
-5. Run descriptive checks to verify new variables are constructed correctly
-    - Can "comment out" these checks, but don't delete them
-    
-:::
+### 5. Run descriptive checks to verify new variables are constructed correctly
+Can "comment out" these checks, but don't delete them
 
 :::{.fragment}
 
@@ -506,15 +488,14 @@ soep_long <- soep_long %>%
 
 :::
 
-## Rule 5  
+## Rule 5  {.smaller}
+::::{.columns}
+:::{.column}
+### 5. Run descriptive checks to verify new variables are constructed correctly
+Can "comment out" these checks, but don't delete them
 
-:::{.nonincremental}
-
-5. Run descriptive checks to verify new variables are constructed correctly
-    - Can "comment out" these checks, but don't delete them
-    
 :::
-    
+::: {.column}
 :::{.fragment}
 
 ```{r}
@@ -524,17 +505,18 @@ soep_long %>%
 ```
 
 :::
+:::
+::::
 
 ## Rule 5  
 
 ::::{.columns}
 :::{.column}
-:::{.nonincremental}
 
-5. Run descriptive checks to verify new variables are constructed correctly
-    - Can "comment out" these checks, but don't delete them
-    
-:::
+### 5. Run descriptive checks to verify new variables are constructed correctly
+
+Can "comment out" these checks, but don't delete them
+
 :::{.fragment}
 
 ```{r, fig.width = 12, fig.height = 12, eval = F}
@@ -562,8 +544,9 @@ soep_long %>%
 
 ## Rule 6  
 
-6. Document new variables with notes and labels
-- Again, I do this in my codebooks, so more on this next week!!
+### 6. Document new variables with notes and labels 
+
+Again, I do this in my codebooks, so more on this next week!!
 
 ## EDA  
 
@@ -602,21 +585,23 @@ soep_long %>%
 
 ------------------------------------------------------------------------
 
-::: {.columns .v-center-container}
-::: {.column width="70%"}
-<p style="font-size:160%;">
+::: {.columns style="display: flex !important; height: 90%;"}
+::: {.column width="70%" style="display: flex; align-items: center;"}
+<!-- <p style="font-size:160%;"> -->
 
-Data Wrangling in `tidyr`
+# Data Wrangling in `tidyr`
 
-</p>
+<!-- </p> -->
 :::
 
-::: {.column width="30%"}
-```{r, fig.align='center'}
-knitr::include_graphics("https://github.com/rstudio/hex-stickers/raw/master/thumbs/tidyr.png")
+::: {.column width="30%" style="display: flex; justify-content: center; align-items: center;"}
+```{r, fig.align='center', echo=F}
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/raw/main/thumbs/tidyr.png")
 ```
 :::
 :::
+
+# Reshaping and Merging 
 
 ## `tidyr`
 
@@ -656,8 +641,9 @@ knitr::include_graphics("https://github.com/rstudio/hex-stickers/raw/master/thum
 
 Let's start with an easy one -- one key, one value:
 
-::: columns
-::: column
+::::{.columns}
+:::{.column}
+
 ```{r, echo=TRUE, results = 'hide'}
 bfi %>%
   rownames_to_column("SID") %>%
@@ -669,9 +655,11 @@ bfi %>%
   ) %>%
   print(n = 8)
 ```
+
 :::
 
-::: column
+:::{.column}
+
 ```{r, echo=F}
 bfi %>%
   rownames_to_column("SID") %>%
@@ -683,15 +671,17 @@ bfi %>%
   ) %>%
   print(n = 8)
 ```
+
 :::
-:::
+::::
 
 ## 1. `pivot_longer()`: More Advanced Application
 
 Now a harder one -- two keys, one value:
 
-::: columns
-::: column
+::::{.columns}
+:::{.column}
+
 ```{r, echo=TRUE, results = 'hide'}
 bfi %>%
   rownames_to_column("SID") %>%
@@ -706,7 +696,7 @@ bfi %>%
 ```
 :::
 
-::: column
+:::{.column}
 ```{r, echo=F}
 bfi %>%
   rownames_to_column("SID") %>%
@@ -720,7 +710,7 @@ bfi %>%
   print(n = 8)
 ```
 :::
-:::
+::::
 
 ## 2. `pivot_wider()` {.smaller}
 
@@ -735,6 +725,9 @@ bfi %>%
 
 ## 2. `pivot_wider()`: Basic Application
 
+:::{.columns}
+:::{.column}
+
 ```{r, results = 'hide'}
 
 bfi_long <- bfi %>%
@@ -747,7 +740,22 @@ bfi_long <- bfi %>%
   )
 ```
 
-```{r, echo=TRUE}
+:::
+:::{.column}
+
+```{r, echo=TRUE, eval = F}
+#| code-line-numbers: "|2|3"
+bfi_long %>%
+  pivot_wider(
+    names_from = "item"
+    , values_from = "values"
+  )
+```
+
+:::
+::::
+
+```{r, echo=F, eval = T}
 #| code-line-numbers: "|2|3"
 bfi_long %>%
   pivot_wider(
@@ -757,6 +765,9 @@ bfi_long %>%
 ```
 
 ## 2. `pivot_wider()`: More Advanced
+
+:::{.columns}
+:::{.column}
 
 ```{r, results = 'hide'}
 bfi_long <- bfi %>%
@@ -770,6 +781,9 @@ bfi_long <- bfi %>%
   )
 ```
 
+:::
+:::{.column}
+
 ```{r, echo = T}
 bfi_long %>%
   pivot_wider(
@@ -778,6 +792,9 @@ bfi_long %>%
     , names_sep = "_"
   )
 ```
+
+:::
+::::
 
 ## 2. `pivot_wider()`: A Little More Advanced
 
