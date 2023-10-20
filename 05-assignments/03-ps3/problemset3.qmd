@@ -5,7 +5,17 @@ date: "insert date here"
 urlcolor: blue
 output: 
   html:
-    df_print: tibble
+    code-tools: true
+    code-copy: true
+    code-line-numbers: true
+    code-link: true
+    theme: united
+    highlight-style: tango
+    df-print: paged
+    code-fold: show
+    toc: true
+    toc-float: true
+    self-contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +38,7 @@ This week, You'll also be practicing variable creation in this problem set, usin
 1. In the code chunk below, complete the following:
 
     - Load the `tidyverse` library
-    - Use the `load()` and `url()` functions to download the `df_school_all` dataframe from the url: `https://github.com/anyone-can-cook/rclass1/raw/master/data/recruiting/recruit_school_allvars.RData`
+    - Use the `load()` and `url()` functions to download the `df_school_all` dataframe from the url: `https://github.com/emoriebeck/psc290-data-FQ23/raw/main/05-assignments/03-ps3/recruit_school_allvars.RData`
       - Each row in `df_school_all` represents a high school (includes both public and private)
       - There are columns (e.g., `visit_by_100751`) indicating the number of times a university visited that high school
       - The variable `total_visits` identifies the number of visits the high school received from all (16) public research universities in this data collection sample
@@ -150,7 +160,6 @@ df_school_all %>% count(school_type)
       - `pct_black`
       - `pct_hispanic`
       - `pct_asian`
-      - `stu_hispanic_01`
       - `pct_amerindian`
       - `pct_other`
       
@@ -178,12 +187,27 @@ df_school_all %>% count(school_type)
 
 ```
 
+# Question 4: Fun with YAML Headers  
 
-# Knit to pdf and submit problem set  
+Explore the documentation on YAML headers for html on Quarto's [website](https://quarto.org/docs/reference/formats/html.html). Also look at the defaults I've set. 
 
-**Knit to pdf** by clicking the "Knit" button near the top of your RStudio window (icon with blue yarn ball) or drop down and select "Knit to PDF"
+Test out at least three options (but as many as you want) not currently in the YAML header from the Quarto website and note them here (If you test more than three, just list the three you thought were the coolest or where you learned the most): 
 
-- Go to the [class website](https://anyone-can-cook.github.io/rclass1/) and under the "Readings & Assignments" >> "Week 4" tab, click on the "Problem set 4 submission link"  
-- Submit both .Rmd and pdf files  
-- Use this naming convention "lastname_firstname_ps#" for your .Rmd and pdf files (e.g. jaquette_ozan_ps4.Rmd & jaquette_ozan_ps4.pdf)  
+1. 
+2. 
+3. 
+
+Next, change the options for at least three things already in the YAML header and note what happens. How does the appearance change? How does the directory structure change (if at all)?
+
+1. 
+2. 
+3. 
+
+# Render to pdf and submit problem set  
+
+**Render to html** by clicking the "Render" button near the top of your RStudio window (icon with blue arrow) 
+
+-   Go to the Canvas --\> Assignments --\> Problem Set 3
+-   Submit both .qmd and .html files\
+-   Use this naming convention "lastname_firstname_ps#" for your .qmd and html files (e.g. beck_emorie_ps3.qmd & beck_emorie_ps3.html)
 
