@@ -1,0 +1,220 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+# Workspace  
+
+## Packages
+
+```{r}
+library(psych)
+library(plyr)
+library(tidyverse)
+```
+
+## Codebook  
+
+```{r}
+readxl::excel_sheets(path = "codebook.xlsx")
+
+codebook <- readxl::read_excel(path = "codebook.xlsx", sheet = "codebook") %>%
+  mutate(old_name = str_to_lower(old_name))
+
+key <- readxl::read_excel(path = "codebook.xlsx", sheet = "Key")
+traits   <- key %>% filter(category == "Big 5")
+outcomes <- key %>% filter(category == "out")
+covars   <- key %>% filter(category == "dem")
+```
+
+
+## Data  
+
+```{r}
+soep <- read_csv(file = "soep.csv")
+soep
+```
+
+# Data Cleaning  
+
+## Rename Variables  
+
+### Change Data to Long  
+```{r}
+## change data to long format
+soep_long <- soep %>%
+  pivot_longer(
+    cols = c(-persnr, -hhnr)
+    , names_to = "old_name"
+    , values_to = "value"
+    , values_drop_na = T
+  ) %>%
+  rename(SID = persnr, HHID = hhnr)
+soep_long
+```
+
+### Merge in Codebook 
+```{r}
+# merge in codebook
+soep_long <- soep_long %>% # long data
+  left_join( # keep all rows in long data
+    codebook %>% # merge in the following variables from the codebook
+      select(old_name, category, name, item_name, year, recode, 
+             reverse, mini, maxi, comp_rule, long_rule)
+  ) %>%
+  select(-old_name) # get rid of old_name because we're done with it
+```
+
+## Recode Variables  
+
+```{r}
+recode_fun <- function(rule, y){
+  x <- y$value
+  if(!is.na(rule)){y$value <- eval(parse(text = rule))}
+  return(y)
+}
+
+soep_recode <- soep_long %>%
+  group_by(recode) %>% # group by the r code rule
+  nest() %>% # create a nested data frame
+  ungroup() %>% # ungroup() 
+  # apply the recode function
+  mutate(data = pmap(list(recode, data), recode_fun)) %>%
+  unnest(data) %>% # unnest the data to get back to a normal df
+  # change any negative, nan, or Inf values to NA
+  mutate(value = ifelse(value < 0 | is.nan(value) | is.infinite(value), NA, value)) %>%
+  select(-recode) # we're done with the recode column, so remove it
+soep_recode
+```
+
+## Reverse Coding  
+
+```{r}
+soep_recode <- soep_recode %>%
+  mutate(value = ifelse(reverse == "no", value, 
+         as.numeric(reverse.code(-1, value, mini = mini, maxi = maxi)))) %>%
+  select(-reverse, -mini, -maxi)
+soep_recode
+```
+
+## Personality  
+
+```{r}
+soep_big5 <- soep_recode %>%
+  filter(category == "Big 5" & !is.na(value)) %>%
+  group_by(category, SID, HHID, name, item_name, year) %>%
+  summarize(value = mean(value)) %>%
+  group_by(category, SID, HHID, name, item_name) %>%
+  summarize(value = mean(value)) %>%
+  ungroup()
+```
+
+
+```{r}
+Mode <- function(x) {
+  ux <- unique(x)
+  ux <- ux[!is.na(ux)]
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+fun_call <- function(x, rule){
+    switch(rule,
+           average = mean(x, na.rm = T),
+           mode = Mode(x)[1],
+           sum = sum(x, na.rm = T),
+           skip = unique(x)[1],
+           select = unique(x)[1],
+           max = max(x, na.rm = T),
+           min = min(x, na.rm = T))
+}
+
+# compositing within years
+year_comp_fun <- function(df, rule){
+  df %>%
+    # group by person and item (collapse across age)
+    group_by(SID, HHID, long_rule, name, item_name, year) %>% 
+    summarize(value = fun_call(value, rule)) %>%
+    group_by(SID, HHID, long_rule, name, year) %>% 
+    summarize(value = fun_call(value, rule)) %>%
+    ungroup() %>% 
+    mutate(value = ifelse(is.infinite(value) | is.nan(value), NA, value))
+}
+
+soep_big5 <- soep_recode %>%
+  filter(category == "Big 5" & !is.na(value)) %>%
+  group_by(category, comp_rule) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(data = map2(data, comp_rule, year_comp_fun)) %>%
+  unnest(data) %>%
+  select(-comp_rule, -long_rule)
+soep_big5
+```
+
+## Outcomes
+
+```{r}
+soep_out <- soep_recode %>%
+  filter(category == "Life Event" & !is.na(value)) %>%
+  group_by(SID, HHID, category, name, year) %>% 
+  summarize(value = max(value)) %>%
+  group_by(SID, HHID, category, name) %>% 
+  summarize(value = max(value)) %>%
+  ungroup()
+```
+
+
+```{r}
+soep_out <- soep_recode %>%
+  filter(category == "Life Event" & !is.na(value)) %>%
+  group_by(category, comp_rule) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(data = map2(data, comp_rule, year_comp_fun)) %>%
+  unnest(data) %>%
+  select(-comp_rule)
+
+
+comp_fun <- function(data, rule){
+  data %>%
+    group_by(SID, HHID, name) %>%
+    summarize(value = fun_call(value, rule)) %>%
+    ungroup()
+}
+
+soep_out <- soep_out %>%
+  group_by(long_rule) %>%
+  nest() %>%
+  mutate(data = map2(data, long_rule, comp_fun)) %>%
+  unnest(data) %>%
+  select(-long_rule)
+```
+
+## Covariates  
+```{r}
+soep_cov <- soep_recode %>%
+  filter(category == "Demographic" & !is.na(value)) %>%
+  group_by(category, SID, HHID, name, year) %>%
+  summarize(value = Mode(value)) %>%
+  group_by(SID, HHID, name) %>%
+  summarize(value = Mode(value)) %>%
+  ungroup() %>%
+  pivot_wider(
+    names_from = "name"
+    , values_from = "value"
+    )
+```
+
+## Merge Data  
+```{r}
+soep_clean <- soep_big5 %>%
+  select(SID, HHID, year, trait = name, p_value = value) %>%
+  inner_join(
+    soep_out %>%
+      select(SID, HHID, event = name, o_value = value)
+    ) %>%
+  left_join(soep_cov)
+soep_clean
+```
+
