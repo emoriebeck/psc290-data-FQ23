@@ -616,13 +616,13 @@ soep_clean %>%
   group_by(trait, event, o_value) %>%
   summarize_at(vars(p_value), lst(mean, sd)) %>%
   ungroup() %>%
-  ggplot(aes(x = o_value, y = mean)) + 
+  ggplot(aes(x = mean, y = event, shape = o_value)) + 
     geom_errorbar(
-      aes(ymin = mean - sd, ymax = mean + sd)
+      aes(xmin = mean - sd, xmax = mean + sd)
       , width = .1
-      , position = "dodge"
+      , position = position_dodge(width=.8)
       ) + 
-  geom_point(shape = "square") + 
-  facet_grid(trait ~ event) + 
+  geom_point(position = position_dodge(width=.8)) + 
+  facet_grid(~trait) + 
   theme_classic()
 ```
