@@ -298,13 +298,13 @@ outcomes <- key %>% filter(category == "out")
 covars   <- key %>% filter(category == "dem")
 ```
 
-### Data
+### Load in Data
 
 ```{r}
 vars <- codebook$old_name
 soep <- read_csv(file = "https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/04-week4-readr/soep.csv") %>%
   select(one_of(vars)) # keep vars from codebook
-soep
+head(soep)
 ```
 
 ## Data Cleaning
