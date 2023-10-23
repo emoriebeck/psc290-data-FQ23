@@ -1,5 +1,5 @@
 ---
-title: "Week 3 - Data Quality and `tidyr`"
+title: "Week 4 - Codebooks and Data Documentation"
 author: "Emorie D Beck"
 format: 
   revealjs:
@@ -77,12 +77,23 @@ options(htmltools.dir.version = FALSE)
 
 ## Preregistration
 
+::::{.columns}
+:::{.column width="70%"}
+
 -   Preregistration:
     -   Specifying your study design, research questions, hypotheses, data cleaning, analytic plan, inference criteria, and robustness checks in advance
 -   Why should you preregister?
     -   Badges are fun
     -   Preregistrations are not rigid but a chance to think through the questions you want to ask and answer and the challenges that might arise in doing so
     -   Builds trust in the scientific process
+    
+:::
+:::{.column width="30%"}
+
+![](https://cdn.cos.io/media/images/prereg-badge.original.png)
+
+:::
+::::
 
 ## Preregistration
 
@@ -148,19 +159,19 @@ knitr::include_graphics('https://d33v4339jhl8k0.cloudfront.net/docs/assets/6197c
 
 In this case, we are going to using some data from the [German Socioeconomic Panel Study (GSOEP)](https://www.diw.de/en/soep/), which is an ongoing Panel Study in Germany. Note that these data are for teaching purposes only, shared under the license for the Comprehensive SOEP teaching dataset, which I, as a contracted SOEP user, can use for teaching purposes. These data represent select cases from the full data set and should not be used for the purpose of publication. The full data are available for free at https://www.diw.de/en/diw_02.c.222829.en/access_and_ordering.html.
 
-For this tutorial, I created the codebook for you <a href="https://github.com/emoriebeck/R-tutorials/raw/master/ALDA/week_1_descriptives/codebook.csv" download>(Download (won't work in Safari or IE))</a>, and included what I believe are the core columns you may need. Some of these columns may not be particularly helpful for every dataset.
+For this tutorial, I created the codebook for you:  [Download](https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/04-week4-readr/codebook.xlsx), and included what I believe are the core columns you may need. Some of these columns may not be particularly helpful for every dataset.
 
-## Codebooks
+## Codebooks {.smaller}
 
 Here are my core columns that are based on the original data:
 
 ::: columns
 ::: column
 -   dataset name (`dataset`)\
--   original variable name (`old_name`)\
 -   how I categorize the variables (`category`)\
--   how I composite the variables (`name`)\
 -   how I rename each item (`item`)\
+-   how I composite the variables (`name`)\
+-   original variable name (`old_name`)\
 -   original item text (`item_text`)\
 -   original item values (`scale`)\
 :::
@@ -176,24 +187,28 @@ Here are my core columns that are based on the original data:
 :::
 :::
 
-## Codebooks
+## Codebooks {.smaller}
 
 1.  **dataset**: this column indexes the **name** of the dataset that you will be pulling the data from. This is important because we will use this info later on (see purrr tutorial) to load and clean specific data files. Even if you don't have multiple data sets, I believe consistency is more important and suggest using this.\
-2.  **old_name**: this column is the name of the variable in the data you are pulling it from. This should be exact. The goal of this column is that it will allow us to select() variables from the original data file and rename them something that is more useful to us.\
-3.  **item_text**: this column is the original text that participants saw or a description of the item.\
-4.  **category**: broad categories that different variables can be put into. I'm a fan of naming them things like "outcome", "predictor", "moderator", "demographic", "procedural", etc. but sometimes use more descriptive labels like "Big 5" to indicate the model from which the measures are derived.\
-5.  **label**: label is basically one level lower than category. So if the category is Big 5, the label would be, or example, "A" for Agreeableness, "SWB" for subjective well-being, etc. This column is most important and useful when you have multiple items in a scales, so I'll typically leave this blank when something is a standalone variable (e.g. sex, single-item scales, etc.).\
-6.  **item_name**: This is the lowest level and most descriptive variable. It indicates which item in scale something is. So it may be "kind" for Agreebleness or "sex" for the demographic biological sex variable.\
-7.  **scale**: this column tells you what the scale of the variable is. Is it a numeric variable, a text variable, etc. This is helpful for knowing the plausible range.
-8.  **recode**: sometimes, we want to recode variables for analyses (e.g. for categorical variables with many levels where sample sizes for some levels are too small to actually do anything with it). I use this column to note the kind of recoding I'll do to a variable for transparency.
+2.  **category**: broad categories that different variables can be put into. I'm a fan of naming them things like "outcome", "predictor", "moderator", "demographic", "procedural", etc. but sometimes use more descriptive labels like "Big 5" to indicate the model from which the measures are derived.\
+3.  **name**: label is basically one level lower than category. So if the category is Big 5, the label would be, or example, "A" for Agreeableness, "SWB" for subjective well-being, etc. This column is most important and useful when you have multiple items in a scales, so I'll typically leave this blank when something is a standalone variable (e.g. sex, single-item scales, etc.).\
+4.  **item_name**: This is the lowest level and most descriptive variable. It indicates which item in scale something is. So it may be "kind" for Agreebleness or "sex" for the demographic biological sex variable.\
+5.  **old_name**: this column is the name of the variable in the data you are pulling it from. This should be exact. The goal of this column is that it will allow us to select() variables from the original data file and rename them something that is more useful to us.\
+6.  **item_text**: this column is the original text that participants saw or a description of the item.\
 
-## Codebooks
+## Codebooks {.smaller} 
+
+7.  **scale**: this column tells you what the scale of the variable is. Is it a numeric variable, a text variable, etc. This is helpful for knowing the plausible range.
+8.  **recode_text**: sometimes, we want to recode variables for analyses (e.g. for categorical variables with many levels where sample sizes for some levels are too small to actually do anything with it). I use this column to note the kind of recoding I'll do to a variable for transparency.
+9. **recode**: I write the R code I'll parse by reading my codebook into R into this column. 
+
+## Codebooks {.smaller}
 
 Here are additional columns that will make our lives easier or are applicable to some but not all data sets:
 
 10. **reverse**: this column tells you whether items in a scale need to be reverse coded. I recommend coding this as 1 (leave alone) and -1 (reverse) for reasons that will become clear later.\
 11. **mini**: this column represents the minimum value of scales that are numeric. Leave blank otherwise.\
-12. **maxi**: this column represents the maximumv alue of scales that are numeric. Leave blank otherwise.\
+12. **maxi**: this column represents the maximum value of scales that are numeric. Leave blank otherwise.\
 13. **year**: for longitudinal data, we have several waves of data and the name of the same item across waves is often different, so it's important to note to which wave an item belongs. You can do this by noting the wave (e.g. 1, 2, 3), but I prefer the actual year the data were collected (e.g. 2005, 2009, etc.)\
 14. **meta**: Some datasets have a meta name, which essentially means a name that variable has across all waves to make it clear which variables are the same. They are not always useful as some data sets have meta names but no great way of extracting variables using them. But they're still typically useful to include in your codebook regardless.
 
@@ -203,19 +218,37 @@ Below, I'll load in the codebook we will use for this study, which will include 
 
 ```{r codebook, eval = F}
 # set the path
-wd <- "https://github.com/emoriebeck/R-tutorials/blob/master/wustl_r_workshops/workflow"
+wd <- "https://github.com/emoriebeck/psc290-data-FQ23/raw/main/04-workshops/04-week4-readr"
 
 download.file(
-  url      = sprintf("%s/data/codebook.csv?raw=true", wd), 
-  destfile = sprintf("%s/data/codebook.csv", data_path)
+  url      = sprintf("%s//codebook.xlsx", wd), 
+  destfile = "codebook.xlsx"
   )
-
-# load the codebook
-(codebook <- sprintf("%s/data/codebook.csv", data_path) %>% 
-    read_csv(.) %>%
-    mutate(old_name = str_to_lower(old_name)))
 ```
 
+## Codebooks 
+
+The resulting codebook looks something like this: 
+
+![](img/codebook.png)
+## Codebooks 
+- In addition, to the codebook, I also document other overarching info three other tabs: 
+  * **Overview** just lists what variables I'm considering as serving different functions (e.g., demographics, covariates, moderators, predictors, outcomes, indepenedent variables, dependent variables, etc.)
+  * **Key** helps me create tables that I'll be able to use in `R` to help me rename things. This is super helpful for making final tables and figures!!
+  * **Sample** helps other people understand how you're using the columns. This is generally good practice and also helpful if you have research assistants or collaborators helping you out!
+  
+## Codebooks: Overview 
+
+![](img/overview.png)
+
+## Codebooks: Key 
+
+![](img/key.png)
+
+## Codebooks: Sample 
+
+![](img/sample.png)
+  
 ## Data
 
 First, we need to load in the data. We're going to use three waves of data from the **German Socioeconomic Panel Study**, which is a longitudinal study of German households that has been conducted since 1984. We're going to use more recent data from three waves of personality data collected between 2005 and 2013.
@@ -283,6 +316,7 @@ readxl::excel_sheets(path = "codebook.xlsx")
 
 codebook <- readxl::read_excel(path = "codebook.xlsx", sheet = "codebook") %>%
   mutate(old_name = str_to_lower(old_name))
+codebook
 ```
 
 ## Codebook  
@@ -290,23 +324,27 @@ codebook <- readxl::read_excel(path = "codebook.xlsx", sheet = "codebook") %>%
 - Well, the reason is because I can use it to rename things more easily into readable names that are great in publications
 - Let's create a data frame for the personality, outcome, and demographic variables we'll reference later 
 
+:::{.fragment}
 ```{r}
 key <- readxl::read_excel(path = "codebook.xlsx", sheet = "Key")
 traits   <- key %>% filter(category == "Big 5")
 outcomes <- key %>% filter(category == "out")
 covars   <- key %>% filter(category == "dem")
 ```
+:::
 
 ## Data  
 
 Let's read in the raw, wide-format data set using `readr::read_csv()`:
 
 ```{r}
-soep <- read_csv(file = "soep.csv")
+vars <- codebook$old_name
+soep <- read_csv(file = "soep.csv") %>%
+  select(one_of(vars)) # keep vars from codebook
 soep
 ```
 
-## Example 
+## Example {.smaller}
 
 - Once I have my workspace setup, it's time to clean the data
 - For the sake of time, I'm going to skip the descriptives we talked about last week, but we should be doing those in a real setting! 
@@ -323,11 +361,11 @@ soep
 - I like to clean different categories of variables separately because I often clean them relatively similarly within categories. Differences within categories are generally captured via columns in my codebook
 
 ## Rename Variables  
-### Change Data to Long  
 
 ::::{.columns}
 :::{.column}
 
+### Change Data to Long  
 - To get our codebook to play nice with the data since our data are in wide form (including across years), we need to make the data long with at least one name that corresponds to the codebook 
 - In this case, we'll all the variables but the participant and household ID's long, and change the item name to old_name since it contains the original variable names. 
 
@@ -339,12 +377,12 @@ soep
 ## change data to long format
 soep_long <- soep %>%
   pivot_longer(
-    cols = c(-persnr, -hhnr)
-    , names_to = "old_name"
-    , values_to = "value"
-    , values_drop_na = T
+    cols = c(-persnr, -hhnr) # all but SID & HHID
+    , names_to = "old_name" # match the codebook
+    , values_to = "value" # arbitrary name
+    , values_drop_na = T # drop missings
   ) %>%
-  rename(SID = persnr, HHID = hhnr)
+  rename(SID = persnr, HHID = hhnr) # rename
 soep_long
 ```
 
@@ -368,6 +406,7 @@ soep_long <- soep_long %>% # long data
              reverse, mini, maxi, comp_rule, long_rule)
   ) %>%
   select(-old_name) # get rid of old_name because we're done with it
+soep_long
 ```
 
 :::
@@ -396,12 +435,17 @@ recode_fun <- function(rule, y){
 
 :::
 
-## Recode Variables  
+## Recode Variables  {.smaller}
+
+::::{.columns}
+:::{.column}
 
 - Now we're going to apply each rule to each chunk of the data that uses the same one
 - To do this, we're going to use some functions from the purrr package that we won't talk about it this week. 
 - Don't worry too much about this. This is code you can copy paste or add to an R script you source across projects! 
 
+:::
+:::{.column}
 :::{.fragment}
 
 ```{r}
@@ -419,8 +463,10 @@ soep_recode
 ```
 
 :::
+:::
+::::
 
-## Reverse Coding  
+## Reverse Coding  {.smaller}
 
 - Now we can reverse code our data. We'll use similar code to what I showed last week, but we're working on long-format data, so we'll use the `reverse` column to tell us which rows to reverse and what the `mini` and `maxi` scale values are.
 
@@ -467,11 +513,12 @@ soep_big5 <- soep_recode %>%
   # "apply" the mean function, collapsing within splits
   summarize(value = mean(value)) %>%
   # "split" the data by category, person, household, trait, and item
-  group_by(category, SID, HHID, name, item_name) %>%
+  group_by(category, SID, HHID, name, year) %>%
   # "apply" the mean function, collapsing within splits
   summarize(value = mean(value)) %>%
   # "combine" the data back together
   ungroup()
+soep_big5
 ```
 
 ## Outcomes  
@@ -480,6 +527,8 @@ soep_big5 <- soep_recode %>%
 - For these data we want to get a single composite for each life event across all years (i.e. did they ever experience each event)
 - Both the `comp_rule` and the `long_rule` are max 
 - As before, the more flexible way is in the workbook
+
+## Outcomes  
 
 ```{r}
 soep_out <- soep_recode %>%
@@ -495,6 +544,7 @@ soep_out <- soep_recode %>%
   summarize(value = max(value)) %>%
   # "combine" the data back together
   ungroup()
+soep_out
 ```
 
 
@@ -503,9 +553,15 @@ soep_out <- soep_recode %>%
 - The `comp_rule` and `long_rule` columns tell us that the two variables actually have the same rule (mode), which make it easy to clean 
 - As before, the more flexible way is in the workbook, which is particularly useful for demographics and covariates that may be on super different scales 
 
-## Covariates  
+## Covariates  {.smaller}
 
 ```{r}
+Mode <- function(x) {
+  ux <- unique(x)
+  ux <- ux[!is.na(ux)]
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
 soep_cov <- soep_recode %>%
   # keep demographics & drop missings
   filter(category == "Demographic" & !is.na(value)) %>%
@@ -524,7 +580,10 @@ soep_cov <- soep_recode %>%
     names_from = "name"
     , values_from = "value"
     )
+soep_cov
 ```
+
+
 
 ## Merge Data  
 - Lastly, let's re-merge the data to bring the information back together 
@@ -558,7 +617,64 @@ soep_clean
 ```{r save data}
 write.csv(
   x = soep_clean
-  , file = sprintf("/clean_data_%s.csv", Sys.Date())
+  , file = sprintf("clean_data_%s.csv", Sys.Date())
   , row.names = F
   )
 ```
+
+## Note: Why did we do the keys? 
+
+```{r}
+soep_clean %>%
+  mutate(trait = factor(trait, levels = traits$name, labels = traits$long_name)
+         , event = factor(event, levels = outcomes$name, labels = outcomes$long_name))
+```
+
+## Note: Why did we do the keys? {.smaller}
+
+::::{.columns}
+:::{.column}
+
+```{r, eval = F}
+soep_clean %>%
+  mutate(trait = factor(trait, levels = traits$name, labels = traits$long_name)
+         , event = factor(event, levels = outcomes$name, labels = outcomes$long_name)
+         , o_value = factor(o_value, levels = c(0,1), labels = c("No Event", "Event"))) %>%
+  group_by(trait, event, o_value) %>%
+  summarize_at(vars(p_value), lst(mean, sd)) %>%
+  ungroup() %>%
+  ggplot(aes(x = o_value, y = mean)) + 
+    geom_errorbar(
+      aes(ymin = mean - sd, ymax = mean + sd)
+      , width = .1
+      , position = "dodge"
+      ) + 
+  geom_point(shape = "square") + 
+  facet_grid(trait ~ event) + 
+  theme_classic()
+```
+
+:::
+:::{.column}
+:::{.fragment}
+```{r, echo = F, fig.width=10, fig.height = 8}
+soep_clean %>%
+  mutate(trait = factor(trait, levels = traits$name, labels = traits$long_name)
+         , event = factor(event, levels = outcomes$name, labels = outcomes$long_name)
+         , o_value = factor(o_value, levels = c(0,1), labels = c("No Event", "Event"))) %>%
+  group_by(trait, event, o_value) %>%
+  summarize_at(vars(p_value), lst(mean, sd)) %>%
+  ungroup() %>%
+  ggplot(aes(x = o_value, y = mean)) + 
+    geom_errorbar(
+      aes(ymin = mean - sd, ymax = mean + sd)
+      , width = .1
+      , position = "dodge"
+      ) + 
+  geom_point(shape = "square") + 
+  facet_grid(trait ~ event) + 
+  theme_classic()
+```
+:::
+:::
+::::
