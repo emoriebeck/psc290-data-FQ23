@@ -32,6 +32,8 @@ website:
         - 03-week3-workbook.qmd
         - 04-week4-slides.qmd
         - 04-week4-workbook.qmd
+        - 05-week5-slides.qmd
+        - 05-week5-workbook.qmd
         
     - id: assignments
       title: "Problem Sets"
