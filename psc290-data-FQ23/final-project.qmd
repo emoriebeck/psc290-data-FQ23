@@ -1,5 +1,5 @@
 ---
-title: "Final Project Proposal"
+title: "Final Projects"
 subtitle: "PSC290 - Data Management and Cleaning, Fall 2023"
 author: "Emorie D Beck"
 institution: "University of California, Davis"
@@ -15,7 +15,7 @@ format: html
   + Motivation (Why are you hacking this particular problem / issue / question / procedure?)
   + Challenges and barriers (what do you struggle with with bringing your project to life; are there specific barriers?)
   
-You can also download this document [here]()
+You can also download this document [here](https://github.com/emoriebeck/psc290-data-FQ23/raw/github-pages/static/final-project-proposal.pdf)
 
 ## Goal
 
