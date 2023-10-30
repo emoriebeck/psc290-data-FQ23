@@ -30,7 +30,7 @@ This course is not a "pure" data science (i.e. we won't be working with database
 
 2\. Reading list (and links) and links to workshop slides are under [**Schedule**](schedule.html) and on Canvas. I recommend bookmarking this site to allow you access to all materials in perpetuity.
 
-3\. Final Project Information will be under **Assignments** (added later)**.** Be sure to familiarize yourself with due dates for the final project. More details will be provided on the final project in the coming weeks.
+3\. Final Project Information will be under **Final Project**. The proposal instructions (Due November 19 at 11:59 PM PST) is now [posted](final-project.html). More details about the final project will be posted by November 7, and a rubric for the final project will be posted by November 28. 
 
 4\. The most updated version of the syllabus will be on the [**Syllabus**](syllabus.html) page and can be downloaded there as well.
 
