@@ -8,8 +8,8 @@ title: "About"
 
 E-mail: [`edbeck@ucdavis.edu`](mailto:edbeck@ucdavis.edu)\
 Office: 268J\
-Office Hours: \
-- Drop-in hour: Tuesdays 11a-12p \
+Office Hours:\
+- Drop-in hour: Tuesdays 11a-12p\
 - Or by appointment: [`edbeck@ucdavis.edu`](mailto:edbeck@ucdavis.edu)
 :::
 
