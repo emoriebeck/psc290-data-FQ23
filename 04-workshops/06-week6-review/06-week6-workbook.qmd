@@ -120,12 +120,12 @@ billboard |>
 
 ```{r}
 # load the codebook
-(codebook <- read_csv("codebook.csv") |>
+(codebook <- read_csv("week6-codebook.csv") |>
     mutate(old_name = str_to_lower(old_name)))
 
 old.names <- codebook$old_name # get old column names
 new.names <- codebook$new_name # get new column names
-soep <- read_csv("descriptives-data.csv") |>
+soep <- read_csv("week6-data.csv") |>
     select(all_of(old.names))
 ```
 
@@ -247,7 +247,7 @@ soep_lavaan |>
 
 ```{r, eval = F}
 soep_long |>
-  filter(!category == "big5")
+  filter(!category == "big5") |> 
   full_join(
     # your code here
   ) |> 
@@ -859,12 +859,12 @@ soep_pred$p[[1]]
 ### Data 
 ```{r, eval = F}
 # load the codebook
-(codebook <- read_csv("codebook.csv") |>
+(codebook <- read_csv("week6-codebook.csv") |>
     mutate(old_name = str_to_lower(old_name)))
 
 old.names <- codebook$old_name # get old column names
 new.names <- codebook$new_name # get new column names
-soep <- read_csv("descriptives-data.csv") |>
+soep <- read_csv("week6-data.csv") |>
     select(all_of(old.names))
 
 ```
