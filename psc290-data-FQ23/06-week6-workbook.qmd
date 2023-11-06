@@ -1,5 +1,5 @@
 ---
-title: "Week 6 Workbook"
+title: "Week 6 - Review"
 author: "Emorie D Beck"
 format: 
   html:
@@ -68,23 +68,20 @@ bfi |>
 
 ## 2. `filter()` {.smaller}
 
--   Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don't want to include.
+- Often times, when conducting research (experiments or otherwise), there are observations (people, specific trials, etc.) that you don't want to include. 
+- We can use `filter()` with logical statements to include only rows that match certain conditions
+- We can refer to both bare quoted columns and objects in the global environment
 
--   We can use `filter()` with logical statements to include only rows that match certain conditions
-
--   We can refer to both bare quoted columns and objects in the global environment
-
-    -   `==` or `!=`
-    -   `<` or `<=`
-    -   `>` or `>=`
-    -   `%in%`
-    -   `all_of()`
-    -   `one_of()`
-    -   `!`
-    -   `|` and `&`
+  - `==` or `!=`
+  - `<` or `<=`
+  - `>` or `>=`
+  - `%in%`
+  - `all_of()`
+  - `one_of()`
+  - `!`
+  - `|` and `&` 
 
 # tidyr: `pivot_longer()` and `pivot_wider()`
-
 ## 1. `pivot_longer()`
 
 -   (Formerly `gather()`) Makes wide data long, based on a key <font size="5">
@@ -95,11 +92,11 @@ bfi |>
     -   `values_to`: name of values in new long data frame (string)
     -   `names_sep`: separator in column headers, if multiple keys
     -   `values_drop_na`: drop missing cells (similar to `na.rm = T`) </font>
+    
+### Why would I make my data longer? 
 
-### Why would I make my data longer?
-
--   Main reason: Columns names sometimes contain data.
--   Example: Billboard data has *time* information in column names
+- Main reason: Columns names sometimes contain data. 
+- Example: Billboard data has *time* information in column names
 
 ```{r}
 data(billboard)
@@ -117,9 +114,9 @@ billboard |>
   )
 ```
 
--   This doesn't just apply to longitudinal data. This is also important when thinking about iteration.
--   For example, if you variables can be grouped into different categories (covariates, IVs/predictors, DVs/outcomes, moderators, etc.), then your column names contain *implicit* data
--   The data below contain *both* time, variable, and category information
+- This doesn't just apply to longitudinal data. This is also important when thinking about iteration. 
+- For example, if you variables can be grouped into different categories (covariates, IVs/predictors, DVs/outcomes, moderators, etc.), then your column names contain *implicit* data 
+- The data below contain *both* time, variable, and category information 
 
 ```{r}
 # load the codebook
@@ -132,24 +129,21 @@ soep <- read_csv("week6-data.csv") |>
     select(all_of(old.names))
 ```
 
-### Exercise
+### Exercise 
 
--   By pivoting our data longer, we can more easily extract information from the column names
--   Pivot the data below longer. Some hints:
-    -   don't make the procedural or demographic variables long
-    -   split the column names you make long into four chunks:
-        -   "category", "label", "item_name", "year"
-    -   drop `NA` values
+- By pivoting our data longer, we can more easily extract information from the column names 
+- Pivot the data below longer. Some hints: 
+  * don't make the procedural or demographic variables long
+  * split the column names you make long into four chunks: 
+    - "category",	"label",	"item_name",	"year"
+  * drop `NA` values
 
 <!-- ```{r} -->
-
 <!-- soep |> -->
-
 <!--   setNames(new.names) -->
-
 <!-- ``` -->
 
-Solution:
+Solution: 
 
 ```{r}
 soep_long <- soep |>
@@ -164,7 +158,7 @@ soep_long <- soep |>
 soep_long
 ```
 
--   Long format data are easier to clean (we'll come back to this but we'll create the cleaned data frame to use for merging practice)
+- Long format data are easier to clean (we'll come back to this but we'll create the cleaned data frame to use for merging practice)
 
 ```{r}
 soep_big5 <- soep_long |>
@@ -202,11 +196,11 @@ soep_clean <- soep_big5 |>
     -   `values_from`: name of values in new long data frame (string)
     -   `values_fn`: function applied to data with duplicate labels </font>
 
-### Why would I pivot wider?
+### Why would I pivot wider? 
 
--   Some analyses require wide format data
--   For example, SEM in `lavaan` in R requires that both indicators and time are wide format.
--   The code below uses the codebook to rename items according to a numbered format that isn't specific to any trait
+- Some analyses require wide format data 
+- For example, SEM in `lavaan` in R requires that both indicators and time are wide format. 
+- The code below uses the codebook to rename items according to a numbered format that isn't specific to any trait
 
 ```{r}
 big5 <- codebook |> filter(category == "big5")
@@ -216,11 +210,11 @@ soep_lavaan <- soep_long |>
 soep_lavaan
 ```
 
-### Exercise
+### Exercise 
 
--   Change the `soep_lavaan` data frame to be in wide format using `pivot_wider()`:
-    -   pull the `names` from two sources: `item_name()` and `year`
-
+- Change the `soep_lavaan` data frame to be in wide format using `pivot_wider()`:
+  * pull the `names` from two sources: `item_name()` and `year`
+  
 ```{r}
 soep_lavaan |>
   pivot_wider(
@@ -229,7 +223,7 @@ soep_lavaan |>
   )
 ```
 
-# `dplyr`: \`\_join()'
+# `dplyr`: `_join()'
 
 ## The `_join()` Functions
 
@@ -244,26 +238,23 @@ soep_lavaan |>
 
 ## 3. `full_join()`
 
--   Most simply, we can put those back together keeping all observations.
+- Most simply, we can put those back together keeping all observations.
+- Pro: sometimes we want to maintain missing data (i.e. some people are randomly missing variables and we don't want to drop them completely)
+- Con: can leave you with lots of `NA`s
 
--   Pro: sometimes we want to maintain missing data (i.e. some people are randomly missing variables and we don't want to drop them completely)
-
--   Con: can leave you with lots of `NA`s
-
--   Join the codebook to the data below using `full_join()`
-
--   Look at the data. What's going on here
+- Join the codebook to the data below using `full_join()`
+- Look at the data. What's going on here
 
 ```{r, eval = F}
 soep_long |>
-  filter(!category == "big5")
+  filter(!category == "big5") |> 
   full_join(
     # your code here
   ) |> 
     View()
 ```
 
-Here's the solution:
+Here's the solution: 
 
 ```{r}
 soep_long |>
@@ -271,19 +262,16 @@ soep_long |>
   full_join(codebook |> select(category, label, item_name, year, item_text)) 
 ```
 
--   note we have lots of missing data because the Big Five portions of the codebook were joined even though we removed that data
+- note we have lots of missing data because the Big Five portions of the codebook were joined even though we removed that data 
 
 ## 4. `inner_join()`
 
--   We can also keep all rows present in *both* data frames
+- We can also keep all rows present in *both* data frames
+- Pro: Won't add rows with missing values in key variables
+- Con: will drop observations that you want want for counts, correlations, etc. 
 
--   Pro: Won't add rows with missing values in key variables
-
--   Con: will drop observations that you want want for counts, correlations, etc.
-
--   Join the codebook to the data below using `inner_join()`
-
--   Look at the data. What's going on here
+- Join the codebook to the data below using `inner_join()`
+- Look at the data. What's going on here
 
 ```{r, eval = F}
 soep_long |>
@@ -294,7 +282,7 @@ soep_long |>
     View()
 ```
 
--   Note that filtering, renaming/selecting, and joining is a common workflow
+- Note that filtering, renaming/selecting, and joining is a common workflow
 
 ```{r}
 soep_long |>
@@ -309,7 +297,7 @@ soep_long |>
 
 ## 5. `left_join()`
 
--   Or all rows present in the left (first) data frame, perhaps if it's a subset of people with complete data
+- Or all rows present in the left (first) data frame, perhaps if it's a subset of people with complete data
 
 ```{r}
 soep_long |>
@@ -324,7 +312,7 @@ soep_long |>
 
 ## 6. `right_join()`
 
--   Or all rows present in the right (second) data frame, such as I do when I join a codebook with raw data
+- Or all rows present in the right (second) data frame, such as I do when I join a codebook with raw data
 
 ```{r}
 soep_long |>
@@ -339,7 +327,7 @@ soep_long |>
 
 ## Your Turn
 
-In small groups, discuss what's happening when you use `full_join()`, `left_join()`, `right_join()`, `inner_join()`, and `anti_join()` with the code below. Which is correct in this use case?
+In small groups, discuss what's happening when you use `full_join()`, `left_join()`, `right_join()`, `inner_join()`, and `anti_join()` with the code below. Which is correct in this use case? 
 
 ```{r, eval = F, error = F}
 soep_long |>
@@ -352,7 +340,7 @@ soep_long |>
   )
 ```
 
-# `dplyr`: split-apply-combine
+# `dplyr`: split-apply-combine 
 
 ## Bringing it all together: Split-Apply-Combine
 
@@ -383,17 +371,16 @@ soep_long |>
 
 # Exercise 1
 
--   Remember when I said that long format data are easier to clean. Let's do that now.
+- Remember when I said that long format data are easier to clean. Let's do that now.
 
-## Question 1:
+## Question 1: 
 
--   Let's start with the Big Five data:
-
-1.  `filter()` out only Big Five rows
-2.  `mutate()` each observation so that values less than one are changed to `NA`
-3.  Remove any missing values using `filter()` or `drop_na()`
-4.  Group (split) the data so that you have a "group" for each person x trait x year combination
-5.  `summarize()` the values to get a composite score for each Big Five trait for each person in each year:
+- Let's start with the Big Five data: 
+1. `filter()` out only Big Five rows 
+2. `mutate()` each observation so that values less than one are changed to `NA`
+3. Remove any missing values using `filter()` or `drop_na()` 
+4. Group (split) the data so that you have a "group" for each person x trait x year combination 
+5. `summarize()` the values to get a composite score for each Big Five trait for each person in each year: 
 
 ### Solution
 
@@ -410,21 +397,21 @@ soep_big5 <- soep_long |>
 soep_big5
 ```
 
-## Question 2:
+## Question 2: 
 
-Now let's take care of the life event data:\
-1. `filter()` out only life event rows\
-2. `mutate()` each observation so that
+Now let's take care of the life event data:  
+1. `filter()` out only life event rows  
+2. `mutate()` each observation so that  
 
--   -2 = 0
--   1 = 1
--   everything else is `NA`
+  * -2 = 0 
+  * 1 = 1 
+  * everything else is `NA` 
+  
+3. Remove any missing values using `filter()` or `drop_na()` 
+4. Group (split) the data so that you have a "group" for each person x event combination 
+5. `summarize()` the values to get a `sum` score for each event for each person across all years: 
 
-3.  Remove any missing values using `filter()` or `drop_na()`
-4.  Group (split) the data so that you have a "group" for each person x event combination
-5.  `summarize()` the values to get a `sum` score for each event for each person across all years:
-
-### Solution
+### Solution  
 
 ```{r}
 soep_le <- soep_long |>
@@ -437,11 +424,11 @@ soep_le <- soep_long |>
 soep_le
 ```
 
-## Question 3:
+## Question 3: 
 
 Just for practice, now make your Big Five data frame wide, leaving the time variable (year) long
 
-### Solution
+### Solution 
 
 ```{r}
 soep_big5 |>
@@ -451,13 +438,13 @@ soep_big5 |>
   )
 ```
 
-## Question 4:
+## Question 4: 
 
--   Now, let's join the data frames back together.
--   Which join function do you think is most appropriate?
--   Hint: You will need to rename the `label` and `value` columns to reflect the category of the data
+- Now, let's join the data frames back together. 
+- Which join function do you think is most appropriate? 
+- Hint: You will need to rename the `label` and `value` columns to reflect the category of the data
 
-### Solution
+### Solution 
 
 ```{r}
 soep_clean <- soep_big5 |>
@@ -472,49 +459,48 @@ soep_clean
 # Functions
 
 ## Functions
+__How to approach writing functions__? (_broad recipe_)
 
-**How to approach writing functions**? (*broad recipe*)
+1. Experiment with performing the task outside of a function
+    - Experiment with performing task with different sets of inputs
+    - Often, you must revise this code, when an approach that worked outside a function does not work within a function
+1. Write the function
+1. Test the function
+    - Try to "break" it
+1. __Continual improvement__. As you use the function, make continual improvements going back-and-forth between steps 1-3
 
-1.  Experiment with performing the task outside of a function
-    -   Experiment with performing task with different sets of inputs
-    -   Often, you must revise this code, when an approach that worked outside a function does not work within a function
-2.  Write the function
-3.  Test the function
-    -   Try to "break" it
-4.  **Continual improvement**. As you use the function, make continual improvements going back-and-forth between steps 1-3
-
-## Basics of writing functions
+## Basics of writing functions 
 
 **Three components** of a function:
 
-1.  **Function name**
-    -   Define a function using `function()` and give it a **name** using the assignment operator `<-`
-2.  **Function arguments** (sometimes called "inputs")
-    -   Inputs that the function takes; they go inside the parentheses of `function()`
-        -   Can be vectors, data frames, logical statements, strings, etc.
-    -   In the above hypothetical code, the function took three inputs `arg1`, `arg2`, `arg3`, but we could have written:
-        -   `function(x, y, z)` or `function(Larry, Curly, Moe)`
-    -   In the "function call," you specify values to assign to these function arguments
-3.  **Function body**
-    -   What the function does to the inputs
-    -   Function body goes inside the pair of curly brackets (`{}`) that follows `function()`
-    -   Above hypothetical function doesn't do anything, but your function can **return a value** (covered in [later section](#return-values))
-
+1. __Function name__
+    - Define a function using `function()` and give it a **name** using the assignment operator `<-`
+2. __Function arguments__ (sometimes called "inputs")
+    - Inputs that the function takes; they go inside the parentheses of `function()`
+      - Can be vectors, data frames, logical statements, strings, etc.
+    - In the above hypothetical code, the function took three inputs `arg1`, `arg2`, `arg3`, but we could have written:
+      - `function(x, y, z)` or `function(Larry, Curly, Moe)`
+    - In the "function call," you specify values to assign to these function arguments
+3. __Function body__
+    - What the function does to the inputs
+    - Function body goes inside the pair of curly brackets (`{}`) that follows `function()`
+    - Above hypothetical function doesn't do anything, but your function can **return a value** (covered in [later section](#return-values))
+    
 # Exercise 2
 
 Some common tasks when working with survey data:
 
--   Identify number of observations with `NA` values for a specific variable
--   Identify number of observations with negative values for a specific variable
--   Replace negative values with `NA` for a specific variable
+- Identify number of observations with `NA` values for a specific variable
+- Identify number of observations with negative values for a specific variable
+- Replace negative values with `NA` for a specific variable
 
-## `num_negative()` function
+## `num_negative()` function 
 
-**Task**: Write function called `num_negative()`
+__Task__: Write function called `num_negative()`
 
--   Write a function that counts the number of observations with negative values for a specific variable
--   Apply this function to variables from dataframe `df` (created below)
--   Adapted from Ben Skinner's *Programming 1* R Workshop [HERE](https://www.btskinner.me/rworkshop/modules/programming_one.html)
+- Write a function that counts the number of observations with negative values for a specific variable
+- Apply this function to variables from dataframe `df` (created below)
+- Adapted from Ben Skinner's _Programming 1_ R Workshop [HERE](https://www.btskinner.me/rworkshop/modules/programming_one.html)
 
 ```{r, echo=-c(1:3)}
 set.seed(54321) # so that we all get the same random numbers
@@ -537,14 +523,14 @@ df <- tibble('id' = 1:100,
 df
 ```
 
-## Steps:
+## Steps: 
 
-**Recommended steps**:
+__Recommended steps__:
 
--   Perform task outside of function
-    -   HINT: `sum(data_frame_name$var_name<0)`
--   Write function
--   Apply/test function on variables
+- Perform task outside of function
+    - HINT: `sum(data_frame_name$var_name<0)`
+- Write function
+- Apply/test function on variables
 
 ### Step 1: Perform task outside of function
 
@@ -575,28 +561,27 @@ num_missing(df$sibage)
 
 In survey data, negative values often refer to reason for missing values:
 
--   E.g., `-8` refers to "didn't take survey"
--   E.g., `-7` refers to "took survey, but didn't answer this question"
+- E.g., `-8` refers to "didn't take survey"
+- E.g., `-7` refers to "took survey, but didn't answer this question"
 
 ## `num_missing()` function
 
-**Task**: Write function called `num_negative()`
+__Task__: Write function called `num_negative()`
 
--   Write a function that counts number of missing observations for a variable and allows you to specify which values are associated with missing for that variable. This function will take two arguments:
-    -   `x`: The variable (e.g., `df$sibage`)
-    -   `miss_vals`: Vector of values you want to associate with "missing" variable
-        -   Values to associate with missing for `df$age`: `-97,-98,-99`
-        -   Values to associate with missing for `df$sibage`: `-97,-98,-99`
-        -   Values to associate with missing for `df$parage`: `-4,-7,-8`
+- Write a function that counts number of missing observations for a variable and allows you to specify which values are associated with missing for that variable. This function will take two arguments:
+    - `x`: The variable (e.g., `df$sibage`)
+    - `miss_vals`: Vector of values you want to associate with "missing" variable
+        - Values to associate with missing for `df$age`: `-97,-98,-99`
+        - Values to associate with missing for `df$sibage`: `-97,-98,-99`
+        - Values to associate with missing for `df$parage`: `-4,-7,-8`
 
-## Steps
+## Steps 
+__Recommended steps__:
 
-**Recommended steps**:
-
--   Perform task outside of function
-    -   HINT: `sum(data_frame_name$var_name %in% c(-4,-5))`
--   Write function
--   Apply/test function on variables
+- Perform task outside of function
+    - HINT: `sum(data_frame_name$var_name %in% c(-4,-5))`
+- Write function
+- Apply/test function on variables
 
 ### Step 1: Perform task outside of function
 
@@ -623,46 +608,47 @@ num_missing(df$parage,c(-4,-7,-8))
 
 # `purrr`
 
-## purrr::`map()`
+## purrr::`map()` 
 
--   `map()` functions are the tidyverse alternative to for loops and chaotic lists with deep nesting structures
--   `map()` functions, unlike `_apply()` functions can take any number of inputs, which mimics nested `for` loops
--   `map()` functions can return any output type, including heterogeneous outputs (at least if you return it as a list)
+- `map()` functions are the tidyverse alternative to for loops and chaotic lists with deep nesting structures
+- `map()` functions, unlike `_apply()` functions can take any number of inputs, which mimics nested `for` loops 
+- `map()` functions can return any output type, including heterogeneous outputs (at least if you return it as a list)
 
-### Inputs
+### Inputs 
 
--   You control how many inputs using the following:
-    -   `map()`: one input, arguments are `map(.x, .f)`
-    -   `map2()`: two inputs, arguments are `map2(.x, y., .f)`
-    -   `pmap()`: any number of inputs, arguments are `pmap(.l, .f)`
-        -   Note the `.l` becuase this means we have to wrap inputs in a `list()`
+- You control how many inputs using the following: 
+  * `map()`: one input, arguments are `map(.x, .f)`
+  * `map2()`: two inputs, arguments are `map2(.x, y., .f)`
+  * `pmap()`: any number of inputs, arguments are `pmap(.l, .f)`
+    - Note the `.l` becuase this means we have to wrap inputs in a `list()` 
 
-### Ouputs
+### Ouputs 
 
--   You can also control the output of `purrr::map()`:
-    -   `map()`: outputs a list
-    -   `map_chr()`: outputs a character vector\
-    -   `map_dbl()`: outputs a numeric vector\
-    -   `map_lgl()`: outputs a logical vector\
-    -   `map_int()`: outputs a integer vector\
-    -   `map_vec()`: outputs essentially any type of vector
--   Note that if one input combination fails, all will fail and nothing will be outputted
+- You can also control the output of `purrr::map()`: 
+  * `map()`: outputs a list 
+  * `map_chr()`: outputs a character vector  
+  * `map_dbl()`: outputs a numeric vector  
+  * `map_lgl()`: outputs a logical vector  
+  * `map_int()`: outputs a integer vector  
+  * `map_vec()`: outputs essentially any type of vector
+- Note that if one input combination fails, all will fail and nothing will be outputted 
 
-### Error handling
+### Error handling 
 
--   Having everything fail because one thing went wrong is really frustrating
--   There are a number of functions in `purrr` to help with that:
-    -   `possibly(.f, otherwise)`: returns whatever you ask it return with `otherwise` when a .f call fails
-    -   `safely(.f)`: returns a list with the output, if successful, and errors, if unsuccessful
-    -   Others: see [documentation](https://purrr.tidyverse.org/reference/index.html#adverbs).
+- Having everything fail because one thing went wrong is really frustrating
+- There are a number of functions in `purrr` to help with that: 
+  * `possibly(.f, otherwise)`: returns whatever you ask it return with `otherwise` when a .f call fails 
+  * `safely(.f)`: returns a list with the output, if successful, and errors, if unsuccessful
+  * Others: see [documentation](https://purrr.tidyverse.org/reference/index.html#adverbs). 
+  
+### List columns 
 
-### List columns
+- One of the easiest ways to work with `purrr` is using list columns in nested data frames 
 
--   One of the easiest ways to work with `purrr` is using list columns in nested data frames
+::::{.columns}
+:::{.column}
 
-::: columns
-::: column
--   You can create a nested data frame using `tidyr::nest()` or `tibble()` (where one column is a list itself)
+- You can create a nested data frame using `tidyr::nest()` or `tibble()` (where one column is a list itself) 
 
 ```{r}
 soep_clean |>
@@ -670,10 +656,11 @@ soep_clean |>
   nest() |>
   ungroup()
 ```
-:::
 
-::: column
--   You can then call `map()` within a mutate call to modify the list column or create new columns in your data frame
+:::
+:::{.column}
+
+- You can then call `map()` within a mutate call to modify the list column or create new columns in your data frame 
 
 ```{r}
 tibble(
@@ -681,14 +668,15 @@ tibble(
   , y = list(letters[1:5], letters[6:10], letters[11:15])
 )
 ```
+
 :::
-:::
+::::
 
 # Exercise 4
 
-## Question 1:
+## Question 1:  
 
--   Create a data frame called `soep_nested` that creates a list column of the data split by trait and life event.
+- Create a data frame called `soep_nested` that creates a list column of the data split by trait and life event. 
 
 ### Solution
 
@@ -701,7 +689,7 @@ soep_nested <- soep_clean |>
 
 ## Question 2:
 
--   Using `mutate()`, create a new list column called `model` that runs the following function
+- Using `mutate()`, create a new list column called `model` that runs the following function 
 
 ```{r}
 lmer_fun <- function(d){
@@ -722,9 +710,9 @@ soep_nested <- soep_nested |>
 soep_nested
 ```
 
-## Question 3:
+## Question 3: 
 
--   Use the following function to extract the number of people we estimated slopes for in this model. Output the result as an integer to a new column called `npeople`
+- Use the following function to extract the number of people we estimated slopes for in this model. Output the result as an integer to a new column called `npeople` 
 
 ```{r}
 nslopes_fun <- function(m) summary(m)$ngrps
@@ -738,12 +726,12 @@ soep_nested <- soep_nested |>
 soep_nested
 ```
 
-## Question 4:
+## Question 4: 
 
--   Use the `tidy()` function from the `broom.mixed` package to extract the coefficients from the model and their confidence intervals. Save it to the column "tidy"
--   Hints:
-    -   Use the argument `conf.int = T` to get the confidence intervals
-    -   Additional arguments to the `.f` function called in `map()` can be just included as addition arguments (e.g., `map(.x, .f, conf.int = T)`)
+- Use the `tidy()` function from the `broom.mixed` package to extract the coefficients from the model and their confidence intervals. Save it to the column "tidy"
+- Hints: 
+  * Use the argument `conf.int = T` to get the confidence intervals 
+  * Additional arguments to the `.f` function called in `map()` can be just included as addition arguments (e.g., `map(.x, .f, conf.int = T)`)
 
 ### Solution
 
@@ -754,15 +742,14 @@ soep_nested <- soep_nested |>
 
 ## Question 5:
 
--   Let's practice making a super simple table. Do the following:
-
-1.  remove the data and model columns from the data frame
-2.  `unnest()` the `tidy` column
-3.  Keep only fixed effects (`effect == "fixed"`)
-4.  We only care about the interaction, so only keep the interaction `term`
-5.  round the estimate, conf.low, and conf.high columns to 2 decimal places
-6.  Keep the `trait`, `le`, `estimate`, `conf.low`, and `conf.high` columns only
-7.  `pivot_wider()` by trait for `estimate`, `conf.low`, and `conf.high`
+- Let's practice making a super simple table. Do the following: 
+1. remove the data and model columns from the data frame 
+2. `unnest()` the `tidy` column 
+3. Keep only fixed effects (`effect == "fixed"`)
+4. We only care about the interaction, so only keep the interaction `term`
+5. round the estimate, conf.low, and conf.high columns to 2 decimal places
+6. Keep the `trait`, `le`, `estimate`, `conf.low`, and `conf.high` columns only
+7. `pivot_wider()` by trait for `estimate`, `conf.low`, and `conf.high`
 
 ### Solution
 
@@ -781,9 +768,9 @@ soep_tab <- soep_nested |>
 soep_tab
 ```
 
-## Question 6:
+## Question 6: 
 
-Use the function below to get model predictions
+Use the function below to get model predictions 
 
 ```{r}
 pred_fun <- function(m){
@@ -794,7 +781,7 @@ pred_fun <- function(m){
 }
 ```
 
-### Solution
+### Solution 
 
 ```{r}
 soep_nested <- soep_nested |>
@@ -802,14 +789,15 @@ soep_nested <- soep_nested |>
 soep_nested
 ```
 
-## Question 7:
 
--   Let's practice making a super simple table. Do the following:
 
-1.  remove the data, model, and tidy columns from the data frame
-2.  `unnest()` the `tidy` column
-3.  `group_by()` life event and `nest()` + `ungroup()`
-4.  save this as `soep_pred`
+## Question 7: 
+
+- Let's practice making a super simple table. Do the following: 
+1. remove the data, model, and tidy columns from the data frame 
+2. `unnest()` the `tidy` column 
+3. `group_by()` life event and `nest()` + `ungroup()`
+4. save this as `soep_pred`
 
 ### Solution
 
@@ -823,10 +811,10 @@ soep_pred <- soep_nested |>
 soep_pred
 ```
 
-## Question 8:
+## Question 8: 
 
--   Use the following function to create a new column `p` that contains spaghetti plots
--   Note that the function takes two inputs!
+- Use the following function to create a new column `p` that contains spaghetti plots 
+- Note that the function takes two inputs! 
 
 ```{r}
 spag_plot_fun <- function(d, trait){
@@ -849,6 +837,7 @@ spag_plot_fun <- function(d, trait){
 }
 ```
 
+
 ### Solution
 
 ```{r, fig.width=9}
@@ -858,20 +847,16 @@ soep_pred <- soep_pred |>
 soep_pred$p[[1]]
 ```
 
-# Wrap-Up
+# Wrap-Up 
+## Wrap-Up 
 
-## Wrap-Up
-
--   Today's goal was to review the coding concepts we've used so far and ask you to apply them using a series of guided examples
--   The biggest takeaway I wanted you to have is *chaining*, or how you can use `tidyverse` functions in chains to accomplish a bunch of goals simultaneously
--   We cleaned, composited, and ran 50 models across thousands of people, including predictions and tables in less than 100 lines of code. Just doing the models, `tidy()`, and `predict()` parts of that alone would have been 150 lines of code and introduced huge opportunities for errors!
+- Today's goal was to review the coding concepts we've used so far and ask you to apply them using a series of guided examples 
+- The biggest takeaway I wanted you to have is *chaining*, or how you can use `tidyverse` functions in chains to accomplish a bunch of goals simultaneously 
+- We cleaned, composited, and ran 50 models across thousands of people, including predictions and tables in less than 100 lines of code. Just doing the models, `tidy()`, and `predict()` parts of that alone would have been 150 lines of code and introduced huge opportunities for errors! 
 
 # Appendix
-
-## Full Code
-
-### Data
-
+## Full Code 
+### Data 
 ```{r, eval = F}
 # load the codebook
 (codebook <- read_csv("week6-codebook.csv") |>
@@ -884,7 +869,7 @@ soep <- read_csv("week6-data.csv") |>
 
 ```
 
-#### Pivot Long
+#### Pivot Long 
 
 ```{r, eval = F}
 soep_long <- soep |>
@@ -899,7 +884,7 @@ soep_long <- soep |>
 soep_long
 ```
 
-#### Recode and Composite
+#### Recode and Composite 
 
 ```{r, eval = F}
 soep_big5 <- soep_long |>
@@ -926,7 +911,7 @@ soep_clean <- soep_big5 |>
   )
 ```
 
-### Models
+### Models 
 
 ```{r, eval = F}
 soep_nested <- soep_clean |>
@@ -948,10 +933,8 @@ soep_nested <- soep_nested |>
 soep_nested
 ```
 
-### Results
-
-#### Tables
-
+### Results 
+#### Tables 
 ```{r, eval = F}
 nslopes_fun <- function(m) summary(m)$ngrps
 
@@ -976,7 +959,7 @@ soep_tab <- soep_nested |>
 soep_tab
 ```
 
-#### Model Predictions
+#### Model Predictions 
 
 ```{r, eval = F}
 pred_fun <- function(m){
