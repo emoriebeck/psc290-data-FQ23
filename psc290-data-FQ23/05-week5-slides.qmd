@@ -2,7 +2,7 @@
 title: "Week 5 Slides"
 ---
 
-Welcome to Week 4! This week, we'll talk about data documentation, readable codebooks, and data cleaning workflows.
+Welcome to Week 5! This week, we'll talk about data documentation, readable codebooks, and data cleaning workflows.
 
 <div>
 
