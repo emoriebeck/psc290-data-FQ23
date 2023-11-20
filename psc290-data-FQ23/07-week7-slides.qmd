@@ -2,7 +2,7 @@
 title: "Week 7 Slides"
 ---
 
-Welcome to Week 7! This week, we'll talk about data documentation, readable codebooks, and data cleaning workflows.
+Welcome to Week 7! This week, we'll talk about tricky classes like dates and strings along with regex (regular expressions).
 
 <div>
 
