@@ -96,12 +96,22 @@ The final exam for this course is instead a final project, due at the day and ti
 
 Additional information on the project will be provided as a separate document on Canvas, announced in week 4 or 5. The project will not be long and the goal will be for you create a document outlining your workflow.
 
-To ensure that your workflows are as effective as possible, this will proceed in five parts:
+To ensure that your workflows are as effective as possible, this will proceed in three parts:
 
-1.  Initial proposal of an idea submitted via Canvas.
-2.  Updated proposal submitted via Canvas.
-3.  5-10 minute presentation to the class on the last day of the course (10% of your grade).
-4.  Final Project (20%).
+-   Initial proposal of an idea submitted via Canvas.
+-   Updated proposal submitted via Canvas.
+-   5-10 minute presentation to the class on the last day of the course (10% of your grade).
+
+Final Project (20%).
+
+### Extra Credit
+
+- Participate in a [https://www.tidytuesday.com](https://www.tidytuesday.com/).
+- 2 pt extra credit for each one you participate in (max 6 pt total).
+- Can post on Twitter or just create a document with the code and output
+- Submit on Canvas
+  * If posting, link the post in in your submission
+  * If not posting, attach the knitted file
 
 ### Evaluation and Grading Scale
 

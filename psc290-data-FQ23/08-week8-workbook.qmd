@@ -1,5 +1,5 @@
 ---
-title: "Week 8 - Functional Tables and Figures"
+title: "Week 8 Workbook"
 author: "Emorie D Beck"
 format: 
   html:
@@ -18,6 +18,8 @@ editor: visual
 editor_options: 
   chunk_output_type: console
 ---
+
+# Week 8 - Functional Tables and Figures 
 
 ```{r, echo = F}
 pkg <- c("knitr", "psych", "lme4", "broom", "broom.mixed", "kableExtra", "lubridate", "plyr", "tidyverse")
@@ -182,7 +184,8 @@ But before we're ready to create a table, we have to make a few considerations:
 -   How will we denote significance? In this case, we'll use confidence intervals whose signs match. We'll then bold these terms for our table.
 -   What is the desired final structure for the table? I'd like columns for Trait, estimate (b), and confidence intervals (CI) formatted to two decimal places and bolded if significant. I'd also like a span header denoting that the outcome measure is child birth.
 
-### What is our target term? 
+### What is our target term?
+
 In this case "p_value" which is the change in log odds associated with a 1 unit increase/decrease in p_value.
 
 ```{r}
@@ -190,7 +193,8 @@ tidy1 <- tidy1 %>% filter(term == "p_value")
 tidy1
 ```
 
-### How will we denote significance? 
+### How will we denote significance?
+
 In this case, we'll use confidence intervals whose signs match. We'll then bold these terms for our table.
 
 ```{r}
@@ -198,7 +202,8 @@ tidy1 <- tidy1 %>% mutate(sig = ifelse(sign(conf.low) == sign(conf.high), "sig",
 tidy1
 ```
 
-### What is the desired final structure for the table? 
+### What is the desired final structure for the table?
+
 I'd like columns for Trait, estimate (b), and confidence intervals (CI) formatted to two decimal places and bolded if significant. I'd also like a span header denoting that the outcome measure is child birth.
 
 Before we do this, though, we need to convert our log odds to odds ratios, using the `exp()` function.
