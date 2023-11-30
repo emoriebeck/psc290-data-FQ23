@@ -116,7 +116,7 @@ Why use version control when you can just save new version of document?
 ## Private vs. public repositories
 
 -   Public repositories: anyone can access the repository
-    -   e.g., [PSC290 FQ23](https://github.com/emoriebeck/psc290-data-FQ23/), the git repository we created to develop the Rclass2 course is a public repository because we want the public to benefit from this course
+    -   e.g., [PSC290 FQ23](https://github.com/emoriebeck/psc290-data-FQ23/), the git repository we created to develop this course is a public repository because we want the public to benefit from this course
 -   Private repositories: only those who have been granted access by a repository "administrator" can access the repository
 
 ## What is **GitHub**?

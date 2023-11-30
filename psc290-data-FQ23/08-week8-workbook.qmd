@@ -19,7 +19,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Week 8 - Functional Tables and Figures 
+# Week 8 - Functional Tables and Figures
 
 ```{r, echo = F}
 pkg <- c("knitr", "psych", "lme4", "broom", "broom.mixed", "kableExtra", "lubridate", "plyr", "tidyverse")

@@ -26,7 +26,7 @@ This course is not a "pure" data science (i.e. we won't be working with database
 
 ## **Navigating This Site:**
 
-1\. Weekly assignments are under **Problem Sets**. These are due at 12:01 AM on the day of class. 
+1\. Weekly assignments are under **Problem Sets**. These are due at 12:01 AM on the day of class.
 
 2\. Reading list (and links) and links to workshop slides are under [**Schedule**](schedule.html) and on Canvas. I recommend bookmarking this site to allow you access to all materials in perpetuity.
 
