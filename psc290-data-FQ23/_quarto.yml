@@ -43,6 +43,8 @@ website:
         - 08-week8-workbook.qmd
         - 09-week9-slides.qmd
         - 09-week9-workbook.qmd
+        - 10-week10-slides.qmd
+        - 10-week10-workbook.qmd
         
     - id: assignments
       title: "Problem Sets"
@@ -57,6 +59,7 @@ website:
         - ps5-week5.qmd
         - ps7-week7.qmd
         - ps8-week8.qmd
+        - ps9-week9-qmd
 
 format:
   html:
