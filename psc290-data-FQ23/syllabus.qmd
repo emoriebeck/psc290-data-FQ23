@@ -24,13 +24,18 @@ Hadley Wickham: [Advanced R](http://adv-r.had.co.nz/) 
 
 ## **Technology Requirements**
 
+```{r}
+
+```
+
+
 The lecture presentations, links to articles, assignments, and rubrics are located on this Canvas site for the course and on the Quarto site. To participate in learning activities and complete assignments, you will need:
 
--   Access to a working computer that has a current operating system with updates installed;
--   Reliable Internet access and a UCD email account;
--   A current Internet browser that is compatible with Canvas;
--   R and R Studio (see below)
--   Reliable data storage for your work, such as Box, Office 365, or a USB drive.
+-  Access to a working computer that has a current operating system with updates installed;
+-  Reliable Internet access and a UCD email account;
+-  A current Internet browser that is compatible with Canvas;
+-  R and R Studio (see below)
+-  Reliable data storage for your work, such as Box, Office 365, or a USB drive.
 
 We will do all of our data cleaning work in this class using the [R](https://cran.r-project.org/) programming language. We will use [RStudio](https://www.rstudio.com/) to interface with R console for a more user-friendly experience.
 

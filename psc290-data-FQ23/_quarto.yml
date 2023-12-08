@@ -15,7 +15,9 @@ website:
       - text: "Schedule"
         file: schedule.qmd
       - sidebar:assignments
-      - final-project.qmd
+      - sidebar:finalproject
+      # - text: "Final Project"
+      #   file: final-project.qmd
       - about.qmd
       
   sidebar:
@@ -60,6 +62,16 @@ website:
         - ps7-week7.qmd
         - ps8-week8.qmd
         - ps9-week9-qmd
+        
+    - id: finalproject 
+      title: "Final Project"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - final-project.qmd
+        - final-project-submission.qmd
+        - final-project-rubric.qmd
 
 format:
   html:

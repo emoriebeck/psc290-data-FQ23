@@ -1,19 +1,23 @@
 ---
-title: "Final Project Proposal"
-subtitle: "PSC290 - Data Management and Cleaning, Fall 2023"
+title: "Final Project Submission"
+subtitle: "PSC290 - Data Cleaning and Management, Fall 2023"
 author: "Emorie D Beck"
 institution: "University of California, Davis"
 format: html
 ---
 
--   Due at 11:59 PM PST on November 19, 2022 on Canvas
--   1-2 page (single spaced) proposal
+-   Due at 11:59 PM PST on December **15**, 2023 on Canvas
+
+## Format
+
+-   Background (2-3 pages):
     -   Short background (What are you hacking?)
     -   Approach (How you do plan to hack this? What "product" will you producing?)
     -   Motivation (Why are you hacking this particular problem / issue / question / procedure?)
-    -   Challenges and barriers (what do you struggle with with bringing your project to life; are there specific barriers?)
-
-You can also download this document [here](https://github.com/emoriebeck/psc290-data-FQ23/raw/github-pages/static/final-project-proposal.pdf)
+    -   (Note overlap here with the proposal. Modify/expand/etc. as needed. Think of it sort of as the cover letter for what you're submitting)
+-   The product:
+    -   The actual thing you are hacking / producing (see scope below)
+    -   If code, ideally include as .qmd / .Rmd as well as the rendered .pdf / .html / .docx
 
 ## Goal
 
@@ -31,9 +35,3 @@ The project is open-ended, but some examples are:
 -   A data cleaning or analysis script that draws on different course concepts (e.g., directory structures, codebooks, functions, iteration / `purrr`, etc.)
 -   A "checks" / procedure checklist that documents robustness tests and aims to improve the accuracy and efficiency of your workflow
 -   Anything else that draws on things you learned in class and focuses on data cleaning, R, data management, procedures, GitHub, etc.
-
-## Recommendation
-
-For the final project, you will be creating something to help improve your workflow. You can think of it sort of like a chance to "hack" your own work. I recommend choosing something you've been wanting to do but haven't had time to prioritize and using this as an excuse to do so.
-
-As mentioned above, this could be anything from finishing up cleaning some gnarly data you've had for awhile, redoing your documentation for a study that's already been collected (or you plan to collect), building templates or procedures, etc. What I want from you for this project is something that is: \* Useful to you, both short- and long-term \* Challenging but doable (you're better at this than you think!) \* Something you feel proud of
